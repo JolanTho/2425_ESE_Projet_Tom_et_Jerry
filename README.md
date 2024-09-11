@@ -1,11 +1,11 @@
 # 2425_ESE_Tom&Jerry
 
 ## Sommaire
-- [Présentation](#présentation)
-- [Mécanique](#mécanique)
-- [Électronique](#électronique)
-- [Informatique](#informatique)
-- [Stratégies](#stratégies)
+- [Présentation](##présentation)
+- [Mécanique](###mécanique)
+- [Électronique](###électronique)
+- [Informatique](###informatique)
+- [Stratégies](###stratégies)
 - [Installation](#installation)
 - [Contribution](#contribution)
 - [Auteurs et Contact](#auteurs-et-contact)
@@ -72,6 +72,7 @@ Cette section inclut le code source et les algorithmes permettant de contrôler 
 
 ### 4. Stratégies
 Cette section inclut tout ce qu'il faut savoir sur les stratégies décidées et mis en oeuvre.
+
 ---
 
 ## Installation
