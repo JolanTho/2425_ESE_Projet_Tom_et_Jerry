@@ -1,4 +1,4 @@
-# Nom du Projet
+# 2425_ESE_Tom&Jerry
 
 ## Présentation
 
@@ -69,3 +69,9 @@ Cette section inclut le code source et les algorithmes permettant de contrôler 
    ```bash
    git clone https://github.com/username/projet.git
    cd projet
+
+## Auteurs : 
+Jolan Thomasset (jolan.thomasset@ensea.fr)
+Romain Pace   (romain.pace@ensea.fr)
+Rémi Weidle   (remi.weidle@ensea.fr)
+
