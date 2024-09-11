@@ -1,5 +1,17 @@
 # 2425_ESE_Tom&Jerry
 
+## Sommaire
+- [Présentation](#présentation)
+- [Mécanique](#mécanique)
+- [Électronique](#électronique)
+- [Informatique](#informatique)
+- [Stratégies](#stratégies)
+- [Installation](#installation)
+- [Contribution](#contribution)
+- [Auteurs et Contact](#auteurs-et-contact)
+
+---
+
 ## Présentation
 
 Bienvenue sur le dépôt GitHub de **Tom&Jerry**. Ce projet a pour but de développer un robot autonome qui sur un plan plat joue à chat. Le plan est sans rebord, les matchs de 60secondes et le robot change de rôle (Chat/Souris) lors des contacts avec le(s) autre(s) robot(s).
@@ -58,6 +70,10 @@ Cette section inclut le code source et les algorithmes permettant de contrôler 
 
 ---
 
+### 4. Stratégies
+Cette section inclut tout ce qu'il faut savoir sur les stratégies décidées et mis en oeuvre.
+---
+
 ## Installation
 
 ### Prérequis :
@@ -69,6 +85,8 @@ Cette section inclut le code source et les algorithmes permettant de contrôler 
    ```bash
    git clone https://github.com/username/projet.git
    cd projet
+   
+## Contribution :
 
 ## Auteurs : 
 Jolan Thomasset (jolan.thomasset@ensea.fr)
