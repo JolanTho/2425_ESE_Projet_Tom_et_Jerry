@@ -1,0 +1,170 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "d6e3fbeb-d028-494d-83bf-2e4a8b12578d")
+	(paper "A4")
+	(lib_symbols)
+	(sheet
+		(at 153.67 109.22)
+		(size 58.42 40.64)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 255 11 1.0000)
+		)
+		(uuid "13841eaf-0cae-41af-843d-366bf7922a88")
+		(property "Sheetname" "Drivers_moteurs"
+			(at 153.67 107.1434 0)
+			(effects
+				(font
+					(size 4 4)
+					(bold yes)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "MoteurProjet_sch.kicad_sch"
+			(at 153.67 150.4446 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 215.9 109.22)
+		(size 50.8 40.64)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 1 22 1.0000)
+		)
+		(uuid "8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d")
+		(property "Sheetname" "Alimentation"
+			(at 215.9 107.1434 0)
+			(effects
+				(font
+					(size 4 4)
+					(bold yes)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Charger.kicad_sch"
+			(at 215.9 150.4446 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 38.1 109.22)
+		(size 49.53 41.91)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 246 0 1.0000)
+		)
+		(uuid "ac7f7f04-c418-4551-b204-a999b9c3c440")
+		(property "Sheetname" "Capteurs et IMU"
+			(at 38.1 107.1434 0)
+			(effects
+				(font
+					(size 4 4)
+					(bold yes)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Moustache.kicad_sch"
+			(at 38.1 151.7146 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 100.33 109.22)
+		(size 49.53 41.91)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 238 255 1.0000)
+		)
+		(uuid "f5e23083-8df3-405c-9896-3299249742ca")
+		(property "Sheetname" "STM32"
+			(at 100.33 107.1434 0)
+			(effects
+				(font
+					(size 4 4)
+					(bold yes)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "STM32x.kicad_sch"
+			(at 100.33 151.7146 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+)
