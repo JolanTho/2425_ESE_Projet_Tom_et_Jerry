@@ -2259,7 +2259,7 @@
 		)
 		(uuid "2cecd01f-1154-4e0c-81e1-da6610a7d1d3")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 64.888 175.26 0)
+			(at 64.8086 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
