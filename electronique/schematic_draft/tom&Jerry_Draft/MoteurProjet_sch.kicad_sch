@@ -3289,255 +3289,6 @@
 		)
 		(uuid "e65bb248-f26f-4864-8ef4-d599670e5133")
 	)
-	(global_label "PWM_MOT2_CH1"
-		(shape input)
-		(at 35.56 185.42 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(bold yes)
-			)
-			(justify right)
-		)
-		(uuid "20733783-217e-4dcd-b124-a60dced2a9c1")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 17.3488 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "ADC_2"
-		(shape input)
-		(at 88.9 151.13 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(bold yes)
-			)
-			(justify right)
-		)
-		(uuid "20e5bd0c-0bf8-4451-bc2c-21803d33ecf7")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 88.9 160.2699 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "Codeur2_PH1"
-		(shape input)
-		(at 248.92 54.61 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "3883e989-fb55-4ccf-96df-3e46dd4a454d")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 233.3559 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "PWM_MOT2_CH2"
-		(shape input)
-		(at 36.83 167.64 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(bold yes)
-			)
-			(justify right)
-		)
-		(uuid "3b430a23-2178-47f7-88d9-e7e8466a10f9")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 18.6188 167.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "Codeur1_PH1"
-		(shape input)
-		(at 170.18 54.61 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "3d636bb4-869d-4daf-90af-f7963fff56d9")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 154.6159 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "PWM_MOT2_CH2"
-		(shape input)
-		(at 35.56 194.31 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(bold yes)
-			)
-			(justify right)
-		)
-		(uuid "6199f996-cd71-46eb-9238-6c0f2e0cd6e8")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 17.3488 194.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "PWM_MOT2_CH1"
-		(shape input)
-		(at 36.83 165.1 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(bold yes)
-			)
-			(justify right)
-		)
-		(uuid "78492c20-a9a6-49e1-b88c-7a21e54aa523")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 18.6188 165.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "Codeur2_PH2"
-		(shape input)
-		(at 248.92 57.15 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "7fffdd85-0f97-43a6-85e0-7293b4cafc8f")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 233.3559 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "PWM_MOT1_CH2"
-		(shape input)
-		(at 19.05 33.02 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(bold yes)
-			)
-			(justify left)
-		)
-		(uuid "895d8c2a-bb0b-4a48-b606-b74c5de8f20b")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 19.05 14.8088 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "Codeur1_PH2"
-		(shape input)
-		(at 170.18 52.07 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "98b727ac-f91d-4b02-acd6-11f6162daefa")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 154.6159 52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "PWM_MOT1_CH1"
-		(shape input)
-		(at 34.29 74.93 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(bold yes)
-			)
-			(justify right)
-		)
-		(uuid "9f4f1bc7-94b1-45cd-b49a-4d981ea1e19a")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 16.0788 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "ADC_1"
 		(shape input)
 		(at 85.09 60.96 270)
@@ -3561,9 +3312,59 @@
 			)
 		)
 	)
-	(global_label "PWM_MOT1_CH1"
+	(hierarchical_label "Codeur1_PH2"
 		(shape input)
-		(at 27.94 33.02 90)
+		(at 170.18 54.61 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "16474096-e5b3-4f31-9d27-f6a23aaf488d")
+	)
+	(hierarchical_label "Codeur2_PH2"
+		(shape input)
+		(at 248.92 57.15 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "62dbc9da-35e9-4655-afb6-ba89732fe964")
+	)
+	(hierarchical_label "PWM_MOT2_CH2"
+		(shape input)
+		(at 36.83 167.64 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(bold yes)
+			)
+			(justify right)
+		)
+		(uuid "7c593f42-f923-4105-8d89-0f3a7ba6b10e")
+	)
+	(hierarchical_label "PWM_MOT2_CH2"
+		(shape input)
+		(at 35.56 194.31 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(bold yes)
+			)
+			(justify right)
+		)
+		(uuid "7dc2a9b8-7578-44df-ab48-cb690bc24f98")
+	)
+	(hierarchical_label "PWM_MOT1_CH2"
+		(shape input)
+		(at 19.05 33.02 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3572,19 +3373,9 @@
 			)
 			(justify left)
 		)
-		(uuid "b3cc2f50-b0e8-44d7-8034-0819cc454ef5")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 27.94 14.8088 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
+		(uuid "913d84a0-2699-40d0-96ce-b42340ea6d63")
 	)
-	(global_label "PWM_MOT1_CH2"
+	(hierarchical_label "PWM_MOT1_CH2"
 		(shape input)
 		(at 34.29 77.47 180)
 		(fields_autoplaced yes)
@@ -3595,17 +3386,96 @@
 			)
 			(justify right)
 		)
-		(uuid "c291f2f2-2541-4948-9244-c3eed9482ca9")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 16.0788 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
+		(uuid "9492f6e3-26ed-48a4-a105-8b3c30505059")
+	)
+	(hierarchical_label "ADC_2"
+		(shape input)
+		(at 88.9 151.13 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(bold yes)
 			)
+			(justify right)
 		)
+		(uuid "98be46d7-7132-4e33-8541-731e2e079200")
+	)
+	(hierarchical_label "Codeur2_PH1"
+		(shape input)
+		(at 248.92 54.61 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a9495de8-7486-4fed-b152-3cb4498752e2")
+	)
+	(hierarchical_label "PWM_MOT1_CH1"
+		(shape input)
+		(at 27.94 33.02 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(bold yes)
+			)
+			(justify left)
+		)
+		(uuid "c3f3efb3-263b-4654-8aea-e1972f602d82")
+	)
+	(hierarchical_label "PWM_MOT2_CH1"
+		(shape input)
+		(at 35.56 185.42 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(bold yes)
+			)
+			(justify right)
+		)
+		(uuid "d77c08fc-394d-4f56-a1fe-b52730877461")
+	)
+	(hierarchical_label "PWM_MOT2_CH1"
+		(shape input)
+		(at 36.83 165.1 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(bold yes)
+			)
+			(justify right)
+		)
+		(uuid "d843e8ba-78b9-445d-b957-f7781581d530")
+	)
+	(hierarchical_label "PWM_MOT1_CH1"
+		(shape input)
+		(at 34.29 74.93 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(bold yes)
+			)
+			(justify right)
+		)
+		(uuid "ec61b87e-7de9-4932-a4d7-4bdf843ce567")
+	)
+	(hierarchical_label "Codeur1_PH1"
+		(shape input)
+		(at 170.18 52.07 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f24360fc-8a5f-4e93-8e3d-6a4eac57764f")
 	)
 	(symbol
 		(lib_id "power:+5V")

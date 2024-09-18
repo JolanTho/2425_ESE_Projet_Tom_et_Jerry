@@ -1,0 +1,6 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "PCF8574RGTR")(type "KiCad")(uri "/Users/romingo/Desktop/ENSEA/3A/PROJET/RESSOURCES/LIB_PCF8574RGTR/PCF8574RGTR/KiCad/PCF8574RGTR.kicad_sym")(options "")(descr ""))
+  (lib (name "LP5812CDSDR")(type "KiCad")(uri "/Users/romingo/Desktop/ENSEA/3A/PROJET/RESSOURCES/LIB_LP5812CDSDR/LP5812CDSDR/KiCad/LP5812CDSDR.kicad_sym")(options "")(descr ""))
+  (lib (name "TCA9555RTWR")(type "KiCad")(uri "/Users/romingo/Desktop/ENSEA/3A/PROJET/RESSOURCES/LIB_TCA9555RTWR/TCA9555RTWR/KiCad/TCA9555RTWR.kicad_sym")(options "")(descr ""))
+)
