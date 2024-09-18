@@ -431,7 +431,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "tom&Jerry_Draft.kicad_pro",
+    "filename": "tom&jerry.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -533,7 +533,7 @@
       "group_symbols": true,
       "name": "Grouped By Value",
       "sort_asc": true,
-      "sort_field": "Référence"
+      "sort_field": "Reference"
     },
     "connection_grid_size": 50.0,
     "drawing": {
@@ -576,56 +576,12 @@
   },
   "sheets": [
     [
-      "d6e3fbeb-d028-494d-83bf-2e4a8b12578d",
-      "Racine"
+      "276ee8e2-ca0e-490e-a2c0-985a1d22ead8",
+      "Root"
     ],
     [
-      "8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d",
+      "98f76b7b-e22f-4800-92d1-6734bac304ee",
       "Alimentation"
-    ],
-    [
-      "ac7f7f04-c418-4551-b204-a999b9c3c440",
-      "Periphériques"
-    ],
-    [
-      "13841eaf-0cae-41af-843d-366bf7922a88",
-      "Motors&Drivers"
-    ],
-    [
-      "f5e23083-8df3-405c-9896-3299249742ca",
-      "STM32"
-    ],
-    [
-      "8f8d8816-c3bc-4641-b521-76532fa599d5",
-      "Musique"
-    ],
-    [
-      "d8c0a3ec-14ca-4cad-91fd-ac8f1e686c9a",
-      "TOF1"
-    ],
-    [
-      "c40d37b7-0764-4612-8fde-71f5145aa67f",
-      "TOF2"
-    ],
-    [
-      "ae735875-3a05-4be6-99bc-f49af30b564b",
-      "TOF3"
-    ],
-    [
-      "f778e645-32e9-43f1-bc8d-860baaad27c0",
-      "TOF4"
-    ],
-    [
-      "7b81f31a-a9d8-47fc-b567-d77a516e32df",
-      "TOF5"
-    ],
-    [
-      "5425c982-9e7d-49f0-9acd-74ece2531576",
-      "TOF6"
-    ],
-    [
-      "efa0feee-f3fd-4a3d-b19b-a83f1ab7d3a0",
-      "Led_Debug"
     ]
   ],
   "text_variables": {}
