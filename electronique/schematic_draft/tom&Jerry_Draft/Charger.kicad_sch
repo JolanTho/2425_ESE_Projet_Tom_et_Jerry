@@ -843,8 +843,8 @@
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "U"
-				(at 5.08 3.81 0)
+			(property "Reference" "U1"
+				(at 6.35 3.81 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -852,14 +852,14 @@
 				)
 			)
 			(property "Value" "MP1475DJ-LF-P"
-				(at 12.7 1.27 0)
+				(at 6.35 1.27 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Footprint" ""
+			(property "Footprint" "Library:SOT65P280X100-8N"
 				(at 0 0 0)
 				(effects
 					(font
@@ -868,7 +868,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" ""
+			(property "Datasheet" "https://www.mouser.fr/datasheet/2/277/MP1475-2945395.pdf"
 				(at 0 0 0)
 				(effects
 					(font
@@ -878,6 +878,42 @@
 				)
 			)
 			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Name" " Monolithic Power Systems (MPS)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Part_Number" "MP1475DJ"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Mouser Part Number" " 946-MP1475DJLFP "
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Mouser Price/Stock" "https://www.mouser.fr/ProductDetail/Monolithic-Power-Systems-MPS/MP1475DJ-LF-P?qs=Iq7RKQRjpgoaxnjiXuhBAA%3D%3D"
 				(at 0 0 0)
 				(effects
 					(font
@@ -954,7 +990,7 @@
 						)
 					)
 				)
-				(pin bidirectional line
+				(pin power_in line
 					(at 6.35 -20.32 90)
 					(length 2.54)
 					(name "GND"
@@ -1979,6 +2015,16 @@
 	)
 	(wire
 		(pts
+			(xy 175.26 87.63) (xy 175.26 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a9fe5426-3226-46a8-9fd4-c7ace1bc00cf")
+	)
+	(wire
+		(pts
 			(xy 106.68 71.12) (xy 106.68 64.77)
 		)
 		(stroke
@@ -2343,6 +2389,30 @@
 			)
 		)
 		(uuid "e52a1f50-cbc8-4e51-a19f-cbad71fa0eae")
+	)
+	(hierarchical_label "CC2"
+		(shape input)
+		(at 175.26 90.17 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "27ae4d91-3207-4da4-810b-edc5a3e0a2e2")
+	)
+	(hierarchical_label "CC1"
+		(shape input)
+		(at 175.26 87.63 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "dfda851e-0768-42d1-ae2e-9d1ab083947c")
 	)
 	(symbol
 		(lib_id "power:GND")

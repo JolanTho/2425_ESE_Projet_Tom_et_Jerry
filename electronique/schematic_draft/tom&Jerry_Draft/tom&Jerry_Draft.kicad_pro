@@ -585,11 +585,11 @@
     ],
     [
       "ac7f7f04-c418-4551-b204-a999b9c3c440",
-      "Capteurs et IMU"
+      "Periphériques"
     ],
     [
       "13841eaf-0cae-41af-843d-366bf7922a88",
-      "Drivers_moteurs"
+      "Motors&Drivers"
     ],
     [
       "f5e23083-8df3-405c-9896-3299249742ca",
@@ -597,7 +597,7 @@
     ],
     [
       "8f8d8816-c3bc-4641-b521-76532fa599d5",
-      "MUSIQUE"
+      "Musique"
     ],
     [
       "d8c0a3ec-14ca-4cad-91fd-ac8f1e686c9a",
@@ -622,6 +622,10 @@
     [
       "5425c982-9e7d-49f0-9acd-74ece2531576",
       "TOF6"
+    ],
+    [
+      "efa0feee-f3fd-4a3d-b19b-a83f1ab7d3a0",
+      "Led_Debug"
     ]
   ],
   "text_variables": {}

@@ -1699,22 +1699,20 @@
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "IC"
-				(at 41.91 22.86 0)
+			(property "Reference" "IC4"
+				(at 49.53 6.3186 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left top)
 				)
 			)
 			(property "Value" "STM32G431CBU3"
-				(at 41.91 20.32 0)
+				(at 49.53 3.7786 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left top)
 				)
 			)
 			(property "Footprint" "QFN50P700X700X65-49N-D"
@@ -3173,10 +3171,6 @@
 		(uuid "3be1c1fd-7ac6-4a6a-8309-b6374cfc2149")
 	)
 	(no_connect
-		(at 59.69 125.73)
-		(uuid "40befd1b-e47f-475e-a1eb-174b20a8d960")
-	)
-	(no_connect
 		(at 246.38 53.34)
 		(uuid "44346981-803e-4795-b2f4-75553515ea3b")
 	)
@@ -3189,28 +3183,12 @@
 		(uuid "7c74c73d-7d12-4723-bab0-e720887a5ad2")
 	)
 	(no_connect
-		(at 54.61 125.73)
-		(uuid "8779770f-a4d1-4449-be82-edd8f1681afc")
-	)
-	(no_connect
-		(at 52.07 125.73)
-		(uuid "97ea4464-6e3c-4ba3-a538-b458eea5ca59")
-	)
-	(no_connect
-		(at 57.15 125.73)
-		(uuid "98c11f3e-2e0a-45d4-8fc4-7a22c6ff32ae")
-	)
-	(no_connect
 		(at 97.79 95.25)
 		(uuid "a977db3e-ccd6-4bed-bf06-af3f3336443c")
 	)
 	(no_connect
 		(at 233.68 43.18)
 		(uuid "cc189c08-ca13-4c3a-b1ec-d5af8ae09a36")
-	)
-	(no_connect
-		(at 67.31 125.73)
-		(uuid "e55fd589-c822-4c81-aa29-1d833c478e90")
 	)
 	(no_connect
 		(at 97.79 100.33)
@@ -3223,10 +3201,6 @@
 	(no_connect
 		(at 97.79 97.79)
 		(uuid "f1fd0997-5023-4579-b312-be886acda988")
-	)
-	(no_connect
-		(at 36.83 100.33)
-		(uuid "ffe53098-b64b-4526-8973-7e85661985df")
 	)
 	(wire
 		(pts
@@ -4224,18 +4198,6 @@
 		)
 		(uuid "3b4ea8e1-aae6-4d3e-ba82-ea3a4161aebb")
 	)
-	(label "BUTTON_2"
-		(at 140.97 123.19 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "3fe36622-3f72-42d4-898b-c6b9970dbec2")
-	)
 	(label "NRST"
 		(at 139.7 97.79 0)
 		(fields_autoplaced yes)
@@ -4311,18 +4273,6 @@
 		)
 		(uuid "939038e8-0cf7-49fa-ac58-a94a336ff349")
 	)
-	(label "BUTTON_3"
-		(at 140.97 129.54 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "9a760f40-1b05-4c60-984f-fca2e82015fa")
-	)
 	(label "VREF"
 		(at 104.14 163.83 0)
 		(fields_autoplaced yes)
@@ -4334,18 +4284,6 @@
 			(justify left bottom)
 		)
 		(uuid "acde7d1c-2d3a-413f-bc3f-d4705d7346dc")
-	)
-	(label "BUTTON_1"
-		(at 140.97 116.84 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "b9620e34-dd28-4771-beab-19c1f671b424")
 	)
 	(label "STLINK_SWCLK"
 		(at 250.19 48.26 0)
@@ -4408,6 +4346,75 @@
 			(justify left bottom)
 		)
 		(uuid "e89a8d9e-eab0-4ff9-8e63-c33702742f74")
+	)
+	(global_label "BUTTON_2"
+		(shape input)
+		(at 140.97 123.19 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(bold yes)
+			)
+			(justify right)
+		)
+		(uuid "44766894-d049-4f39-8368-cd306c16f46e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 128.135 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BUTTON_1"
+		(shape input)
+		(at 140.97 129.54 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(bold yes)
+			)
+			(justify right)
+		)
+		(uuid "9f7836c3-7b12-46d2-8840-0774d9d851f9")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 128.135 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BUTTON_3"
+		(shape input)
+		(at 140.97 116.84 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(bold yes)
+			)
+			(justify right)
+		)
+		(uuid "c35558dd-b061-4c00-b863-8d45fe35ac04")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 128.135 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
 	)
 	(hierarchical_label "CC2"
 		(shape input)
@@ -4521,6 +4528,20 @@
 		)
 		(uuid "8c28cced-6317-49ab-b7f3-01d9220b028f")
 	)
+	(hierarchical_label "DAC-"
+		(shape input)
+		(at 52.07 125.73 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+			(justify right)
+		)
+		(uuid "9797a603-1071-4d2d-a995-1ffd7a5dc75d")
+	)
 	(hierarchical_label "DRIVER_2_FWD"
 		(shape input)
 		(at 74.93 125.73 270)
@@ -4534,6 +4555,20 @@
 			(justify right)
 		)
 		(uuid "9d70e32f-f420-4a71-ab92-2b7bf364840a")
+	)
+	(hierarchical_label "DAC+"
+		(shape input)
+		(at 36.83 100.33 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+			(justify right)
+		)
+		(uuid "a8a40c1e-978b-4d32-833b-03a211cd9af4")
 	)
 	(hierarchical_label "I2C_MAIN_SDA"
 		(shape input)
@@ -4577,6 +4612,20 @@
 		)
 		(uuid "b0fe1a05-46ff-4acf-a46f-6ba894a7988e")
 	)
+	(hierarchical_label "MOUSTACHE_1"
+		(shape input)
+		(at 67.31 125.73 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+			(justify right)
+		)
+		(uuid "b3a5fee0-4f98-4a43-bdb0-b657de7f1487")
+	)
 	(hierarchical_label "ODOM1_PHASEA"
 		(shape input)
 		(at 97.79 90.17 0)
@@ -4605,6 +4654,20 @@
 		)
 		(uuid "c6b048b2-1aab-4da5-a830-81d8275efb20")
 	)
+	(hierarchical_label "MOUSTACHE_3"
+		(shape input)
+		(at 57.15 125.73 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+			(justify right)
+		)
+		(uuid "d18c81e8-d3fb-47bf-82ca-23b28e25166a")
+	)
 	(hierarchical_label "LIDAR_RX"
 		(shape input)
 		(at 36.83 97.79 180)
@@ -4632,6 +4695,34 @@
 			(justify left)
 		)
 		(uuid "da9023ef-54d9-4de8-b358-569466f594f1")
+	)
+	(hierarchical_label "MOUSTACHE_2"
+		(shape input)
+		(at 54.61 125.73 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+			(justify right)
+		)
+		(uuid "e8f51c80-a378-4c27-88e4-e65da82fec1b")
+	)
+	(hierarchical_label "MOUSTACHE_4"
+		(shape input)
+		(at 59.69 125.73 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+			(justify right)
+		)
+		(uuid "f16f6de0-dbf3-410c-8bff-9cf9bdc45a77")
 	)
 	(hierarchical_label "CC1"
 		(shape input)
@@ -8764,6 +8855,10 @@
 		(instances
 			(project ""
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/f5e23083-8df3-405c-9896-3299249742ca"
+					(reference "IC4")
+					(unit 1)
+				)
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/ac7f7f04-c418-4551-b204-a999b9c3c440/d8c0a3ec-14ca-4cad-91fd-ac8f1e686c9a"
 					(reference "IC4")
 					(unit 1)
 				)

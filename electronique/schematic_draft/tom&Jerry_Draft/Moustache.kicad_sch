@@ -1342,15 +1342,111 @@
 				)
 			)
 		)
+		(symbol "power:PWR_FLAG"
+			(power)
+			(pin_numbers hide)
+			(pin_names
+				(offset 0) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#FLG"
+				(at 0 1.905 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "PWR_FLAG"
+				(at 0 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Special symbol for telling ERC where power comes from"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "flag power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "PWR_FLAG_0_0"
+				(pin power_out line
+					(at 0 0 90)
+					(length 0)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "PWR_FLAG_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 1.27) (xy -1.016 1.905) (xy 0 2.54) (xy 1.016 1.905) (xy 0 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+		)
 	)
 	(junction
-		(at 90.17 73.66)
+		(at 60.96 69.85)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "0e9cd4a9-b55f-4d14-946f-b55409a18899")
 	)
 	(junction
-		(at 90.17 53.34)
+		(at 60.96 49.53)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "1194d41d-afc1-42d0-be6f-1c62ba616ca8")
@@ -1362,19 +1458,19 @@
 		(uuid "21cb6efe-5769-478c-8648-4906ba03e61c")
 	)
 	(junction
-		(at 90.17 96.52)
+		(at 60.96 92.71)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3b1044ca-b756-47e5-bbf5-2ab377d3c4d2")
 	)
 	(junction
-		(at 90.17 50.8)
+		(at 60.96 46.99)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "506b864d-667b-47bc-a970-9960bf9576d6")
 	)
 	(junction
-		(at 90.17 76.2)
+		(at 60.96 72.39)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e017e5b0-3719-48ec-97ee-0c6ecfd1c737")
@@ -1384,6 +1480,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f5b9d63e-ff12-460d-9a57-a432cb9ff67a")
+	)
+	(junction
+		(at 248.92 45.72)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f8e5e201-b34f-4342-922d-e15db639043b")
 	)
 	(no_connect
 		(at 175.26 102.87)
@@ -1411,7 +1513,7 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 50.8) (xy 90.17 53.34)
+			(xy 60.96 46.99) (xy 60.96 49.53)
 		)
 		(stroke
 			(width 0)
@@ -1431,7 +1533,7 @@
 	)
 	(wire
 		(pts
-			(xy 248.92 44.45) (xy 248.92 46.99)
+			(xy 248.92 44.45) (xy 248.92 45.72)
 		)
 		(stroke
 			(width 0)
@@ -1441,7 +1543,7 @@
 	)
 	(polyline
 		(pts
-			(xy 135.89 13.97) (xy 135.89 148.59)
+			(xy 116.84 13.97) (xy 116.84 105.41)
 		)
 		(stroke
 			(width 0)
@@ -1461,7 +1563,7 @@
 	)
 	(wire
 		(pts
-			(xy 71.12 50.8) (xy 90.17 50.8)
+			(xy 41.91 46.99) (xy 60.96 46.99)
 		)
 		(stroke
 			(width 0)
@@ -1481,7 +1583,7 @@
 	)
 	(wire
 		(pts
-			(xy 71.12 73.66) (xy 90.17 73.66)
+			(xy 41.91 69.85) (xy 60.96 69.85)
 		)
 		(stroke
 			(width 0)
@@ -1491,13 +1593,23 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 76.2) (xy 110.49 76.2)
+			(xy 60.96 72.39) (xy 81.28 72.39)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "6f7f0a3c-68d8-4e26-a166-4d8869b94706")
+	)
+	(polyline
+		(pts
+			(xy 476.25 91.44) (xy 341.63 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7033957c-0caa-4a58-ba38-bc85bd262b37")
 	)
 	(wire
 		(pts
@@ -1511,7 +1623,7 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 73.66) (xy 90.17 76.2)
+			(xy 60.96 69.85) (xy 60.96 72.39)
 		)
 		(stroke
 			(width 0)
@@ -1541,7 +1653,7 @@
 	)
 	(wire
 		(pts
-			(xy 71.12 96.52) (xy 90.17 96.52)
+			(xy 41.91 92.71) (xy 60.96 92.71)
 		)
 		(stroke
 			(width 0)
@@ -1551,13 +1663,23 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 96.52) (xy 90.17 99.06)
+			(xy 60.96 92.71) (xy 60.96 95.25)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "820989e1-048c-47d4-9968-ac7210a80357")
+	)
+	(polyline
+		(pts
+			(xy 116.84 90.17) (xy 116.84 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "832910ba-5870-463d-8736-f325f1c9f6e6")
 	)
 	(wire
 		(pts
@@ -1571,6 +1693,16 @@
 	)
 	(wire
 		(pts
+			(xy 248.92 45.72) (xy 248.92 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "84984998-216a-4596-b4cd-1b9cb5a0ca14")
+	)
+	(wire
+		(pts
 			(xy 161.29 120.65) (xy 175.26 120.65)
 		)
 		(stroke
@@ -1581,7 +1713,7 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 99.06) (xy 110.49 99.06)
+			(xy 60.96 95.25) (xy 81.28 95.25)
 		)
 		(stroke
 			(width 0)
@@ -1611,7 +1743,7 @@
 	)
 	(polyline
 		(pts
-			(xy 209.55 12.7) (xy 209.55 147.32)
+			(xy 116.84 91.44) (xy 251.46 91.44)
 		)
 		(stroke
 			(width 0)
@@ -1621,7 +1753,17 @@
 	)
 	(polyline
 		(pts
-			(xy 135.89 86.36) (xy 209.55 86.36)
+			(xy 209.55 12.7) (xy 209.55 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aba34f3f-0efa-4691-995a-9038863c64f7")
+	)
+	(polyline
+		(pts
+			(xy 12.7 105.41) (xy 116.84 105.41)
 		)
 		(stroke
 			(width 0)
@@ -1651,7 +1793,7 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 53.34) (xy 110.49 53.34)
+			(xy 60.96 49.53) (xy 81.28 49.53)
 		)
 		(stroke
 			(width 0)
@@ -1661,7 +1803,7 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 39.37) (xy 90.17 50.8)
+			(xy 60.96 35.56) (xy 60.96 46.99)
 		)
 		(stroke
 			(width 0)
@@ -1671,7 +1813,7 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 76.2) (xy 90.17 96.52)
+			(xy 60.96 72.39) (xy 60.96 92.71)
 		)
 		(stroke
 			(width 0)
@@ -1691,7 +1833,7 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 53.34) (xy 90.17 73.66)
+			(xy 60.96 49.53) (xy 60.96 69.85)
 		)
 		(stroke
 			(width 0)
@@ -1750,9 +1892,9 @@
 		)
 		(uuid "9a75319b-ced9-4f4d-b18f-daf093a38f1b")
 	)
-	(text "IMU est seul sur le I2C"
+	(text "IMU est seul sur le I2C\ndonc CS: ON et ADDR:GND\n"
 		(exclude_from_sim no)
-		(at 226.314 73.66 0)
+		(at 224.282 78.74 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1800,7 +1942,7 @@
 	)
 	(hierarchical_label "TOF2_SDA"
 		(shape input)
-		(at 110.49 55.88 180)
+		(at 81.28 52.07 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1812,7 +1954,7 @@
 	)
 	(hierarchical_label "TOF3_SDA"
 		(shape input)
-		(at 71.12 76.2 0)
+		(at 41.91 72.39 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1824,7 +1966,7 @@
 	)
 	(hierarchical_label "TOF1_SDA"
 		(shape input)
-		(at 71.12 53.34 0)
+		(at 41.91 49.53 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1836,7 +1978,7 @@
 	)
 	(hierarchical_label "TOF6_GPIO1"
 		(shape input)
-		(at 110.49 87.63 180)
+		(at 81.28 83.82 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1860,7 +2002,7 @@
 	)
 	(hierarchical_label "TOF5_XSHUT"
 		(shape input)
-		(at 71.12 87.63 0)
+		(at 41.91 83.82 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1872,7 +2014,7 @@
 	)
 	(hierarchical_label "TOF5_SDA"
 		(shape input)
-		(at 71.12 99.06 0)
+		(at 41.91 95.25 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1884,7 +2026,7 @@
 	)
 	(hierarchical_label "TOF1_GPIO1"
 		(shape input)
-		(at 71.12 39.37 0)
+		(at 41.91 35.56 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1896,7 +2038,7 @@
 	)
 	(hierarchical_label "TOF2_XSHUT"
 		(shape input)
-		(at 110.49 44.45 180)
+		(at 81.28 40.64 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1908,7 +2050,7 @@
 	)
 	(hierarchical_label "TOF3_XSHUT"
 		(shape input)
-		(at 71.12 64.77 0)
+		(at 41.91 60.96 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1956,7 +2098,7 @@
 	)
 	(hierarchical_label "TOF2_GPIO1"
 		(shape input)
-		(at 110.49 41.91 180)
+		(at 81.28 38.1 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2004,7 +2146,7 @@
 	)
 	(hierarchical_label "TOF5_GPIO1"
 		(shape input)
-		(at 71.12 85.09 0)
+		(at 41.91 81.28 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2016,7 +2158,7 @@
 	)
 	(hierarchical_label "TOF3_GPIO1"
 		(shape input)
-		(at 71.12 62.23 0)
+		(at 41.91 58.42 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2028,7 +2170,7 @@
 	)
 	(hierarchical_label "TOF_SCL"
 		(shape input)
-		(at 90.17 39.37 90)
+		(at 60.96 35.56 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2052,7 +2194,7 @@
 	)
 	(hierarchical_label "TOF4_XSHUT"
 		(shape input)
-		(at 110.49 67.31 180)
+		(at 81.28 63.5 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2064,7 +2206,7 @@
 	)
 	(hierarchical_label "TOF6_XSHUT"
 		(shape input)
-		(at 110.49 90.17 180)
+		(at 81.28 86.36 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2076,7 +2218,7 @@
 	)
 	(hierarchical_label "TOF4_SDA"
 		(shape input)
-		(at 110.49 78.74 180)
+		(at 81.28 74.93 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2088,7 +2230,7 @@
 	)
 	(hierarchical_label "TOF1_XSHUT"
 		(shape input)
-		(at 71.12 41.91 0)
+		(at 41.91 38.1 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2100,7 +2242,7 @@
 	)
 	(hierarchical_label "TOF6_SDA"
 		(shape input)
-		(at 110.49 101.6 180)
+		(at 81.28 97.79 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2112,7 +2254,7 @@
 	)
 	(hierarchical_label "TOF4_GPIO1"
 		(shape input)
-		(at 110.49 64.77 180)
+		(at 81.28 60.96 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2422,6 +2564,73 @@
 			(project "tom&Jerry_Draft"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/ac7f7f04-c418-4551-b204-a999b9c3c440"
 					(reference "#PWR0301")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 248.92 45.72 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "31f32aed-aa40-498b-9522-1c0579f8d17a")
+		(property "Reference" "#FLG0301"
+			(at 247.015 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 245.11 45.7199 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 248.92 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 248.92 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 248.92 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "98fbe607-4582-4f2d-80b1-f316eb7177c6")
+		)
+		(instances
+			(project ""
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/ac7f7f04-c418-4551-b204-a999b9c3c440"
+					(reference "#FLG0301")
 					(unit 1)
 				)
 			)
@@ -3300,7 +3509,7 @@
 		)
 	)
 	(sheet
-		(at 110.49 86.36)
+		(at 81.28 82.55)
 		(size 21.59 16.51)
 		(fields_autoplaced yes)
 		(stroke
@@ -3312,7 +3521,7 @@
 		)
 		(uuid "5425c982-9e7d-49f0-9acd-74ece2531576")
 		(property "Sheetname" "TOF6"
-			(at 110.49 85.6484 0)
+			(at 81.28 81.8384 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3321,7 +3530,7 @@
 			)
 		)
 		(property "Sheetfile" "tof.kicad_sch"
-			(at 110.49 103.4546 0)
+			(at 81.28 99.6446 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3330,7 +3539,7 @@
 			)
 		)
 		(pin "TOF_SCL" input
-			(at 110.49 99.06 180)
+			(at 81.28 95.25 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3340,7 +3549,7 @@
 			(uuid "5fc1225b-6bb6-4c5f-b88a-b6c1359f1005")
 		)
 		(pin "TOF_SDA" input
-			(at 110.49 101.6 180)
+			(at 81.28 97.79 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3350,7 +3559,7 @@
 			(uuid "103d2dfd-e841-47e9-826d-9ef7dcd79ee3")
 		)
 		(pin "TOF_XSHUT" input
-			(at 110.49 90.17 180)
+			(at 81.28 86.36 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3360,7 +3569,7 @@
 			(uuid "b2ff358f-d07c-4faa-903a-e18cd60afd42")
 		)
 		(pin "TOF_GPIO1" input
-			(at 110.49 87.63 180)
+			(at 81.28 83.82 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3378,7 +3587,7 @@
 		)
 	)
 	(sheet
-		(at 49.53 83.82)
+		(at 20.32 80.01)
 		(size 21.59 16.51)
 		(fields_autoplaced yes)
 		(stroke
@@ -3390,7 +3599,7 @@
 		)
 		(uuid "7b81f31a-a9d8-47fc-b567-d77a516e32df")
 		(property "Sheetname" "TOF5"
-			(at 49.53 83.1084 0)
+			(at 20.32 79.2984 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3399,7 +3608,7 @@
 			)
 		)
 		(property "Sheetfile" "tof.kicad_sch"
-			(at 49.53 100.9146 0)
+			(at 20.32 97.1046 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3408,7 +3617,7 @@
 			)
 		)
 		(pin "TOF_SCL" input
-			(at 71.12 96.52 0)
+			(at 41.91 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3418,7 +3627,7 @@
 			(uuid "a0e0f0ca-518d-47c4-8819-5e86bd357d77")
 		)
 		(pin "TOF_SDA" input
-			(at 71.12 99.06 0)
+			(at 41.91 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3428,7 +3637,7 @@
 			(uuid "87b5ef77-85f2-4284-b73d-245a16c72253")
 		)
 		(pin "TOF_XSHUT" input
-			(at 71.12 87.63 0)
+			(at 41.91 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3438,7 +3647,7 @@
 			(uuid "6b86de9b-2a83-43c4-813d-d57a34d33b21")
 		)
 		(pin "TOF_GPIO1" input
-			(at 71.12 85.09 0)
+			(at 41.91 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3456,7 +3665,7 @@
 		)
 	)
 	(sheet
-		(at 49.53 60.96)
+		(at 20.32 57.15)
 		(size 21.59 16.51)
 		(fields_autoplaced yes)
 		(stroke
@@ -3468,7 +3677,7 @@
 		)
 		(uuid "ae735875-3a05-4be6-99bc-f49af30b564b")
 		(property "Sheetname" "TOF3"
-			(at 49.53 60.2484 0)
+			(at 20.32 56.4384 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3477,7 +3686,7 @@
 			)
 		)
 		(property "Sheetfile" "tof.kicad_sch"
-			(at 49.53 78.0546 0)
+			(at 20.32 74.2446 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3486,7 +3695,7 @@
 			)
 		)
 		(pin "TOF_SCL" input
-			(at 71.12 73.66 0)
+			(at 41.91 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3496,7 +3705,7 @@
 			(uuid "0279c7ae-63e3-4408-9e89-12cefd583234")
 		)
 		(pin "TOF_SDA" input
-			(at 71.12 76.2 0)
+			(at 41.91 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3506,7 +3715,7 @@
 			(uuid "584dddfc-7d26-4633-b800-42bebaaab9f4")
 		)
 		(pin "TOF_XSHUT" input
-			(at 71.12 64.77 0)
+			(at 41.91 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3516,7 +3725,7 @@
 			(uuid "c6665636-e52b-428a-a29e-b1df1608779b")
 		)
 		(pin "TOF_GPIO1" input
-			(at 71.12 62.23 0)
+			(at 41.91 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3534,7 +3743,7 @@
 		)
 	)
 	(sheet
-		(at 110.49 40.64)
+		(at 81.28 36.83)
 		(size 21.59 16.51)
 		(fields_autoplaced yes)
 		(stroke
@@ -3546,7 +3755,7 @@
 		)
 		(uuid "c40d37b7-0764-4612-8fde-71f5145aa67f")
 		(property "Sheetname" "TOF2"
-			(at 110.49 39.9284 0)
+			(at 81.28 36.1184 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3555,7 +3764,7 @@
 			)
 		)
 		(property "Sheetfile" "tof.kicad_sch"
-			(at 110.49 57.7346 0)
+			(at 81.28 53.9246 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3564,7 +3773,7 @@
 			)
 		)
 		(pin "TOF_SCL" input
-			(at 110.49 53.34 180)
+			(at 81.28 49.53 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3574,7 +3783,7 @@
 			(uuid "d55f0fda-4522-498d-9762-1eb12e97a124")
 		)
 		(pin "TOF_SDA" input
-			(at 110.49 55.88 180)
+			(at 81.28 52.07 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3584,7 +3793,7 @@
 			(uuid "93b63040-3c77-4acd-b7fc-0628779d87f7")
 		)
 		(pin "TOF_XSHUT" input
-			(at 110.49 44.45 180)
+			(at 81.28 40.64 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3594,7 +3803,7 @@
 			(uuid "76085b22-8e7a-4031-b487-4864b0a3a8c4")
 		)
 		(pin "TOF_GPIO1" input
-			(at 110.49 41.91 180)
+			(at 81.28 38.1 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3612,7 +3821,7 @@
 		)
 	)
 	(sheet
-		(at 49.53 38.1)
+		(at 20.32 34.29)
 		(size 21.59 16.51)
 		(fields_autoplaced yes)
 		(stroke
@@ -3624,7 +3833,7 @@
 		)
 		(uuid "d8c0a3ec-14ca-4cad-91fd-ac8f1e686c9a")
 		(property "Sheetname" "TOF1"
-			(at 49.53 37.3884 0)
+			(at 20.32 33.5784 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3633,7 +3842,7 @@
 			)
 		)
 		(property "Sheetfile" "tof.kicad_sch"
-			(at 49.53 55.1946 0)
+			(at 20.32 51.3846 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3642,7 +3851,7 @@
 			)
 		)
 		(pin "TOF_SCL" input
-			(at 71.12 50.8 0)
+			(at 41.91 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3652,7 +3861,7 @@
 			(uuid "cd4b33cb-04a3-4620-a366-eee3b43c38dc")
 		)
 		(pin "TOF_SDA" input
-			(at 71.12 53.34 0)
+			(at 41.91 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3662,7 +3871,7 @@
 			(uuid "eda0239f-55bf-4b6f-a9ed-54c4766a7c7e")
 		)
 		(pin "TOF_XSHUT" input
-			(at 71.12 41.91 0)
+			(at 41.91 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3672,7 +3881,7 @@
 			(uuid "649293fe-9b63-417a-ac9d-f87ac80dfaa7")
 		)
 		(pin "TOF_GPIO1" input
-			(at 71.12 39.37 0)
+			(at 41.91 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3690,7 +3899,7 @@
 		)
 	)
 	(sheet
-		(at 110.49 63.5)
+		(at 81.28 59.69)
 		(size 21.59 16.51)
 		(fields_autoplaced yes)
 		(stroke
@@ -3702,7 +3911,7 @@
 		)
 		(uuid "f778e645-32e9-43f1-bc8d-860baaad27c0")
 		(property "Sheetname" "TOF4"
-			(at 110.49 62.7884 0)
+			(at 81.28 58.9784 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3711,7 +3920,7 @@
 			)
 		)
 		(property "Sheetfile" "tof.kicad_sch"
-			(at 110.49 80.5946 0)
+			(at 81.28 76.7846 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3720,7 +3929,7 @@
 			)
 		)
 		(pin "TOF_SCL" input
-			(at 110.49 76.2 180)
+			(at 81.28 72.39 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3730,7 +3939,7 @@
 			(uuid "7f930360-a992-428f-b35f-6204cb8f11a5")
 		)
 		(pin "TOF_SDA" input
-			(at 110.49 78.74 180)
+			(at 81.28 74.93 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3740,7 +3949,7 @@
 			(uuid "6dae15b5-a2bb-4d83-b3b6-8425a1f883e8")
 		)
 		(pin "TOF_XSHUT" input
-			(at 110.49 67.31 180)
+			(at 81.28 63.5 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3750,7 +3959,7 @@
 			(uuid "8efe6d4d-6a3e-454b-bfae-5282cfbbb6b2")
 		)
 		(pin "TOF_GPIO1" input
-			(at 110.49 64.77 180)
+			(at 81.28 60.96 180)
 			(effects
 				(font
 					(size 1.27 1.27)

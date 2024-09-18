@@ -697,6 +697,16 @@
 	)
 	(wire
 		(pts
+			(xy 119.38 69.85) (xy 121.92 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "37763800-9896-445e-b809-ba60716415e7")
+	)
+	(wire
+		(pts
 			(xy 135.89 104.14) (xy 135.89 106.68)
 		)
 		(stroke
@@ -886,7 +896,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7dfd73b0-0d7b-405d-ab3b-58ce5d26b41d")
-		(property "Reference" "C702"
+		(property "Reference" "C1202"
 			(at 124.4599 76.2 0)
 			(effects
 				(font
@@ -968,7 +978,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 121.92 69.85 270)
+		(at 119.38 69.85 270)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -977,8 +987,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8080b817-d118-4f32-b977-a3e57abe22f2")
-		(property "Reference" "#PWR0702"
-			(at 115.57 69.85 0)
+		(property "Reference" "#PWR01202"
+			(at 113.03 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -987,7 +997,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 118.11 69.8499 90)
+			(at 115.57 69.8499 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -996,7 +1006,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 121.92 69.85 0)
+			(at 119.38 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1005,7 +1015,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 121.92 69.85 0)
+			(at 119.38 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1014,7 +1024,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 121.92 69.85 0)
+			(at 119.38 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1066,7 +1076,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9d4ba7a7-8a51-43ee-89f0-e70029db86cf")
-		(property "Reference" "#PWR0701"
+		(property "Reference" "#PWR01201"
 			(at 125.73 66.04 0)
 			(effects
 				(font
@@ -1153,7 +1163,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e34bca4f-a2b4-4e90-896f-9adb86817294")
-		(property "Reference" "C701"
+		(property "Reference" "C1201"
 			(at 123.444 60.96 0)
 			(effects
 				(font
@@ -1244,7 +1254,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e8c14d4c-5bc0-47b4-a981-a7fdbfc1f9fe")
-		(property "Reference" "#PWR0703"
+		(property "Reference" "#PWR01203"
 			(at 146.05 106.68 0)
 			(effects
 				(font
@@ -1332,7 +1342,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "fb3b26fb-1f51-4d88-959a-3bd9d907e24c")
-		(property "Reference" "U701"
+		(property "Reference" "U1201"
 			(at 129.54 87.6299 0)
 			(effects
 				(font
