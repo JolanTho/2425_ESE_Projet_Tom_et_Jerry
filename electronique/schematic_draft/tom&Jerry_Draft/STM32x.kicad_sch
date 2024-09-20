@@ -3183,10 +3183,6 @@
 		(uuid "7c74c73d-7d12-4723-bab0-e720887a5ad2")
 	)
 	(no_connect
-		(at 97.79 95.25)
-		(uuid "a977db3e-ccd6-4bed-bf06-af3f3336443c")
-	)
-	(no_connect
 		(at 233.68 43.18)
 		(uuid "cc189c08-ca13-4c3a-b1ec-d5af8ae09a36")
 	)
@@ -3197,10 +3193,6 @@
 	(no_connect
 		(at 36.83 74.93)
 		(uuid "efeeeee0-8457-4362-9388-973862262ed7")
-	)
-	(no_connect
-		(at 97.79 97.79)
-		(uuid "f1fd0997-5023-4579-b312-be886acda988")
 	)
 	(wire
 		(pts
@@ -4444,6 +4436,20 @@
 		)
 		(uuid "165c9fd3-d9fe-425d-bec4-21bbac400606")
 	)
+	(hierarchical_label "MOUSTACHE_1"
+		(shape input)
+		(at 97.79 95.25 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+			(justify left)
+		)
+		(uuid "1dfdf853-3fdc-494b-b7da-8e3d8f077593")
+	)
 	(hierarchical_label "IMU_SCL"
 		(shape input)
 		(at 80.01 41.91 90)
@@ -4612,7 +4618,7 @@
 		)
 		(uuid "b0fe1a05-46ff-4acf-a46f-6ba894a7988e")
 	)
-	(hierarchical_label "MOUSTACHE_1"
+	(hierarchical_label "MOUSTACHE_4"
 		(shape input)
 		(at 67.31 125.73 270)
 		(fields_autoplaced yes)
@@ -4654,7 +4660,7 @@
 		)
 		(uuid "c6b048b2-1aab-4da5-a830-81d8275efb20")
 	)
-	(hierarchical_label "MOUSTACHE_3"
+	(hierarchical_label "ASSERV2_OUT"
 		(shape input)
 		(at 57.15 125.73 270)
 		(fields_autoplaced yes)
@@ -4696,7 +4702,7 @@
 		)
 		(uuid "da9023ef-54d9-4de8-b358-569466f594f1")
 	)
-	(hierarchical_label "MOUSTACHE_2"
+	(hierarchical_label "ASSERV1_OUT"
 		(shape input)
 		(at 54.61 125.73 270)
 		(fields_autoplaced yes)
@@ -4710,7 +4716,7 @@
 		)
 		(uuid "e8f51c80-a378-4c27-88e4-e65da82fec1b")
 	)
-	(hierarchical_label "MOUSTACHE_4"
+	(hierarchical_label "MOUSTACHE_3"
 		(shape input)
 		(at 59.69 125.73 270)
 		(fields_autoplaced yes)
@@ -4737,6 +4743,20 @@
 			(justify left)
 		)
 		(uuid "f466fe24-074b-4061-b405-560cf3dd7dd7")
+	)
+	(hierarchical_label "MOUSTACHE_2"
+		(shape input)
+		(at 97.79 97.79 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+			(justify left)
+		)
+		(uuid "f5396acf-409c-4a87-b4ed-9b61b780ae8f")
 	)
 	(hierarchical_label "LIDAR_TX"
 		(shape input)

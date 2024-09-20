@@ -1375,6 +1375,16 @@
 	)
 	(wire
 		(pts
+			(xy 222.25 78.74) (xy 247.65 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "42ff4dd0-f024-46f5-9bef-604b2dae9c93")
+	)
+	(wire
+		(pts
 			(xy 99.06 107.95) (xy 99.06 111.76)
 		)
 		(stroke
@@ -1812,6 +1822,16 @@
 			(type default)
 		)
 		(uuid "b0e22b82-178e-4236-8adb-53de07616488")
+	)
+	(wire
+		(pts
+			(xy 222.25 81.28) (xy 247.65 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b12eb8e4-a8d3-4067-bdd6-645d891d42a9")
 	)
 	(wire
 		(pts
@@ -2945,7 +2965,7 @@
 	)
 	(sheet
 		(at 247.65 43.18)
-		(size 40.64 34.29)
+		(size 40.64 43.18)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -2966,7 +2986,7 @@
 			)
 		)
 		(property "Sheetfile" "MoteurProjet_sch.kicad_sch"
-			(at 247.65 78.0546 0)
+			(at 247.65 86.9446 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3035,16 +3055,6 @@
 			)
 			(uuid "441963c8-70b6-42f6-97ba-21377fda81e6")
 		)
-		(pin "ADC_2" input
-			(at 288.29 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "d091d9e2-b8f3-4b0b-a76f-d56716428cdd")
-		)
 		(pin "PWM_MOT2_CH2" input
 			(at 247.65 59.69 180)
 			(effects
@@ -3064,6 +3074,26 @@
 				(justify left)
 			)
 			(uuid "81921bac-fa8e-42ec-a45c-954100bb8ae3")
+		)
+		(pin "Out_CurrMeas2" input
+			(at 247.65 81.28 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "516ccb11-0542-40e8-a709-97eb7fcb65b4")
+		)
+		(pin "Out_CurrMeas1" input
+			(at 247.65 78.74 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "b6bc526e-5710-4e76-956c-44c57b968c96")
 		)
 		(instances
 			(project "tom&Jerry_Draft"
@@ -3899,6 +3929,26 @@
 				(justify left)
 			)
 			(uuid "c695427c-e5e9-40a8-992a-f8b08ff0675e")
+		)
+		(pin "ASSERV1_OUT" input
+			(at 222.25 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "4a2fdfc7-daa2-459b-9ace-bf7935f4df56")
+		)
+		(pin "ASSERV2_OUT" input
+			(at 222.25 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "662a775d-396f-4ae4-a816-28b00334bc94")
 		)
 		(instances
 			(project "tom&Jerry_Draft"
