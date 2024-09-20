@@ -140,6 +140,177 @@
 				)
 			)
 		)
+		(symbol "Device:LED_Small"
+			(pin_numbers hide)
+			(pin_names
+				(offset 0.254) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "D"
+				(at -1.27 3.175 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "LED_Small"
+				(at -4.445 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Light emitting diode, small symbol"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "LED diode light-emitting-diode"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "LED* LED_SMD:* LED_THT:*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "LED_Small_0_1"
+				(polyline
+					(pts
+						(xy -0.762 -1.016) (xy -0.762 1.016)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 0) (xy -0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.016) (xy -0.762 0) (xy 0.762 1.016) (xy 0.762 -1.016)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0.762) (xy -0.508 1.27) (xy -0.254 1.27) (xy -0.508 1.27) (xy -0.508 1.016)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.508 1.27) (xy 0 1.778) (xy 0.254 1.778) (xy 0 1.778) (xy 0 1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "LED_Small_1_1"
+				(pin passive line
+					(at -2.54 0 0)
+					(length 1.778)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 0 180)
+					(length 1.778)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "Device:R_Small"
 			(pin_numbers hide)
 			(pin_names
@@ -1241,6 +1412,16 @@
 	)
 	(wire
 		(pts
+			(xy 121.92 29.21) (xy 125.73 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0d52c703-515a-45d1-8836-c8f5cb9dfbde")
+	)
+	(wire
+		(pts
 			(xy 120.65 83.82) (xy 134.62 83.82)
 		)
 		(stroke
@@ -1248,6 +1429,36 @@
 			(type default)
 		)
 		(uuid "1630c817-64ee-4e3e-9895-532af7326b15")
+	)
+	(wire
+		(pts
+			(xy 130.81 29.21) (xy 137.16 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1eba0b9d-eb20-40d8-8f55-79a2986a95f1")
+	)
+	(wire
+		(pts
+			(xy 130.81 38.1) (xy 137.16 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "200c5d74-3889-4afa-a8cd-9bdc07adb22c")
+	)
+	(wire
+		(pts
+			(xy 142.24 38.1) (xy 144.78 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "322e942a-2665-4ea0-9f98-5b5cb11e8434")
 	)
 	(wire
 		(pts
@@ -1411,6 +1622,16 @@
 	)
 	(wire
 		(pts
+			(xy 142.24 29.21) (xy 144.78 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cf274509-432f-46f0-a79a-f6fde66a0a1d")
+	)
+	(wire
+		(pts
 			(xy 132.08 104.14) (xy 128.27 104.14)
 		)
 		(stroke
@@ -1418,6 +1639,16 @@
 			(type default)
 		)
 		(uuid "cf73dc0a-7a54-4d35-a08e-ccda0c988e0d")
+	)
+	(wire
+		(pts
+			(xy 121.92 38.1) (xy 125.73 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cffc7798-f203-47ff-a78e-cf624d92fb13")
 	)
 	(wire
 		(pts
@@ -1549,6 +1780,19 @@
 		)
 		(uuid "fe65003d-fe1f-4bed-a28d-e4e96970c47b")
 	)
+	(rectangle
+		(start 104.14 21.59)
+		(end 153.67 45.72)
+		(stroke
+			(width 1)
+			(type default)
+			(color 255 0 0 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid dea65c37-98f2-4402-8058-6cd7feb52de4)
+	)
 	(text "recommended capacitance \nis 100nF to 1μF"
 		(exclude_from_sim no)
 		(at 96.52 74.93 0)
@@ -1571,6 +1815,16 @@
 			(justify left bottom)
 		)
 		(uuid "4321e88e-475e-4222-9157-ac60370c9212")
+	)
+	(text "Frequence du PWM de 10kHZ,\n pas sure que les LEDS tiennent la frequence\n"
+		(exclude_from_sim no)
+		(at 127.254 48.768 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "8f9c728e-545f-4f9c-a638-7e5ffb309092")
 	)
 	(text "recommended capacitance \nis 100nF to 10μF"
 		(exclude_from_sim no)
@@ -1626,6 +1880,32 @@
 			(justify left bottom)
 		)
 		(uuid "ada6d606-7c78-41dc-8568-32e9463ad0f7")
+	)
+	(hierarchical_label "PWM_MOTx_CH2"
+		(shape input)
+		(at 121.92 38.1 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(bold yes)
+			)
+			(justify right)
+		)
+		(uuid "08bab461-73f2-445f-84cb-b9059cee38ad")
+	)
+	(hierarchical_label "PWM_MOTx_CH1"
+		(shape input)
+		(at 121.92 29.21 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(bold yes)
+			)
+			(justify right)
+		)
+		(uuid "18826ff8-4f52-42f4-af35-bc19f4104b7c")
 	)
 	(hierarchical_label "Motor+"
 		(shape input)
@@ -1770,15 +2050,19 @@
 			)
 		)
 		(pin "1"
-			(uuid "659ef6b2-521a-4316-a137-cb27a08e3601")
+			(uuid "89df427d-c22f-4a48-9bc3-a5b78a32a4e5")
 		)
 		(pin "2"
-			(uuid "2432f6c4-10fa-4eb2-aa90-2a7db67411f2")
+			(uuid "ee674caa-2f78-4d63-a79b-51435134e059")
 		)
 		(instances
 			(project "tom&Jerry_Draft"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/0f450893-0917-4549-b275-81de1731d970"
 					(reference "R1401")
+					(unit 1)
+				)
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/e8ed1c1f-b4de-452e-87ed-c5746bc5ffa3"
+					(reference "R1503")
 					(unit 1)
 				)
 			)
@@ -1839,12 +2123,16 @@
 			)
 		)
 		(pin "1"
-			(uuid "1e39d6f4-d9bc-4fdc-bf38-1a08530209ea")
+			(uuid "82e1888f-60f5-47ba-bf56-4d6241fc9bf8")
 		)
 		(instances
 			(project "tom&Jerry_Draft"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/0f450893-0917-4549-b275-81de1731d970"
 					(reference "#PWR01407")
+					(unit 1)
+				)
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/e8ed1c1f-b4de-452e-87ed-c5746bc5ffa3"
+					(reference "#PWR01509")
 					(unit 1)
 				)
 			)
@@ -1904,12 +2192,16 @@
 			)
 		)
 		(pin "1"
-			(uuid "ea27be49-a1c3-4945-9294-b51ee6221cc7")
+			(uuid "80a5f228-55fe-4da6-8763-a139d64b808f")
 		)
 		(instances
 			(project "tom&Jerry_Draft"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/0f450893-0917-4549-b275-81de1731d970"
 					(reference "#PWR01409")
+					(unit 1)
+				)
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/e8ed1c1f-b4de-452e-87ed-c5746bc5ffa3"
+					(reference "#PWR01511")
 					(unit 1)
 				)
 			)
@@ -1970,12 +2262,16 @@
 			)
 		)
 		(pin "1"
-			(uuid "5e51447c-4256-47ee-a161-4b3ee551569e")
+			(uuid "7516debd-eef7-4d47-8c94-95a6101cfe4b")
 		)
 		(instances
 			(project "tom&Jerry_Draft"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/0f450893-0917-4549-b275-81de1731d970"
 					(reference "#PWR01402")
+					(unit 1)
+				)
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/e8ed1c1f-b4de-452e-87ed-c5746bc5ffa3"
+					(reference "#PWR01504")
 					(unit 1)
 				)
 			)
@@ -2035,12 +2331,168 @@
 			)
 		)
 		(pin "1"
-			(uuid "90b59e16-39bf-490a-aa87-b3b22bd58d4e")
+			(uuid "bd83d979-ccbb-405b-951b-8bc7a4c94dd1")
 		)
 		(instances
 			(project "tom&Jerry_Draft"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/0f450893-0917-4549-b275-81de1731d970"
 					(reference "#PWR01403")
+					(unit 1)
+				)
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/e8ed1c1f-b4de-452e-87ed-c5746bc5ffa3"
+					(reference "#PWR01505")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 139.7 38.1 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4d691be2-c6b9-44a7-9bab-992136b24a5e")
+		(property "Reference" "R1404"
+			(at 139.7 24.13 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "390R"
+			(at 139.7 43.18 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 139.7 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 139.7 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 139.7 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "0603"
+			(at 139.7 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "92b2f07b-b227-4c80-bdd2-84c4dc19e9fb")
+		)
+		(pin "2"
+			(uuid "d5315b14-9fb8-4ca0-96a2-4d9383685286")
+		)
+		(instances
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/0f450893-0917-4549-b275-81de1731d970"
+					(reference "R1404")
+					(unit 1)
+				)
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/e8ed1c1f-b4de-452e-87ed-c5746bc5ffa3"
+					(reference "R1502")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED_Small")
+		(at 128.27 29.21 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5a1f55ea-1772-4a14-9d5d-88db2c578154")
+		(property "Reference" "D1401"
+			(at 128.27 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "RED"
+			(at 128.27 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
+			(at 128.27 29.21 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 128.27 29.21 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 128.27 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d25c44d7-83be-4eae-be9a-f0f13c44545a")
+		)
+		(pin "2"
+			(uuid "9db4b8f1-7afa-4c99-b1cd-9b255e771756")
+		)
+		(instances
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/0f450893-0917-4549-b275-81de1731d970"
+					(reference "D1401")
+					(unit 1)
+				)
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/e8ed1c1f-b4de-452e-87ed-c5746bc5ffa3"
+					(reference "D1501")
 					(unit 1)
 				)
 			)
@@ -2101,15 +2553,90 @@
 			)
 		)
 		(pin "1"
-			(uuid "2a5e3ad9-6beb-4c88-ae36-eb2de0063253")
+			(uuid "03d3337f-0f71-45c2-a6bf-9f8dde8e85af")
 		)
 		(pin "2"
-			(uuid "c646b5ba-ce3a-405b-86c5-c7e4fd1057d9")
+			(uuid "7c6e1663-906a-4cb4-bd0d-eb2c3b619920")
 		)
 		(instances
 			(project "tom&Jerry_Draft"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/0f450893-0917-4549-b275-81de1731d970"
 					(reference "C1405")
+					(unit 1)
+				)
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/e8ed1c1f-b4de-452e-87ed-c5746bc5ffa3"
+					(reference "C1505")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 144.78 29.21 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6856045c-e1cc-4c15-9b3b-ee6ba2cb714a")
+		(property "Reference" "#PWR01411"
+			(at 151.13 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 148.59 29.845 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 144.78 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 144.78 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 144.78 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6b77d8c5-0861-4b45-bbf4-3ecede9e27d3")
+		)
+		(instances
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/0f450893-0917-4549-b275-81de1731d970"
+					(reference "#PWR01411")
+					(unit 1)
+				)
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/e8ed1c1f-b4de-452e-87ed-c5746bc5ffa3"
+					(reference "#PWR01501")
 					(unit 1)
 				)
 			)
@@ -2169,12 +2696,16 @@
 			)
 		)
 		(pin "1"
-			(uuid "970938fe-8047-4268-96ff-e5810e6d3b1b")
+			(uuid "2d9c654e-cadc-4e33-ab7a-9d7d0ddba4a2")
 		)
 		(instances
 			(project "tom&Jerry_Draft"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/0f450893-0917-4549-b275-81de1731d970"
 					(reference "#PWR01408")
+					(unit 1)
+				)
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/e8ed1c1f-b4de-452e-87ed-c5746bc5ffa3"
+					(reference "#PWR01510")
 					(unit 1)
 				)
 			)
@@ -2234,12 +2765,16 @@
 			)
 		)
 		(pin "1"
-			(uuid "c2f7308c-0715-4d2b-824e-8cab52837eb5")
+			(uuid "ffa8f029-d444-4bff-a46c-9cc4e99acdab")
 		)
 		(instances
 			(project "tom&Jerry_Draft"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/0f450893-0917-4549-b275-81de1731d970"
 					(reference "#PWR01410")
+					(unit 1)
+				)
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/e8ed1c1f-b4de-452e-87ed-c5746bc5ffa3"
+					(reference "#PWR01512")
 					(unit 1)
 				)
 			)
@@ -2300,12 +2835,16 @@
 			)
 		)
 		(pin "1"
-			(uuid "b595247f-dbe4-4a6f-8dd3-7af9d63a40bc")
+			(uuid "015ea7cf-6dd1-4920-9788-8a593bbc71b2")
 		)
 		(instances
 			(project "tom&Jerry_Draft"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/0f450893-0917-4549-b275-81de1731d970"
 					(reference "#PWR01405")
+					(unit 1)
+				)
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/e8ed1c1f-b4de-452e-87ed-c5746bc5ffa3"
+					(reference "#PWR01507")
 					(unit 1)
 				)
 			)
@@ -2367,15 +2906,19 @@
 			)
 		)
 		(pin "1"
-			(uuid "bd3bb6f0-26b9-445b-b049-680b015c713e")
+			(uuid "585f6a6c-5baf-4123-bc7a-da36a88a4519")
 		)
 		(pin "2"
-			(uuid "2e70632f-069c-4522-8be0-a4d02839932e")
+			(uuid "8c2bc2ac-e45a-4e02-8159-2f24d3166f96")
 		)
 		(instances
 			(project "tom&Jerry_Draft"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/0f450893-0917-4549-b275-81de1731d970"
 					(reference "C1403")
+					(unit 1)
+				)
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/e8ed1c1f-b4de-452e-87ed-c5746bc5ffa3"
+					(reference "C1503")
 					(unit 1)
 				)
 			)
@@ -2436,12 +2979,16 @@
 			)
 		)
 		(pin "1"
-			(uuid "1a110bee-d344-417e-ba9c-d040b0a3e8fc")
+			(uuid "97e28515-1caf-4b27-bcd3-640099d94fcd")
 		)
 		(instances
 			(project "tom&Jerry_Draft"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/0f450893-0917-4549-b275-81de1731d970"
 					(reference "#PWR01401")
+					(unit 1)
+				)
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/e8ed1c1f-b4de-452e-87ed-c5746bc5ffa3"
+					(reference "#PWR01503")
 					(unit 1)
 				)
 			)
@@ -2520,33 +3067,37 @@
 			)
 		)
 		(pin "1"
-			(uuid "a3d3617a-c193-4239-9a3c-93e955fe9669")
+			(uuid "59aaabae-563a-4a84-84ed-7faedd8229df")
 		)
 		(pin "2"
-			(uuid "a47407b7-c9f7-42ac-8db7-ed061795488c")
+			(uuid "e6d08fa2-87ec-40a5-a443-e0f7a959dd1b")
 		)
 		(pin "3"
-			(uuid "a0beb683-9dc9-4734-a32f-b744077cc808")
+			(uuid "cc070a5f-9387-44b9-b135-85a029d90638")
 		)
 		(pin "4"
-			(uuid "1a5dbbd6-1c59-4c21-b66c-bdeeabfcd42d")
+			(uuid "f9429669-1bb2-47d7-88fe-b9be70e152e8")
 		)
 		(pin "5"
-			(uuid "5c25915f-d9ba-4de8-9a07-03ed27a4c9a0")
+			(uuid "4efa4f74-6b46-42e8-a47e-79b4094f099a")
 		)
 		(pin "6"
-			(uuid "895279cc-1ebc-4d9c-9072-3d9f76180f84")
+			(uuid "6877f548-e3c9-4d33-88da-b14cfabb73e4")
 		)
 		(pin "7"
-			(uuid "0bc80faa-a41b-4507-8e30-98b42f0277e9")
+			(uuid "6eae53f1-0b4a-4348-b3c1-00498fce93af")
 		)
 		(pin "8"
-			(uuid "5249fd7a-3c2e-411b-83f5-5a36bbe58b7c")
+			(uuid "787b81be-108b-4f2d-a344-f28123877ed3")
 		)
 		(instances
 			(project "tom&Jerry_Draft"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/0f450893-0917-4549-b275-81de1731d970"
 					(reference "U1401")
+					(unit 1)
+				)
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/e8ed1c1f-b4de-452e-87ed-c5746bc5ffa3"
+					(reference "U1501")
 					(unit 1)
 				)
 			)
@@ -2608,15 +3159,90 @@
 			)
 		)
 		(pin "2"
-			(uuid "ab5500bd-799f-42a4-b641-04285a335c2c")
+			(uuid "1a7d7213-95b5-4f4f-bcc4-3f8cd63316a7")
 		)
 		(pin "1"
-			(uuid "ff839e86-21f8-4225-88a8-5cfe98afeaf1")
+			(uuid "34ee8f72-a50d-474b-bde0-d3423939f4b6")
 		)
 		(instances
 			(project "tom&Jerry_Draft"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/0f450893-0917-4549-b275-81de1731d970"
 					(reference "R1402")
+					(unit 1)
+				)
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/e8ed1c1f-b4de-452e-87ed-c5746bc5ffa3"
+					(reference "R1504")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 144.78 38.1 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b0072ca8-0019-4121-a871-e05ad4a863e6")
+		(property "Reference" "#PWR01412"
+			(at 151.13 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 148.59 38.735 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 144.78 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 144.78 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 144.78 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7c70f9cb-2172-4af7-bd63-39b4d8a432da")
+		)
+		(instances
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/0f450893-0917-4549-b275-81de1731d970"
+					(reference "#PWR01412")
+					(unit 1)
+				)
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/e8ed1c1f-b4de-452e-87ed-c5746bc5ffa3"
+					(reference "#PWR01502")
 					(unit 1)
 				)
 			)
@@ -2677,15 +3303,19 @@
 			)
 		)
 		(pin "1"
-			(uuid "c93ed8c3-f215-4e28-82ff-3779b1dc888f")
+			(uuid "86cf4737-7aa4-48cf-972e-737e16ae654c")
 		)
 		(pin "2"
-			(uuid "5c00a396-93a0-43dd-9bf6-7dedd3e27f7e")
+			(uuid "da478a55-2354-4435-b262-fdf191cd49ac")
 		)
 		(instances
 			(project "tom&Jerry_Draft"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/0f450893-0917-4549-b275-81de1731d970"
 					(reference "C1402")
+					(unit 1)
+				)
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/e8ed1c1f-b4de-452e-87ed-c5746bc5ffa3"
+					(reference "C1502")
 					(unit 1)
 				)
 			)
@@ -2746,12 +3376,98 @@
 			)
 		)
 		(pin "1"
-			(uuid "acef5319-6fda-4ff2-920c-d3ec5fb2d10d")
+			(uuid "e03cd449-ae98-4f06-89bd-3ce05c6bed65")
 		)
 		(instances
 			(project "tom&Jerry_Draft"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/0f450893-0917-4549-b275-81de1731d970"
 					(reference "#PWR01406")
+					(unit 1)
+				)
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/e8ed1c1f-b4de-452e-87ed-c5746bc5ffa3"
+					(reference "#PWR01508")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 139.7 29.21 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c290838e-3890-4043-831d-09a93c138b37")
+		(property "Reference" "R1403"
+			(at 137.16 40.64 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "390R"
+			(at 138.43 26.67 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 139.7 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 139.7 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 139.7 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "0603"
+			(at 139.7 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "478a98cc-74aa-4ca6-ba35-488b8d69cde8")
+		)
+		(pin "2"
+			(uuid "63ecd3ac-4f8f-46cb-b4ae-40a42cb27ab1")
+		)
+		(instances
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/0f450893-0917-4549-b275-81de1731d970"
+					(reference "R1403")
+					(unit 1)
+				)
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/e8ed1c1f-b4de-452e-87ed-c5746bc5ffa3"
+					(reference "R1501")
 					(unit 1)
 				)
 			)
@@ -2812,15 +3528,19 @@
 			)
 		)
 		(pin "1"
-			(uuid "6f8d078b-5f96-4058-b9f0-8d50407a2ef5")
+			(uuid "287d21ce-3adb-47c6-92a9-476a4efaff63")
 		)
 		(pin "2"
-			(uuid "3a5061f8-eabb-4a94-ab3d-8a5dd31bc88b")
+			(uuid "f41df490-8274-4ef4-a623-119fc1061df2")
 		)
 		(instances
 			(project "tom&Jerry_Draft"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/0f450893-0917-4549-b275-81de1731d970"
 					(reference "C1404")
+					(unit 1)
+				)
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/e8ed1c1f-b4de-452e-87ed-c5746bc5ffa3"
+					(reference "C1504")
 					(unit 1)
 				)
 			)
@@ -2881,12 +3601,16 @@
 			)
 		)
 		(pin "1"
-			(uuid "0a383815-d37b-4db7-8b76-5a919ae80b62")
+			(uuid "50eef1dc-8cbd-473f-98bc-ffcbfd372551")
 		)
 		(instances
 			(project "tom&Jerry_Draft"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/0f450893-0917-4549-b275-81de1731d970"
 					(reference "#PWR01404")
+					(unit 1)
+				)
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/e8ed1c1f-b4de-452e-87ed-c5746bc5ffa3"
+					(reference "#PWR01506")
 					(unit 1)
 				)
 			)
@@ -2997,27 +3721,31 @@
 			)
 		)
 		(pin "1"
-			(uuid "7f6f4fe6-461b-4a0d-9e2b-2c24d9d2f7d3")
+			(uuid "81a3d5d2-1b75-4ca1-98b8-6da2163334cb")
 		)
 		(pin "2"
-			(uuid "625816ba-ab52-4544-89f1-a9800e3aa4d6")
+			(uuid "a622f528-3451-4e9c-b897-2b6fbb4894dd")
 		)
 		(pin "3"
-			(uuid "8813dfaf-2d56-4365-a65b-c55ae67284b4")
+			(uuid "34ce3bf4-fa37-422b-beb7-c9434898df2d")
 		)
 		(pin "4"
-			(uuid "97a6e7a9-01ff-4fd1-992c-cd5ffc8158fa")
+			(uuid "c1c1a689-a7a4-4200-9e01-e915e8929867")
 		)
 		(pin "5"
-			(uuid "bfd8a0ad-be6c-4f95-b344-a73c1709fe36")
+			(uuid "6537478c-166b-4182-a328-4c1129fd170a")
 		)
 		(pin "6"
-			(uuid "e01fbcf0-6254-4c80-9a62-9fa924acbcbd")
+			(uuid "7705fbcf-1a6f-4ef8-843f-63c77fce5c30")
 		)
 		(instances
 			(project "tom&Jerry_Draft"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/0f450893-0917-4549-b275-81de1731d970"
 					(reference "IC1401")
+					(unit 1)
+				)
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/e8ed1c1f-b4de-452e-87ed-c5746bc5ffa3"
+					(reference "IC1501")
 					(unit 1)
 				)
 			)
@@ -3078,15 +3806,90 @@
 			)
 		)
 		(pin "1"
-			(uuid "64848435-9764-4e4c-8c6a-028de5f0a853")
+			(uuid "af1b8477-53b1-4b4d-921c-125056b15923")
 		)
 		(pin "2"
-			(uuid "a2270bc6-253d-4f46-8cf7-210f77b9039c")
+			(uuid "4604cad7-f52d-4df8-8e9f-a40d0bd9bf11")
 		)
 		(instances
 			(project "tom&Jerry_Draft"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/0f450893-0917-4549-b275-81de1731d970"
 					(reference "C1401")
+					(unit 1)
+				)
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/e8ed1c1f-b4de-452e-87ed-c5746bc5ffa3"
+					(reference "C1501")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED_Small")
+		(at 128.27 38.1 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "fbc7315e-5343-4c50-832e-341360248809")
+		(property "Reference" "D1402"
+			(at 128.27 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "RED"
+			(at 128.27 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
+			(at 128.27 38.1 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 128.27 38.1 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 128.27 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c1e926ca-4355-4297-8ab0-f0a0a1478cf5")
+		)
+		(pin "2"
+			(uuid "536a516c-4210-4525-ae30-f054d942dc67")
+		)
+		(instances
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/0f450893-0917-4549-b275-81de1731d970"
+					(reference "D1402")
+					(unit 1)
+				)
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/13841eaf-0cae-41af-843d-366bf7922a88/e8ed1c1f-b4de-452e-87ed-c5746bc5ffa3"
+					(reference "D1502")
 					(unit 1)
 				)
 			)

@@ -3,4 +3,6 @@
   (lib (name "PCF8574RGTR")(type "KiCad")(uri "/Users/romingo/Desktop/ENSEA/3A/PROJET/RESSOURCES/LIB_PCF8574RGTR/PCF8574RGTR/KiCad/PCF8574RGTR.kicad_sym")(options "")(descr ""))
   (lib (name "LP5812CDSDR")(type "KiCad")(uri "/Users/romingo/Desktop/ENSEA/3A/PROJET/RESSOURCES/LIB_LP5812CDSDR/LP5812CDSDR/KiCad/LP5812CDSDR.kicad_sym")(options "")(descr ""))
   (lib (name "TCA9555RTWR")(type "KiCad")(uri "/Users/romingo/Desktop/ENSEA/3A/PROJET/RESSOURCES/LIB_TCA9555RTWR/TCA9555RTWR/KiCad/TCA9555RTWR.kicad_sym")(options "")(descr ""))
+  (lib (name "BQ25172")(type "KiCad")(uri "/Users/romingo/Desktop/ENSEA/3A/PROJET/2425_ESE_Projet_Tom_et_Jerry/electronique/schematic_final/tom&jerry/BQ25172.kicad_sym")(options "")(descr ""))
+  (lib (name "BU33SD5WG-TR")(type "KiCad")(uri "/Users/romingo/Desktop/ENSEA/3A/PROJET/2425_ESE_Projet_Tom_et_Jerry/electronique/schematic_final/tom&jerry/BU33SD5WG-TR.kicad_sym")(options "")(descr ""))
 )
