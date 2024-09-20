@@ -629,7 +629,11 @@
     ],
     [
       "0f450893-0917-4549-b275-81de1731d970",
-      "Motor Driver"
+      "Motor Driver 1"
+    ],
+    [
+      "e8ed1c1f-b4de-452e-87ed-c5746bc5ffa3",
+      "Motor Driver 2"
     ]
   ],
   "text_variables": {}
