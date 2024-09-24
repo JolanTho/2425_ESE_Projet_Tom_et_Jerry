@@ -1,14 +1,14 @@
 # 2425_ESE_Tom&Jerry
 
 ## Sommaire
-- [Présentation](##présentation)
-- [Mécanique](###mécanique)
-- [Électronique](###électronique)
-- [Informatique](###informatique)
-- [Stratégies](###stratégies)
+- [Présentation](#présentation)
+- [Mécanique](#1-mécanique)
+- [Électronique](#2-électronique)
+- [Informatique](#3-informatique)
+- [Stratégies](#4-stratégies)
 - [Installation](#installation)
-- [Contribution](#contribution)
-- [Auteurs et Contact](#auteurs-et-contact)
+- [Contribution](#contribution-)
+- [Auteurs et Contact](#auteurs-)
 
 ---
 
@@ -81,13 +81,19 @@ Cette section inclut tout ce qu'il faut savoir sur les stratégies décidées et
 - **Matériel** : Liste du matériel nécessaire (ex. microcontrôleur, capteurs).
 - **Logiciel** : Liste des logiciels et outils à installer (ex. IDE, bibliothèques, compilateurs).
 
+---
+
 ### Instructions :
 1. Cloner le dépôt : 
    ```bash
    git clone https://github.com/username/projet.git
    cd projet
    
+---
+
 ## Contribution :
+
+---
 
 ## Auteurs : 
 Jolan Thomasset (jolan.thomasset@ensea.fr)
