@@ -505,49 +505,50 @@
 				)
 			)
 		)
-		(symbol "LP5812CDSDR:LP5812CDSDR"
+		(symbol "LP5812ADSDR:LP5812ADSDR"
+			(pin_names
+				(offset 0.254)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "IC"
-				(at 26.67 7.62 0)
+			(property "Reference" "U"
+				(at 20.32 10.16 0)
 				(effects
 					(font
-						(size 1.27 1.27)
+						(size 1.524 1.524)
 					)
-					(justify left top)
 				)
 			)
-			(property "Value" "LP5812CDSDR"
-				(at 26.67 5.08 0)
+			(property "Value" "LP5812ADSDR"
+				(at 20.32 7.62 0)
 				(effects
 					(font
-						(size 1.27 1.27)
+						(size 1.524 1.524)
 					)
-					(justify left top)
 				)
 			)
-			(property "Footprint" "SON65P300X300X80-9N-D"
-				(at 26.67 -94.92 0)
+			(property "Footprint" "WSON8_DSD_TEX"
+				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
+						(italic yes)
 					)
-					(justify left top)
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "https://www.ti.com/lit/ds/symlink/lp5812.pdf"
-				(at 26.67 -194.92 0)
+			(property "Datasheet" "LP5812ADSDR"
+				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
+						(italic yes)
 					)
-					(justify left top)
 					(hide yes)
 				)
 			)
-			(property "Description" "LED Lighting Drivers 4 CHANNEL FLEXLED DRIVER"
+			(property "Description" ""
 				(at 0 0 0)
 				(effects
 					(font
@@ -556,91 +557,84 @@
 					(hide yes)
 				)
 			)
-			(property "Height" "0.8"
-				(at 26.67 -394.92 0)
+			(property "ki_locked" ""
+				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left top)
-					(hide yes)
 				)
 			)
-			(property "Manufacturer_Name" "Texas Instruments"
-				(at 26.67 -494.92 0)
+			(property "ki_keywords" "LP5812ADSDR"
+				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left top)
 					(hide yes)
 				)
 			)
-			(property "Manufacturer_Part_Number" "LP5812CDSDR"
-				(at 26.67 -594.92 0)
+			(property "ki_fp_filters" "WSON8_DSD_TEX WSON8_DSD_TEX-M WSON8_DSD_TEX-L"
+				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left top)
 					(hide yes)
 				)
 			)
-			(property "Mouser Part Number" "595-LP5812CDSDR"
-				(at 26.67 -694.92 0)
-				(effects
-					(font
-						(size 1.27 1.27)
+			(symbol "LP5812ADSDR_0_1"
+				(polyline
+					(pts
+						(xy 7.62 -15.24) (xy 33.02 -15.24)
 					)
-					(justify left top)
-					(hide yes)
-				)
-			)
-			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/LP5812CDSDR?qs=Z%252BL2brAPG1KJw2tcOdz4LQ%3D%3D"
-				(at 26.67 -794.92 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-					(hide yes)
-				)
-			)
-			(property "Arrow Part Number" ""
-				(at 26.67 -894.92 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-					(hide yes)
-				)
-			)
-			(property "Arrow Price/Stock" ""
-				(at 26.67 -994.92 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-					(hide yes)
-				)
-			)
-			(symbol "LP5812CDSDR_1_1"
-				(rectangle
-					(start 5.08 2.54)
-					(end 25.4 -17.78)
 					(stroke
-						(width 0.254)
+						(width 0.127)
 						(type default)
 					)
 					(fill
-						(type background)
+						(type none)
 					)
 				)
-				(pin passive line
+				(polyline
+					(pts
+						(xy 7.62 5.08) (xy 7.62 -15.24)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 33.02 -15.24) (xy 33.02 5.08)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 33.02 5.08) (xy 7.62 5.08)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin power_in line
 					(at 0 0 0)
-					(length 5.08)
+					(length 7.62)
 					(name "VCC"
 						(effects
 							(font
@@ -656,9 +650,9 @@
 						)
 					)
 				)
-				(pin passive line
+				(pin bidirectional line
 					(at 0 -2.54 0)
-					(length 5.08)
+					(length 7.62)
 					(name "SYNC"
 						(effects
 							(font
@@ -674,9 +668,9 @@
 						)
 					)
 				)
-				(pin passive line
+				(pin input line
 					(at 0 -5.08 0)
-					(length 5.08)
+					(length 7.62)
 					(name "SCL"
 						(effects
 							(font
@@ -692,9 +686,9 @@
 						)
 					)
 				)
-				(pin passive line
+				(pin bidirectional line
 					(at 0 -7.62 0)
-					(length 5.08)
+					(length 7.62)
 					(name "SDA"
 						(effects
 							(font
@@ -710,9 +704,9 @@
 						)
 					)
 				)
-				(pin passive line
-					(at 30.48 -7.62 180)
-					(length 5.08)
+				(pin output line
+					(at 40.64 -10.16 180)
+					(length 7.62)
 					(name "OUT3"
 						(effects
 							(font
@@ -728,9 +722,9 @@
 						)
 					)
 				)
-				(pin passive line
-					(at 30.48 -5.08 180)
-					(length 5.08)
+				(pin output line
+					(at 40.64 -7.62 180)
+					(length 7.62)
 					(name "OUT2"
 						(effects
 							(font
@@ -746,9 +740,9 @@
 						)
 					)
 				)
-				(pin passive line
-					(at 30.48 -2.54 180)
-					(length 5.08)
+				(pin output line
+					(at 40.64 -5.08 180)
+					(length 7.62)
 					(name "OUT1"
 						(effects
 							(font
@@ -764,9 +758,9 @@
 						)
 					)
 				)
-				(pin passive line
-					(at 30.48 0 180)
-					(length 5.08)
+				(pin output line
+					(at 40.64 -2.54 180)
+					(length 7.62)
 					(name "OUT0"
 						(effects
 							(font
@@ -782,9 +776,9 @@
 						)
 					)
 				)
-				(pin passive line
-					(at 15.24 -22.86 90)
-					(length 5.08)
+				(pin power_out line
+					(at 40.64 0 180)
+					(length 7.62)
 					(name "GND"
 						(effects
 							(font
@@ -1493,7 +1487,7 @@
 	)
 	(hierarchical_label "Led_Debug_SDA"
 		(shape input)
-		(at 92.71 72.39 180)
+		(at 82.55 69.85 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1505,7 +1499,7 @@
 	)
 	(hierarchical_label "Led_Debug_SCL"
 		(shape input)
-		(at 92.71 69.85 180)
+		(at 82.55 67.31 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1517,7 +1511,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 92.71 64.77 90)
+		(at 82.55 62.23 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1526,7 +1520,7 @@
 		(fields_autoplaced yes)
 		(uuid "117110d2-359a-47c0-b6f4-b23170bc1bfd")
 		(property "Reference" "#PWR01301"
-			(at 96.52 64.77 0)
+			(at 86.36 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1535,7 +1529,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 88.9 64.7699 90)
+			(at 78.74 62.2299 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1544,7 +1538,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 92.71 64.77 0)
+			(at 82.55 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1553,7 +1547,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 92.71 64.77 0)
+			(at 82.55 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1562,7 +1556,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 92.71 64.77 0)
+			(at 82.55 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1584,7 +1578,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 92.71 67.31 270)
+		(at 82.55 64.77 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1593,7 +1587,7 @@
 		(fields_autoplaced yes)
 		(uuid "4b4815c6-5453-4407-8e40-6b3226d96a23")
 		(property "Reference" "#PWR01302"
-			(at 86.36 67.31 0)
+			(at 76.2 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1602,7 +1596,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 88.9 67.3099 90)
+			(at 78.74 64.7699 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1611,7 +1605,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 92.71 67.31 0)
+			(at 82.55 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1620,7 +1614,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 92.71 67.31 0)
+			(at 82.55 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1629,7 +1623,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 92.71 67.31 0)
+			(at 82.55 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1726,8 +1720,99 @@
 		)
 	)
 	(symbol
+		(lib_id "LP5812ADSDR:LP5812ADSDR")
+		(at 82.55 62.23 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5cb91869-87e8-4533-bb7e-660e1cf0f32a")
+		(property "Reference" "U1301"
+			(at 102.87 52.07 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "LP5812ADSDR"
+			(at 102.87 54.61 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "LP5812:WSON8_DSD_TEX"
+			(at 82.55 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "LP5812ADSDR"
+			(at 82.55 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 82.55 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "5"
+			(uuid "372fb4d1-a270-4a7d-a802-4232ac98510a")
+		)
+		(pin "6"
+			(uuid "1f988573-5f42-4c1b-aa42-2f229bbc3000")
+		)
+		(pin "4"
+			(uuid "6212aefb-e56c-4e2d-899f-741b376934a0")
+		)
+		(pin "7"
+			(uuid "8d1b29d4-28c0-4f14-ae2f-3763ca24de5f")
+		)
+		(pin "8"
+			(uuid "ebea16a5-0e61-49e6-876f-a334d5d2763d")
+		)
+		(pin "2"
+			(uuid "7f31b57a-ecd7-4bee-8ab0-c8c80ad597c0")
+		)
+		(pin "9"
+			(uuid "0796deb4-b504-4896-8b39-b83f60776104")
+		)
+		(pin "3"
+			(uuid "91459e44-fbf3-4c3a-b8f5-35f0ea76b2f5")
+		)
+		(pin "1"
+			(uuid "ab9c7647-5ddc-4ac9-bea3-0e40599de91f")
+		)
+		(instances
+			(project ""
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/efa0feee-f3fd-4a3d-b19b-a83f1ab7d3a0"
+					(reference "U1301")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
-		(at 107.95 87.63 0)
+		(at 123.19 62.23 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1736,7 +1821,7 @@
 		(fields_autoplaced yes)
 		(uuid "6c105398-d22f-4921-b4e6-aa235bdd7556")
 		(property "Reference" "#PWR01303"
-			(at 107.95 93.98 0)
+			(at 129.54 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1745,15 +1830,16 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 107.95 92.71 0)
+			(at 127 62.2299 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Footprint" ""
-			(at 107.95 87.63 0)
+			(at 123.19 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1762,7 +1848,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 107.95 87.63 0)
+			(at 123.19 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1771,7 +1857,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 107.95 87.63 0)
+			(at 123.19 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1786,167 +1872,6 @@
 			(project "tom&Jerry_Draft"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/efa0feee-f3fd-4a3d-b19b-a83f1ab7d3a0"
 					(reference "#PWR01303")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "LP5812CDSDR:LP5812CDSDR")
-		(at 92.71 64.77 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "9b63d651-5747-4e9e-b504-34d0330ec682")
-		(property "Reference" "IC1301"
-			(at 107.95 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "LP5812CDSDR"
-			(at 107.95 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "SON65P300X300X80-9N-D"
-			(at 119.38 159.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/lp5812.pdf"
-			(at 119.38 259.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Description" "LED Lighting Drivers 4 CHANNEL FLEXLED DRIVER"
-			(at 92.71 64.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" "0.8"
-			(at 119.38 459.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "Texas Instruments"
-			(at 119.38 559.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "LP5812CDSDR"
-			(at 119.38 659.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "595-LP5812CDSDR"
-			(at 119.38 759.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/LP5812CDSDR?qs=Z%252BL2brAPG1KJw2tcOdz4LQ%3D%3D"
-			(at 119.38 859.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 119.38 959.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 119.38 1059.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(pin "5"
-			(uuid "77d2bc52-9d54-42ba-8995-d1c1836ee554")
-		)
-		(pin "9"
-			(uuid "6fa3bab0-44b3-452b-be2f-fdf4602ce018")
-		)
-		(pin "1"
-			(uuid "0bfed574-4233-4608-bc06-bf72fd8779cd")
-		)
-		(pin "2"
-			(uuid "0c32f1f5-6af3-43f3-9c07-24c00aeb4f9c")
-		)
-		(pin "8"
-			(uuid "3636d2e9-0215-496c-a88a-1041a133cc90")
-		)
-		(pin "3"
-			(uuid "9dc0fae3-b028-4127-ade4-2d2d2e89a489")
-		)
-		(pin "4"
-			(uuid "d8c896ce-ddef-42ae-8aa1-b6a5fb481146")
-		)
-		(pin "7"
-			(uuid "c1bd6b71-3726-4a0c-84c0-9b7f21d58003")
-		)
-		(pin "6"
-			(uuid "f8736c82-371b-48dd-95cf-d540f865756d")
-		)
-		(instances
-			(project "tom&Jerry_Draft"
-				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/efa0feee-f3fd-4a3d-b19b-a83f1ab7d3a0"
-					(reference "IC1301")
 					(unit 1)
 				)
 			)

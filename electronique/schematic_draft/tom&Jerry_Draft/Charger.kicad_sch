@@ -3565,6 +3565,319 @@
 				)
 			)
 		)
+		(symbol "Simulation_SPICE:PMOS"
+			(pin_numbers hide)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "Q"
+				(at 5.08 1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "PMOS"
+				(at 5.08 -1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs"
+				(at 0 -12.7 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "P-MOSFET transistor, drain/source/gate"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Sim.Device" "PMOS"
+				(at 0 -17.145 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Sim.Type" "VDMOS"
+				(at 0 -19.05 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Sim.Pins" "1=D 2=G 3=S"
+				(at 0 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "transistor PMOS P-MOS P-MOSFET simulation"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "PMOS_0_1"
+				(polyline
+					(pts
+						(xy 0.254 0) (xy -2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.254 1.905) (xy 0.254 -1.905)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.27) (xy 0.762 -2.286)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 0.508) (xy 0.762 -0.508)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 2.286) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 2.54) (xy 2.54 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 1.778) (xy 3.302 1.778) (xy 3.302 -1.778) (xy 0.762 -1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.286 0) (xy 1.27 0.381) (xy 1.27 -0.381) (xy 2.286 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.794 -0.508) (xy 2.921 -0.381) (xy 3.683 -0.381) (xy 3.81 -0.254)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.302 -0.381) (xy 2.921 0.254) (xy 3.683 0.254) (xy 3.302 -0.381)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 1.651 0)
+					(radius 2.794)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.54 -1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 2.54 1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+			)
+			(symbol "PMOS_1_1"
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "G"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "power:+3.3V"
 			(power)
 			(pin_numbers hide)
@@ -4149,10 +4462,10 @@
 		(uuid "3fd1244b-c432-47de-b9f2-59d314880bfa")
 	)
 	(junction
-		(at 87.63 60.96)
+		(at 250.19 85.09)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "41aa7958-4681-4ed1-9da9-98d240893da2")
+		(uuid "475ecc58-8aee-4670-9154-4e8e534c4f0f")
 	)
 	(junction
 		(at 165.1 80.01)
@@ -4177,12 +4490,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "74314460-8692-41b9-9565-f5a5ffa38c8d")
-	)
-	(junction
-		(at 92.71 60.96)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "8025e564-a3ba-49d4-b19a-910f644b52f9")
 	)
 	(junction
 		(at 242.57 71.12)
@@ -4245,7 +4552,7 @@
 		(uuid "b5b00e66-ca9c-4614-8a2d-87c61b2a20e8")
 	)
 	(junction
-		(at 274.32 48.26)
+		(at 274.32 40.64)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b6defb2f-5897-4cb9-9c7e-5dfd37371582")
@@ -4297,6 +4604,16 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ff8c695b-141b-4488-8724-5f9be632a30c")
+	)
+	(wire
+		(pts
+			(xy 173.99 107.95) (xy 172.72 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "02118fae-1520-4a9b-8c5e-f1621e2371fc")
 	)
 	(wire
 		(pts
@@ -4437,16 +4754,6 @@
 			(type default)
 		)
 		(uuid "24b16721-d1fa-4331-b9b0-35417a1f9ec7")
-	)
-	(wire
-		(pts
-			(xy 92.71 62.23) (xy 92.71 60.96)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "279d3fbe-3cb4-4362-a363-9c70827e105e")
 	)
 	(wire
 		(pts
@@ -4610,6 +4917,16 @@
 	)
 	(wire
 		(pts
+			(xy 237.49 140.97) (xy 234.95 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5ceaa6bc-9da6-4326-a3bd-b60e941848a5")
+	)
+	(wire
+		(pts
 			(xy 200.66 151.13) (xy 204.47 151.13)
 		)
 		(stroke
@@ -4620,7 +4937,7 @@
 	)
 	(wire
 		(pts
-			(xy 242.57 140.97) (xy 251.46 140.97)
+			(xy 245.11 140.97) (xy 251.46 140.97)
 		)
 		(stroke
 			(width 0)
@@ -4700,7 +5017,7 @@
 	)
 	(wire
 		(pts
-			(xy 274.32 46.99) (xy 274.32 48.26)
+			(xy 274.32 39.37) (xy 274.32 40.64)
 		)
 		(stroke
 			(width 0)
@@ -4757,6 +5074,16 @@
 			(type default)
 		)
 		(uuid "71484626-c393-4d17-8d12-6119e023b06e")
+	)
+	(wire
+		(pts
+			(xy 274.32 49.53) (xy 274.32 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7258f65e-83d9-4ce2-87ff-4040f1a5033d")
 	)
 	(wire
 		(pts
@@ -4817,16 +5144,6 @@
 			(type default)
 		)
 		(uuid "79cc37e1-9840-496f-bcb2-22fbaa091cba")
-	)
-	(wire
-		(pts
-			(xy 87.63 62.23) (xy 87.63 60.96)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7c9962eb-051d-468c-92dd-21f2b0ebea07")
 	)
 	(wire
 		(pts
@@ -4910,6 +5227,16 @@
 	)
 	(wire
 		(pts
+			(xy 274.32 62.23) (xy 274.32 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "87f67328-9c60-48fc-aa46-f0443ee2c087")
+	)
+	(wire
+		(pts
 			(xy 58.42 156.21) (xy 99.06 156.21)
 		)
 		(stroke
@@ -4960,7 +5287,7 @@
 	)
 	(wire
 		(pts
-			(xy 274.32 48.26) (xy 274.32 54.61)
+			(xy 274.32 40.64) (xy 274.32 46.99)
 		)
 		(stroke
 			(width 0)
@@ -5110,6 +5437,16 @@
 	)
 	(wire
 		(pts
+			(xy 274.32 90.17) (xy 274.32 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b627024d-c04c-4d6e-96c9-c6195277e745")
+	)
+	(wire
+		(pts
 			(xy 200.66 158.75) (xy 200.66 160.02)
 		)
 		(stroke
@@ -5137,6 +5474,16 @@
 			(type default)
 		)
 		(uuid "bced9863-1b0e-4280-9c4d-55032d7e6f8f")
+	)
+	(wire
+		(pts
+			(xy 173.99 95.25) (xy 172.72 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bd5cfbff-cd50-46e3-a052-2a6cbe35f93c")
 	)
 	(wire
 		(pts
@@ -5390,6 +5737,16 @@
 	)
 	(wire
 		(pts
+			(xy 266.7 85.09) (xy 250.19 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f4181b96-7ab3-4eca-a746-b5962d210b66")
+	)
+	(wire
+		(pts
 			(xy 55.88 140.97) (xy 55.88 146.05)
 		)
 		(stroke
@@ -5569,7 +5926,7 @@
 		(uuid "289f4fa0-bfb9-4e36-9629-edc8c084151f")
 	)
 	(label "Batt_cell"
-		(at 166.37 107.95 0)
+		(at 173.99 107.95 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5591,7 +5948,7 @@
 		(uuid "6e8e5173-ac2b-4826-a713-d4b50ba7e709")
 	)
 	(label "Batt_CHG"
-		(at 166.37 95.25 0)
+		(at 173.99 95.25 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5703,6 +6060,112 @@
 					(unit 1)
 				)
 			)
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d"
+					(reference "C202")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Simulation_SPICE:PMOS")
+		(at 271.78 85.09 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "03bd2a43-066d-4cf8-950e-8ee730b44905")
+		(property "Reference" "Q201"
+			(at 278.13 86.3601 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "PMOS"
+			(at 278.13 83.8201 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 276.86 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs"
+			(at 271.78 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "P-MOSFET transistor, drain/source/gate"
+			(at 271.78 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "PMOS"
+			(at 271.78 67.945 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" "VDMOS"
+			(at 271.78 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=D 2=G 3=S"
+			(at 271.78 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "318da4a6-75cb-40fc-aa45-c8f490aaa7eb")
+		)
+		(pin "3"
+			(uuid "258ffa3c-60a1-4981-8529-fd45cd3f2c0f")
+		)
+		(pin "1"
+			(uuid "0e52e1ea-06f1-4e0e-8a1c-b3ef9d4c76e0")
+		)
+		(instances
+			(project ""
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d"
+					(reference "Q201")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -5769,6 +6232,12 @@
 			(project "tom&jerry"
 				(path "/276ee8e2-ca0e-490e-a2c0-985a1d22ead8/98f76b7b-e22f-4800-92d1-6734bac304ee"
 					(reference "C213")
+					(unit 1)
+				)
+			)
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d"
+					(reference "C208")
 					(unit 1)
 				)
 			)
@@ -5914,6 +6383,76 @@
 			(project ""
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d"
 					(reference "#PWR0215")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 269.24 46.99 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "172b4949-1119-4e33-9b91-2bb8c78af35f")
+		(property "Reference" "J201"
+			(at 266.7 46.9899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x02"
+			(at 266.7 49.5299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 269.24 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 269.24 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 269.24 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "a1762257-78b2-495c-a09a-a20c205d59aa")
+		)
+		(pin "1"
+			(uuid "93784c7a-e8fa-4828-b715-a40184c3399f")
+		)
+		(instances
+			(project ""
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d"
+					(reference "J201")
 					(unit 1)
 				)
 			)
@@ -6092,6 +6631,12 @@
 					(unit 1)
 				)
 			)
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d"
+					(reference "L201")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -6168,6 +6713,12 @@
 					(unit 1)
 				)
 			)
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d"
+					(reference "R206")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -6235,6 +6786,12 @@
 			(project "tom&jerry"
 				(path "/276ee8e2-ca0e-490e-a2c0-985a1d22ead8/98f76b7b-e22f-4800-92d1-6734bac304ee"
 					(reference "R208")
+					(unit 1)
+				)
+			)
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d"
+					(reference "R210")
 					(unit 1)
 				)
 			)
@@ -6520,6 +7077,12 @@
 					(unit 1)
 				)
 			)
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d"
+					(reference "U202")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -6585,6 +7148,12 @@
 		(instances
 			(project "tom&jerry"
 				(path "/276ee8e2-ca0e-490e-a2c0-985a1d22ead8/98f76b7b-e22f-4800-92d1-6734bac304ee"
+					(reference "C201")
+					(unit 1)
+				)
+			)
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d"
 					(reference "C201")
 					(unit 1)
 				)
@@ -6827,6 +7396,12 @@
 					(unit 1)
 				)
 			)
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d"
+					(reference "PS201")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -6894,6 +7469,12 @@
 			(project ""
 				(path "/276ee8e2-ca0e-490e-a2c0-985a1d22ead8/98f76b7b-e22f-4800-92d1-6734bac304ee"
 					(reference "R207")
+					(unit 1)
+				)
+			)
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d"
+					(reference "R209")
 					(unit 1)
 				)
 			)
@@ -6967,6 +7548,12 @@
 					(unit 1)
 				)
 			)
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d"
+					(reference "C213")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -7034,6 +7621,12 @@
 			(project ""
 				(path "/276ee8e2-ca0e-490e-a2c0-985a1d22ead8/98f76b7b-e22f-4800-92d1-6734bac304ee"
 					(reference "R211")
+					(unit 1)
+				)
+			)
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d"
+					(reference "R208")
 					(unit 1)
 				)
 			)
@@ -7116,6 +7709,12 @@
 					(unit 1)
 				)
 			)
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d"
+					(reference "R207")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -7182,6 +7781,12 @@
 		(instances
 			(project "tom&jerry"
 				(path "/276ee8e2-ca0e-490e-a2c0-985a1d22ead8/98f76b7b-e22f-4800-92d1-6734bac304ee"
+					(reference "JP202")
+					(unit 1)
+				)
+			)
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d"
 					(reference "JP202")
 					(unit 1)
 				)
@@ -7264,6 +7869,12 @@
 					(unit 1)
 				)
 			)
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d"
+					(reference "R204")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -7341,32 +7952,34 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
-		(at 161.29 97.79 180)
+		(at 167.64 95.25 0)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "5f9ce67c-c9a3-4766-bdc6-82846e56280e")
 		(property "Reference" "J202"
-			(at 161.29 88.9 0)
+			(at 165.1 95.2499 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Value" "Conn_01x02"
-			(at 161.29 91.44 0)
+			(at 165.1 97.7899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
-			(at 161.29 97.79 0)
+			(at 167.64 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7375,7 +7988,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 161.29 97.79 0)
+			(at 167.64 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7384,7 +7997,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 161.29 97.79 0)
+			(at 167.64 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7402,6 +8015,12 @@
 			(project ""
 				(path "/276ee8e2-ca0e-490e-a2c0-985a1d22ead8/98f76b7b-e22f-4800-92d1-6734bac304ee"
 					(reference "J202")
+					(unit 1)
+				)
+			)
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d"
+					(reference "J203")
 					(unit 1)
 				)
 			)
@@ -7625,36 +8244,44 @@
 					(unit 1)
 				)
 			)
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d"
+					(reference "R205")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
-		(at 161.29 110.49 180)
+		(at 167.64 107.95 0)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "73f38d12-de4f-4f52-992a-2b0a91a5afa5")
 		(property "Reference" "J203"
-			(at 161.29 101.6 0)
+			(at 165.1 107.9499 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Value" "Conn_01x02"
-			(at 161.29 104.14 0)
+			(at 165.1 110.4899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
-			(at 161.29 110.49 0)
+			(at 167.64 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7663,7 +8290,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 161.29 110.49 0)
+			(at 167.64 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7672,7 +8299,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 161.29 110.49 0)
+			(at 167.64 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7690,6 +8317,12 @@
 			(project "tom&jerry"
 				(path "/276ee8e2-ca0e-490e-a2c0-985a1d22ead8/98f76b7b-e22f-4800-92d1-6734bac304ee"
 					(reference "J203")
+					(unit 1)
+				)
+			)
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d"
+					(reference "J204")
 					(unit 1)
 				)
 			)
@@ -7878,6 +8511,12 @@
 					(unit 1)
 				)
 			)
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d"
+					(reference "J202")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -7948,6 +8587,12 @@
 					(unit 1)
 				)
 			)
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d"
+					(reference "R203")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -8015,6 +8660,12 @@
 			(project "tom&jerry"
 				(path "/276ee8e2-ca0e-490e-a2c0-985a1d22ead8/98f76b7b-e22f-4800-92d1-6734bac304ee"
 					(reference "R209")
+					(unit 1)
+				)
+			)
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d"
+					(reference "R211")
 					(unit 1)
 				)
 			)
@@ -8094,7 +8745,7 @@
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 274.32 48.26 270)
+		(at 274.32 40.64 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8103,7 +8754,7 @@
 		(fields_autoplaced yes)
 		(uuid "9194a52d-54cf-4644-a562-a9cc74356ead")
 		(property "Reference" "#FLG0201"
-			(at 276.225 48.26 0)
+			(at 276.225 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8112,7 +8763,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 278.13 48.2599 90)
+			(at 278.13 40.6399 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8121,7 +8772,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 274.32 48.26 0)
+			(at 274.32 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8130,7 +8781,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 274.32 48.26 0)
+			(at 274.32 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8139,7 +8790,7 @@
 			)
 		)
 		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 274.32 48.26 0)
+			(at 274.32 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8226,6 +8877,12 @@
 					(unit 1)
 				)
 			)
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d"
+					(reference "C209")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -8293,6 +8950,12 @@
 			(project "tom&jerry"
 				(path "/276ee8e2-ca0e-490e-a2c0-985a1d22ead8/98f76b7b-e22f-4800-92d1-6734bac304ee"
 					(reference "C207")
+					(unit 1)
+				)
+			)
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d"
+					(reference "C204")
 					(unit 1)
 				)
 			)
@@ -8370,6 +9033,12 @@
 			(project "tom&jerry"
 				(path "/276ee8e2-ca0e-490e-a2c0-985a1d22ead8/98f76b7b-e22f-4800-92d1-6734bac304ee"
 					(reference "R203")
+					(unit 1)
+				)
+			)
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d"
+					(reference "R201")
 					(unit 1)
 				)
 			)
@@ -8456,6 +9125,12 @@
 			(project "tom&jerry"
 				(path "/276ee8e2-ca0e-490e-a2c0-985a1d22ead8/98f76b7b-e22f-4800-92d1-6734bac304ee"
 					(reference "D203")
+					(unit 1)
+				)
+			)
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d"
+					(reference "D202")
 					(unit 1)
 				)
 			)
@@ -8758,6 +9433,12 @@
 					(unit 1)
 				)
 			)
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d"
+					(reference "C212")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -8836,7 +9517,7 @@
 	(symbol
 		(lib_name "GND_3")
 		(lib_id "power:GND")
-		(at 166.37 97.79 90)
+		(at 172.72 97.79 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8845,7 +9526,7 @@
 		(fields_autoplaced yes)
 		(uuid "bc476465-6ce4-4f39-9dc7-12831abbaa63")
 		(property "Reference" "#PWR0217"
-			(at 172.72 97.79 0)
+			(at 179.07 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8854,7 +9535,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 170.18 97.7899 90)
+			(at 176.53 97.7899 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8863,7 +9544,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 166.37 97.79 0)
+			(at 172.72 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8872,7 +9553,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 166.37 97.79 0)
+			(at 172.72 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8881,7 +9562,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 166.37 97.79 0)
+			(at 172.72 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8972,6 +9653,12 @@
 			(project "tom&jerry"
 				(path "/276ee8e2-ca0e-490e-a2c0-985a1d22ead8/98f76b7b-e22f-4800-92d1-6734bac304ee"
 					(reference "C212")
+					(unit 1)
+				)
+			)
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d"
+					(reference "C207")
 					(unit 1)
 				)
 			)
@@ -9188,12 +9875,18 @@
 					(unit 1)
 				)
 			)
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d"
+					(reference "JP204")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
 		(lib_name "GND_3")
 		(lib_id "power:GND")
-		(at 166.37 110.49 90)
+		(at 172.72 110.49 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9202,7 +9895,7 @@
 		(fields_autoplaced yes)
 		(uuid "c613f929-b73c-4828-bbe9-7cd8b84aeba8")
 		(property "Reference" "#PWR0207"
-			(at 172.72 110.49 0)
+			(at 179.07 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9211,7 +9904,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 170.18 110.4899 90)
+			(at 176.53 110.4899 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9220,7 +9913,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 166.37 110.49 0)
+			(at 172.72 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9229,7 +9922,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 166.37 110.49 0)
+			(at 172.72 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9238,7 +9931,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 166.37 110.49 0)
+			(at 172.72 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9458,11 +10151,17 @@
 					(unit 1)
 				)
 			)
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d"
+					(reference "U201")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
 		(lib_id "power:+BATT")
-		(at 274.32 46.99 0)
+		(at 274.32 39.37 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9471,7 +10170,7 @@
 		(fields_autoplaced yes)
 		(uuid "cb617acc-75fb-4cb8-bd82-b4e2598f26c9")
 		(property "Reference" "#PWR0219"
-			(at 274.32 50.8 0)
+			(at 274.32 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9480,7 +10179,7 @@
 			)
 		)
 		(property "Value" "+BATT"
-			(at 274.32 43.18 0)
+			(at 274.32 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9488,7 +10187,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 274.32 46.99 0)
+			(at 274.32 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9497,7 +10196,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 274.32 46.99 0)
+			(at 274.32 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9506,7 +10205,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 274.32 46.99 0)
+			(at 274.32 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9600,6 +10299,12 @@
 					(unit 1)
 				)
 			)
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d"
+					(reference "C203")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -9683,6 +10388,12 @@
 			(project ""
 				(path "/276ee8e2-ca0e-490e-a2c0-985a1d22ead8/98f76b7b-e22f-4800-92d1-6734bac304ee"
 					(reference "D202")
+					(unit 1)
+				)
+			)
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d"
+					(reference "D201")
 					(unit 1)
 				)
 			)
@@ -9828,6 +10539,12 @@
 					(unit 1)
 				)
 			)
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d"
+					(reference "C206")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -9896,11 +10613,17 @@
 					(unit 1)
 				)
 			)
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d"
+					(reference "JP201")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
 		(lib_id "Device:LED")
-		(at 238.76 140.97 0)
+		(at 241.3 140.97 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9908,7 +10631,7 @@
 		(dnp no)
 		(uuid "db468041-5fdc-467d-9685-10012f8f3269")
 		(property "Reference" "D201"
-			(at 240.792 144.018 0)
+			(at 243.332 144.018 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9916,7 +10639,7 @@
 			)
 		)
 		(property "Value" "LED"
-			(at 240.792 146.558 0)
+			(at 243.332 146.558 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9924,7 +10647,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 238.76 140.97 0)
+			(at 241.3 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9933,7 +10656,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 238.76 140.97 0)
+			(at 241.3 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9942,7 +10665,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 238.76 140.97 0)
+			(at 241.3 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9960,6 +10683,12 @@
 			(project ""
 				(path "/276ee8e2-ca0e-490e-a2c0-985a1d22ead8/98f76b7b-e22f-4800-92d1-6734bac304ee"
 					(reference "D201")
+					(unit 1)
+				)
+			)
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d"
+					(reference "D203")
 					(unit 1)
 				)
 			)
@@ -10033,6 +10762,12 @@
 					(unit 1)
 				)
 			)
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d"
+					(reference "C211")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -10099,6 +10834,12 @@
 			(project "tom&jerry"
 				(path "/276ee8e2-ca0e-490e-a2c0-985a1d22ead8/98f76b7b-e22f-4800-92d1-6734bac304ee"
 					(reference "C204")
+					(unit 1)
+				)
+			)
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d"
+					(reference "C205")
 					(unit 1)
 				)
 			)
@@ -10169,6 +10910,12 @@
 			(project "tom&jerry"
 				(path "/276ee8e2-ca0e-490e-a2c0-985a1d22ead8/98f76b7b-e22f-4800-92d1-6734bac304ee"
 					(reference "C205")
+					(unit 1)
+				)
+			)
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d"
+					(reference "C210")
 					(unit 1)
 				)
 			)
@@ -10314,6 +11061,12 @@
 					(unit 1)
 				)
 			)
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d"
+					(reference "R212")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -10380,6 +11133,12 @@
 		(instances
 			(project "tom&jerry"
 				(path "/276ee8e2-ca0e-490e-a2c0-985a1d22ead8/98f76b7b-e22f-4800-92d1-6734bac304ee"
+					(reference "JP203")
+					(unit 1)
+				)
+			)
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d"
 					(reference "JP203")
 					(unit 1)
 				)

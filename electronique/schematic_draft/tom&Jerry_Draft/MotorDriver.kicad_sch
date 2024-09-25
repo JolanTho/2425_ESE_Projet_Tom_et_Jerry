@@ -3021,7 +3021,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_SO:SOIC-8-1EP_3.9x4.9mm_P1.27mm_EP2.62x3.51mm_ThermalVias"
+		(property "Footprint" "Package_SO:Diodes_SO-8EP"
 			(at 119.38 107.95 0)
 			(effects
 				(font
@@ -3641,7 +3641,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Library:SOT65P210X110-6N"
+		(property "Footprint" "Package_TO_SOT_SMD:SC-70-8"
 			(at 149.86 -11.1 0)
 			(effects
 				(font
