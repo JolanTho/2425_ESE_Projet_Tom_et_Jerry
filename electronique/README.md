@@ -46,7 +46,7 @@ Il est détaillé chaque composante du Schématique/PCb dans ce Read.me
 
 [[Capture]]
 
->On a un transistor à canal P pour bloquer la charge du circuit par batterie lorsqu'une tension vient du bornier ou de l'USB-C. De plus on ajoute des >condensateur (C...) pour eviter les retours de courant dû a des freinage des roues dans la résistance et donc dans l'alimentation derrière [(Doc)](../datasheet/slua376.pdf).    
+>On a un transistor à canal P pour bloquer la charge du circuit par batterie lorsqu'une tension vient du bornier ou de l'USB-C. De plus on ajoute des condensateur (C...) pour eviter les retours de courant dû a des freinage des roues dans la résistance et donc dans l'alimentation derrière [(Doc)](../datasheet/slua376.pdf).    
 
 ![Convertisseur linéaire](../screenshot/electronique/BUCK.png)
 
@@ -54,14 +54,14 @@ Il est détaillé chaque composante du Schématique/PCb dans ce Read.me
 
 >[!Note]
 >**Convertisseur Buck ([MP1475](../datasheet/MP1475.pdf))**  
->*IN : Tension d'entrée  
->*BST : Bootstrap  
->*SWT : Sortie de commutation  
->*PG : Sortie de puissance  
->*VCC : LDO interne de 5v  
->*EN/SYNC : Pour les clocks externes  
->*FB : Feedback  
->*GND : Ground  
+>* IN : Tension d'entrée  
+>* BST : Bootstrap  
+>* SWT : Sortie de commutation  
+>* PG : Sortie de puissance  
+>* VCC : LDO interne de 5v  
+>* EN/SYNC : Pour les clocks externes  
+>* FB : Feedback  
+>* GND : Ground  
 
 >Actuellement les données sont celle ce la doc. La seule chose réglée est le pont diviseur avec une Vref = 1.25V pour avoir une sortie de 5V en sortie.  
 
@@ -71,11 +71,11 @@ Il est détaillé chaque composante du Schématique/PCb dans ce Read.me
 
 >[!Note]
 >**Convertisseur LDO [(BU33SD5WG-TR)](../datasheet/buxxsd5wg-e.pdf)**  
->*VIN : Tension d'entrée  
->*GND : Ground  
->*STBY : StandBy --> Ici sur High il marche dés qu'il est alimenté.   
->*N. C. : No Connected pin  
->*Vout : Tension de sortie  
+>* VIN : Tension d'entrée  
+>* GND : Ground  
+>* STBY : StandBy --> Ici sur High il marche dés qu'il est alimenté.   
+>* N. C. : No Connected pin  
+>* Vout : Tension de sortie  
 
 ---
 
@@ -86,12 +86,12 @@ Il est détaillé chaque composante du Schématique/PCb dans ce Read.me
 
 >[!Note]
 >Branché sur la carte les deux moteurs auront de beaux JST-XH de 6 Pins chacun tels que :  
->*Motor - : Phase - du moteur  
->*Motor + : Phase + du moteur  
->*GND : Ground   
->*5V : Alimentation des codeurs en 5V   
->*Codeur PH1 : Pin allant avec PH2 avec la trame du codeur pour déterminer ensuite la vitesse du robot.   
->*Codeur PH2 : Pin allant avec PH1 avec la trame du codeur pour déterminer ensuite la vitesse du robot.   
+>* Motor - : Phase - du moteur  
+>* Motor + : Phase + du moteur  
+>* GND : Ground   
+>* 5V : Alimentation des codeurs en 5V   
+>* Codeur PH1 : Pin allant avec PH2 avec la trame du codeur pour déterminer ensuite la vitesse du robot.   
+>* Codeur PH2 : Pin allant avec PH1 avec la trame du codeur pour déterminer ensuite la vitesse du robot.   
 
 >Pour controler ces deux moteurs chaque moteur aura son driver.   
 
@@ -99,13 +99,13 @@ Il est détaillé chaque composante du Schématique/PCb dans ce Read.me
 
 >[!Note]
 >**Driver [ZXBM5210](../datasheet/ZXBM5210.pdf)**  
->*Vref : Tension de référence pour setup l'oscillator PWM du composant.   
->*VDD : Alimentation du composant en 5V   
->*VM : Tension d'alimentation des moteurs  
->*FWD : PWM pour faire avancer le robot  
->*REV : PWM pour faire reculer le robot  
->*Out 1 :  Sortie au moteur phase -  
->*Out* 2 : Sortie au moteur phase +  
+>* Vref : Tension de référence pour setup l'oscillator PWM du composant.   
+>* VDD : Alimentation du composant en 5V   
+>* VM : Tension d'alimentation des moteurs  
+>* FWD : PWM pour faire avancer le robot  
+>* REV : PWM pour faire reculer le robot  
+>* Out 1 :  Sortie au moteur phase -  
+>* Out 2 : Sortie au moteur phase +  
 
 >[!Important]
 >Il est à noter que des capa de découplage sont utilisés afin d'éviter les fluctuation de courant trop rapide sur Vref ( Car tension de référence), sur les phases du moteur afin d'éviter des signaux créneau pur. De plus la documentation suggère un système de diode afin d'éviter la réversibilité du courant vers la batterie. Celui-ci ne sera pas utilisé afin d'éviter de cramer des diodes suite à des quantités trop importantes de courant que se déchargeraient dans les diodes.   
@@ -113,72 +113,141 @@ Il est détaillé chaque composante du Schématique/PCb dans ce Read.me
 >[!Tip]
 >En plus de cela nous utilisons un composant pour mesurer le courant drainé de la batterie vers les moteurs à l'aide d'une résistance dite shunt. Ce composant permettra de nous aider à asservir pourquoi pas en courant mais aussi de protection afin d'éviter comme nous n'avons pas mis les diodes d'avoir des données sur ce qui se passe.  
 
-![Driver Moteur](../screenshot/electronique/NCS199A2RSQT2G.png)
+![Mesureur de courant](../screenshot/electronique/NCS199A2RSQT2G.png)
 
 >[!Note]
 >**Mesureur de courant [NCS199A2RSQT2G](../datasheet/NCS199A2RSQT2G.pdf)**  
->*GND : Ground  
->*In + : Entrée + coté résistance de shunt pour capter le courant  
->*In - : Entrée - coté résistance de shunt pour capter le courant  
->*Vs : Tension d'alimentation du composant  
->*Vref : Tension de référence dont je ne sais pas à quoi elle sert (J'ai cable comme la doc)  
->*Out : Sortie du composant avec ke courant prêt à être lu par un ADC  
+>* GND : Ground  
+>* In + : Entrée + coté résistance de shunt pour capter le courant  
+>* In - : Entrée - coté résistance de shunt pour capter le courant  
+>* Vs : Tension d'alimentation du composant  
+>* Vref : Tension de référence dont je ne sais pas à quoi elle sert (J'ai cable comme la doc)  
+>* Out : Sortie du composant avec ke courant prêt à être lu par un ADC  
 
 >Comme toute entrée de composant celui-ci ne fait pas l'impasse une capacité de découplage a été ajoutée. De plus la résistance de 1kOhm a été mise pour préparer l'entrée du courant dans l'ADC conforme à la documentation.  
 
 ---
 
 ## STM32 
+>[!Important]
+>Avant de développer sur la STM32 et la facon dont nous avons répartis les pins de celle-ci. Pour que celle-ci fonctionne correctement nous utiliserons un quartz externe pour cadencer la STM32 (Configuré dans l'IOC de STM32CubeIDE). 
+
+![GPIO Extender](../screenshot/electronique/Crystal.png)
+
+>[!Important]
+>De plus nous utilisons une connexion STLink pour le debug de la carte via PC. 
+
+![STLink](../screenshot/electronique/STLink.png)
 
 ---
 
 ## Périphériques 
 
+>[!Note]
+>La carte actuelle va gérer certains capteurs. Avec ceux-ci le robot pourra (Nous l'esperons) se repérer sur la table et réaliser au mieux la stratégie mise en place. 
+
+>[!Tip]
+> Afin de détecter les bords nous avons décider de faire de la redondance. En effet nous utilisons des capteurs "Moustache" ainsi que TOF pour repérer les bords de la table et éviter que les robots tombent. L'avantage des capteurs moustache est qu'ils sont mécanique donc fiable maintenant cela demande de na pas louper son intégration sur la base roulante ce qui n'es tpas gagner. Pour cela nous pouvvons utiliser les TOF. Ceux-ci sont plus simple à positionner sur le robot et à fonctionner. Cependant l'exploitation des données est plus dure (I2C + GPIO Extender...). 
+
+![Moustache](../screenshot/electronique/Moustache.png)
+
+>[!Note]
+>Branché sur la carte les quatre capteurs moustahce ont un JST  :  
+>* 3.3V : Alimentation
+>* GND : Ground  
+>Ceux-ci marchent en interrupteur pas besoin de plus de chose pour lire leurs données. 
+
+![TOF](../screenshot/electronique/Moustache.png)
+
+>[!Note]
+>Capteurs TOF **[VL53L1X](../datasheet/VL53L1X.pdf):   
+>* AVDDVCSEL : VCSEL tension d'alimentation  
+>* AVSSVCSEL : VCSEL Ground    
+>* GND1 - GND4 : Ground  
+>* XShut: Pin pour shutdown le composant. celui-ci est actif sur un signal Bas  
+>* GPIO1 : GPIO pour gérer les interruptions  
+>* DNC : A ne pas connecter (Doit être floating)  
+>* SDA : Serial data bus
+>* SCL : Serial clock bus
+>* AVDD : Tension d'alim du composant
+>Ceux-ci sont sur les cartes fournient avec produit par STM32. 
+
+>[!Note]
+>En plus de la détection de bord avec les TOF et les capteurs "Moustache", le robot aura un IMU pour faire de la fusion de donnée (Rédigé en septembre ca ne sera pas traité pas assez de temps) ainsi que de vérifier si un robot nous touche. De plus il y aura un lidar pour détecter les robots sur la table et foncer sur eux. 
+
+![Lidar](../screenshot/electronique/Moustache.png)
+
+>[!Note]
+>Capteurs TOF **[YDLidar X2](../datasheet/YDLIDARX2.pdf):    
+>* M_CTR : Entrée de la PWM du moteur du Lidar    
+>* TX : Sortie UART avec les données du LIDAR      
+>* GND : Ground    
+>* VCC : Tension d'alimentation du lidar (5v)  
+
+ ![IMU](../screenshot/electronique/IMU.png)
+
+>[!Note]
+>IMU **[ADXL343](../datasheet/ADXL343.pdf):    
+>* Vs : Tension d'alimentation du composant   
+>* GND : Ground   
+>* VDD : Tension d'alimentation de l'interface digitale  
+>* SDA : Serial data bus  
+>* SCL : Serial clock bus  
+>* SDO : I2C adresse  
+>* NC : A garder non connecte  
+>* Int1 - Int2 : Pin d'interruption   
+>* CS : Chip Select
+
 ---
 
 ## Périphériques Annexes 
-Deux composants non imposés ont été utilisés en plus de ceux imposés afin de pouvoir tout connecter à la STM32. Suite à la solution technique des TOF employé le nombre de GPIO recquis a quelque peu explosé surpassant la capacité de la STM. par conséquent un GPIO Extender est utilisé pour ajouter des GPIO afin de couper et utiliser les TOF lorsque nous en avons besoin.   
+>Deux composants non imposés ont été utilisés en plus de ceux imposés afin de pouvoir tout connecter à la STM32. Suite à la solution technique des TOF employé le nombre de GPIO recquis a quelque peu explosé surpassant la capacité de la STM. par conséquent un GPIO Extender est utilisé pour ajouter des GPIO afin de couper et utiliser les TOF lorsque nous en avons besoin.   
 
-[[Capture]]
+![GPIO Extender](../screenshot/electronique/GPIO_Extender.png)
 
-**GPIO Extender TCA9555RTWR**  
-    - A0 : Adress Input 0  
-    - A1 : Adress Input 1  
-    - A2 : Adress Input 2  
-    - GND : Ground   
-    - P00 à P17 : P/port I/O connecte comme Input au démarrage.   
-    - SCL : Serial clock bus  
-    - SDA : Serial data bus  
-    - VCC : Tension d'alimentation du composant  
-    - INT : Permet de donner des interruptions avec une Pull-Up resistance.   
+>[!Note]
+>**GPIO Extender [TCA9555RTWR](../datasheet/TCA9555.pdf)**  
+>* A0 : Adress Input 0  
+>* A1 : Adress Input 1  
+>* A2 : Adress Input 2  
+>* GND : Ground   
+>* P00 à P17 : P/port I/O connecte comme Input au démarrage.   
+>* SCL : Serial clock bus  
+>* SDA : Serial data bus  
+>* VCC : Tension d'alimentation du composant  
+>* INT : Permet de donner des interruptions avec une Pull-Up resistance.   
 
-En plus de ce composant nous avons utilisé un petit composant pour traiter nos leds. En effet en comptant 4 de débugs, robot allumé, chat/souris,... Nous nous sommes sentis à l'étroit et avons décidé de rajouter un composant qui drive 4 RGB. Cela sera parfait pour débug et montrer les informations nécessaires.  
+>[!Tip]
+>En plus de ce composant nous avons utilisé un petit composant pour traiter nos leds. En effet en comptant 4 de débugs, robot allumé, chat/souris,... Nous nous sommes sentis à l'étroit et avons décidé de rajouter un composant qui drive 4 RGB. Cela sera parfait pour débug et montrer les informations nécessaires.  
 
-[[Capture]]
+![RGB Led Driver](../screenshot/electronique/LED_Driver.png)
 
-**RGB LED Driver LP5812CDSDR**  
-    - VCC : Tension d'alimentation du composant  
-    - GND : Ground  
-    - SYNC : Synchro du composant sur GND (C'est la doc je sais pas pk)  
-    - SCL : Serial clock bus  
-    - SDA : Serial data bus   
-    - OUT0 - OUT3 : Sorties vers les LED   
+>[!Note]
+>**RGB LED Driver [LP5812CDSDR](../datasheet/LP5812.pdf)**  
+>* VCC : Tension d'alimentation du composant  
+>* GND : Ground  
+>* SYNC : Synchro du composant sur GND (C'est la doc je sais pas pk)  
+>* SCL : Serial clock bus  
+>* SDA : Serial data bus   
+>* OUT0 - OUT3 : Sorties vers les LED   
 
-Pour ce composant nous verrons pour le faire marcher en temps voulu avec le SPI pour allumer nos LEDS. Celles-ci sont cablés comme décrit dans la documentation.   
+>Pour ce composant nous verrons pour le faire marcher en temps voulu avec le SPI pour allumer nos LEDS. Celles-ci sont cablés comme décrit dans la documentation.   
 
 ---
 
 ## Musique 
-Ayant dans notre groupe notre jolan nationnal, le projet ne pouvait être correctement réalisé sans l'ajout de bout de musique sur le robot. Pour se faire les sorties DAC de la STM32 dédiées seront utilisées. Ce signal audio sera amplifié par un amplificateur de Classe D puis va être envoyé dans des hauts parleurs.   
+>Ayant dans notre groupe notre jolan nationnal, le projet ne pouvait être correctement réalisé sans l'ajout de bout de musique sur le robot. Pour se faire les sorties DAC de la STM32 dédiées seront utilisées. Ce signal audio sera amplifié par un amplificateur de Classe D puis va être envoyé dans des hauts parleurs.   
 
-[[Capture]]
+![Musique](../screenshot/electronique/Music.png)
 
-**Ampli de Classe D PAM8302AAY**  
-    - IN + : Entrée DAC de la STM +  
-    - IN - : Entrée DAC de la STM -   
-    - SD : Doit rester sur HIGh pour éviter qu'il soit shutdown (donc relié à 3.3v)  
-    - VDD : Alimentation du composant  
-    - OUT + : Sortie + du haut parleur   
-    - OUT - : Sortie - du haut parleur  
+>[!Note]
+>**Ampli de Classe D [PAM8302AAY](../datasheet/PAM8302A.pdf)**  
+>* IN + : Entrée DAC de la STM +  
+>* IN - : Entrée DAC de la STM -   
+>* SD : Doit rester sur HIGh pour éviter qu'il soit shutdown (donc relié à 3.3v)  
+>* VDD : Alimentation du composant  
+>* OUT + : Sortie + du haut parleur   
+>* OUT - : Sortie - du haut parleur  
 
-Les deux capacité de découplage ainsi que les deux ferrites sont celles conforme à la documentation afin de réduire les interférence electromagnétique à partir de 1MHz et au dela. Ceci est parfait puisque ce composant est à coté de composant sensible comme la STM...  
+>[!Important]
+>Les deux capacité de découplage ainsi que les deux ferrites sont celles conforme à la documentation afin de réduire les interférence electromagnétique à partir de 1MHz et au dela. Ceci est parfait puisque ce composant est à coté de composant sensible comme la STM...  
