@@ -31,15 +31,15 @@ Pour la recharge de la batterie nous prévoyons deux connecteurs : Type-C et Bor
 ![Convertisseur linéaire](../screenshot/electronique/BMS.png)
 
 Cette entrée d'energie est gérée par le **BMS [BQ25172DSGR](../datasheet/BQ25172.pdf)de TI**. Celui-ci est cablé tel quel :  
-    *- IN : Entrée de tension de charge de batterie. Max 0.8 A (Cf : Doc)  
-    *- VSET : Programme le nombre de cellule --> 6 cellules + Charge intermittente  
-    *- ISET : Programme le courant de charge --> 0.8A   
-    *- TMR : Programme le Timer de sureté --> 6Hr  
-    *- TS : Programme la température de sureté de charge --> Donnée constructeur    
-    *- OUT : Sortie de tension de charge de la batterie  
-    *- STAT : Sortie d'indication de l'état de charge à drain ouvert  
-    *- EXP : Ground (Pad thermique)  
-    *- GND : Ground  
+    * IN : Entrée de tension de charge de batterie. Max 0.8 A (Cf : Doc)  
+    * VSET : Programme le nombre de cellule --> 6 cellules + Charge intermittente  
+    * ISET : Programme le courant de charge --> 0.8A   
+    * TMR : Programme le Timer de sureté --> 6Hr  
+    * TS : Programme la température de sureté de charge --> Donnée constructeur    
+    * OUT : Sortie de tension de charge de la batterie  
+    * STAT : Sortie d'indication de l'état de charge à drain ouvert  
+    * EXP : Ground (Pad thermique)  
+    * GND : Ground  
 
 [[Capture]]
 
