@@ -3671,6 +3671,10 @@
 		(uuid "89412ef6-f99f-43e0-a1ed-6cfed4e52bb3")
 	)
 	(no_connect
+		(at 101.6 64.77)
+		(uuid "9414dc17-7049-4119-8591-aad8d5b8a3ad")
+	)
+	(no_connect
 		(at 40.64 125.73)
 		(uuid "9d846fc3-5187-481c-83e7-6883b54a2da1")
 	)
@@ -5851,20 +5855,6 @@
 			(justify left)
 		)
 		(uuid "e22730e3-b864-435d-a975-5e15d465c8dd")
-	)
-	(hierarchical_label "LIDAR_RX"
-		(shape input)
-		(at 101.6 64.77 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(thickness 0.254)
-				(bold yes)
-			)
-			(justify left)
-		)
-		(uuid "f34aebcb-12df-46df-91c6-99188d40cb09")
 	)
 	(hierarchical_label "ODOM2_PHASEB"
 		(shape input)
