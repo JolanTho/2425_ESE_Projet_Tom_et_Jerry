@@ -1212,23 +1212,13 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 119.38) (xy 148.59 119.38)
+			(xy 153.67 119.38) (xy 148.59 119.38)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "bdf14606-2271-4f83-af16-a1c381bc1d9c")
-	)
-	(wire
-		(pts
-			(xy 152.4 119.38) (xy 152.4 120.65)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "becda7e4-e6b3-4b68-96cf-6e8049c41c29")
 	)
 	(wire
 		(pts
@@ -1295,7 +1285,7 @@
 	)
 	(text "1.65V"
 		(exclude_from_sim no)
-		(at 99.06 107.95 0)
+		(at 96.52 105.41 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1344,18 +1334,6 @@
 			(justify left bottom)
 		)
 		(uuid "f4d9fde3-9d6f-4d8d-91c4-4fc6a5bb5c72")
-	)
-	(label "REF"
-		(at 152.4 120.65 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "35bb80a2-f58f-4ecb-871c-c69b9b6a7898")
 	)
 	(label "Motor1+"
 		(at 240.03 86.36 0)
@@ -1453,18 +1431,6 @@
 		)
 		(uuid "bc123a81-503d-438b-8d83-a0d8cec5e22d")
 	)
-	(label "REF"
-		(at 95.25 106.68 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "cdc81286-6626-4bde-ba88-1e3b4f9b987e")
-	)
 	(label "Motor1-"
 		(at 241.3 73.66 0)
 		(fields_autoplaced yes)
@@ -1476,6 +1442,52 @@
 			(justify left bottom)
 		)
 		(uuid "d231809c-fc8b-43a7-8798-1ef0305bae31")
+	)
+	(global_label "REF"
+		(shape input)
+		(at 95.25 106.68 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(bold yes)
+			)
+			(justify left)
+		)
+		(uuid "27476a77-3893-470d-83b5-73f0a79c687b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 102.2188 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "REF"
+		(shape input)
+		(at 153.67 119.38 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(bold yes)
+			)
+			(justify left)
+		)
+		(uuid "bc44a977-ef5a-4902-ad26-250e9538b5a0")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 160.6388 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 	)
 	(hierarchical_label "Codeur1_PH2"
 		(shape input)
