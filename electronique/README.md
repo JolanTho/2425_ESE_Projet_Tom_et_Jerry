@@ -28,9 +28,9 @@ Des connecteurs Pac-Man sont utilisés au niveau de la recharge de batterie afin
 
     Pour la recharge de la batterie nous prévoyons deux connecteurs : Type-C et Bornier afin de pouvoir recharger la batterie par alimentation stabilisée de labo ainsi que par cable USB-C (Plus difficile à mettre en oeuvre). 
 
-    [[Capture]]
+    ![Convertisseur linéaire](../screenshot/electronique/BMS.png)
     
-    Cette entrée d'energie est gérée par le BMS (BQ25172DSGR de TI). Celui-ci est cablé tel quel : 
+    Cette entrée d'energie est gérée par le **BMS [BQ25172DSGR](../datasheet/BQ25172.pdf)de TI**. Celui-ci est cablé tel quel : 
         - IN : Entrée de tension de charge de batterie. Max 0.8 A (Cf : Doc)
         - VSET : Programme le nombre de cellule --> 6 cellules + Charge intermittente
         - ISET : Programme le courant de charge --> 0.8A 
@@ -45,9 +45,11 @@ Des connecteurs Pac-Man sont utilisés au niveau de la recharge de batterie afin
 
     On a un transistor à canal P pour bloquer la charge du circuit par batterie lorsqu'une tension vient du bornier ou de l'USB-C. De plus on ajoute des condensateur (C...) pour eviter les retours de courant dû a des freinage des roues dans la résistance et donc dans l'alimentation derrière. 
 
-- **Convertisseur Buck (MP1475DJ-LF-P)**
-    [[Capture]]
+    ![Convertisseur linéaire](../screenshot/electronique/BUCK.png)
+
     On utilise un premier convertisseur Buck pour abaisser la tension à 5V. Celui-ci est à découpage donc plus cher mais possède un meilleur rendement et un plus faible échauffement. Cela est parfait puisqu'il alimente le lidar ainsi que tous les circuits 3.3v derrière et donc peut avoir des appels de courant assez élevé (Comme démarrage de lidar). 
+
+- **Convertisseur Buck (MP1475DJ-LF-P)**
         - IN : Tension d'entrée
         - BST : Bootstrap
         - SWT : Sortie de commutation
@@ -59,9 +61,11 @@ Des connecteurs Pac-Man sont utilisés au niveau de la recharge de batterie afin
 
     Actuellement les données sont celle ce la doc. La seule chose réglée est le pont diviseur avec une Vref = 1.25V pour avoir une sortie de 5V en sortie. 
 
-   - **Convertisseur LDO (BU33SD5WG-TR)**
-    [[Capture]] 
+    ![Convertisseur linéaire](../screenshot/electronique/LDO.png)
+
     Simple convertisseur linéaire qui abaisse de 5V vers 3.3V pour alimenter certains capteurs ou encore la STM32 qui n'accepte pas du 5V. L'utilisation d'un buck serai plus utile si on recherche la performance cependant un LDO est suffisant car moins couteux, plus simple à mettre en place. L'abaissement de tension est faible sur de faible courants par conséquent la dissipation thermique sera faible ce qui justifie un LDO plutôt qu'un buck. 
+
+    **Convertisseur LDO (BU33SD5WG-TR)**
         - VIN : Tension d'entrée
         - GND : Ground
         - STBY : StandBy --> Ici sur High il marche dés qu'il est alimenté. 
