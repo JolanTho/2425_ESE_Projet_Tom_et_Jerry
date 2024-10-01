@@ -264,22 +264,22 @@
 				)
 			)
 		)
-		(symbol "Connector_Generic:Conn_01x08"
+		(symbol "Connector_Generic:Conn_01x04"
 			(pin_names
 				(offset 1.016) hide)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
 			(property "Reference" "J"
-				(at 0 10.16 0)
+				(at 0 5.08 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Value" "Conn_01x08"
-				(at 0 -12.7 0)
+			(property "Value" "Conn_01x04"
+				(at 0 -7.62 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -304,7 +304,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Generic connector, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
 				(at 0 0 0)
 				(effects
 					(font
@@ -331,29 +331,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "Conn_01x08_1_1"
-				(rectangle
-					(start -1.27 -10.033)
-					(end 0 -10.287)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 -7.493)
-					(end 0 -7.747)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
+			(symbol "Conn_01x04_1_1"
 				(rectangle
 					(start -1.27 -4.953)
 					(end 0 -5.207)
@@ -399,30 +377,8 @@
 					)
 				)
 				(rectangle
-					(start -1.27 5.207)
-					(end 0 4.953)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 7.747)
-					(end 0 7.493)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 8.89)
-					(end 1.27 -11.43)
+					(start -1.27 3.81)
+					(end 1.27 -6.35)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -432,7 +388,7 @@
 					)
 				)
 				(pin passive line
-					(at -5.08 7.62 0)
+					(at -5.08 2.54 0)
 					(length 3.81)
 					(name "Pin_1"
 						(effects
@@ -450,7 +406,7 @@
 					)
 				)
 				(pin passive line
-					(at -5.08 5.08 0)
+					(at -5.08 0 0)
 					(length 3.81)
 					(name "Pin_2"
 						(effects
@@ -468,7 +424,7 @@
 					)
 				)
 				(pin passive line
-					(at -5.08 2.54 0)
+					(at -5.08 -2.54 0)
 					(length 3.81)
 					(name "Pin_3"
 						(effects
@@ -486,7 +442,7 @@
 					)
 				)
 				(pin passive line
-					(at -5.08 0 0)
+					(at -5.08 -5.08 0)
 					(length 3.81)
 					(name "Pin_4"
 						(effects
@@ -496,78 +452,6 @@
 						)
 					)
 					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -2.54 0)
-					(length 3.81)
-					(name "Pin_5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -5.08 0)
-					(length 3.81)
-					(name "Pin_6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -7.62 0)
-					(length 3.81)
-					(name "Pin_7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -10.16 0)
-					(length 3.81)
-					(name "Pin_8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1440,13 +1324,13 @@
 		)
 	)
 	(junction
-		(at 60.96 69.85)
+		(at 60.96 77.47)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "0e9cd4a9-b55f-4d14-946f-b55409a18899")
 	)
 	(junction
-		(at 60.96 49.53)
+		(at 60.96 57.15)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "1194d41d-afc1-42d0-be6f-1c62ba616ca8")
@@ -1458,19 +1342,19 @@
 		(uuid "21cb6efe-5769-478c-8648-4906ba03e61c")
 	)
 	(junction
-		(at 60.96 92.71)
+		(at 60.96 100.33)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3b1044ca-b756-47e5-bbf5-2ab377d3c4d2")
 	)
 	(junction
-		(at 60.96 46.99)
+		(at 60.96 54.61)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "506b864d-667b-47bc-a970-9960bf9576d6")
 	)
 	(junction
-		(at 60.96 72.39)
+		(at 60.96 80.01)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e017e5b0-3719-48ec-97ee-0c6ecfd1c737")
@@ -1487,10 +1371,6 @@
 		(color 0 0 0 0)
 		(uuid "f8e5e201-b34f-4342-922d-e15db639043b")
 	)
-	(no_connect
-		(at 175.26 102.87)
-		(uuid "033cf45f-3314-4e61-b78a-c3d64c76ebef")
-	)
 	(wire
 		(pts
 			(xy 229.87 67.31) (xy 236.22 67.31)
@@ -1500,6 +1380,16 @@
 			(type default)
 		)
 		(uuid "138f2333-0caf-4146-9233-174f2f4f3ae2")
+	)
+	(wire
+		(pts
+			(xy 154.94 111.76) (xy 162.56 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1511e4e9-03f3-4ee7-8786-50762dd4b70a")
 	)
 	(wire
 		(pts
@@ -1513,7 +1403,7 @@
 	)
 	(wire
 		(pts
-			(xy 60.96 46.99) (xy 60.96 49.53)
+			(xy 60.96 54.61) (xy 60.96 57.15)
 		)
 		(stroke
 			(width 0)
@@ -1543,7 +1433,7 @@
 	)
 	(polyline
 		(pts
-			(xy 116.84 13.97) (xy 116.84 105.41)
+			(xy 116.84 13.97) (xy 116.84 113.03)
 		)
 		(stroke
 			(width 0)
@@ -1563,7 +1453,7 @@
 	)
 	(wire
 		(pts
-			(xy 41.91 46.99) (xy 60.96 46.99)
+			(xy 41.91 54.61) (xy 60.96 54.61)
 		)
 		(stroke
 			(width 0)
@@ -1583,7 +1473,7 @@
 	)
 	(wire
 		(pts
-			(xy 41.91 69.85) (xy 60.96 69.85)
+			(xy 41.91 77.47) (xy 60.96 77.47)
 		)
 		(stroke
 			(width 0)
@@ -1593,7 +1483,7 @@
 	)
 	(wire
 		(pts
-			(xy 60.96 72.39) (xy 81.28 72.39)
+			(xy 60.96 80.01) (xy 81.28 80.01)
 		)
 		(stroke
 			(width 0)
@@ -1623,7 +1513,7 @@
 	)
 	(wire
 		(pts
-			(xy 60.96 69.85) (xy 60.96 72.39)
+			(xy 60.96 77.47) (xy 60.96 80.01)
 		)
 		(stroke
 			(width 0)
@@ -1653,7 +1543,7 @@
 	)
 	(wire
 		(pts
-			(xy 41.91 92.71) (xy 60.96 92.71)
+			(xy 41.91 100.33) (xy 60.96 100.33)
 		)
 		(stroke
 			(width 0)
@@ -1663,7 +1553,7 @@
 	)
 	(wire
 		(pts
-			(xy 60.96 92.71) (xy 60.96 95.25)
+			(xy 60.96 100.33) (xy 60.96 102.87)
 		)
 		(stroke
 			(width 0)
@@ -1673,7 +1563,7 @@
 	)
 	(polyline
 		(pts
-			(xy 116.84 90.17) (xy 116.84 105.41)
+			(xy 116.84 90.17) (xy 116.84 113.03)
 		)
 		(stroke
 			(width 0)
@@ -1703,7 +1593,7 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 120.65) (xy 175.26 120.65)
+			(xy 148.59 114.3) (xy 162.56 114.3)
 		)
 		(stroke
 			(width 0)
@@ -1713,7 +1603,7 @@
 	)
 	(wire
 		(pts
-			(xy 60.96 95.25) (xy 81.28 95.25)
+			(xy 60.96 102.87) (xy 81.28 102.87)
 		)
 		(stroke
 			(width 0)
@@ -1763,7 +1653,7 @@
 	)
 	(polyline
 		(pts
-			(xy 12.7 105.41) (xy 116.84 105.41)
+			(xy 12.7 113.03) (xy 116.84 113.03)
 		)
 		(stroke
 			(width 0)
@@ -1783,17 +1673,7 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 113.03) (xy 175.26 113.03)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b74e8b43-7633-4180-9fe4-b9da761dfe79")
-	)
-	(wire
-		(pts
-			(xy 60.96 49.53) (xy 81.28 49.53)
+			(xy 60.96 57.15) (xy 81.28 57.15)
 		)
 		(stroke
 			(width 0)
@@ -1803,7 +1683,7 @@
 	)
 	(wire
 		(pts
-			(xy 60.96 35.56) (xy 60.96 46.99)
+			(xy 60.96 43.18) (xy 60.96 54.61)
 		)
 		(stroke
 			(width 0)
@@ -1813,7 +1693,7 @@
 	)
 	(wire
 		(pts
-			(xy 60.96 72.39) (xy 60.96 92.71)
+			(xy 60.96 80.01) (xy 60.96 100.33)
 		)
 		(stroke
 			(width 0)
@@ -1833,7 +1713,7 @@
 	)
 	(wire
 		(pts
-			(xy 60.96 49.53) (xy 60.96 69.85)
+			(xy 60.96 57.15) (xy 60.96 77.47)
 		)
 		(stroke
 			(width 0)
@@ -1880,7 +1760,7 @@
 	)
 	(text "Lidar"
 		(exclude_from_sim no)
-		(at 155.194 101.854 0)
+		(at 153.162 102.362 0)
 		(effects
 			(font
 				(size 4 4)
@@ -1904,7 +1784,7 @@
 	)
 	(text "TOF"
 		(exclude_from_sim no)
-		(at 16.51 20.828 0)
+		(at 16.51 28.448 0)
 		(effects
 			(font
 				(size 4 4)
@@ -1915,18 +1795,6 @@
 			(justify left bottom)
 		)
 		(uuid "a6e2c65b-bdf4-4ddc-85ab-138e4629e5de")
-	)
-	(hierarchical_label "LIDAR_M_EN"
-		(shape input)
-		(at 175.26 105.41 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "0d350dee-2cf4-4ca3-8bad-3ad8996583ca")
 	)
 	(hierarchical_label "Moustache_1"
 		(shape input)
@@ -1942,7 +1810,7 @@
 	)
 	(hierarchical_label "TOF2_SDA"
 		(shape input)
-		(at 81.28 52.07 180)
+		(at 81.28 59.69 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1954,7 +1822,7 @@
 	)
 	(hierarchical_label "TOF3_SDA"
 		(shape input)
-		(at 41.91 72.39 0)
+		(at 41.91 80.01 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1966,7 +1834,7 @@
 	)
 	(hierarchical_label "TOF1_SDA"
 		(shape input)
-		(at 41.91 49.53 0)
+		(at 41.91 57.15 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1978,7 +1846,7 @@
 	)
 	(hierarchical_label "TOF6_GPIO1"
 		(shape input)
-		(at 81.28 83.82 180)
+		(at 81.28 91.44 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1988,21 +1856,9 @@
 		)
 		(uuid "34814603-9f89-4d8b-9fa6-ec4a06e206b8")
 	)
-	(hierarchical_label "LIDAR_RX"
-		(shape input)
-		(at 175.26 115.57 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "34cb7e6e-3d46-4191-8d91-0362c59bfa29")
-	)
 	(hierarchical_label "TOF5_XSHUT"
 		(shape input)
-		(at 41.91 83.82 0)
+		(at 41.91 91.44 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2014,7 +1870,7 @@
 	)
 	(hierarchical_label "TOF5_SDA"
 		(shape input)
-		(at 41.91 95.25 0)
+		(at 41.91 102.87 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2026,7 +1882,7 @@
 	)
 	(hierarchical_label "TOF1_GPIO1"
 		(shape input)
-		(at 41.91 35.56 0)
+		(at 41.91 43.18 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2038,7 +1894,7 @@
 	)
 	(hierarchical_label "TOF2_XSHUT"
 		(shape input)
-		(at 81.28 40.64 180)
+		(at 81.28 48.26 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2050,7 +1906,7 @@
 	)
 	(hierarchical_label "TOF3_XSHUT"
 		(shape input)
-		(at 41.91 60.96 0)
+		(at 41.91 68.58 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2060,21 +1916,9 @@
 		)
 		(uuid "65f0d1da-7303-44e9-9b12-e2b2457ec4c1")
 	)
-	(hierarchical_label "LIDAR_TX"
-		(shape input)
-		(at 175.26 118.11 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "666005eb-709c-442d-9dcd-f0114c57990f")
-	)
 	(hierarchical_label "LIDAR_PWM"
 		(shape input)
-		(at 175.26 110.49 180)
+		(at 162.56 106.68 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2098,7 +1942,7 @@
 	)
 	(hierarchical_label "TOF2_GPIO1"
 		(shape input)
-		(at 81.28 38.1 180)
+		(at 81.28 45.72 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2146,7 +1990,7 @@
 	)
 	(hierarchical_label "TOF5_GPIO1"
 		(shape input)
-		(at 41.91 81.28 0)
+		(at 41.91 88.9 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2158,7 +2002,7 @@
 	)
 	(hierarchical_label "TOF3_GPIO1"
 		(shape input)
-		(at 41.91 58.42 0)
+		(at 41.91 66.04 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2170,7 +2014,7 @@
 	)
 	(hierarchical_label "TOF_SCL"
 		(shape input)
-		(at 60.96 35.56 90)
+		(at 60.96 43.18 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2194,7 +2038,7 @@
 	)
 	(hierarchical_label "TOF4_XSHUT"
 		(shape input)
-		(at 81.28 63.5 180)
+		(at 81.28 71.12 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2206,7 +2050,7 @@
 	)
 	(hierarchical_label "TOF6_XSHUT"
 		(shape input)
-		(at 81.28 86.36 180)
+		(at 81.28 93.98 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2218,7 +2062,7 @@
 	)
 	(hierarchical_label "TOF4_SDA"
 		(shape input)
-		(at 81.28 74.93 180)
+		(at 81.28 82.55 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2230,7 +2074,7 @@
 	)
 	(hierarchical_label "TOF1_XSHUT"
 		(shape input)
-		(at 41.91 38.1 0)
+		(at 41.91 45.72 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2242,7 +2086,7 @@
 	)
 	(hierarchical_label "TOF6_SDA"
 		(shape input)
-		(at 81.28 97.79 180)
+		(at 81.28 105.41 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2254,7 +2098,7 @@
 	)
 	(hierarchical_label "TOF4_GPIO1"
 		(shape input)
-		(at 81.28 60.96 180)
+		(at 81.28 68.58 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2288,9 +2132,9 @@
 		)
 		(uuid "f68098f7-e8bf-4657-b838-9c1113ee3559")
 	)
-	(hierarchical_label "LIDAR_DEV_EN"
+	(hierarchical_label "LIDAR_TX"
 		(shape input)
-		(at 175.26 107.95 180)
+		(at 162.56 109.22 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2298,7 +2142,7 @@
 			)
 			(justify right)
 		)
-		(uuid "fa4b86b1-35c1-4a71-b9c8-a0781aca6728")
+		(uuid "f9bbc6ef-562d-43ee-9b04-ea5b1a97a18b")
 	)
 	(symbol
 		(lib_name "+3.3V_1")
@@ -3015,6 +2859,82 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector_Generic:Conn_01x04")
+		(at 167.64 109.22 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8afcba33-d916-4e96-a4c9-4d3bc0661b5d")
+		(property "Reference" "J306"
+			(at 170.18 109.2199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x04"
+			(at 170.18 111.7599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 167.64 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 167.64 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 167.64 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f8976bb1-da16-4a28-8cd3-1e7999bced71")
+		)
+		(pin "2"
+			(uuid "705589b0-48bb-4b28-97ba-a002d471ce2a")
+		)
+		(pin "4"
+			(uuid "3e4da5e0-8632-4946-a193-bafa95fb411f")
+		)
+		(pin "3"
+			(uuid "900b1554-261f-4753-9209-a99f75aea37d")
+		)
+		(instances
+			(project ""
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/ac7f7f04-c418-4551-b204-a999b9c3c440"
+					(reference "J306")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
 		(at 173.99 58.42 0)
 		(unit 1)
@@ -3156,7 +3076,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 161.29 120.65 0)
+		(at 148.59 114.3 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3164,7 +3084,7 @@
 		(dnp no)
 		(uuid "be831652-3612-4ea9-9947-b756d187c430")
 		(property "Reference" "#PWR066"
-			(at 161.29 124.46 0)
+			(at 152.4 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3173,7 +3093,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 161.29 116.84 0)
+			(at 144.78 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3181,7 +3101,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 161.29 120.65 0)
+			(at 148.59 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3190,7 +3110,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 161.29 120.65 0)
+			(at 148.59 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3199,7 +3119,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 161.29 120.65 0)
+			(at 148.59 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3221,7 +3141,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 160.02 113.03 270)
+		(at 154.94 111.76 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3230,7 +3150,7 @@
 		(fields_autoplaced yes)
 		(uuid "da5c712b-0ec8-4544-880f-100d8f6011d3")
 		(property "Reference" "#PWR065"
-			(at 153.67 113.03 0)
+			(at 148.59 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3239,7 +3159,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 156.21 113.665 90)
+			(at 151.13 112.395 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3248,7 +3168,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 160.02 113.03 0)
+			(at 154.94 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3257,7 +3177,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 160.02 113.03 0)
+			(at 154.94 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3266,7 +3186,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 160.02 113.03 0)
+			(at 154.94 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3281,94 +3201,6 @@
 			(project "tom&Jerry_Draft"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/ac7f7f04-c418-4551-b204-a999b9c3c440"
 					(reference "#PWR065")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector_Generic:Conn_01x08")
-		(at 180.34 110.49 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e2b1c8de-8bb2-402a-bfe7-1edfa6753c9f")
-		(property "Reference" "J302"
-			(at 182.88 110.4899 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "Conn_01x08"
-			(at 182.88 113.0299 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 180.34 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 180.34 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 180.34 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "3"
-			(uuid "e4273742-13ca-4826-b429-2917db2ddb9e")
-		)
-		(pin "1"
-			(uuid "7e636f87-b2b6-46bf-8835-37b0aba70ce7")
-		)
-		(pin "2"
-			(uuid "eb6725a5-8621-442e-bbe8-f5cbe0ada98d")
-		)
-		(pin "4"
-			(uuid "82e05837-abeb-4e14-8932-ba1b9f599aaa")
-		)
-		(pin "8"
-			(uuid "1b8c63cc-1bd8-446e-971f-b1e1b6a0d0b2")
-		)
-		(pin "6"
-			(uuid "8eadc6d2-6e1e-421b-8b67-7ed58cf0b82d")
-		)
-		(pin "7"
-			(uuid "5616ad38-ba4a-49df-9f20-579ddff517d9")
-		)
-		(pin "5"
-			(uuid "c720eb65-983c-4d29-a340-88692ed6c3bc")
-		)
-		(instances
-			(project ""
-				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/ac7f7f04-c418-4551-b204-a999b9c3c440"
-					(reference "J302")
 					(unit 1)
 				)
 			)
@@ -3509,7 +3341,7 @@
 		)
 	)
 	(sheet
-		(at 81.28 82.55)
+		(at 81.28 90.17)
 		(size 21.59 16.51)
 		(fields_autoplaced yes)
 		(stroke
@@ -3521,7 +3353,7 @@
 		)
 		(uuid "5425c982-9e7d-49f0-9acd-74ece2531576")
 		(property "Sheetname" "TOF6"
-			(at 81.28 81.8384 0)
+			(at 81.28 89.4584 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3530,7 +3362,7 @@
 			)
 		)
 		(property "Sheetfile" "tof.kicad_sch"
-			(at 81.28 99.6446 0)
+			(at 81.28 107.2646 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3539,7 +3371,7 @@
 			)
 		)
 		(pin "TOF_SCL" input
-			(at 81.28 95.25 180)
+			(at 81.28 102.87 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3549,7 +3381,7 @@
 			(uuid "5fc1225b-6bb6-4c5f-b88a-b6c1359f1005")
 		)
 		(pin "TOF_SDA" input
-			(at 81.28 97.79 180)
+			(at 81.28 105.41 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3559,7 +3391,7 @@
 			(uuid "103d2dfd-e841-47e9-826d-9ef7dcd79ee3")
 		)
 		(pin "TOF_XSHUT" input
-			(at 81.28 86.36 180)
+			(at 81.28 93.98 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3569,7 +3401,7 @@
 			(uuid "b2ff358f-d07c-4faa-903a-e18cd60afd42")
 		)
 		(pin "TOF_GPIO1" input
-			(at 81.28 83.82 180)
+			(at 81.28 91.44 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3587,7 +3419,7 @@
 		)
 	)
 	(sheet
-		(at 20.32 80.01)
+		(at 20.32 87.63)
 		(size 21.59 16.51)
 		(fields_autoplaced yes)
 		(stroke
@@ -3599,7 +3431,7 @@
 		)
 		(uuid "7b81f31a-a9d8-47fc-b567-d77a516e32df")
 		(property "Sheetname" "TOF5"
-			(at 20.32 79.2984 0)
+			(at 20.32 86.9184 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3608,7 +3440,7 @@
 			)
 		)
 		(property "Sheetfile" "tof.kicad_sch"
-			(at 20.32 97.1046 0)
+			(at 20.32 104.7246 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3617,7 +3449,7 @@
 			)
 		)
 		(pin "TOF_SCL" input
-			(at 41.91 92.71 0)
+			(at 41.91 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3627,7 +3459,7 @@
 			(uuid "a0e0f0ca-518d-47c4-8819-5e86bd357d77")
 		)
 		(pin "TOF_SDA" input
-			(at 41.91 95.25 0)
+			(at 41.91 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3637,7 +3469,7 @@
 			(uuid "87b5ef77-85f2-4284-b73d-245a16c72253")
 		)
 		(pin "TOF_XSHUT" input
-			(at 41.91 83.82 0)
+			(at 41.91 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3647,7 +3479,7 @@
 			(uuid "6b86de9b-2a83-43c4-813d-d57a34d33b21")
 		)
 		(pin "TOF_GPIO1" input
-			(at 41.91 81.28 0)
+			(at 41.91 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3665,7 +3497,7 @@
 		)
 	)
 	(sheet
-		(at 20.32 57.15)
+		(at 20.32 64.77)
 		(size 21.59 16.51)
 		(fields_autoplaced yes)
 		(stroke
@@ -3677,7 +3509,7 @@
 		)
 		(uuid "ae735875-3a05-4be6-99bc-f49af30b564b")
 		(property "Sheetname" "TOF3"
-			(at 20.32 56.4384 0)
+			(at 20.32 64.0584 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3686,7 +3518,7 @@
 			)
 		)
 		(property "Sheetfile" "tof.kicad_sch"
-			(at 20.32 74.2446 0)
+			(at 20.32 81.8646 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3695,7 +3527,7 @@
 			)
 		)
 		(pin "TOF_SCL" input
-			(at 41.91 69.85 0)
+			(at 41.91 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3705,7 +3537,7 @@
 			(uuid "0279c7ae-63e3-4408-9e89-12cefd583234")
 		)
 		(pin "TOF_SDA" input
-			(at 41.91 72.39 0)
+			(at 41.91 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3715,7 +3547,7 @@
 			(uuid "584dddfc-7d26-4633-b800-42bebaaab9f4")
 		)
 		(pin "TOF_XSHUT" input
-			(at 41.91 60.96 0)
+			(at 41.91 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3725,7 +3557,7 @@
 			(uuid "c6665636-e52b-428a-a29e-b1df1608779b")
 		)
 		(pin "TOF_GPIO1" input
-			(at 41.91 58.42 0)
+			(at 41.91 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3743,7 +3575,7 @@
 		)
 	)
 	(sheet
-		(at 81.28 36.83)
+		(at 81.28 44.45)
 		(size 21.59 16.51)
 		(fields_autoplaced yes)
 		(stroke
@@ -3755,7 +3587,7 @@
 		)
 		(uuid "c40d37b7-0764-4612-8fde-71f5145aa67f")
 		(property "Sheetname" "TOF2"
-			(at 81.28 36.1184 0)
+			(at 81.28 43.7384 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3764,7 +3596,7 @@
 			)
 		)
 		(property "Sheetfile" "tof.kicad_sch"
-			(at 81.28 53.9246 0)
+			(at 81.28 61.5446 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3773,7 +3605,7 @@
 			)
 		)
 		(pin "TOF_SCL" input
-			(at 81.28 49.53 180)
+			(at 81.28 57.15 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3783,7 +3615,7 @@
 			(uuid "d55f0fda-4522-498d-9762-1eb12e97a124")
 		)
 		(pin "TOF_SDA" input
-			(at 81.28 52.07 180)
+			(at 81.28 59.69 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3793,7 +3625,7 @@
 			(uuid "93b63040-3c77-4acd-b7fc-0628779d87f7")
 		)
 		(pin "TOF_XSHUT" input
-			(at 81.28 40.64 180)
+			(at 81.28 48.26 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3803,7 +3635,7 @@
 			(uuid "76085b22-8e7a-4031-b487-4864b0a3a8c4")
 		)
 		(pin "TOF_GPIO1" input
-			(at 81.28 38.1 180)
+			(at 81.28 45.72 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3821,7 +3653,7 @@
 		)
 	)
 	(sheet
-		(at 20.32 34.29)
+		(at 20.32 41.91)
 		(size 21.59 16.51)
 		(fields_autoplaced yes)
 		(stroke
@@ -3833,7 +3665,7 @@
 		)
 		(uuid "d8c0a3ec-14ca-4cad-91fd-ac8f1e686c9a")
 		(property "Sheetname" "TOF1"
-			(at 20.32 33.5784 0)
+			(at 20.32 41.1984 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3842,7 +3674,7 @@
 			)
 		)
 		(property "Sheetfile" "tof.kicad_sch"
-			(at 20.32 51.3846 0)
+			(at 20.32 59.0046 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3851,7 +3683,7 @@
 			)
 		)
 		(pin "TOF_SCL" input
-			(at 41.91 46.99 0)
+			(at 41.91 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3861,7 +3693,7 @@
 			(uuid "cd4b33cb-04a3-4620-a366-eee3b43c38dc")
 		)
 		(pin "TOF_SDA" input
-			(at 41.91 49.53 0)
+			(at 41.91 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3871,7 +3703,7 @@
 			(uuid "eda0239f-55bf-4b6f-a9ed-54c4766a7c7e")
 		)
 		(pin "TOF_XSHUT" input
-			(at 41.91 38.1 0)
+			(at 41.91 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3881,7 +3713,7 @@
 			(uuid "649293fe-9b63-417a-ac9d-f87ac80dfaa7")
 		)
 		(pin "TOF_GPIO1" input
-			(at 41.91 35.56 0)
+			(at 41.91 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3899,7 +3731,7 @@
 		)
 	)
 	(sheet
-		(at 81.28 59.69)
+		(at 81.28 67.31)
 		(size 21.59 16.51)
 		(fields_autoplaced yes)
 		(stroke
@@ -3911,7 +3743,7 @@
 		)
 		(uuid "f778e645-32e9-43f1-bc8d-860baaad27c0")
 		(property "Sheetname" "TOF4"
-			(at 81.28 58.9784 0)
+			(at 81.28 66.5984 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3920,7 +3752,7 @@
 			)
 		)
 		(property "Sheetfile" "tof.kicad_sch"
-			(at 81.28 76.7846 0)
+			(at 81.28 84.4046 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3929,7 +3761,7 @@
 			)
 		)
 		(pin "TOF_SCL" input
-			(at 81.28 72.39 180)
+			(at 81.28 80.01 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3939,7 +3771,7 @@
 			(uuid "7f930360-a992-428f-b35f-6204cb8f11a5")
 		)
 		(pin "TOF_SDA" input
-			(at 81.28 74.93 180)
+			(at 81.28 82.55 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3949,7 +3781,7 @@
 			(uuid "6dae15b5-a2bb-4d83-b3b6-8425a1f883e8")
 		)
 		(pin "TOF_XSHUT" input
-			(at 81.28 63.5 180)
+			(at 81.28 71.12 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3959,7 +3791,7 @@
 			(uuid "8efe6d4d-6a3e-454b-bfae-5282cfbbb6b2")
 		)
 		(pin "TOF_GPIO1" input
-			(at 81.28 60.96 180)
+			(at 81.28 68.58 180)
 			(effects
 				(font
 					(size 1.27 1.27)
