@@ -1,4 +1,4 @@
-23863320018477046
+23872873046835345
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -95137,6 +95137,13 @@ LED
 6
 6
 Tom&Jerry
+CAPAE1350X1400N
+WCAP-ASLL 12.5 x 14
+Capacitor Polarised
+0
+2
+2
+Tom&Jerry
 DFN300X300X80-8N
 
 
@@ -95171,6 +95178,13 @@ TCA9555RTWR
 0
 34
 26
+Tom&Jerry
+SODFL4825X110N
+SMA−FL CASE 403AD ISSUE A
+Diode
+0
+2
+2
 Tom&Jerry
 SOIC127P600X175-8N
 SO-8
