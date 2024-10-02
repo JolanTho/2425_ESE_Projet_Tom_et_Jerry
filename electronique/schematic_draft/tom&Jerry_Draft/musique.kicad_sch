@@ -1707,7 +1707,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 118.11 86.36 0)
 			(effects
 				(font
@@ -1768,7 +1768,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "220pF"
+		(property "Value" "220p"
 			(at 167.64 104.1462 0)
 			(effects
 				(font
@@ -1777,7 +1777,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 165.1 102.87 0)
 			(effects
 				(font
@@ -1838,7 +1838,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "220pF"
+		(property "Value" "220p"
 			(at 167.64 86.3662 0)
 			(effects
 				(font
@@ -1847,7 +1847,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 165.1 85.09 0)
 			(effects
 				(font
@@ -1917,7 +1917,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 128.27 68.58 0)
 			(effects
 				(font
@@ -2118,7 +2118,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_JST:JST_XH_S3B-XH-A_1x03_P2.50mm_Horizontal"
 			(at 195.58 92.71 0)
 			(effects
 				(font
@@ -2256,7 +2256,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_DFN_QFN:DFN-8-1EP_3x3mm_P0.65mm_EP1.55x2.4mm"
+		(property "Footprint" "Tom&Jerry:DFN300X300X80-8N"
 			(at 134.62 91.44 0)
 			(effects
 				(font
@@ -2474,7 +2474,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Inductor_SMD:L_0805_2012Metric"
 			(at 151.13 88.138 90)
 			(effects
 				(font
@@ -2748,7 +2748,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 120.65 68.58 0)
 			(effects
 				(font
@@ -2809,7 +2809,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C_Small"
+		(property "Value" "100n"
 			(at 123.19 100.3362 0)
 			(effects
 				(font
@@ -2818,7 +2818,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 120.65 99.06 0)
 			(effects
 				(font
@@ -2951,7 +2951,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Inductor_SMD:L_0805_2012Metric"
 			(at 151.13 93.218 90)
 			(effects
 				(font

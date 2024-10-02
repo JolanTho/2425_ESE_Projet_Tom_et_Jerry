@@ -5,4 +5,5 @@
   (lib (name "BQ25172")(type "KiCad")(uri "/Users/romingo/Desktop/ENSEA/3A/PROJET/2425_ESE_Projet_Tom_et_Jerry/electronique/schematic_final/tom&jerry/BQ25172.kicad_sym")(options "")(descr ""))
   (lib (name "BU33SD5WG-TR")(type "KiCad")(uri "/Users/romingo/Desktop/ENSEA/3A/PROJET/2425_ESE_Projet_Tom_et_Jerry/electronique/schematic_final/tom&jerry/BU33SD5WG-TR.kicad_sym")(options "")(descr ""))
   (lib (name "LP5812ADSDR")(type "KiCad")(uri "/Users/romingo/Desktop/ENSEA/3A/PROJET/RESSOURCES/ul_LP5812ADSDR/KiCADv6/2024-09-25_07-34-54.kicad_sym")(options "")(descr ""))
+  (lib (name "Tom&Jerry")(type "KiCad")(uri "${KIPRJMOD}/Tom&Jerry.kicad_sym")(options "")(descr ""))
 )

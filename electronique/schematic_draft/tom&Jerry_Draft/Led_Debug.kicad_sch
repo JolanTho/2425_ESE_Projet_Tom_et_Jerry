@@ -5,506 +5,6 @@
 	(uuid "a547fe1b-52e0-4a04-8468-3e1d504dbc39")
 	(paper "A4")
 	(lib_symbols
-		(symbol "Device:LED_ABGR"
-			(pin_names
-				(offset 0) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "D"
-				(at 0 9.398 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "LED_ABGR"
-				(at 0 -8.89 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 -1.27 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 -1.27 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "RGB LED, anode/blue/green/red"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "LED RGB diode"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "LED* LED_SMD:* LED_THT:*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "LED_ABGR_0_0"
-				(text "B"
-					(at -1.905 -6.35 0)
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(text "G"
-					(at -1.905 -1.27 0)
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(text "R"
-					(at -1.905 3.81 0)
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(symbol "LED_ABGR_0_1"
-				(polyline
-					(pts
-						(xy -1.27 -5.08) (xy -2.54 -5.08)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 -5.08) (xy 1.27 -5.08)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 -3.81) (xy -1.27 -6.35)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 0) (xy -2.54 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 1.27) (xy -1.27 -1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 5.08) (xy -2.54 5.08)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 5.08) (xy 1.27 5.08)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 6.35) (xy -1.27 3.81)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 0) (xy -1.27 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 0) (xy 2.54 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 1.27) (xy -1.27 -1.27) (xy -1.27 -1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 6.35) (xy -1.27 3.81) (xy -1.27 3.81)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -5.08) (xy 2.032 -5.08) (xy 2.032 5.08) (xy 1.27 5.08)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -3.81) (xy 1.27 -6.35) (xy -1.27 -5.08) (xy 1.27 -3.81)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 6.35) (xy 1.27 3.81) (xy -1.27 5.08) (xy 1.27 6.35)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.016 -3.81) (xy 0.508 -2.286) (xy -0.254 -2.286) (xy 0.508 -2.286) (xy 0.508 -3.048)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.016 1.27) (xy 0.508 2.794) (xy -0.254 2.794) (xy 0.508 2.794) (xy 0.508 2.032)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.016 6.35) (xy 0.508 7.874) (xy -0.254 7.874) (xy 0.508 7.874) (xy 0.508 7.112)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -3.81) (xy 1.524 -2.286) (xy 0.762 -2.286) (xy 1.524 -2.286) (xy 1.524 -3.048)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 1.27) (xy 1.524 2.794) (xy 0.762 2.794) (xy 1.524 2.794) (xy 1.524 2.032)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 6.35) (xy 1.524 7.874) (xy 0.762 7.874) (xy 1.524 7.874) (xy 1.524 7.112)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start 1.27 -1.27)
-					(end 1.27 1.27)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start 1.27 1.27)
-					(end 1.27 1.27)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start 1.27 3.81)
-					(end 1.27 6.35)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start 1.27 6.35)
-					(end 1.27 6.35)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 2.032 0)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(rectangle
-					(start 2.794 8.382)
-					(end -2.794 -7.62)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-			)
-			(symbol "LED_ABGR_1_1"
-				(pin passive line
-					(at 5.08 0 180)
-					(length 2.54)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -5.08 0)
-					(length 2.54)
-					(name "BK"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "GK"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 5.08 0)
-					(length 2.54)
-					(name "RK"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "LP5812ADSDR:LP5812ADSDR"
 			(pin_names
 				(offset 0.254)
@@ -798,6 +298,229 @@
 				)
 			)
 		)
+		(symbol "Tom&Jerry:RGB"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "LED"
+				(at 19.05 7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Value" "RGB"
+				(at 19.05 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Footprint" "5988G10313F"
+				(at 19.05 -94.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.dialightsignalsandcomponents.com/598-smd-led-plcc6-2827-pkg-tricolor-r-g-b-w-black-surface-13-reel/#resources-btn"
+				(at 19.05 -194.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Description" "LED, Red, Green, Blue, SMD, 110 , Square, R 20mA, G 20mA, B 20mA"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Height" "2.577"
+				(at 19.05 -394.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Farnell Part Number" ""
+				(at 19.05 -494.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Farnell Price/Stock" ""
+				(at 19.05 -594.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Name" "Dialight"
+				(at 19.05 -694.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Part_Number" "5988G10313F"
+				(at 19.05 -794.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(symbol "RGB_1_1"
+				(rectangle
+					(start 5.08 2.54)
+					(end 17.78 -7.62)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin passive line
+					(at 0 0 0)
+					(length 5.08)
+					(name "R+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 22.86 0 180)
+					(length 5.08)
+					(name "R-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 0)
+					(length 5.08)
+					(name "G+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 22.86 -2.54 180)
+					(length 5.08)
+					(name "G-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -5.08 0)
+					(length 5.08)
+					(name "B+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 22.86 -5.08 180)
+					(length 5.08)
+					(name "B-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "power:+5V"
 			(power)
 			(pin_numbers hide)
@@ -1016,52 +739,64 @@
 		)
 	)
 	(junction
-		(at 161.29 88.9)
+		(at 140.97 64.77)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "2d6b8d6a-7626-46bf-9378-1f11f34f3d35")
+		(uuid "1177ebb0-c16f-411d-a80a-e62e98293dde")
 	)
 	(junction
-		(at 170.18 77.47)
+		(at 158.75 114.3)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "2f060a88-9c23-4ea0-a682-25faee5db518")
-	)
-	(junction
-		(at 156.21 104.14)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "38099fd2-118e-4006-bd25-3d335a43b329")
+		(uuid "15387e66-9887-4a28-8942-a3be6e1e33cf")
 	)
 	(junction
 		(at 138.43 64.77)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "68b8dc96-75dd-4b1c-ac60-2691aa2f21ba")
+		(uuid "1638fd6e-466a-47bc-8198-525881c1edb6")
 	)
 	(junction
-		(at 143.51 104.14)
+		(at 161.29 114.3)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "738eb043-e012-4185-9ea9-8c0c92d49e40")
+		(uuid "2d6b8d6a-7626-46bf-9378-1f11f34f3d35")
 	)
 	(junction
-		(at 133.35 77.47)
+		(at 152.4 88.9)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "89af4ae4-933d-466d-9f8d-0f63c9801cf2")
+		(uuid "3bc15874-ebaf-4f2f-8606-9eecfc4df4bf")
 	)
 	(junction
-		(at 152.4 104.14)
+		(at 158.75 142.24)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "9637ecfc-a470-4e41-8b00-31fb8922d003")
+		(uuid "461ec080-f05b-4397-b52f-d3b358953d07")
 	)
 	(junction
-		(at 138.43 88.9)
+		(at 163.83 114.3)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "96cc216f-854a-41e3-bfb9-c01fa702806c")
+		(uuid "49951c5a-1a8a-42a6-872d-7be5daf8bb92")
+	)
+	(junction
+		(at 149.86 114.3)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4d0157e4-16c6-4050-add0-91e0afd37260")
+	)
+	(junction
+		(at 149.86 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5fc695af-8e68-4378-a6a8-e4fdc0900333")
+	)
+	(junction
+		(at 170.18 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a3da4aaf-735c-4d74-8c6a-4b668594a971")
 	)
 	(junction
 		(at 171.45 64.77)
@@ -1070,46 +805,92 @@
 		(uuid "ad74fece-bef7-4859-9e67-cbea7197c45c")
 	)
 	(junction
-		(at 147.32 88.9)
+		(at 140.97 142.24)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "d8dba534-2d26-4099-85ba-cc3eb86814c9")
+		(uuid "b40b97f4-0125-4d1c-9446-e33d1a529b4c")
 	)
 	(junction
-		(at 161.29 64.77)
+		(at 138.43 114.3)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "d982842a-1db0-4fb0-a0e8-eea21bbce684")
+		(uuid "c4d09aee-6f7b-414a-ac6b-f9e987ea00d4")
 	)
 	(junction
-		(at 152.4 77.47)
+		(at 135.89 88.9)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "ef799424-326d-4268-84ac-3bac3dcc7f77")
+		(uuid "cccfc873-be4a-43c4-af82-2b252a4d9f1b")
+	)
+	(junction
+		(at 154.94 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d72125ce-aecb-421e-89db-f57eca67c8c8")
+	)
+	(junction
+		(at 135.89 64.77)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "dc346a39-9378-4ca0-8509-d1815bb1a280")
+	)
+	(junction
+		(at 162.56 64.77)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ec1f4086-dae6-4915-87fb-8bf9c906070b")
+	)
+	(junction
+		(at 152.4 142.24)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f0cb0345-04c4-43b4-8388-9f07438510b2")
+	)
+	(junction
+		(at 180.34 142.24)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f79f24fe-4733-4d69-9cdc-6ba5d8cbe518")
+	)
+	(junction
+		(at 182.88 142.24)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fd74ecbd-06c6-4c0e-9fe3-eb76bb3529c5")
 	)
 	(wire
 		(pts
-			(xy 156.21 104.14) (xy 180.34 104.14)
+			(xy 135.89 87.63) (xy 135.89 88.9)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "03c3a931-fac6-4cc5-b968-a169b6a30e3d")
+		(uuid "01e375d3-b7e4-4492-be1f-231cc5649303")
 	)
 	(wire
 		(pts
-			(xy 161.29 102.87) (xy 171.45 102.87)
+			(xy 170.18 88.9) (xy 170.18 139.7)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0fc8315b-064e-41cd-862d-628dd456c1f8")
+		(uuid "0221ac1f-eea6-484f-a0cd-9c51bce678a3")
 	)
 	(wire
 		(pts
-			(xy 161.29 64.77) (xy 138.43 64.77)
+			(xy 162.56 64.77) (xy 171.45 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "02e51803-5746-4ce0-9022-b38922f60586")
+	)
+	(wire
+		(pts
+			(xy 123.19 64.77) (xy 135.89 64.77)
 		)
 		(stroke
 			(width 0)
@@ -1119,17 +900,17 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 90.17) (xy 161.29 88.9)
+			(xy 182.88 142.24) (xy 185.42 142.24)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "15dec074-eafb-44e8-bb70-286f802c361a")
+		(uuid "1f2e0235-a246-4e66-8759-eaff899307d9")
 	)
 	(wire
 		(pts
-			(xy 127 72.39) (xy 127 104.14)
+			(xy 127 72.39) (xy 127 142.24)
 		)
 		(stroke
 			(width 0)
@@ -1139,13 +920,33 @@
 	)
 	(wire
 		(pts
-			(xy 127 104.14) (xy 143.51 104.14)
+			(xy 127 142.24) (xy 140.97 142.24)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "23a727ec-c624-477d-8796-28ab0997446f")
+	)
+	(wire
+		(pts
+			(xy 149.86 111.76) (xy 149.86 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2452db13-80b8-4e66-b479-345c8a085964")
+	)
+	(wire
+		(pts
+			(xy 138.43 87.63) (xy 138.43 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "28d5b3b4-64cc-4736-85e3-bc6047c42daf")
 	)
 	(wire
 		(pts
@@ -1159,57 +960,37 @@
 	)
 	(wire
 		(pts
-			(xy 143.51 74.93) (xy 143.51 104.14)
+			(xy 171.45 64.77) (xy 171.45 140.97)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "323b51c3-2cde-4a53-a031-937d3edba11e")
+		(uuid "3cad0778-3ede-4f55-90a9-8ae9f33670c4")
 	)
 	(wire
 		(pts
-			(xy 156.21 100.33) (xy 156.21 104.14)
+			(xy 161.29 140.97) (xy 161.29 139.7)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "3a400117-5191-4864-b4b4-ff41b2798340")
+		(uuid "41552374-d058-4220-9855-65cd6d5e0721")
 	)
 	(wire
 		(pts
-			(xy 170.18 100.33) (xy 170.18 77.47)
+			(xy 140.97 64.77) (xy 162.56 64.77)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "44845c09-f932-499b-879e-6f2f47f8e826")
+		(uuid "41c84033-a715-4743-a73f-481a4933ad97")
 	)
 	(wire
 		(pts
-			(xy 166.37 100.33) (xy 170.18 100.33)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "45f98058-8c17-4f97-b004-33f0200d5bd8")
-	)
-	(wire
-		(pts
-			(xy 123.19 64.77) (xy 138.43 64.77)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "45ff0877-378e-4802-b4b3-19a8e9cc32da")
-	)
-	(wire
-		(pts
-			(xy 170.18 77.47) (xy 180.34 77.47)
+			(xy 170.18 88.9) (xy 182.88 88.9)
 		)
 		(stroke
 			(width 0)
@@ -1219,27 +1000,27 @@
 	)
 	(wire
 		(pts
-			(xy 180.34 104.14) (xy 180.34 100.33)
+			(xy 128.27 114.3) (xy 138.43 114.3)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4c7c5746-8678-49fa-b7f2-fb59d566ad5d")
+		(uuid "4a2cc24f-57c0-41cc-843d-311923015e00")
 	)
 	(wire
 		(pts
-			(xy 152.4 104.14) (xy 156.21 104.14)
+			(xy 154.94 88.9) (xy 170.18 88.9)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4d1ec86e-d9af-41d7-9db5-2a7826ac7067")
+		(uuid "4d26ac4e-c465-498d-b90b-4c20adbcc741")
 	)
 	(wire
 		(pts
-			(xy 152.4 77.47) (xy 170.18 77.47)
+			(xy 129.54 88.9) (xy 135.89 88.9)
 		)
 		(stroke
 			(width 0)
@@ -1249,33 +1030,53 @@
 	)
 	(wire
 		(pts
-			(xy 133.35 77.47) (xy 152.4 77.47)
+			(xy 163.83 116.84) (xy 163.83 114.3)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "5c420ee0-64a8-436d-9576-d098d1d16cb1")
+		(uuid "50b39c49-de42-48cd-9c46-7a9d2514f056")
 	)
 	(wire
 		(pts
-			(xy 161.29 64.77) (xy 171.45 64.77)
+			(xy 161.29 114.3) (xy 161.29 116.84)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "5e35d779-3388-4d12-ac19-761b530aa992")
+		(uuid "51dcea2a-b9ea-4f31-95f6-85ac66ea031c")
 	)
 	(wire
 		(pts
-			(xy 152.4 87.63) (xy 152.4 104.14)
+			(xy 185.42 142.24) (xy 185.42 137.16)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "60c47ad3-de51-4679-a4c1-46bb83432a0b")
+		(uuid "5ada5273-20d6-4a2b-9f1b-a3ce05a57e17")
+	)
+	(wire
+		(pts
+			(xy 138.43 64.77) (xy 140.97 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6246775b-56c2-42e5-80b4-ff4fcd489fc0")
+	)
+	(wire
+		(pts
+			(xy 163.83 114.3) (xy 180.34 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "634dc4cf-499d-4926-804f-93583322b8c7")
 	)
 	(wire
 		(pts
@@ -1289,7 +1090,7 @@
 	)
 	(wire
 		(pts
-			(xy 185.42 90.17) (xy 185.42 64.77)
+			(xy 185.42 64.77) (xy 185.42 114.3)
 		)
 		(stroke
 			(width 0)
@@ -1309,6 +1110,16 @@
 	)
 	(wire
 		(pts
+			(xy 140.97 87.63) (xy 140.97 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6e324af0-064a-4e47-b0ea-52dada9fefe3")
+	)
+	(wire
+		(pts
 			(xy 127 72.39) (xy 123.19 72.39)
 		)
 		(stroke
@@ -1319,63 +1130,113 @@
 	)
 	(wire
 		(pts
-			(xy 138.43 74.93) (xy 138.43 88.9)
+			(xy 149.86 88.9) (xy 152.4 88.9)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "77959ddd-72ef-412f-8a76-6aaa6156bd96")
+		(uuid "7965b5ba-7f96-4906-8081-3886a60479b6")
 	)
 	(wire
 		(pts
-			(xy 157.48 87.63) (xy 161.29 87.63)
+			(xy 170.18 139.7) (xy 163.83 139.7)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "83cd944c-c540-4533-8760-64b2251afedb")
+		(uuid "7b1f9301-c7ea-4788-ac88-b32f63ead967")
 	)
 	(wire
 		(pts
-			(xy 133.35 74.93) (xy 133.35 77.47)
+			(xy 180.34 137.16) (xy 180.34 142.24)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "88a0e343-d1b0-42fa-90e9-77af4ae6eac6")
+		(uuid "7c351637-926e-4654-87c9-c60b4ec08d1d")
 	)
 	(wire
 		(pts
-			(xy 147.32 87.63) (xy 147.32 88.9)
+			(xy 154.94 111.76) (xy 162.56 111.76)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "9604c16e-328e-4d6a-add4-791201cbd91d")
+		(uuid "7e69c85c-1a9d-484e-87b7-0883eae1c7ea")
 	)
 	(wire
 		(pts
-			(xy 175.26 88.9) (xy 175.26 90.17)
+			(xy 180.34 142.24) (xy 182.88 142.24)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "9b186803-a4f1-4a9f-aac0-b700c48751b7")
+		(uuid "80d586bc-c2a2-4f2d-8630-543345f52208")
 	)
 	(wire
 		(pts
-			(xy 129.54 67.31) (xy 129.54 77.47)
+			(xy 158.75 139.7) (xy 158.75 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "822353b1-4622-4b8a-a57b-1700bf74c798")
+	)
+	(wire
+		(pts
+			(xy 158.75 114.3) (xy 161.29 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "87f689ec-2fdf-4d73-a316-7b666de9916d")
+	)
+	(wire
+		(pts
+			(xy 149.86 114.3) (xy 158.75 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8c6ebf43-0021-44a8-b461-2537bc684f2c")
+	)
+	(wire
+		(pts
+			(xy 171.45 140.97) (xy 161.29 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "98fb957e-4f78-4a97-9bb5-e26b40696054")
+	)
+	(wire
+		(pts
+			(xy 129.54 67.31) (xy 129.54 88.9)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "9e34300b-3834-4526-97ac-aea1cf30f4ef")
+	)
+	(wire
+		(pts
+			(xy 152.4 88.9) (xy 154.94 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a2d75258-0c97-4ca3-ad70-98b9d581bd3b")
 	)
 	(wire
 		(pts
@@ -1389,7 +1250,27 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 69.85) (xy 128.27 88.9)
+			(xy 140.97 142.24) (xy 152.4 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a7e80bde-656a-4d60-8f70-fb8863633bab")
+	)
+	(wire
+		(pts
+			(xy 163.83 114.3) (xy 161.29 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a8335850-7486-412e-9e6d-dd61e02eab5a")
+	)
+	(wire
+		(pts
+			(xy 128.27 69.85) (xy 128.27 114.3)
 		)
 		(stroke
 			(width 0)
@@ -1399,13 +1280,23 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 88.9) (xy 161.29 88.9)
+			(xy 152.4 142.24) (xy 158.75 142.24)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "ae8eabc0-2924-4a54-b8a6-8ee78842f5d9")
+		(uuid "b6d2f305-9bde-473f-a472-7f4bfbe1195b")
+	)
+	(wire
+		(pts
+			(xy 158.75 142.24) (xy 180.34 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b7681cee-6c93-4eb8-9c34-6772d34d7128")
 	)
 	(wire
 		(pts
@@ -1419,7 +1310,17 @@
 	)
 	(wire
 		(pts
-			(xy 180.34 77.47) (xy 180.34 90.17)
+			(xy 138.43 114.3) (xy 149.86 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bd12d06a-59ac-49bb-87cd-25db1806bea0")
+	)
+	(wire
+		(pts
+			(xy 182.88 88.9) (xy 182.88 114.3)
 		)
 		(stroke
 			(width 0)
@@ -1429,7 +1330,17 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 87.63) (xy 161.29 64.77)
+			(xy 158.75 114.3) (xy 158.75 116.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d2454473-0a44-44f6-ad3e-b0de026bb63d")
+	)
+	(wire
+		(pts
+			(xy 162.56 111.76) (xy 162.56 64.77)
 		)
 		(stroke
 			(width 0)
@@ -1439,73 +1350,43 @@
 	)
 	(wire
 		(pts
-			(xy 143.51 104.14) (xy 152.4 104.14)
+			(xy 182.88 137.16) (xy 182.88 142.24)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "dc18b523-8ba1-4431-bc0b-0465be16cbc5")
+		(uuid "e0f0f5f7-5aad-4aa2-a3a5-07a56185767a")
 	)
 	(wire
 		(pts
-			(xy 171.45 102.87) (xy 171.45 64.77)
+			(xy 135.89 64.77) (xy 138.43 64.77)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e03191cd-ecb4-49ef-b165-70ff26bed44e")
+		(uuid "e9f9de68-ece8-4f8b-96a3-e080a8f0be14")
 	)
 	(wire
 		(pts
-			(xy 161.29 88.9) (xy 175.26 88.9)
+			(xy 135.89 88.9) (xy 149.86 88.9)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e15e2b1f-67b3-4f43-bd8e-9dbed47a76e9")
+		(uuid "f2d20785-2f2f-4cb8-a7dd-dbf5e4154a45")
 	)
 	(wire
 		(pts
-			(xy 138.43 88.9) (xy 147.32 88.9)
+			(xy 152.4 111.76) (xy 152.4 142.24)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e992abd6-1ea9-4fee-98b2-9edb52deb39d")
-	)
-	(wire
-		(pts
-			(xy 128.27 88.9) (xy 138.43 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e9f33bf5-a171-453a-9e99-8bd4e61bf60b")
-	)
-	(wire
-		(pts
-			(xy 129.54 77.47) (xy 133.35 77.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "eb5398eb-577f-4472-a21f-5982d96a87eb")
-	)
-	(wire
-		(pts
-			(xy 161.29 100.33) (xy 161.29 102.87)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f6bd21c8-c228-4580-9a0e-31c3f0edbb16")
+		(uuid "fc944d17-3e1b-4dc1-809a-b9059812e8a3")
 	)
 	(hierarchical_label "Led_Debug_SDA"
 		(shape input)
@@ -1598,6 +1479,140 @@
 		)
 	)
 	(symbol
+		(lib_id "Tom&Jerry:RGB")
+		(at 185.42 114.3 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "32fc0d53-ac4f-4ad1-b524-618f826ae74a")
+		(property "Reference" "LED1301"
+			(at 189.23 124.4599 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "RGB"
+			(at 189.23 126.9999 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Tom&Jerry:5988G10313F"
+			(at 90.5 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.dialightsignalsandcomponents.com/598-smd-led-plcc6-2827-pkg-tricolor-r-g-b-w-black-surface-13-reel/#resources-btn"
+			(at -9.5 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "LED, Red, Green, Blue, SMD, 110 , Square, R 20mA, G 20mA, B 20mA"
+			(at 185.42 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "2.577"
+			(at -209.5 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Farnell Part Number" ""
+			(at -309.5 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Farnell Price/Stock" ""
+			(at -409.5 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Dialight"
+			(at -509.5 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "5988G10313F"
+			(at -609.5 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "39f20254-9ddc-42d7-9a98-4de28ab9fec2")
+		)
+		(pin "4"
+			(uuid "26ce45c7-8ddb-46dd-b110-f9659a1ea09b")
+		)
+		(pin "3"
+			(uuid "843a9faa-7fb3-49e0-96c0-b7bd2fa2fc3f")
+		)
+		(pin "6"
+			(uuid "6e7b032e-a30e-4300-8b55-bbf6132cf75e")
+		)
+		(pin "5"
+			(uuid "9e952886-706b-469d-be97-21eaf339f7bb")
+		)
+		(pin "2"
+			(uuid "949eb69c-f2f4-4ab5-bc88-9e2fdb446727")
+		)
+		(instances
+			(project ""
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8aa2c92d-cc8b-4d4a-ae4b-287f58b555e7"
+					(reference "LED1301")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 62.23 64.77 0)
 		(unit 1)
@@ -1664,82 +1679,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:LED_ABGR")
-		(at 152.4 82.55 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "5c439981-3f91-4f12-bcaa-13fbc11568f7")
-		(property "Reference" "D1302"
-			(at 161.29 81.2799 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "LED_ABGR"
-			(at 161.29 83.8199 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 153.67 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 153.67 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "RGB LED, anode/blue/green/red"
-			(at 152.4 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "3"
-			(uuid "8bab7447-edb1-4643-9464-582c38e52532")
-		)
-		(pin "2"
-			(uuid "e5658207-b84a-41e6-bdb2-072049b75063")
-		)
-		(pin "4"
-			(uuid "59c6e003-d137-45c3-8d0d-3d33ec9b5dc1")
-		)
-		(pin "1"
-			(uuid "d831693d-b1fa-4a7c-87aa-d95f78e5c1f8")
-		)
-		(instances
-			(project "tom&Jerry_Draft"
-				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8aa2c92d-cc8b-4d4a-ae4b-287f58b555e7"
-					(reference "D1302")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "LP5812ADSDR:LP5812ADSDR")
 		(at 82.55 62.23 0)
 		(unit 1)
@@ -1765,7 +1704,7 @@
 				)
 			)
 		)
-		(property "Footprint" "LP5812:WSON8_DSD_TEX"
+		(property "Footprint" "Tom&Jerry:WSON8_DSD_TEX"
 			(at 82.55 62.23 0)
 			(effects
 				(font
@@ -1898,93 +1837,17 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:LED_ABGR")
-		(at 138.43 69.85 90)
+		(lib_id "Tom&Jerry:RGB")
+		(at 149.86 111.76 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "9cc5d5a1-62c0-4b50-bdcd-f3673a905df6")
-		(property "Reference" "D1301"
-			(at 147.32 68.5799 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "LED_ABGR"
-			(at 147.32 71.1199 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 139.7 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 139.7 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "RGB LED, anode/blue/green/red"
-			(at 138.43 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "3"
-			(uuid "399dfacb-128f-4523-a67d-da27325c4928")
-		)
-		(pin "2"
-			(uuid "f4c89aa8-8f91-4328-9ad2-b01a025fff69")
-		)
-		(pin "4"
-			(uuid "a3c48119-0df3-402e-9ccd-9722445cd0b0")
-		)
-		(pin "1"
-			(uuid "8a166f74-7925-4d17-aa04-60f6957dad2d")
-		)
-		(instances
-			(project "tom&Jerry_Draft"
-				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8aa2c92d-cc8b-4d4a-ae4b-287f58b555e7"
-					(reference "D1301")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:LED_ABGR")
-		(at 180.34 95.25 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b2faa247-5e25-49e4-80f4-c0cba4081fd8")
-		(property "Reference" "D1304"
-			(at 190.5 93.9799 90)
+		(uuid "c096d124-ad88-406f-8f02-741dbc20dc0f")
+		(property "Reference" "LED1303"
+			(at 146.05 101.6001 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1992,8 +1855,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "LED_ABGR"
-			(at 190.5 96.5199 90)
+		(property "Value" "RGB"
+			(at 146.05 99.0601 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2001,8 +1864,28 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
-			(at 179.07 95.25 0)
+		(property "Footprint" "Tom&Jerry:5988G10313F"
+			(at 244.78 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.dialightsignalsandcomponents.com/598-smd-led-plcc6-2827-pkg-tricolor-r-g-b-w-black-surface-13-reel/#resources-btn"
+			(at 344.78 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "LED, Red, Green, Blue, SMD, 110 , Square, R 20mA, G 20mA, B 20mA"
+			(at 149.86 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2010,74 +1893,133 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 179.07 95.25 0)
+		(property "Height" "2.577"
+			(at 544.78 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 				(hide yes)
 			)
 		)
-		(property "Description" "RGB LED, anode/blue/green/red"
-			(at 180.34 95.25 0)
+		(property "Farnell Part Number" ""
+			(at 644.78 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 				(hide yes)
 			)
 		)
-		(pin "3"
-			(uuid "676a03dc-f997-498e-a1b5-9e9116f1d071")
+		(property "Farnell Price/Stock" ""
+			(at 744.78 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
 		)
-		(pin "2"
-			(uuid "307e566a-5742-47ea-acb4-186514aa0fe0")
+		(property "Manufacturer_Name" "Dialight"
+			(at 844.78 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
 		)
-		(pin "4"
-			(uuid "3c866953-16a0-4616-82ff-28838be2c161")
+		(property "Manufacturer_Part_Number" "5988G10313F"
+			(at 944.78 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
 		)
 		(pin "1"
-			(uuid "0d6eb2f6-c00b-43d9-9af9-39890305ea9e")
+			(uuid "cac977f6-0d6c-440e-92f8-d09086d3cf00")
+		)
+		(pin "4"
+			(uuid "203636bf-5ab7-455a-ae96-8fdf3af5af74")
+		)
+		(pin "3"
+			(uuid "6be7e447-13bc-4240-91bc-72bebcd27532")
+		)
+		(pin "6"
+			(uuid "a14ca1e6-0b47-476f-ab31-20809ad14e4a")
+		)
+		(pin "5"
+			(uuid "1aa2e6ad-e7ce-4ed0-941b-c5df1794edd2")
+		)
+		(pin "2"
+			(uuid "4fb1bacb-a559-4df5-8a84-362c72b203b9")
 		)
 		(instances
 			(project "tom&Jerry_Draft"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8aa2c92d-cc8b-4d4a-ae4b-287f58b555e7"
-					(reference "D1304")
+					(reference "LED1303")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Device:LED_ABGR")
-		(at 161.29 95.25 90)
+		(lib_id "Tom&Jerry:RGB")
+		(at 135.89 87.63 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "c20a9beb-9962-448b-ab73-5336b795871f")
-		(property "Reference" "D1303"
-			(at 143.51 94.488 90)
+		(fields_autoplaced yes)
+		(uuid "d381984c-ff29-4b82-b9bf-7f3176049763")
+		(property "Reference" "LED1304"
+			(at 132.08 77.4701 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
-		(property "Value" "LED_ABGR"
-			(at 143.51 97.028 90)
+		(property "Value" "RGB"
+			(at 132.08 74.9301 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
-		(property "Footprint" ""
-			(at 162.56 95.25 0)
+		(property "Footprint" "Tom&Jerry:5988G10313F"
+			(at 230.81 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.dialightsignalsandcomponents.com/598-smd-led-plcc6-2827-pkg-tricolor-r-g-b-w-black-surface-13-reel/#resources-btn"
+			(at 330.81 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "LED, Red, Green, Blue, SMD, 110 , Square, R 20mA, G 20mA, B 20mA"
+			(at 135.89 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2085,40 +2027,212 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 162.56 95.25 0)
+		(property "Height" "2.577"
+			(at 530.81 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 				(hide yes)
 			)
 		)
-		(property "Description" "RGB LED, anode/blue/green/red"
-			(at 161.29 95.25 0)
+		(property "Farnell Part Number" ""
+			(at 630.81 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 				(hide yes)
 			)
 		)
-		(pin "3"
-			(uuid "ecb26207-4bff-47ec-acde-eb123a84da51")
+		(property "Farnell Price/Stock" ""
+			(at 730.81 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
 		)
-		(pin "2"
-			(uuid "a0c1a8cc-4774-4464-b7fd-c905d8e7eef3")
+		(property "Manufacturer_Name" "Dialight"
+			(at 830.81 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
 		)
-		(pin "4"
-			(uuid "61788871-78b1-4284-9a37-cdf53744aa5d")
+		(property "Manufacturer_Part_Number" "5988G10313F"
+			(at 930.81 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
 		)
 		(pin "1"
-			(uuid "ddb59c22-56de-4621-8289-eaa6b8d236f7")
+			(uuid "bf87a45b-673d-441f-bcfe-330971e72cff")
+		)
+		(pin "4"
+			(uuid "0dd82ecf-fb5c-409c-9026-99f145c7eb09")
+		)
+		(pin "3"
+			(uuid "9a91d5b0-79e8-4f8a-a0b5-b3096f17a40c")
+		)
+		(pin "6"
+			(uuid "4784f193-e44b-4c10-9c5e-f662ffc82cc8")
+		)
+		(pin "5"
+			(uuid "71514d86-543b-46ac-b37b-60a9a86e62da")
+		)
+		(pin "2"
+			(uuid "e565ae9f-91aa-4885-ad5d-6f8d967baf27")
 		)
 		(instances
 			(project "tom&Jerry_Draft"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8aa2c92d-cc8b-4d4a-ae4b-287f58b555e7"
-					(reference "D1303")
+					(reference "LED1304")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Tom&Jerry:RGB")
+		(at 158.75 139.7 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e6561fb5-fe3e-4d35-89c9-29ed0deba5d7")
+		(property "Reference" "LED1302"
+			(at 154.94 129.5401 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "RGB"
+			(at 154.94 127.0001 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Tom&Jerry:5988G10313F"
+			(at 253.67 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.dialightsignalsandcomponents.com/598-smd-led-plcc6-2827-pkg-tricolor-r-g-b-w-black-surface-13-reel/#resources-btn"
+			(at 353.67 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "LED, Red, Green, Blue, SMD, 110 , Square, R 20mA, G 20mA, B 20mA"
+			(at 158.75 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "2.577"
+			(at 553.67 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Farnell Part Number" ""
+			(at 653.67 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Farnell Price/Stock" ""
+			(at 753.67 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Dialight"
+			(at 853.67 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "5988G10313F"
+			(at 953.67 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8f4e323e-840a-45da-b702-fd98953a64d0")
+		)
+		(pin "4"
+			(uuid "a4b33b0b-44cc-4d81-bf3f-7a87845a7490")
+		)
+		(pin "3"
+			(uuid "8f5fd59d-5edc-4101-b564-649f6f9c35d5")
+		)
+		(pin "6"
+			(uuid "c7f22535-320d-4ac8-820f-2f64b62d67ec")
+		)
+		(pin "5"
+			(uuid "95774b91-398b-48bb-97e2-9dfa4cfa23f2")
+		)
+		(pin "2"
+			(uuid "75516d62-ec75-4aa8-9e1d-3bda73be1e43")
+		)
+		(instances
+			(project "tom&Jerry_Draft"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8aa2c92d-cc8b-4d4a-ae4b-287f58b555e7"
+					(reference "LED1302")
 					(unit 1)
 				)
 			)

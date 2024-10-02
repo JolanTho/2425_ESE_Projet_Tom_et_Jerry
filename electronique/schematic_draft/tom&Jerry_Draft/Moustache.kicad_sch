@@ -4056,7 +4056,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 264.16 41.91 0)
 			(effects
 				(font
@@ -4259,7 +4259,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_LGA:LGA-14_3x5mm_P0.8mm_LayoutBorder1x6y"
+		(property "Footprint" "Tom&Jerry:PQFN80P300X500X100-14N"
 			(at 243.586 33.782 0)
 			(effects
 				(font
@@ -4364,7 +4364,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "QFN50P400X400X80-25N-D"
+		(property "Footprint" "Tom&Jerry:RTW24_2P45X2P45"
 			(at -12.37 167.64 0)
 			(effects
 				(font
@@ -4771,7 +4771,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_JST:JST_XH_S8B-XH-A_1x08_P2.50mm_Horizontal"
 			(at 248.92 128.27 0)
 			(effects
 				(font
