@@ -2379,7 +2379,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Tom&Jerry:SOIC127P600X175-8N"
+		(property "Footprint" "Tom&Jerry:XBM5210"
 			(at 119.38 107.95 0)
 			(effects
 				(font

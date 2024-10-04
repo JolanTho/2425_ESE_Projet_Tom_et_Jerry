@@ -6691,7 +6691,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Tom&Jerry:SOT95P280X125-5N"
 			(at 262.89 82.55 0)
 			(effects
 				(font
