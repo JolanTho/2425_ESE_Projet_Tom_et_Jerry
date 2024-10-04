@@ -774,28 +774,8 @@
       "Musique"
     ],
     [
-      "d8c0a3ec-14ca-4cad-91fd-ac8f1e686c9a",
-      "TOF1"
-    ],
-    [
-      "c40d37b7-0764-4612-8fde-71f5145aa67f",
-      "TOF2"
-    ],
-    [
-      "ae735875-3a05-4be6-99bc-f49af30b564b",
-      "TOF3"
-    ],
-    [
-      "f778e645-32e9-43f1-bc8d-860baaad27c0",
-      "TOF4"
-    ],
-    [
-      "7b81f31a-a9d8-47fc-b567-d77a516e32df",
-      "TOF5"
-    ],
-    [
-      "5425c982-9e7d-49f0-9acd-74ece2531576",
-      "TOF6"
+      "78d8a324-e99d-414a-8925-5d9c313f8f28",
+      "TOF8"
     ],
     [
       "8aa2c92d-cc8b-4d4a-ae4b-287f58b555e7",
@@ -828,6 +808,10 @@
     [
       "4a942aeb-0f5a-4b74-98aa-4f22cccd5125",
       "Moustache4"
+    ],
+    [
+      "ac58a218-0a22-4bab-ac1f-09a05ae798d5",
+      "TOF7"
     ]
   ],
   "text_variables": {}
