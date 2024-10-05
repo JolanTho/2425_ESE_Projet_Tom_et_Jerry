@@ -3615,12 +3615,6 @@
 		(uuid "094e7af3-6000-4fe5-8cd4-41c896b46206")
 	)
 	(junction
-		(at 107.95 168.91)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0d5b7eae-80e0-4545-8b4a-fc03f99246b4")
-	)
-	(junction
 		(at 49.53 77.47)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3919,16 +3913,6 @@
 	(no_connect
 		(at 40.64 100.33)
 		(uuid "d49189b3-5042-4caf-8a75-6c73bf745721")
-	)
-	(wire
-		(pts
-			(xy 105.41 168.91) (xy 107.95 168.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0778134c-367d-4a92-af19-9003c14d9488")
 	)
 	(wire
 		(pts
@@ -4362,16 +4346,6 @@
 	)
 	(wire
 		(pts
-			(xy 91.44 168.91) (xy 100.33 168.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "43504a4d-a957-40f4-87e9-7e3832ba550e")
-	)
-	(wire
-		(pts
 			(xy 39.37 87.63) (xy 54.61 87.63)
 		)
 		(stroke
@@ -4689,26 +4663,6 @@
 			(type default)
 		)
 		(uuid "73d37b1e-a693-48a9-9774-2022241732d8")
-	)
-	(wire
-		(pts
-			(xy 107.95 168.91) (xy 107.95 171.45)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "764e4618-e3f8-4bbd-a053-5c35a201c0b6")
-	)
-	(wire
-		(pts
-			(xy 107.95 168.91) (xy 113.03 168.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "774f120d-c63c-45d5-9660-235a2d670736")
 	)
 	(wire
 		(pts
@@ -5342,16 +5296,6 @@
 	)
 	(wire
 		(pts
-			(xy 107.95 176.53) (xy 107.95 179.07)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e0e33f18-d54b-410d-bf34-47a379bf1182")
-	)
-	(wire
-		(pts
 			(xy 87.63 80.01) (xy 92.71 80.01)
 		)
 		(stroke
@@ -5876,18 +5820,6 @@
 		)
 		(uuid "964dfada-e25e-47e7-9856-9b381fd1fd79")
 	)
-	(label "VREF"
-		(at 113.03 168.91 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "acde7d1c-2d3a-413f-bc3f-d4705d7346dc")
-	)
 	(label "BUTTON_Initial_State"
 		(at 170.18 138.43 180)
 		(fields_autoplaced yes)
@@ -6389,72 +6321,6 @@
 			(project "tom&Jerry_Draft"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/f5e23083-8df3-405c-9896-3299249742ca"
 					(reference "#PWR0504")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 107.95 179.07 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "01ddaa5d-94e6-4613-bb90-f5b2ff11914e")
-		(property "Reference" "#PWR0511"
-			(at 107.95 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 107.95 184.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 107.95 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 107.95 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 107.95 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "4636b117-f789-4f1e-9fdd-e26506de9287")
-		)
-		(instances
-			(project "tom&Jerry_Draft"
-				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/f5e23083-8df3-405c-9896-3299249742ca"
-					(reference "#PWR0511")
 					(unit 1)
 				)
 			)
@@ -8722,72 +8588,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3.3V")
-		(at 91.44 168.91 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "76f7fa3a-ee9c-470a-8511-faff6f77fca5")
-		(property "Reference" "#PWR0508"
-			(at 91.44 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 91.44 163.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 91.44 168.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 91.44 168.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 91.44 168.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "1a268ad4-313f-48dd-9c4b-2fdf618e017a")
-		)
-		(instances
-			(project "tom&Jerry_Draft"
-				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/f5e23083-8df3-405c-9896-3299249742ca"
-					(reference "#PWR0508")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C_Small")
 		(at 176.53 143.51 0)
 		(unit 1)
@@ -8922,73 +8722,6 @@
 			(project ""
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/f5e23083-8df3-405c-9896-3299249742ca"
 					(reference "C507")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:L_Small")
-		(at 102.87 168.91 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "92070d31-7263-4d21-880f-17b3ce3ada8f")
-		(property "Reference" "L503"
-			(at 102.87 165.1 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "6u"
-			(at 102.87 167.132 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Inductor_SMD:L_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
-			(at 102.87 168.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 102.87 168.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 102.87 168.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "9b628632-6a4f-4dcf-a53b-994b244b8bfc")
-		)
-		(pin "2"
-			(uuid "88a11e12-e4aa-4076-a4a5-39267ee75696")
-		)
-		(instances
-			(project "tom&Jerry_Draft"
-				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/f5e23083-8df3-405c-9896-3299249742ca"
-					(reference "L503")
 					(unit 1)
 				)
 			)
@@ -10479,76 +10212,6 @@
 			(project "tom&Jerry_Draft"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/f5e23083-8df3-405c-9896-3299249742ca"
 					(reference "#PWR0514")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C_Small")
-		(at 107.95 173.99 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e452a1f1-e508-4ed9-97a0-3a991f3e2fcf")
-		(property "Reference" "C509"
-			(at 110.49 172.7262 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "100n"
-			(at 110.49 175.2662 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 107.95 173.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 107.95 173.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 107.95 173.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "f7685165-fe89-498b-907e-a8299b74048c")
-		)
-		(pin "2"
-			(uuid "5ee66044-ba0e-4ceb-b8f4-2bfa692b21cc")
-		)
-		(instances
-			(project "tom&Jerry_Draft"
-				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/f5e23083-8df3-405c-9896-3299249742ca"
-					(reference "C509")
 					(unit 1)
 				)
 			)
