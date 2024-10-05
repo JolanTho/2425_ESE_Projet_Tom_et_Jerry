@@ -69,6 +69,10 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define BTN_STATE_INIT_Pin GPIO_PIN_13
+#define BTN_STATE_INIT_GPIO_Port GPIOC
+#define BTN_START_ROBOT_Pin GPIO_PIN_14
+#define BTN_START_ROBOT_GPIO_Port GPIOC
 #define ENCODER_1A_Pin GPIO_PIN_0
 #define ENCODER_1A_GPIO_Port GPIOA
 #define ENCODER_1B_Pin GPIO_PIN_1
@@ -93,10 +97,6 @@ void Error_Handler(void);
 #define DRIVER_FWD1_GPIO_Port GPIOB
 #define DRIVER_REV1_Pin GPIO_PIN_11
 #define DRIVER_REV1_GPIO_Port GPIOB
-#define MOUSTACHE_EXTI3_Pin GPIO_PIN_13
-#define MOUSTACHE_EXTI3_GPIO_Port GPIOB
-#define MOUSTACHE_EXTI2_Pin GPIO_PIN_14
-#define MOUSTACHE_EXTI2_GPIO_Port GPIOB
 #define MOUSTACHE_EXTI1_Pin GPIO_PIN_15
 #define MOUSTACHE_EXTI1_GPIO_Port GPIOB
 #define ENCODER_2A_Pin GPIO_PIN_6
@@ -105,6 +105,8 @@ void Error_Handler(void);
 #define I2C_MAIN_SCL_GPIO_Port GPIOA
 #define LIDAR_M_CTR_Pin GPIO_PIN_11
 #define LIDAR_M_CTR_GPIO_Port GPIOA
+#define MOUSTACHE_EXTI4_Pin GPIO_PIN_12
+#define MOUSTACHE_EXTI4_GPIO_Port GPIOA
 #define I2C_IMU_SCL_Pin GPIO_PIN_15
 #define I2C_IMU_SCL_GPIO_Port GPIOA
 #define I2C_MAIN_SDA_Pin GPIO_PIN_11
