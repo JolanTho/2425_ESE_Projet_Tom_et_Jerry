@@ -5882,7 +5882,7 @@
 		)
 		(uuid "f2af5a87-3b54-4d44-8ec4-7d29e54a1b79")
 	)
-	(hierarchical_label "MOUSTACHE_1"
+	(hierarchical_label "MOUSTACHE_4"
 		(shape input)
 		(at 40.64 133.35 180)
 		(fields_autoplaced yes)
@@ -5896,7 +5896,7 @@
 		)
 		(uuid "1c0aee79-2a20-451d-8c2d-29d00fc3a846")
 	)
-	(hierarchical_label "MOUSTACHE_3"
+	(hierarchical_label "MOUSTACHE_2"
 		(shape input)
 		(at 40.64 128.27 180)
 		(fields_autoplaced yes)
@@ -5952,7 +5952,7 @@
 		)
 		(uuid "419e447c-e9d9-41e5-887c-ee2b80b2e856")
 	)
-	(hierarchical_label "DRIVER_1_REV"
+	(hierarchical_label "DRIVER_1_FWD"
 		(shape input)
 		(at 40.64 123.19 180)
 		(fields_autoplaced yes)
@@ -5966,7 +5966,7 @@
 		)
 		(uuid "43c0e25a-35a8-41ba-9530-4453659c2ea9")
 	)
-	(hierarchical_label "DRIVER_1_FWD"
+	(hierarchical_label "DRIVER_1_REV"
 		(shape input)
 		(at 40.64 120.65 180)
 		(fields_autoplaced yes)
@@ -5980,7 +5980,7 @@
 		)
 		(uuid "46241864-8bf6-4b41-a686-124e24e29457")
 	)
-	(hierarchical_label "MOUSTACHE_4"
+	(hierarchical_label "MOUSTACHE_3"
 		(shape input)
 		(at 40.64 125.73 180)
 		(fields_autoplaced yes)
@@ -6008,7 +6008,7 @@
 		)
 		(uuid "4d8f4379-7533-4319-86d5-8bb933804686")
 	)
-	(hierarchical_label "ENCODER_1B"
+	(hierarchical_label "ENCODER_1A"
 		(shape input)
 		(at 101.6 59.69 0)
 		(fields_autoplaced yes)
@@ -6092,7 +6092,7 @@
 		)
 		(uuid "8e9226c2-619f-4e20-b30f-e9cad4214eac")
 	)
-	(hierarchical_label "MOUSTACHE_2"
+	(hierarchical_label "MOUSTACHE_1"
 		(shape input)
 		(at 40.64 130.81 180)
 		(fields_autoplaced yes)
@@ -6190,7 +6190,7 @@
 		)
 		(uuid "c95290cd-3224-41ac-90b1-d283a02630cb")
 	)
-	(hierarchical_label "ENCODER_1A"
+	(hierarchical_label "ENCODER_1B"
 		(shape input)
 		(at 101.6 57.15 0)
 		(fields_autoplaced yes)

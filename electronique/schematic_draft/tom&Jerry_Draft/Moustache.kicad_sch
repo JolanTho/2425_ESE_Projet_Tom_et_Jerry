@@ -4317,7 +4317,7 @@
 		)
 		(uuid "214fd625-255c-4762-8ea7-5b513a3570c6")
 	)
-	(label "TOF1_XSHUT"
+	(label "TOF1_GPIO1"
 		(at 44.45 152.4 180)
 		(fields_autoplaced yes)
 		(effects
@@ -4383,7 +4383,7 @@
 		)
 		(uuid "3493f2da-e641-46c1-9c30-b2f976a35992")
 	)
-	(label "TOF1_GPIO1"
+	(label "TOF1_XSHUT"
 		(at 44.45 149.86 180)
 		(fields_autoplaced yes)
 		(effects
@@ -4515,7 +4515,7 @@
 		)
 		(uuid "b84d3d03-ed0e-4810-9e9c-3d4b6d83b97b")
 	)
-	(label "LIDAR_M_EN"
+	(label "LIDAR_DEV_EN"
 		(at 66.04 173.99 270)
 		(fields_autoplaced yes)
 		(effects
@@ -4538,7 +4538,7 @@
 		)
 		(uuid "d15a04aa-257a-4760-bd0a-13d2cdb96ce8")
 	)
-	(label "TOF5_XSHUT"
+	(label "TOF4_XSHUT"
 		(at 71.12 138.43 90)
 		(fields_autoplaced yes)
 		(effects
@@ -4549,7 +4549,7 @@
 		)
 		(uuid "dfe43822-7577-4cb5-81b6-1f0b8b0c7be8")
 	)
-	(label "LIDAR_DEV_EN"
+	(label "LIDAR_M_EN"
 		(at 68.58 173.99 270)
 		(fields_autoplaced yes)
 		(effects
@@ -4572,7 +4572,7 @@
 		)
 		(uuid "e6b938e2-1e40-4b62-a265-c9eaee1e5107")
 	)
-	(label "TOF4_XSHUT"
+	(label "TOF5_XSHUT"
 		(at 76.2 138.43 90)
 		(fields_autoplaced yes)
 		(effects
