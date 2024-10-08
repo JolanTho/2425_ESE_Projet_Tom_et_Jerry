@@ -2544,7 +2544,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Tom&Jerry:Potar"
 			(at 106.68 81.28 0)
 			(effects
 				(font
