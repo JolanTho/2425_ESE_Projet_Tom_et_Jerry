@@ -37,9 +37,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.254,
-          "height": 0.508,
-          "width": 0.508
+          "drill": 0.2,
+          "height": 0.4,
+          "width": 0.4
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -178,8 +178,7 @@
         }
       ],
       "track_widths": [
-        0.0,
-        0.7
+        0.0
       ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
@@ -765,7 +764,7 @@
   "sheets": [
     [
       "d6e3fbeb-d028-494d-83bf-2e4a8b12578d",
-      "Root"
+      "Racine"
     ],
     [
       "8ac3fdfa-c0da-499a-9332-dcbe4f0edf5d",
@@ -788,8 +787,8 @@
       "Musique"
     ],
     [
-      "78d8a324-e99d-414a-8925-5d9c313f8f28",
-      "TOF8"
+      "5e2c90b4-302b-4248-9b2d-33cf1dd02f63",
+      "TOF SUD"
     ],
     [
       "8aa2c92d-cc8b-4d4a-ae4b-287f58b555e7",
@@ -798,6 +797,10 @@
     [
       "0f450893-0917-4549-b275-81de1731d970",
       "Motor Driver 1"
+    ],
+    [
+      "54b45b65-9b93-4dc4-9f52-5c68fef99c08",
+      "TOF NORD"
     ],
     [
       "e8ed1c1f-b4de-452e-87ed-c5746bc5ffa3",
@@ -822,10 +825,6 @@
     [
       "4a942aeb-0f5a-4b74-98aa-4f22cccd5125",
       "Moustache4"
-    ],
-    [
-      "ac58a218-0a22-4bab-ac1f-09a05ae798d5",
-      "TOF7"
     ]
   ],
   "text_variables": {}

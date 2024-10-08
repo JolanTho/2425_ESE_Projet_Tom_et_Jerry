@@ -1488,7 +1488,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "32fc0d53-ac4f-4ad1-b524-618f826ae74a")
-		(property "Reference" "LED804"
+		(property "Reference" "LED803"
 			(at 189.23 124.4599 90)
 			(effects
 				(font
@@ -1606,7 +1606,7 @@
 		(instances
 			(project ""
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8aa2c92d-cc8b-4d4a-ae4b-287f58b555e7"
-					(reference "LED804")
+					(reference "LED803")
 					(unit 1)
 				)
 			)
@@ -1622,7 +1622,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4b4815c6-5453-4407-8e40-6b3226d96a23")
-		(property "Reference" "#PWR0802"
+		(property "Reference" "#PWR0803"
 			(at 62.23 71.12 0)
 			(effects
 				(font
@@ -1672,7 +1672,7 @@
 		(instances
 			(project "tom&Jerry_Draft"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8aa2c92d-cc8b-4d4a-ae4b-287f58b555e7"
-					(reference "#PWR0802")
+					(reference "#PWR0803")
 					(unit 1)
 				)
 			)
@@ -1779,7 +1779,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6c105398-d22f-4921-b4e6-aa235bdd7556")
-		(property "Reference" "#PWR0803"
+		(property "Reference" "#PWR0802"
 			(at 129.54 62.23 0)
 			(effects
 				(font
@@ -1830,7 +1830,7 @@
 		(instances
 			(project "tom&Jerry_Draft"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8aa2c92d-cc8b-4d4a-ae4b-287f58b555e7"
-					(reference "#PWR0803")
+					(reference "#PWR0802")
 					(unit 1)
 				)
 			)
@@ -2114,7 +2114,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e6561fb5-fe3e-4d35-89c9-29ed0deba5d7")
-		(property "Reference" "LED803"
+		(property "Reference" "LED804"
 			(at 154.94 129.5401 90)
 			(effects
 				(font
@@ -2232,7 +2232,7 @@
 		(instances
 			(project "tom&Jerry_Draft"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8aa2c92d-cc8b-4d4a-ae4b-287f58b555e7"
-					(reference "LED803")
+					(reference "LED804")
 					(unit 1)
 				)
 			)
