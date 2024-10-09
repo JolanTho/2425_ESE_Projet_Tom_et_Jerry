@@ -23,7 +23,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "stdio.h"
-extern int irq_TX_completed;
+extern int irq_TX1_completed;
+extern int irq_TX2_completed;
 extern uint8_t* Lidar_byte;
 /* USER CODE END Includes */
 
@@ -58,8 +59,8 @@ extern uint8_t* Lidar_byte;
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
-extern DMA_HandleTypeDef hdma_usart1_rx;
 extern DMA_HandleTypeDef hdma_usart1_tx;
+extern DMA_HandleTypeDef hdma_usart1_rx;
 extern DMA_HandleTypeDef hdma_usart2_tx;
 extern UART_HandleTypeDef huart1;
 /* USER CODE BEGIN EV */
@@ -260,20 +261,21 @@ void USART1_IRQHandler(void)
 }
 
 /* USER CODE BEGIN 1 */
+uint8_t temp[50];
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
 	if (huart==&huart1){ //Lorsque l'on recoit la réponse en DMA
+/*
 		//Normalement en DMA
-		printf(">%hhn\r\n",(uint8_t*)Lidar_byte);
+		uint8_t len = snprintf((char*)temp,50,">%02X\r\n",(uint8_t*)Lidar_byte);
+        HAL_UART_Transmit_DMA(&huart2, temp, len);
 		//HAL_UART_Receive_DMA(&huart1, (uint8_t*)Lidar_byte, 2);
+*/
 	}
 }
 void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart){
-	if (huart==&huart1){
-		printf("Command send: DONE\r\n");
-	}
 	if (huart==&huart2){
 		//Lorsque l'on finit l'envoie du message vers le terminal
-		irq_TX_completed=1;
+		irq_TX2_completed=1;
 	}
 
 }

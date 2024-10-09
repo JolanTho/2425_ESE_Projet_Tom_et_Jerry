@@ -26,8 +26,10 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "stdio.h"
-uint8_t* Lidar_byte[2];
-int irq_TX_completed = 0;
+uint8_t Lidar_byte;
+int irq_TX1_completed = 0;
+int irq_TX2_completed = 0;
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -63,8 +65,8 @@ void SystemClock_Config(void);
 int _write(int file, char*ptr , int len){
 	(void)file;
 	HAL_UART_Transmit_DMA(&huart2, (uint8_t*)ptr, len);
-//	while(irq_TX_completed!=1);
-	irq_TX_completed=0;
+	//while(irq_TX2_completed!=1);
+	irq_TX2_completed=0;
 	return len;
 }
 
@@ -111,18 +113,19 @@ int main(void)
 	HAL_GPIO_WritePin(LIDAR_DEV_EN_GPIO_Port,LIDAR_DEV_EN_Pin, GPIO_PIN_SET);
 	//__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_2,0);
 
-	uint8_t command[2] = {0xA5,0x90};
+	uint8_t command[2] = {0xA5,0x60};
 
 	printf("====== START LIDAR =====\r\n");
-	HAL_UART_Transmit_DMA(&huart1, (uint8_t*)command, sizeof(command));
+	HAL_UART_Transmit(&huart1, command, 2,HAL_MAX_DELAY);
 
-	HAL_UART_Receive_DMA(&huart1, (uint8_t*)Lidar_byte, 2);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 	while (1)
 	{
+		HAL_UART_Receive(&huart1, (uint8_t *)Lidar_byte, 1,HAL_MAX_DELAY);
+		printf(">%u\r\n",Lidar_byte);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
