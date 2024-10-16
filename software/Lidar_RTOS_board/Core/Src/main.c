@@ -26,9 +26,9 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "stdio.h"
-uint8_t Lidar_byte;
-int irq_TX1_completed = 0;
-int irq_TX2_completed = 0;
+#include "LIDAR.h"
+int irq_RX = 0;
+uint8_t Lidar_byte = 0;
 
 /* USER CODE END Includes */
 
@@ -61,13 +61,18 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+/*
 int _write(int file, char*ptr , int len){
 	(void)file;
 	HAL_UART_Transmit_DMA(&huart2, (uint8_t*)ptr, len);
 	//while(irq_TX2_completed!=1);
-	irq_TX2_completed=0;
+	//irq_TX2_completed=0;
 	return len;
+}*/
+
+int __io_putchar(char ch){
+	HAL_UART_Transmit(&huart2, (uint8_t*)&ch, 1,HAL_MAX_DELAY);
+	return ch;
 }
 
 /* USER CODE END 0 */
@@ -113,19 +118,37 @@ int main(void)
 	HAL_GPIO_WritePin(LIDAR_DEV_EN_GPIO_Port,LIDAR_DEV_EN_Pin, GPIO_PIN_SET);
 	//__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_2,0);
 
-	uint8_t command[2] = {0xA5,0x60};
+	uint8_t command[2] = {0xA5,0x90};
+	LIDAR_MSG lidar_msg;
+	GET_HEALTH_T* content;
+	lidar_msg.CONTENT = (GET_HEALTH_T*)content;
 
+
+	HAL_Delay(2000);
 	printf("====== START LIDAR =====\r\n");
+
 	HAL_UART_Transmit(&huart1, command, 2,HAL_MAX_DELAY);
+	HAL_UART_Receive_IT(&huart1, (uint8_t *)&Lidar_byte, 1);
 
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+	extern int i_RX;
+	int LIDAR_LENGTH = 20+7;
+	extern uint8_t tab[20+7];
 	while (1)
 	{
-		HAL_UART_Receive(&huart1, (uint8_t *)Lidar_byte, 1,HAL_MAX_DELAY);
-		printf(">%u\r\n",Lidar_byte);
+		if(i_RX==LIDAR_LENGTH){
+			for (int i=0;i<LIDAR_LENGTH;i++){
+			printf(">%02X\r\n",tab[i]);
+			i_RX=0;
+			}
+		}
+
+		/*HAL_UART_Receive(&huart1, (uint8_t *)&Lidar_byte, 1,100);
+		printf(">%02X\r\n",Lidar_byte);
+*/
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
