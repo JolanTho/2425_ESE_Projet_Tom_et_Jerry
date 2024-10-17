@@ -6514,7 +6514,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOT95P237X112-3N"
+		(property "Footprint" "Tom&Jerry:SOT95P237X112-3N"
 			(at 264.16 -18.72 0)
 			(effects
 				(font

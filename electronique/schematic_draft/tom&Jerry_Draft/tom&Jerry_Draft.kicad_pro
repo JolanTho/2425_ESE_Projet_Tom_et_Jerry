@@ -60,12 +60,6 @@
       ],
       "drc_exclusions": [
         "clearance|109016933|63333067|7a60b65f-0d1d-4726-81be-b59833412c5e|00b5f1cf-4787-409a-863e-146b55bc7e94",
-        "clearance|112220000|63263000|4e0f957c-86dc-4577-9271-8b5b2b20fef8|fe26ee15-b0a9-4250-aef3-f281ddbc528e",
-        "clearance|112220000|63913000|5e2d9e44-cae4-49d1-8744-2a11d9b694ea|fe26ee15-b0a9-4250-aef3-f281ddbc528e",
-        "clearance|112220000|64563000|5e131916-1141-498e-8c15-87136a4c8af6|fe26ee15-b0a9-4250-aef3-f281ddbc528e",
-        "clearance|113770000|63263000|b896123c-1906-4603-aaab-a8dabc0be809|fe26ee15-b0a9-4250-aef3-f281ddbc528e",
-        "clearance|113770000|64563000|766f6f13-f74b-4ee8-8f01-d9171be8df9c|fe26ee15-b0a9-4250-aef3-f281ddbc528e",
-        "clearance|113770000|65213000|39145c40-ed49-4108-9f6e-41c922f70b69|fe26ee15-b0a9-4250-aef3-f281ddbc528e",
         "clearance|114905000|90430000|5a9ca66d-2b36-41e6-904a-12ce3bb63805|b7566036-5607-481f-b401-e154ef91f637",
         "clearance|115095000|88410000|7d8a1232-6ef9-41d8-82e7-6d8c3427aa99|aebe1907-96d9-4d5b-ac58-4a7007ed1a84",
         "clearance|115705000|90430000|b7566036-5607-481f-b401-e154ef91f637|906418e2-90ab-4707-a881-ef37d63e5e84",
@@ -89,12 +83,6 @@
         "clearance|90505000|80870000|ae4f765c-ebdd-4b70-b5ce-3f059182a3bc|1c2128f7-cdf2-4f9f-91d3-788362816030",
         "clearance|90995000|83250000|b3f5ec99-073d-44f2-86ac-5a114269e00a|847a9a39-3c76-4c0b-9990-683e8e7e560f",
         "clearance|91155000|80870000|46a3b502-59f5-458b-826d-4015382ca24f|ae4f765c-ebdd-4b70-b5ce-3f059182a3bc",
-        "solder_mask_bridge|112220000|63263000|4e0f957c-86dc-4577-9271-8b5b2b20fef8|fe26ee15-b0a9-4250-aef3-f281ddbc528e",
-        "solder_mask_bridge|112220000|63913000|5e2d9e44-cae4-49d1-8744-2a11d9b694ea|fe26ee15-b0a9-4250-aef3-f281ddbc528e",
-        "solder_mask_bridge|112220000|64563000|5e131916-1141-498e-8c15-87136a4c8af6|fe26ee15-b0a9-4250-aef3-f281ddbc528e",
-        "solder_mask_bridge|113770000|63263000|b896123c-1906-4603-aaab-a8dabc0be809|fe26ee15-b0a9-4250-aef3-f281ddbc528e",
-        "solder_mask_bridge|113770000|64563000|766f6f13-f74b-4ee8-8f01-d9171be8df9c|fe26ee15-b0a9-4250-aef3-f281ddbc528e",
-        "solder_mask_bridge|113770000|65213000|39145c40-ed49-4108-9f6e-41c922f70b69|fe26ee15-b0a9-4250-aef3-f281ddbc528e",
         "solder_mask_bridge|114905000|90430000|5a9ca66d-2b36-41e6-904a-12ce3bb63805|b7566036-5607-481f-b401-e154ef91f637",
         "solder_mask_bridge|115095000|88410000|7d8a1232-6ef9-41d8-82e7-6d8c3427aa99|aebe1907-96d9-4d5b-ac58-4a7007ed1a84",
         "solder_mask_bridge|115705000|90430000|b7566036-5607-481f-b401-e154ef91f637|906418e2-90ab-4707-a881-ef37d63e5e84",
@@ -104,14 +92,10 @@
         "solder_mask_bridge|118105000|90430000|0e9f7b27-b94d-4cfb-be7a-1890822046c2|1f16347f-c2cc-4e81-a74f-76d67eb438ce",
         "solder_mask_bridge|118295000|88410000|b203bf04-2682-4580-b32a-1941da7ca1d4|7a2cebd8-9090-4fcf-8f97-4a5c20cd5698",
         "starved_thermal|107900000|71440000|7933cc7c-9d95-4e44-a821-2e8ea51109ed|08555c7a-d4ef-4d19-a0a8-9280164bb157|F.Cu",
-        "starved_thermal|116150000|110050000|7933cc7c-9d95-4e44-a821-2e8ea51109ed|8bf96799-96d5-4614-8f54-2b2b713d96cd|F.Cu",
-        "starved_thermal|120720000|102100000|7933cc7c-9d95-4e44-a821-2e8ea51109ed|5be56dc1-2126-41c8-af90-f48501955eab|F.Cu",
         "starved_thermal|76600000|77900000|f5389945-01ac-4583-a62a-4b97610d082a|43cb4e7e-da08-411f-8c3c-ea8abbdc9f2a|In2.Cu",
-        "starved_thermal|90325000|65974937|7933cc7c-9d95-4e44-a821-2e8ea51109ed|1960bbea-a96c-485c-b3cd-5a8fa988f137|F.Cu",
         "starved_thermal|91400000|82580000|7933cc7c-9d95-4e44-a821-2e8ea51109ed|847a9a39-3c76-4c0b-9990-683e8e7e560f|F.Cu",
         "starved_thermal|92000000|60700000|7933cc7c-9d95-4e44-a821-2e8ea51109ed|fca6ec9a-449c-41a7-8e02-8f4f72f85b4f|B.Cu",
         "starved_thermal|92000000|60700000|7933cc7c-9d95-4e44-a821-2e8ea51109ed|fca6ec9a-449c-41a7-8e02-8f4f72f85b4f|F.Cu",
-        "starved_thermal|93550000|68200000|7933cc7c-9d95-4e44-a821-2e8ea51109ed|dd8905ae-35e1-4e72-bb7c-dcce73d72826|F.Cu",
         "starved_thermal|98000000|65165000|7933cc7c-9d95-4e44-a821-2e8ea51109ed|77f0b55f-ba66-4e71-8e0e-385386d2fbef|F.Cu"
       ],
       "meta": {
@@ -810,6 +794,14 @@
       "version": 1
     },
     "net_format_name": "",
+    "ngspice": {
+      "fix_include_paths": true,
+      "meta": {
+        "version": 0
+      },
+      "model_mode": 4,
+      "workbook_filename": ""
+    },
     "page_layout_descr_file": "",
     "plot_directory": "",
     "spice_current_sheet_as_root": false,
@@ -873,6 +865,10 @@
     [
       "a23499ad-e269-4d60-8a7e-fdf0e52e9311",
       "Moustache1"
+    ],
+    [
+      "fed7232b-2307-4861-a783-a0c58bcc6f9b",
+      "Battery Charging LEDs"
     ],
     [
       "e9c92678-eab0-4500-8304-4b18da6b06b1",
