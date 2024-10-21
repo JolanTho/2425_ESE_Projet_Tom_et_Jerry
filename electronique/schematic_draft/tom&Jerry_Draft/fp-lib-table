@@ -1,5 +1,0 @@
-(fp_lib_table
-  (version 7)
-  (lib (name "TestPoint")(type "KiCad")(uri "/Users/romingo/Desktop/ENSEA/3A/PROJET/RESSOURCES/TestPoint.pretty")(options "")(descr ""))
-  (lib (name "LP5812")(type "KiCad")(uri "/Users/romingo/Desktop/ENSEA/3A/PROJET/RESSOURCES/ul_LP5812ADSDR/KiCADv6/LP5812.pretty")(options "")(descr ""))
-)

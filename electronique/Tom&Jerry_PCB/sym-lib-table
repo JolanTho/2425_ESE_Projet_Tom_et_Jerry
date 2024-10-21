@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "Tom&Jerry")(type "KiCad")(uri "${KIPRJMOD}/Tom&Jerry.kicad_sym")(options "")(descr ""))
+)
