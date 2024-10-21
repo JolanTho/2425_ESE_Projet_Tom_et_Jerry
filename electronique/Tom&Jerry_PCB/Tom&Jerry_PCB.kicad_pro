@@ -60,18 +60,13 @@
       ],
       "drc_exclusions": [
         "clearance|109016933|63333067|7a60b65f-0d1d-4726-81be-b59833412c5e|00b5f1cf-4787-409a-863e-146b55bc7e94",
-        "clearance|114905000|90430000|5a9ca66d-2b36-41e6-904a-12ce3bb63805|b7566036-5607-481f-b401-e154ef91f637",
         "clearance|115095000|88410000|7d8a1232-6ef9-41d8-82e7-6d8c3427aa99|aebe1907-96d9-4d5b-ac58-4a7007ed1a84",
-        "clearance|115705000|90430000|b7566036-5607-481f-b401-e154ef91f637|906418e2-90ab-4707-a881-ef37d63e5e84",
-        "clearance|116505000|90430000|906418e2-90ab-4707-a881-ef37d63e5e84|e5e8ebd1-5b93-4fdd-b930-8dcc1b20948e",
         "clearance|116550000|100400000|7fcf2717-2c14-4440-975c-0fcff4971ae7|9823ed79-7531-47fb-9f95-67cafddb9ff7",
         "clearance|116650000|92000000|f24c29c0-f5b4-484c-a4fe-93d7d930f81d|eaaa598c-0435-45c8-acc9-b6a8d0313e31",
         "clearance|116695000|88410000|b08b4097-838b-4f5d-9e27-42dc9b24a5b2|34fa9232-9535-463d-a4e1-d270d2346428",
         "clearance|117495000|88410000|7a2cebd8-9090-4fcf-8f97-4a5c20cd5698|b08b4097-838b-4f5d-9e27-42dc9b24a5b2",
-        "clearance|118105000|90430000|0e9f7b27-b94d-4cfb-be7a-1890822046c2|1f16347f-c2cc-4e81-a74f-76d67eb438ce",
         "clearance|118295000|88410000|b203bf04-2682-4580-b32a-1941da7ca1d4|7a2cebd8-9090-4fcf-8f97-4a5c20cd5698",
         "clearance|82734900|102710800|8dfdd79e-c78e-460a-a5c4-93c768e18dfe|187da60a-3d49-4e9a-af9d-649930637c03",
-        "clearance|82734900|104793600|0296746f-bc0e-46ff-9aaf-285a15ed1bc8|187da60a-3d49-4e9a-af9d-649930637c03",
         "clearance|83384898|102710800|d8d7281c-dd6e-4778-9df3-733a6aa85543|187da60a-3d49-4e9a-af9d-649930637c03",
         "clearance|84034900|102710800|94012f78-faed-4c6d-98df-82d1ae49c680|187da60a-3d49-4e9a-af9d-649930637c03",
         "clearance|84034900|104793600|aa5b2ec2-57fb-403f-bc57-14bf34b2194a|187da60a-3d49-4e9a-af9d-649930637c03",
@@ -509,6 +504,23 @@
         "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.0,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "Specifique",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.2,
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
+        "wire_width": 6
       }
     ],
     "meta": {
@@ -516,7 +528,20 @@
     },
     "net_colors": null,
     "netclass_assignments": null,
-    "netclass_patterns": []
+    "netclass_patterns": [
+      {
+        "netclass": "Specifique",
+        "pattern": "GND"
+      },
+      {
+        "netclass": "Specifique",
+        "pattern": "+3.3V"
+      },
+      {
+        "netclass": "Specifique",
+        "pattern": "+5V"
+      }
+    ]
   },
   "pcbnew": {
     "last_paths": {
