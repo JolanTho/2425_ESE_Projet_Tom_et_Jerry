@@ -13,6 +13,7 @@
 
 ## Présentation
 >Bienvenue dans la partie éléctronique du projet, dans ce dossier sont présent tous les fichiers de conception du PCB KiCad ainsi que tous les fichiers de fabrications Gerber.  
+Deux fichiers sont actuellement dans le directory. Tom&Jerry_PCB pour le PCB principal et TOF_PCB pour le secondaire.   
 Il est détaillé chaque composante du Schématique/PCb dans ce Read.me  
 
 ---
@@ -26,7 +27,7 @@ Il est détaillé chaque composante du Schématique/PCb dans ce Read.me
 
 **Recharge de batterie**
 
-[[Capture]]
+[Recharge](../screenshot/electronique/usbC.png)
 
 >Pour la recharge de la batterie nous prévoyons deux connecteurs : Type-C et Bornier afin de pouvoir recharger la batterie par alimentation stabilisée de labo ainsi que par cable USB-C (Plus difficile à mettre en oeuvre) [Documentation1](../datasheet/PPM_BMS.pdf).  
 
@@ -44,7 +45,7 @@ Il est détaillé chaque composante du Schématique/PCb dans ce Read.me
 >* EXP : Ground (Pad thermique)  
 >* GND : Ground  
 
-[[Capture]]
+[CanalP](../screenshot/electronique/canalP.png)
 
 >On a un transistor à canal P pour bloquer la charge du circuit par batterie lorsqu'une tension vient du bornier ou de l'USB-C. De plus on ajoute des condensateur (C...) pour eviter les retours de courant dû a des freinage des roues dans la résistance et donc dans l'alimentation derrière [(Doc)](../datasheet/slua376.pdf).    
 
@@ -160,7 +161,7 @@ Il est détaillé chaque composante du Schématique/PCb dans ce Read.me
 ![TOF](../screenshot/electronique/Moustache.png)
 
 >[!Note]
->Capteurs TOF **[VL53L1X](../datasheet/VL53L1X.pdf):   
+>**Capteurs TOF [VL53L1X](../datasheet/VL53L1X.pdf):**   
 >* AVDDVCSEL : VCSEL tension d'alimentation  
 >* AVSSVCSEL : VCSEL Ground    
 >* GND1 - GND4 : Ground  
@@ -178,7 +179,7 @@ Il est détaillé chaque composante du Schématique/PCb dans ce Read.me
 ![Lidar](../screenshot/electronique/Moustache.png)
 
 >[!Note]
->Capteurs TOF **[YDLidar X2](../datasheet/YDLIDARX2.pdf):    
+>**Capteurs TOF [YDLidar X2](../datasheet/YDLIDARX2.pdf):**    
 >* M_CTR : Entrée de la PWM du moteur du Lidar    
 >* TX : Sortie UART avec les données du LIDAR      
 >* GND : Ground    
@@ -187,7 +188,7 @@ Il est détaillé chaque composante du Schématique/PCb dans ce Read.me
  ![IMU](../screenshot/electronique/IMU.png)
 
 >[!Note]
->IMU **[ADXL343](../datasheet/ADXL343.pdf):    
+>**IMU [ADXL343](../datasheet/ADXL343.pdf):**   
 >* Vs : Tension d'alimentation du composant   
 >* GND : Ground   
 >* VDD : Tension d'alimentation de l'interface digitale  
@@ -242,8 +243,8 @@ Il est détaillé chaque composante du Schématique/PCb dans ce Read.me
 
 >[!Note]
 >**Ampli de Classe D [PAM8302AAY](../datasheet/PAM8302A.pdf)**  
->* IN + : Entrée DAC de la STM +  
->* IN - : Entrée DAC de la STM -   
+>* IN + : Entrée DAC  +  
+>* IN - : Entrée DAC  -   
 >* SD : Doit rester sur HIGh pour éviter qu'il soit shutdown (donc relié à 3.3v)  
 >* VDD : Alimentation du composant  
 >* OUT + : Sortie + du haut parleur   
@@ -251,3 +252,8 @@ Il est détaillé chaque composante du Schématique/PCb dans ce Read.me
 
 >[!Important]
 >Les deux capacité de découplage ainsi que les deux ferrites sont celles conforme à la documentation afin de réduire les interférence electromagnétique à partir de 1MHz et au dela. Ceci est parfait puisque ce composant est à coté de composant sensible comme la STM...  
+
+## Auteurs : 
+>* Jolan Thomasset (jolan.thomasset@ensea.fr)  
+>* Romain Pace   (romain.pace@ensea.fr)  
+>* Rémi Weidle   (remi.weidle@ensea.fr)  
