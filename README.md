@@ -68,7 +68,7 @@
 >* **/src/** : Contient le code source du projet.  
 >* **/docs/** : Documentation du code et guide d’utilisation.  
 >* **/scripts/** : Scripts auxiliaires pour tester ou déployer le logiciel.  
-
+>* **[Read.me](software/README.md)**
 ---
 
 ### 4. Stratégies
