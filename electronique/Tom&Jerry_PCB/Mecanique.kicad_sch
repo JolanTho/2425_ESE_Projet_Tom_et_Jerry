@@ -262,7 +262,7 @@
 			(uuid "0aaf1e45-ab72-42ae-868b-2ed46dabbbf4")
 		)
 		(instances
-			(project ""
+			(project "Tom&Jerry_PCB"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/ea2dc0aa-c072-4ac8-b7d3-16b9d53a67a9"
 					(reference "#PWR01201")
 					(unit 1)
@@ -328,7 +328,7 @@
 			(uuid "7f0f796a-9231-40a0-a375-38ca4e65ad57")
 		)
 		(instances
-			(project "tom&Jerry_Draft"
+			(project "Tom&Jerry_PCB"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/ea2dc0aa-c072-4ac8-b7d3-16b9d53a67a9"
 					(reference "#PWR01204")
 					(unit 1)
@@ -404,7 +404,7 @@
 			(uuid "c588c4bb-ee0e-4ca7-87d6-6474cb5f61b0")
 		)
 		(instances
-			(project "tom&Jerry_Draft"
+			(project "Tom&Jerry_PCB"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/ea2dc0aa-c072-4ac8-b7d3-16b9d53a67a9"
 					(reference "H1203")
 					(unit 1)
@@ -470,7 +470,7 @@
 			(uuid "aa98b369-951b-4b18-b76a-6161269cb727")
 		)
 		(instances
-			(project "tom&Jerry_Draft"
+			(project "Tom&Jerry_PCB"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/ea2dc0aa-c072-4ac8-b7d3-16b9d53a67a9"
 					(reference "#PWR01202")
 					(unit 1)
@@ -536,7 +536,7 @@
 			(uuid "8022d3ce-632b-4e45-bcd8-0323714f95c4")
 		)
 		(instances
-			(project "tom&Jerry_Draft"
+			(project "Tom&Jerry_PCB"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/ea2dc0aa-c072-4ac8-b7d3-16b9d53a67a9"
 					(reference "#PWR01203")
 					(unit 1)
@@ -612,7 +612,7 @@
 			(uuid "766a0a6b-715c-44c4-ac34-b9bc6b66fdf3")
 		)
 		(instances
-			(project ""
+			(project "Tom&Jerry_PCB"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/ea2dc0aa-c072-4ac8-b7d3-16b9d53a67a9"
 					(reference "H1201")
 					(unit 1)
@@ -688,7 +688,7 @@
 			(uuid "a3044d7e-080e-4418-9393-85976f61c238")
 		)
 		(instances
-			(project "tom&Jerry_Draft"
+			(project "Tom&Jerry_PCB"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/ea2dc0aa-c072-4ac8-b7d3-16b9d53a67a9"
 					(reference "H1204")
 					(unit 1)
@@ -764,7 +764,7 @@
 			(uuid "17880ca9-0ec6-4c7f-911d-571849427075")
 		)
 		(instances
-			(project "tom&Jerry_Draft"
+			(project "Tom&Jerry_PCB"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/ea2dc0aa-c072-4ac8-b7d3-16b9d53a67a9"
 					(reference "H1202")
 					(unit 1)

@@ -1979,16 +1979,22 @@
 		)
 	)
 	(junction
-		(at 243.84 39.37)
+		(at 243.84 30.48)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "21cb6efe-5769-478c-8648-4906ba03e61c")
+		(uuid "7366758b-0d24-48c7-8a0d-85458b0ea862")
 	)
 	(junction
-		(at 248.92 39.37)
+		(at 248.92 41.91)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "e5b631dc-ab56-481a-bb2f-f3c7d039bb6f")
+		(uuid "7d7e6f0e-1fcd-4c2a-9236-8da0eafb70f0")
+	)
+	(junction
+		(at 243.84 33.02)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "960ca65c-fd1b-4c66-94a8-54c6cd6f9113")
 	)
 	(junction
 		(at 90.17 152.4)
@@ -2068,7 +2074,17 @@
 	)
 	(wire
 		(pts
-			(xy 238.76 44.45) (xy 238.76 39.37)
+			(xy 231.14 33.02) (xy 243.84 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "14ac5d7f-5d6d-45d9-95af-8925640bf6b2")
+	)
+	(wire
+		(pts
+			(xy 238.76 30.48) (xy 238.76 44.45)
 		)
 		(stroke
 			(width 0)
@@ -2095,16 +2111,6 @@
 			(type default)
 		)
 		(uuid "234f8ff1-7afa-48c5-ba03-8364fefc70ed")
-	)
-	(wire
-		(pts
-			(xy 248.92 39.37) (xy 248.92 44.45)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2552e25a-42b6-4e69-8238-0cb8c2a1d694")
 	)
 	(wire
 		(pts
@@ -2188,6 +2194,36 @@
 	)
 	(wire
 		(pts
+			(xy 243.84 33.02) (xy 243.84 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5227ce56-d004-4840-ac4b-a28ce0dfbd2a")
+	)
+	(wire
+		(pts
+			(xy 238.76 30.48) (xy 243.84 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "52bd0981-1415-400c-b424-4d4600507f2b")
+	)
+	(wire
+		(pts
+			(xy 273.05 41.91) (xy 273.05 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5400846d-559c-4393-9685-8c07ab077d0b")
+	)
+	(wire
+		(pts
 			(xy 90.17 156.21) (xy 101.6 156.21)
 		)
 		(stroke
@@ -2208,6 +2244,16 @@
 	)
 	(wire
 		(pts
+			(xy 243.84 30.48) (xy 243.84 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "61b283c0-3100-4cec-b71e-65bac28dc6d4")
+	)
+	(wire
+		(pts
 			(xy 67.31 138.43) (xy 67.31 140.97)
 		)
 		(stroke
@@ -2225,6 +2271,16 @@
 			(type default)
 		)
 		(uuid "66bd9f43-1ecc-4800-ac1e-65fe1248e4f2")
+	)
+	(wire
+		(pts
+			(xy 243.84 30.48) (xy 248.92 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "67c76985-c69f-4164-965d-486637f61e67")
 	)
 	(wire
 		(pts
@@ -2278,16 +2334,6 @@
 	)
 	(wire
 		(pts
-			(xy 238.76 39.37) (xy 243.84 39.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7e973f7e-4e6c-4d24-aa45-3c3645c71e88")
-	)
-	(wire
-		(pts
 			(xy 74.93 176.53) (xy 74.93 171.45)
 		)
 		(stroke
@@ -2318,13 +2364,13 @@
 	)
 	(wire
 		(pts
-			(xy 243.84 36.83) (xy 243.84 39.37)
+			(xy 243.84 29.21) (xy 243.84 30.48)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "84984998-216a-4596-b4cd-1b9cb5a0ca14")
+		(uuid "88f040c9-c15b-4e5c-bdfd-bcc00463eac5")
 	)
 	(wire
 		(pts
@@ -2388,16 +2434,6 @@
 	)
 	(wire
 		(pts
-			(xy 243.84 44.45) (xy 243.84 39.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a44d5336-fe5b-45e9-9fd3-9579387d94fb")
-	)
-	(wire
-		(pts
 			(xy 33.02 153.67) (xy 46.99 153.67)
 		)
 		(stroke
@@ -2418,6 +2454,16 @@
 	)
 	(wire
 		(pts
+			(xy 248.92 41.91) (xy 248.92 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a9855f0f-2cd5-4938-bd64-7a87f659fb05")
+	)
+	(wire
+		(pts
 			(xy 64.77 138.43) (xy 64.77 140.97)
 		)
 		(stroke
@@ -2425,6 +2471,16 @@
 			(type default)
 		)
 		(uuid "ab339d4e-ca9a-4316-9b9c-ce6d8d86509f")
+	)
+	(wire
+		(pts
+			(xy 248.92 30.48) (xy 248.92 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ae3dfc17-192e-43c5-bfa3-26a1c46b0e9a")
 	)
 	(wire
 		(pts
@@ -2445,6 +2501,16 @@
 			(type default)
 		)
 		(uuid "b3b4d342-df27-4931-82ee-1b166cf955e3")
+	)
+	(wire
+		(pts
+			(xy 231.14 38.1) (xy 231.14 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b5d883ee-2387-46b8-ac09-8c2e53135c93")
 	)
 	(wire
 		(pts
@@ -2498,16 +2564,6 @@
 	)
 	(wire
 		(pts
-			(xy 243.84 39.37) (xy 248.92 39.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e1f5bfe6-fe80-43f7-82c8-372f02b73f48")
-	)
-	(wire
-		(pts
 			(xy 63.5 173.99) (xy 62.23 173.99)
 		)
 		(stroke
@@ -2528,7 +2584,7 @@
 	)
 	(wire
 		(pts
-			(xy 248.92 39.37) (xy 264.16 39.37)
+			(xy 248.92 41.91) (xy 273.05 41.91)
 		)
 		(stroke
 			(width 0)
@@ -3351,7 +3407,7 @@
 			(uuid "221dbda6-d541-4422-9656-65037fc72a35")
 		)
 		(instances
-			(project "tom&Jerry_Draft"
+			(project "Tom&Jerry_PCB"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/ac7f7f04-c418-4551-b204-a999b9c3c440"
 					(reference "#PWR0304")
 					(unit 1)
@@ -3419,7 +3475,7 @@
 			(uuid "581a898f-d93f-4ee4-a7db-5f26e1a48997")
 		)
 		(instances
-			(project ""
+			(project "Tom&Jerry_PCB"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/ac7f7f04-c418-4551-b204-a999b9c3c440"
 					(reference "#PWR0303")
 					(unit 1)
@@ -3430,7 +3486,7 @@
 	(symbol
 		(lib_name "+3.3V_1")
 		(lib_id "power:+3.3V")
-		(at 243.84 36.83 0)
+		(at 243.84 29.21 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3439,7 +3495,7 @@
 		(fields_autoplaced yes)
 		(uuid "13ead4cc-3829-48bb-9064-5c3ab11b377a")
 		(property "Reference" "#PWR0301"
-			(at 243.84 40.64 0)
+			(at 243.84 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3448,7 +3504,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 243.84 31.75 0)
+			(at 243.84 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3456,7 +3512,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 243.84 36.83 0)
+			(at 243.84 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3465,7 +3521,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 243.84 36.83 0)
+			(at 243.84 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3474,7 +3530,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 243.84 36.83 0)
+			(at 243.84 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3486,7 +3542,7 @@
 			(uuid "c812e21a-6892-4961-b7c8-8a72e64aaeba")
 		)
 		(instances
-			(project ""
+			(project "Tom&Jerry_PCB"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/ac7f7f04-c418-4551-b204-a999b9c3c440"
 					(reference "#PWR0301")
 					(unit 1)
@@ -3497,7 +3553,7 @@
 	(symbol
 		(lib_name "GND_2")
 		(lib_id "power:GND")
-		(at 264.16 44.45 0)
+		(at 273.05 49.53 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3506,7 +3562,7 @@
 		(fields_autoplaced yes)
 		(uuid "204dc876-1750-4664-b110-773056bde68e")
 		(property "Reference" "#PWR0302"
-			(at 264.16 50.8 0)
+			(at 273.05 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3515,7 +3571,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 264.16 49.53 0)
+			(at 273.05 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3523,7 +3579,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 264.16 44.45 0)
+			(at 273.05 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3532,7 +3588,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 264.16 44.45 0)
+			(at 273.05 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3541,7 +3597,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 264.16 44.45 0)
+			(at 273.05 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3553,7 +3609,7 @@
 			(uuid "bc083693-4faf-4204-9583-212cdf83ca8c")
 		)
 		(instances
-			(project ""
+			(project "Tom&Jerry_PCB"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/ac7f7f04-c418-4551-b204-a999b9c3c440"
 					(reference "#PWR0302")
 					(unit 1)
@@ -3618,7 +3674,7 @@
 			(uuid "0b0c6356-0e06-4c55-ae80-060977c0416f")
 		)
 		(instances
-			(project "tom&Jerry_Draft"
+			(project "Tom&Jerry_PCB"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/ac7f7f04-c418-4551-b204-a999b9c3c440"
 					(reference "#PWR0307")
 					(unit 1)
@@ -3684,7 +3740,7 @@
 			(uuid "dd1340d7-0a31-485a-bef0-fa953be1b9c0")
 		)
 		(instances
-			(project "tom&Jerry_Draft"
+			(project "Tom&Jerry_PCB"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/ac7f7f04-c418-4551-b204-a999b9c3c440"
 					(reference "#PWR0305")
 					(unit 1)
@@ -3694,7 +3750,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
-		(at 264.16 41.91 0)
+		(at 273.05 46.99 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3703,7 +3759,7 @@
 		(fields_autoplaced yes)
 		(uuid "36c6733d-3eae-45fd-b3e2-2bfea35e9668")
 		(property "Reference" "C301"
-			(at 266.7 40.6462 0)
+			(at 275.59 45.7262 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3712,7 +3768,7 @@
 			)
 		)
 		(property "Value" "100n"
-			(at 266.7 43.1862 0)
+			(at 275.59 48.2662 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3720,8 +3776,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 264.16 41.91 0)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 273.05 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3730,7 +3786,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 264.16 41.91 0)
+			(at 273.05 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3739,7 +3795,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
-			(at 264.16 41.91 0)
+			(at 273.05 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3748,7 +3804,7 @@
 			)
 		)
 		(property "Sim.Type" ""
-			(at 264.16 41.91 0)
+			(at 273.05 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3763,7 +3819,7 @@
 			(uuid "df91e3cf-e2ff-406c-ad9c-759c876ae4ae")
 		)
 		(instances
-			(project ""
+			(project "Tom&Jerry_PCB"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/ac7f7f04-c418-4551-b204-a999b9c3c440"
 					(reference "C301")
 					(unit 1)
@@ -3831,7 +3887,7 @@
 			(uuid "32693489-7a73-4493-8a43-e486ba598d8a")
 		)
 		(instances
-			(project ""
+			(project "Tom&Jerry_PCB"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/ac7f7f04-c418-4551-b204-a999b9c3c440"
 					(reference "#PWR0306")
 					(unit 1)
@@ -3898,7 +3954,7 @@
 			(uuid "e8de8738-1579-43de-ac87-36ae86e6bc69")
 		)
 		(instances
-			(project "tom&Jerry_Draft"
+			(project "Tom&Jerry_PCB"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/ac7f7f04-c418-4551-b204-a999b9c3c440"
 					(reference "#PWR0310")
 					(unit 1)
@@ -4011,7 +4067,7 @@
 			(uuid "e409f272-6032-4bd1-8a34-617d25143c8b")
 		)
 		(instances
-			(project "tom&Jerry_Draft"
+			(project "Tom&Jerry_PCB"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/ac7f7f04-c418-4551-b204-a999b9c3c440"
 					(reference "U301")
 					(unit 1)
@@ -4227,7 +4283,7 @@
 			(uuid "fa9ec4b6-ce6c-4619-8771-8a712a9ef43b")
 		)
 		(instances
-			(project "tom&Jerry_Draft"
+			(project "Tom&Jerry_PCB"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/ac7f7f04-c418-4551-b204-a999b9c3c440"
 					(reference "IC301")
 					(unit 1)
@@ -4294,9 +4350,76 @@
 			(uuid "018435a0-aedf-43a7-af7a-1ca5b5aeef98")
 		)
 		(instances
-			(project "tom&Jerry_Draft"
+			(project "Tom&Jerry_PCB"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/ac7f7f04-c418-4551-b204-a999b9c3c440"
 					(reference "#PWR0308")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "GND_2")
+		(lib_id "power:GND")
+		(at 231.14 39.37 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "89738040-6b8a-4952-828f-b772a9b02d45")
+		(property "Reference" "#PWR0314"
+			(at 231.14 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 231.14 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 231.14 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 231.14 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 231.14 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c2cface2-579d-434e-a07d-c33faa0a86fc")
+		)
+		(instances
+			(project "Tom&Jerry_PCB"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/ac7f7f04-c418-4551-b204-a999b9c3c440"
+					(reference "#PWR0314")
 					(unit 1)
 				)
 			)
@@ -4360,9 +4483,88 @@
 			(uuid "506fa437-2dc6-4bda-a761-496fde466eae")
 		)
 		(instances
-			(project "tom&Jerry_Draft"
+			(project "Tom&Jerry_PCB"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/ac7f7f04-c418-4551-b204-a999b9c3c440"
 					(reference "#PWR0309")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 231.14 35.56 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ba5599b0-3eee-42d0-9b89-f4fd9db7ed3f")
+		(property "Reference" "C302"
+			(at 233.68 34.2962 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0.1u"
+			(at 233.68 36.8362 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 231.14 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 231.14 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 231.14 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
+			(at 231.14 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "23003f3f-4fcd-4502-8e8e-da4a5011902b")
+		)
+		(pin "2"
+			(uuid "28858b34-8478-4d51-a21b-9ddd0dda019c")
+		)
+		(instances
+			(project "Tom&Jerry_PCB"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/ac7f7f04-c418-4551-b204-a999b9c3c440"
+					(reference "C302")
 					(unit 1)
 				)
 			)
@@ -4426,7 +4628,7 @@
 			(uuid "b376c060-d20f-494d-95e0-847aad346244")
 		)
 		(instances
-			(project "tom&Jerry_Draft"
+			(project "Tom&Jerry_PCB"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/ac7f7f04-c418-4551-b204-a999b9c3c440"
 					(reference "#PWR0311")
 					(unit 1)
@@ -4523,7 +4725,7 @@
 			(uuid "8618296f-484b-4929-a24b-8d536b088e64")
 		)
 		(instances
-			(project ""
+			(project "Tom&Jerry_PCB"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/ac7f7f04-c418-4551-b204-a999b9c3c440"
 					(reference "J301")
 					(unit 1)

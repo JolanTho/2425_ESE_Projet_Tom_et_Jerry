@@ -1470,7 +1470,7 @@
 			(uuid "3711e173-d458-4d08-8a94-0708c8a532ba")
 		)
 		(instances
-			(project "tom&Jerry_Draft"
+			(project "Tom&Jerry_PCB"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8aa2c92d-cc8b-4d4a-ae4b-287f58b555e7"
 					(reference "#PWR0801")
 					(unit 1)
@@ -1613,7 +1613,7 @@
 			(uuid "949eb69c-f2f4-4ab5-bc88-9e2fdb446727")
 		)
 		(instances
-			(project ""
+			(project "Tom&Jerry_PCB"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8aa2c92d-cc8b-4d4a-ae4b-287f58b555e7"
 					(reference "LED803")
 					(unit 1)
@@ -1679,7 +1679,7 @@
 			(uuid "5d84e1ff-759b-46b9-8238-102c611376cd")
 		)
 		(instances
-			(project "tom&Jerry_Draft"
+			(project "Tom&Jerry_PCB"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8aa2c92d-cc8b-4d4a-ae4b-287f58b555e7"
 					(reference "#PWR0803")
 					(unit 1)
@@ -1779,7 +1779,7 @@
 			(uuid "5a4c90e3-f919-4fe7-b3f7-276a7809fe70")
 		)
 		(instances
-			(project "tom&Jerry_Draft"
+			(project "Tom&Jerry_PCB"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8aa2c92d-cc8b-4d4a-ae4b-287f58b555e7"
 					(reference "U801")
 					(unit 1)
@@ -1846,7 +1846,7 @@
 			(uuid "a7432e18-4382-4a55-a547-a57f671ad53b")
 		)
 		(instances
-			(project "tom&Jerry_Draft"
+			(project "Tom&Jerry_PCB"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8aa2c92d-cc8b-4d4a-ae4b-287f58b555e7"
 					(reference "#PWR0802")
 					(unit 1)
@@ -1989,7 +1989,7 @@
 			(uuid "4fb1bacb-a559-4df5-8a84-362c72b203b9")
 		)
 		(instances
-			(project "tom&Jerry_Draft"
+			(project "Tom&Jerry_PCB"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8aa2c92d-cc8b-4d4a-ae4b-287f58b555e7"
 					(reference "LED802")
 					(unit 1)
@@ -2132,7 +2132,7 @@
 			(uuid "e565ae9f-91aa-4885-ad5d-6f8d967baf27")
 		)
 		(instances
-			(project "tom&Jerry_Draft"
+			(project "Tom&Jerry_PCB"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8aa2c92d-cc8b-4d4a-ae4b-287f58b555e7"
 					(reference "LED801")
 					(unit 1)
@@ -2275,7 +2275,7 @@
 			(uuid "75516d62-ec75-4aa8-9e1d-3bda73be1e43")
 		)
 		(instances
-			(project "tom&Jerry_Draft"
+			(project "Tom&Jerry_PCB"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/8aa2c92d-cc8b-4d4a-ae4b-287f58b555e7"
 					(reference "LED804")
 					(unit 1)
