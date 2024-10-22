@@ -252,3 +252,8 @@ Il est détaillé chaque composante du Schématique/PCb dans ce Read.me
 
 >[!Important]
 >Les deux capacité de découplage ainsi que les deux ferrites sont celles conforme à la documentation afin de réduire les interférence electromagnétique à partir de 1MHz et au dela. Ceci est parfait puisque ce composant est à coté de composant sensible comme la STM...  
+
+## Auteurs : 
+>* Jolan Thomasset (jolan.thomasset@ensea.fr)  
+>* Romain Pace   (romain.pace@ensea.fr)  
+>* Rémi Weidle   (remi.weidle@ensea.fr)  

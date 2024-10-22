@@ -3,6 +3,7 @@
 ## Sommaire
 - [Présentation](#présentation)
 - [Architecture](#architecture)
+- [Driver-Lidar](#driver-lidar)
 
 ---
 
@@ -32,3 +33,16 @@ stateDiagram-v2
     Strategie --> Deplacement
     Deplacement --> [*] 
 ```
+
+---
+
+## Driver Lidar
+>[!Note]
+>Le lidar est connecté en UART à la STM32.   
+>* On a uns structure de fonctions tel que :
+
+
+## Auteurs : 
+>* Jolan Thomasset (jolan.thomasset@ensea.fr)  
+>* Romain Pace   (romain.pace@ensea.fr)  
+>* Rémi Weidle   (remi.weidle@ensea.fr)  
