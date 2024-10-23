@@ -837,7 +837,7 @@
 			(uuid "10e0d00d-07e1-4c0e-8309-925986f8bbdd")
 		)
 		(instances
-			(project "tom&Jerry_Draft"
+			(project "Tom&Jerry_PCB"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/ac7f7f04-c418-4551-b204-a999b9c3c440/4a942aeb-0f5a-4b74-98aa-4f22cccd5125"
 					(reference "R1702")
 					(unit 1)
@@ -928,7 +928,7 @@
 			(uuid "0ee4defc-95b5-44c5-999c-5855ff4ff2a3")
 		)
 		(instances
-			(project "tom&Jerry_Draft"
+			(project "Tom&Jerry_PCB"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/ac7f7f04-c418-4551-b204-a999b9c3c440/4a942aeb-0f5a-4b74-98aa-4f22cccd5125"
 					(reference "J1701")
 					(unit 1)
@@ -1019,7 +1019,7 @@
 			(uuid "181e93c0-25ee-4dbc-a34e-b7a6a099edcc")
 		)
 		(instances
-			(project "tom&Jerry_Draft"
+			(project "Tom&Jerry_PCB"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/ac7f7f04-c418-4551-b204-a999b9c3c440/4a942aeb-0f5a-4b74-98aa-4f22cccd5125"
 					(reference "R1701")
 					(unit 1)
@@ -1097,7 +1097,7 @@
 			(uuid "784344b5-cfdd-4a93-8ae0-f5c4c9308d16")
 		)
 		(instances
-			(project "tom&Jerry_Draft"
+			(project "Tom&Jerry_PCB"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/ac7f7f04-c418-4551-b204-a999b9c3c440/4a942aeb-0f5a-4b74-98aa-4f22cccd5125"
 					(reference "#PWR01702")
 					(unit 1)
@@ -1188,7 +1188,7 @@
 			(uuid "8dd980f3-7a7e-4d17-aa5e-700a53e51844")
 		)
 		(instances
-			(project "tom&Jerry_Draft"
+			(project "Tom&Jerry_PCB"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/ac7f7f04-c418-4551-b204-a999b9c3c440/4a942aeb-0f5a-4b74-98aa-4f22cccd5125"
 					(reference "C1701")
 					(unit 1)
@@ -1266,7 +1266,7 @@
 			(uuid "7c4465cd-9946-4d40-ad72-9698d23f7555")
 		)
 		(instances
-			(project "tom&Jerry_Draft"
+			(project "Tom&Jerry_PCB"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/ac7f7f04-c418-4551-b204-a999b9c3c440/4a942aeb-0f5a-4b74-98aa-4f22cccd5125"
 					(reference "#PWR01701")
 					(unit 1)
