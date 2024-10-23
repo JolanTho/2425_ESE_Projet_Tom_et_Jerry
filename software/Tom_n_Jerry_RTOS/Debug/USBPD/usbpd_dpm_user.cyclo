@@ -1,0 +1,4 @@
+../USBPD/usbpd_dpm_user.c:134:6:USBPD_DPM_WaitForTime	1
+../USBPD/usbpd_dpm_user.c:145:6:USBPD_DPM_UserExecute	1
+../USBPD/usbpd_dpm_user.c:161:6:USBPD_DPM_UserCableDetection	1
+../USBPD/usbpd_dpm_user.c:207:6:USBPD_DPM_Notification	1

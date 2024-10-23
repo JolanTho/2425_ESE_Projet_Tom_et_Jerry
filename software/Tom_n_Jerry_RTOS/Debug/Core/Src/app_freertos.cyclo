@@ -1,0 +1,4 @@
+../Core/Src/app_freertos.c:67:6:MX_FREERTOS_Init	2
+../Core/Src/app_freertos.c:131:6:StartDefaultTask	1
+../Core/Src/app_freertos.c:146:6:shell	1
+../Core/Src/app_freertos.c:154:6:edgedetection	1

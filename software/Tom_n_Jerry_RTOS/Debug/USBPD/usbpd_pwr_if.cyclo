@@ -1,0 +1,3 @@
+../USBPD/usbpd_pwr_if.c:111:21:USBPD_PWR_IF_VBUSEnable	1
+../USBPD/usbpd_pwr_if.c:124:21:USBPD_PWR_IF_VBUSDisable	1
+../USBPD/usbpd_pwr_if.c:138:9:USBPD_PWR_IF_GetVBUSStatus	8
