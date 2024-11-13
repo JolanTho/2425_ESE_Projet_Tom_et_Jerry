@@ -23,7 +23,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include <stdio.h>
+#include <stdint.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -55,7 +56,20 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+int __io_putchar(int ch) {
+	HAL_UART_Transmit(&huart2, (uint8_t *)&ch, 1, HAL_MAX_DELAY);
+	return ch;
+}
 
+int uart_it_transmit(uint8_t *p_data, uint16_t size){
+	HAL_UART_Transmit_IT(&huart4, p_data, size);
+	return 0;
+}
+
+int uart_receive(uint8_t *p_data, uint16_t size){
+	HAL_UART_Receive(&huart4, p_data, size, 100);
+	return 0;
+}
 /* USER CODE END 0 */
 
 /**
@@ -66,7 +80,8 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-
+	BaseType_t xReturned;
+	TaskHandle_t xHandle1 = NULL;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -88,8 +103,27 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_USART2_UART_Init();
+  MX_UART4_Init();
   /* USER CODE BEGIN 2 */
+  printf("=================== DRIVER LIDAR =================== \r\n");
 
+  uint8_t stop_command[2] = {0xA5, 0x65};
+  uart_it_transmit(stop_command, 2);
+
+  printf(" 3 \r\n");
+
+  // Attendre 2 secondes
+  HAL_Delay(2000);
+
+  printf(" 4 \r\n");
+
+  // Commande pour obtenir le statut de santé
+  uint8_t health_status_command[2] = {0xA5, 0x90};
+  uart_it_transmit(health_status_command, 2);
+  uint8_t raw_data[64];
+  memset(raw_data,0,64);
+  uart_receive(raw_data,64);
+  int a=5;
   /* USER CODE END 2 */
 
   /* Infinite loop */

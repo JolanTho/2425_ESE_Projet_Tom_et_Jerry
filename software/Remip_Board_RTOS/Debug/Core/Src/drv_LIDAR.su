@@ -1,9 +1,0 @@
-../Core/Src/drv_LIDAR.c:9:5:LIDAR_start	24	static
-../Core/Src/drv_LIDAR.c:21:5:LIDAR_stop	24	static
-../Core/Src/drv_LIDAR.c:32:5:LIDAR_get_info	136	static
-../Core/Src/drv_LIDAR.c:52:5:LIDAR_get_health_stat	24	static
-../Core/Src/drv_LIDAR.c:70:5:LIDAR_restart	24	static
-../Core/Src/drv_LIDAR.c:80:6:LIDAR_process_frame	48	static
-../Core/Src/drv_LIDAR.c:112:5:calculer_distance_moyenne	32	static
-../Core/Src/drv_LIDAR.c:124:6:find_clusters	56	static
-../Core/Src/drv_LIDAR.c:162:6:medianFilter	72	static
