@@ -1,0 +1,3 @@
+../Core/Src/drv_Lidar.c:6:5:LIDAR_stop	24	static
+../Core/Src/drv_Lidar.c:13:5:LIDAR_get_info	136	static
+../Core/Src/drv_Lidar.c:73:5:LIDAR_get_health_stat	24	static
