@@ -27,6 +27,7 @@
 /* Private variables ---------------------------------------------------------*/
 TIM_HandleTypeDef        htim17;
 /* Private function prototypes -----------------------------------------------*/
+ void TimeBase_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim);
 /* Private functions ---------------------------------------------------------*/
 
 /**
@@ -94,6 +95,8 @@ HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)
     }
   }
 
+  HAL_TIM_RegisterCallback(&htim17, HAL_TIM_PERIOD_ELAPSED_CB_ID, TimeBase_TIM_PeriodElapsedCallback);
+
  /* Return function status */
   return status;
 }
@@ -120,5 +123,22 @@ void HAL_ResumeTick(void)
 {
   /* Enable TIM17 Update interrupt */
   __HAL_TIM_ENABLE_IT(&htim17, TIM_IT_UPDATE);
+}
+
+ /**
+  * @brief  Period elapsed callback in non blocking mode
+  * @note   This function is called  when TIM6 interrupt took place, inside
+  * HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment
+  * a global variable "uwTick" used as application time base.
+  * @param  htim TIM handle
+  * @retval None
+  */
+
+void TimeBase_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+  /* Prevent unused argument(s) compilation warning */
+  UNUSED(htim);
+
+  HAL_IncTick();
 }
 

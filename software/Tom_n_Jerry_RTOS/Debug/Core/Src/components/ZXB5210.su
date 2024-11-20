@@ -1,0 +1,4 @@
+../Core/Src/components/ZXB5210.c:9:6:ZXB5210_init	8	static
+../Core/Src/components/ZXB5210.c:18:6:ZXB5210_deinit	8	static
+../Core/Src/components/ZXB5210.c:25:6:ZXB5210_speed_FWD	24	static
+../Core/Src/components/ZXB5210.c:29:6:ZXB5210_speed_REV	24	static

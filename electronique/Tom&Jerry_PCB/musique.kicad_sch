@@ -2281,7 +2281,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "687647e6-8b1c-46e2-9d29-913be11c9b90")
 		(property "Reference" "U601"
 			(at 136.8141 78.74 0)

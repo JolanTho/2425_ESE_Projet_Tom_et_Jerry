@@ -4510,7 +4510,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "0.1u"
+		(property "Value" "100n"
 			(at 233.68 36.8362 0)
 			(effects
 				(font

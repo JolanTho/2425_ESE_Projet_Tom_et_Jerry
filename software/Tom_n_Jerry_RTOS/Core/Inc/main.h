@@ -73,10 +73,6 @@ void Error_Handler(void);
 #define BUTTON_INITIAL_STATE_GPIO_Port GPIOC
 #define BUTTON_START_ROBOT_Pin GPIO_PIN_14
 #define BUTTON_START_ROBOT_GPIO_Port GPIOC
-#define ENCODER_1B_Pin GPIO_PIN_0
-#define ENCODER_1B_GPIO_Port GPIOA
-#define ENCODER_1A_Pin GPIO_PIN_1
-#define ENCODER_1A_GPIO_Port GPIOA
 #define LIDAR_RXnTX_STM_Pin GPIO_PIN_2
 #define LIDAR_RXnTX_STM_GPIO_Port GPIOA
 #define LIDAR_TXnRX_STM_Pin GPIO_PIN_3
@@ -101,8 +97,6 @@ void Error_Handler(void);
 #define MOUSTACHE_4_GPIO_Port GPIOB
 #define MOUSTACHE_1_Pin GPIO_PIN_15
 #define MOUSTACHE_1_GPIO_Port GPIOB
-#define ENCODER_2A_Pin GPIO_PIN_6
-#define ENCODER_2A_GPIO_Port GPIOC
 #define I2C_MAIN_SCL_Pin GPIO_PIN_8
 #define I2C_MAIN_SCL_GPIO_Port GPIOA
 #define LIDAR_M_CTR_Pin GPIO_PIN_11
@@ -111,8 +105,6 @@ void Error_Handler(void);
 #define I2C_IMU_SCL_GPIO_Port GPIOA
 #define I2C_MAIN_SDA_Pin GPIO_PIN_11
 #define I2C_MAIN_SDA_GPIO_Port GPIOC
-#define ENCODER_2B_Pin GPIO_PIN_5
-#define ENCODER_2B_GPIO_Port GPIOB
 #define VCP_RX_Pin GPIO_PIN_7
 #define VCP_RX_GPIO_Port GPIOB
 #define I2C_IMU_SDA_Pin GPIO_PIN_9

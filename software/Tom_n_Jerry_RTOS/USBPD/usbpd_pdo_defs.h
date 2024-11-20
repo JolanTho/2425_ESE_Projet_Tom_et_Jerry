@@ -88,13 +88,13 @@ uint32_t PORT0_PDO_ListSRC[USBPD_MAX_NB_PDO] =
   (
     USBPD_PDO_TYPE_FIXED                 | /* Fixed supply PDO            */
 
-    USBPD_PDO_SRC_FIXED_SET_VOLTAGE(5000U)         | /* Voltage in mV               */
+    USBPD_PDO_SRC_FIXED_SET_VOLTAGE(9000U)         | /* Voltage in mV               */
     USBPD_PDO_SRC_FIXED_SET_MAX_CURRENT(100U)     | /* Max current in mA           */
     USBPD_PDO_SRC_FIXED_PEAKCURRENT_EQUAL          | /* Peak Current info           */
 
     /* Common definitions applicable to all PDOs, defined only in PDO 1 */
     USBPD_PDO_SRC_FIXED_UNCHUNK_NOT_SUPPORTED      | /* Unchunked Extended Messages */
-    USBPD_PDO_SRC_FIXED_DRD_SUPPORTED          | /* Dual-Role Data              */
+    USBPD_PDO_SRC_FIXED_DRD_NOT_SUPPORTED          | /* Dual-Role Data              */
     USBPD_PDO_SRC_FIXED_USBCOMM_NOT_SUPPORTED      | /* USB Communications          */
     USBPD_PDO_SRC_FIXED_EXT_POWER_NOT_AVAILABLE    | /* External Power              */
     USBPD_PDO_SRC_FIXED_USBSUSPEND_NOT_SUPPORTED   | /* USB Suspend Supported		 */
