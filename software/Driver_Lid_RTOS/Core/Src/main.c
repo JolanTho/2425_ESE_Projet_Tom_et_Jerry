@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "cmsis_os.h"
+#include "dma.h"
 #include "usart.h"
 #include "gpio.h"
 
@@ -40,7 +41,7 @@
 /* USER CODE BEGIN PD */
 #define STACK_SIZE 256
 
-#define DUREE 50000
+#define DUREE 1000
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -51,7 +52,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+h_LIDAR_t lidar;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -73,25 +74,84 @@ int uart_poll_receive(uint8_t *p_data, uint16_t size) {
     return HAL_UART_Receive(&huart4, p_data, size, 100);
 }
 
+int uart_it_receive(uint8_t *p_data, uint16_t size){
+	HAL_UART_Receive_IT(&huart4, p_data, size);
+	return 0;
+}
+
+int uart_it_transmit(uint8_t *p_data, uint16_t size){
+	HAL_UART_Transmit_IT(&huart4, p_data, size);
+	return 0;
+}
+
+int uart_dma_receive(uint8_t *p_data, uint16_t size){
+	HAL_UART_Receive_DMA(&huart4, p_data, size);
+	return 0;
+}
+
+int uart_dma_transmit(uint8_t *p_data, uint16_t size){
+	HAL_UART_Transmit_DMA(&huart4, p_data, size);
+	return 0;
+}
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 void counter (void * pvParameters){
 	char* s = pcTaskGetName(xTaskGetCurrentTaskHandle());
+
+	int h = 0;
+
+//	LIDAR_restart(&lidar);
+//
+//	vTaskDelay(2000);
+//
+//	  // Récupération des informations de l'appareil
+//	  if (LIDAR_get_info(&lidar) == 0) {
+//		  printf("LIDAR device information retrieved successfully.\r\n");
+//	  } else {
+//		  printf("Failed to retrieve LIDAR device information.\r\n");
+//	  }
+//
+//	  // Récupération de l'état de santé
+//	  if (LIDAR_get_health_stat(&lidar) == 0) {
+//		  printf("LIDAR health status retrieved successfully.\r\n");
+//	  } else {
+//		  printf("Failed to retrieve LIDAR health status.\r\n");
+//	  }
+
+	  if (LIDAR_start_scan_dma(&lidar) == 0) {
+	      printf("LIDAR scanning started successfully.\r\n");
+	  } else {
+	      printf("Failed to start LIDAR scanning.\r\n");
+	  }
+
 	while (1) {
+
+		    if (lidar.serial_drv.dma_receive(lidar.processing.receive_buff, DATA_BUFF_SIZE) != 0) {
+		        printf("Erreur lors de la configuration de la réception DMA.\r\n");
+		    }
+
 		printf("Je suis la tache %s et je m'endors pour %d periodes\r\n", s, DUREE);
 
-//	    printf("LIDAR Scan Results (Angle: Distance in mm):\r\n");
-//	    for (int i = 0; i < 360; i++) {
-//	        if (lidar.processing.point_buff[i] >= 0) { // Afficher uniquement les valeurs valides
-//	            printf("Angle %3d: %4d mm\r\n", i, lidar.processing.point_buff[i]);
-//	        } else {
-//	            printf("Angle %3d: --- mm (No Data)\r\n", i);
-//	        }
-//	    }
-//	    printf("\n");
+		if(h >= 30){
+			h=0;
 
+			printf("LIDAR Scan Results (Angle: Distance in mm):\r\n");
+	    for (int i = 0; i < 360; i++) {
+	    		if (lidar.processing.point_buff[i] >= 0) { // Afficher uniquement les valeurs valides
+	    			printf("Angle %3d: %4d mm\r\n", i, lidar.processing.point_buff[i]);
+	    		} else {
+	    			printf("Angle %3d: --- mm (No Data)\r\n", i);
+	    		}
+	    }
+
+	    printf("\n");
+
+		}
+
+		h++;
 		vTaskDelay(DUREE);
 	}
 }
@@ -127,6 +187,7 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_USART2_UART_Init();
   MX_UART4_Init();
   /* USER CODE BEGIN 2 */
@@ -134,6 +195,7 @@ int main(void)
 
   /*
    * Allumage du LIDAR et mise en place de la rotation
+   *
    */
 
   /*
@@ -141,26 +203,15 @@ int main(void)
    */
 
 	  // Déclaration et configuration de la structure h_LIDAR
-	  h_LIDAR_t lidar;
+
 	  lidar.serial_drv.transmit = uart_transmit;
 	  lidar.serial_drv.poll_receive = uart_poll_receive;
 
-	  LIDAR_stop(&lidar);
-	  HAL_Delay(100);
+	  lidar.serial_drv.it_receive=uart_it_receive;
+	  lidar.serial_drv.it_transmit=uart_it_transmit;
 
-	  // Récupération des informations de l'appareil
-	  if (LIDAR_get_info(&lidar) == 0) {
-		  printf("LIDAR device information retrieved successfully.\r\n");
-	  } else {
-		  printf("Failed to retrieve LIDAR device information.\r\n");
-	  }
-
-	  // Récupération de l'état de santé
-	  if (LIDAR_get_health_stat(&lidar) == 0) {
-		  printf("LIDAR health status retrieved successfully.\r\n");
-	  } else {
-		  printf("Failed to retrieve LIDAR health status.\r\n");
-	  }
+	  lidar.serial_drv.dma_receive=uart_dma_receive;
+	  lidar.serial_drv.dma_transmit=uart_dma_transmit;
 
 	xReturned = xTaskCreate(
 			counter, // Function that implements the task.
@@ -247,6 +298,42 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
+    if (huart->Instance == UART4) {
+    	lidar.rx_flag_uart = 1;
+    }
+}
+
+//void HAL_DMA_XferCpltCallback(DMA_HandleTypeDef *hdma) {
+//
+//	printf("Hi 1 \r\n");
+//
+//    if (hdma->Instance == DMA1_Channel1) { // Vérifiez que c'est le bon canal
+//        printf("Réception complète via DMA (Full Transfer).\n");
+//
+//        // Traiter la deuxième moitié du buffer
+//        LIDAR_process_scan_dma_half(&lidar, lidar.processing.receive_buff + DATA_BUFF_SIZE / 2, DATA_BUFF_SIZE / 2);
+//    }
+//}
+//
+//void HAL_DMA_XferHalfCpltCallback(DMA_HandleTypeDef *hdma) {
+//
+//	printf("Hi 2 \r\n");
+//
+//    if (hdma->Instance == DMA1_Channel1) { // Vérifiez que c'est le bon canal
+//        printf("Réception à moitié complète via DMA (Half Transfer).\n");
+//
+//        // Traiter la première moitié du buffer
+//        LIDAR_process_scan_dma_half(&lidar, lidar.processing.receive_buff, DATA_BUFF_SIZE / 2);
+//    }
+//}
+
+void HAL_DMA_ErrorCallback(DMA_HandleTypeDef *hdma) {
+    if (hdma->Instance == DMA1_Channel1) {
+        printf("Erreur DMA détectée !\n");
+        // Gérez les erreurs ici
+    }
+}
 
 
 /* USER CODE END 4 */

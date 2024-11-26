@@ -1,28 +1,66 @@
 #include "drv_LIDAR.h"
 #include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
 
 //Stop and stop scanning
-//No answer
-int LIDAR_stop(h_LIDAR_t * h_LIDAR){
-	uint8_t cmd_buff[CMD_BUFF_SIZE]={CMD_BEGIN,CMD_STOP};
-	h_LIDAR->serial_drv.transmit(cmd_buff,CMD_BUFF_SIZE);
-	return 0;
-}
+int LIDAR_stop(h_LIDAR_t *h_LIDAR) {
+    uint8_t cmd_buff[CMD_BUFF_SIZE] = {CMD_BEGIN, CMD_STOP}; // Commande pour arrêter le LIDAR
 
-// Récupérer les informations de l'appareil
-int LIDAR_get_info(h_LIDAR_t *h_LIDAR) {
-    uint8_t cmd_buff[CMD_BUFF_SIZE] = {CMD_BEGIN,CMD_INFO};
-
-    // Envoi de la commande pour obtenir les informations
-    if (h_LIDAR->serial_drv.transmit(cmd_buff, CMD_BUFF_SIZE) != 0) {
+    // Envoi de la commande pour arrêter le LIDAR
+    if (h_LIDAR->serial_drv.it_transmit(cmd_buff, CMD_BUFF_SIZE) != 0) {
         printf("Erreur lors de l'envoi de la commande.\r\n");
         return -1;
     }
 
-    // Réception des informations dans le buffer
-    if (h_LIDAR->serial_drv.poll_receive(h_LIDAR->info_buff, INFO_BUFF_SIZE) != 0) {
-        printf("Erreur lors de la reception des donnees.\r\n");
+    // Attente que la transmission soit terminée
+    uint32_t start_time = HAL_GetTick();
+    while (!h_LIDAR->rx_flag_uart) {
+        if (HAL_GetTick() - start_time > 1000) { // Timeout après 1000 ms
+            printf("Timeout lors de la transmission UART.\r\n");
+            return -2;
+        }
+    }
+
+    return 0; // Commande envoyée avec succès
+}
+
+//Soft restart
+//No response
+int LIDAR_restart(h_LIDAR_t * h_LIDAR){
+	uint8_t cmd_buff[CMD_BUFF_SIZE]={CMD_BEGIN,CMD_RESTART};
+    // Envoi de la commande pour restart le LIDAR
+    if (h_LIDAR->serial_drv.it_transmit(cmd_buff, CMD_BUFF_SIZE) != 0) {
+        printf("Erreur lors de l'envoi de la commande.\r\n");
+        return -1;
+    }
+
+	return 0;
+}
+
+int LIDAR_get_info(h_LIDAR_t *h_LIDAR) {
+    uint8_t cmd_buff[CMD_BUFF_SIZE] = {CMD_BEGIN, CMD_INFO};
+
+    // Envoi de la commande pour obtenir les informations
+    if (h_LIDAR->serial_drv.it_transmit(cmd_buff, CMD_BUFF_SIZE) != 0) {
+        printf("Erreur lors de l'envoi de la commande.\r\n");
+        return -1;
+    }
+
+    // Préparation à la réception
+    h_LIDAR->rx_flag_uart = 0; // Réinitialise le drapeau
+    if (h_LIDAR->serial_drv.it_receive(h_LIDAR->info_buff, INFO_BUFF_SIZE) != 0) {
+        printf("Erreur lors de la preparation de la réception.\r\n");
         return -2;
+    }
+
+    // Attente de la réception
+    uint32_t start_time = HAL_GetTick();
+    while (!h_LIDAR->rx_flag_uart) {
+        if (HAL_GetTick() - start_time > 10000) { // Timeout de 1000 ms
+            printf("Timeout lors de la reception.\r\n");
+            return -3;
+        }
     }
 
     // Analyse des données
@@ -33,15 +71,14 @@ int LIDAR_get_info(h_LIDAR_t *h_LIDAR) {
     h_LIDAR->device_info.mode = h_LIDAR->info_buff[5] >> 6;
     h_LIDAR->device_info.type_code = h_LIDAR->info_buff[6];
 
-    // Vérification de la validité de la réponse
     if (h_LIDAR->device_info.start_sign != 0xA55A) {
-        printf("Signature de début invalide : %04X\r\n", h_LIDAR->device_info.start_sign);
-        return -3;
+        printf("Signature de debut invalide : %04X\r\n", h_LIDAR->device_info.start_sign);
+        return -4;
     }
 
     if (h_LIDAR->device_info.type_code != 0x04) {
         printf("Type code invalide : %X\r\n", h_LIDAR->device_info.type_code);
-        return -4;
+        return -5;
     }
 
     // Récupération des autres informations
@@ -55,6 +92,7 @@ int LIDAR_get_info(h_LIDAR_t *h_LIDAR) {
              h_LIDAR->info_buff[15], h_LIDAR->info_buff[16], h_LIDAR->info_buff[17], h_LIDAR->info_buff[18],
              h_LIDAR->info_buff[19], h_LIDAR->info_buff[20], h_LIDAR->info_buff[21], h_LIDAR->info_buff[22],
              h_LIDAR->info_buff[23], h_LIDAR->info_buff[24], h_LIDAR->info_buff[25], h_LIDAR->info_buff[26]);
+
 
     // Affichage des informations
     printf("Start sign : %04X\r\n", h_LIDAR->device_info.start_sign);
@@ -74,18 +112,28 @@ int LIDAR_get_health_stat(h_LIDAR_t *h_LIDAR) {
     uint8_t cmd_buff[CMD_BUFF_SIZE] = {CMD_BEGIN, CMD_HEALTH};
 
     // Envoi de la commande pour obtenir l'état de santé
-    if (h_LIDAR->serial_drv.transmit(cmd_buff, CMD_BUFF_SIZE) != 0) {
+    if (h_LIDAR->serial_drv.it_transmit(cmd_buff, CMD_BUFF_SIZE) != 0) {
         printf("Erreur lors de l'envoi de la commande.\r\n");
         return -1;
     }
 
-    // Réception de l'état de santé
-    if (h_LIDAR->serial_drv.poll_receive(h_LIDAR->health_buff, HEALTH_BUFF_SIZE) != 0) {
-        printf("Erreur lors de la réception des données.\r\n");
+    // Préparation à la réception
+    h_LIDAR->rx_flag_uart = 0; // Réinitialise le drapeau
+    if (h_LIDAR->serial_drv.it_receive(h_LIDAR->health_buff, HEALTH_BUFF_SIZE) != 0) {
+        printf("Erreur lors de la préparation de la réception.\r\n");
         return -2;
     }
 
-    // Analyse des données reçues
+    // Attente de la réception
+    uint32_t start_time = HAL_GetTick();
+    while (!h_LIDAR->rx_flag_uart) {
+        if (HAL_GetTick() - start_time > 1000) { // Timeout de 1000 ms
+            printf("Timeout lors de la reception.\r\n");
+            return -3;
+        }
+    }
+
+    // Analyse des données
     h_LIDAR->health_stat.start_sign = (h_LIDAR->health_buff[0] << 8) | h_LIDAR->health_buff[1];
     h_LIDAR->health_stat.length = (h_LIDAR->health_buff[2]) |
                                   (h_LIDAR->health_buff[3] << 8) |
@@ -95,15 +143,14 @@ int LIDAR_get_health_stat(h_LIDAR_t *h_LIDAR) {
     h_LIDAR->health_stat.status_code = h_LIDAR->health_buff[7];
     h_LIDAR->health_stat.error_code = h_LIDAR->health_buff[8] | (h_LIDAR->health_buff[9] << 8);
 
-    // Vérifications des données
     if (h_LIDAR->health_stat.start_sign != 0xA55A) {
-        printf("Signature de début invalide : %04X\r\n", h_LIDAR->health_stat.start_sign);
-        return -3;
+        printf("Signature de debut invalide : %04X\r\n", h_LIDAR->health_stat.start_sign);
+        return -4;
     }
 
     if (h_LIDAR->health_stat.type_code != 0x06) {
         printf("Type code invalide : %X\r\n", h_LIDAR->health_stat.type_code);
-        return -4;
+        return -5;
     }
 
     // Affichage de l'état de santé
@@ -116,4 +163,116 @@ int LIDAR_get_health_stat(h_LIDAR_t *h_LIDAR) {
 
     return 0;
 }
+
+int LIDAR_start_scan_dma(h_LIDAR_t *h_LIDAR) {
+    uint8_t cmd_buff[CMD_BUFF_SIZE] = {CMD_BEGIN, CMD_START}; // Commande pour démarrer le scan
+
+    // Envoi de la commande
+    if (h_LIDAR->serial_drv.it_transmit(cmd_buff, CMD_BUFF_SIZE) != 0) {
+        printf("Erreur lors de l'envoi de la commande de démarrage du scan.\r\n");
+        return -1;
+    }
+
+    // Configurer la réception DMA en mode circulaire
+    if (h_LIDAR->serial_drv.dma_receive(h_LIDAR->processing.receive_buff, DATA_BUFF_SIZE) != 0) {
+        printf("Erreur lors de la configuration de la réception DMA.\r\n");
+        return -2;
+    }
+
+    printf("Scan DMA demarre avec succes en mode circulaire.\r\n");
+    return 0;
+}
+
+
+
+
+
+void LIDAR_process_frame(h_LIDAR_t *LIDAR) {
+    uint8_t *buff = LIDAR->processing.receive_buff; // Buffer circulaire DMA
+    int buffer_size = DATA_BUFF_SIZE;              // Taille totale du buffer
+    int start_idx = 0;                             // Indice de départ pour parcourir le buffer
+
+
+
+
+    while (start_idx < buffer_size) {
+
+        if (buff[start_idx] == 0xAA && buff[(start_idx + 1) % buffer_size] == 0x55) {
+
+        	printf("Trame trouvee\r\n");
+
+            // L'entête est trouvé, extraire les métadonnées
+            int header_idx = start_idx; // Index actuel pour début de trame
+            uint16_t FSA = (buff[(header_idx + 4) % buffer_size] |
+                            (buff[(header_idx + 5) % buffer_size] << 8)) >>
+                           7; // Angle de départ (en degrés)
+            uint16_t LSA = (buff[(header_idx + 6) % buffer_size] |
+                            (buff[(header_idx + 7) % buffer_size] << 8)) >>
+                           7; // Angle de fin (en degrés)
+            uint8_t LSN = buff[(header_idx + 3) % buffer_size]; // Nombre de points
+
+            // Calcul de la taille totale attendue de la trame
+            int frame_size = 10 + LSN * 2; // 8 octets d'entête + 2 octets par point
+            if (frame_size > buffer_size) {
+                printf("Erreur : Taille de la trame (%d) dépasse la taille du buffer (%d).\r\n", frame_size, buffer_size);
+                break;
+            }
+
+            // Vérifier si toute la trame est contenue dans le buffer
+            if ((start_idx + frame_size) % buffer_size < start_idx) {
+                printf("Trame partielle detectee en fin de buffer. Ignoree.\r\n");
+                break;
+            }
+
+//            // Vérification du checksum
+//            uint16_t checksum_calculated = 0;
+//            for (int i = 0; i < frame_size - 2; i++) {
+//                checksum_calculated ^= buff[(header_idx + i) % buffer_size];
+//            }
+//            uint16_t checksum_received = (buff[(header_idx + 8) % buffer_size] |
+//                                          (buff[(header_idx + 9) % buffer_size] << 8)) >>
+//                                        		  1;
+//
+//            if (checksum_calculated != checksum_received) {
+//                printf("Erreur : Checksum invalide. Calcule: 0x%04X, Recu: 0x%04X\r\n", checksum_calculated, checksum_received);
+//                start_idx += 1; // Avancer pour trouver la prochaine trame valide
+//                continue;
+//            }
+
+            // Traiter les données de la trame
+            int *point_buff = LIDAR->processing.point_buff;
+            for (int i = 0; i < LSN; i++) {
+                // Lecture de la distance brute
+                uint16_t Si = buff[(header_idx + 10 + i * 2) % buffer_size] |
+                              (buff[(header_idx + 11 + i * 2) % buffer_size] << 8);
+                int Di = Si / 4; // Distance réelle en mm
+
+                // Calcul de l'angle
+                int Ai = (i+1)*abs(LSA-FSA)/(LSN-1) + FSA;
+                // Stockage dans le buffer des points
+                if (Di < 0 || Di > 2000) {
+                    point_buff[Ai] = 0; // Distance hors plage
+                } else {
+                    point_buff[Ai] = Di; // Distance valide
+                }
+            }
+
+            printf("Trame traitee : FSA=%d, LSA=%d, Points=%d\r\n", FSA, LSA, LSN);
+
+            // Avancer dans le buffer jusqu'à la fin de la trame traitée
+            start_idx += frame_size;
+        } else {
+            // Avancer d'un octet si aucune entête valide n'est trouvée
+            start_idx++;
+        }
+    }
+
+    LIDAR->rx_flag_dma = 0;
+
+}
+
+
+
+
+
 

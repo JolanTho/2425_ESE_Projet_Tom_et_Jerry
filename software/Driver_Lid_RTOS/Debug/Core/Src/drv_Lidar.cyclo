@@ -1,3 +1,6 @@
-../Core/Src/drv_Lidar.c:6:5:LIDAR_stop	1
-../Core/Src/drv_Lidar.c:13:5:LIDAR_get_info	5
-../Core/Src/drv_Lidar.c:73:5:LIDAR_get_health_stat	5
+../Core/Src/drv_Lidar.c:7:5:LIDAR_stop	4
+../Core/Src/drv_Lidar.c:30:5:LIDAR_restart	2
+../Core/Src/drv_Lidar.c:41:5:LIDAR_get_info	7
+../Core/Src/drv_Lidar.c:111:5:LIDAR_get_health_stat	7
+../Core/Src/drv_Lidar.c:167:5:LIDAR_start_scan_dma	3
+../Core/Src/drv_Lidar.c:190:6:LIDAR_process_frame	9
