@@ -10,7 +10,7 @@
 #define INFO_BUFF_SIZE 27
 #define HEALTH_BUFF_SIZE 10
 #define CMD_BUFF_SIZE 2
-#define DATA_BUFF_SIZE 640
+#define DATA_BUFF_SIZE 1280
 #define FRAME_BUFF_SIZE 640	//Au max on a 0x28=40 points par packet (80o) + le header (10o)
 #define POINT_BUFF_SIZE 360 //Les 360° autour du LIDAR
 #define NB_DEGRES 360

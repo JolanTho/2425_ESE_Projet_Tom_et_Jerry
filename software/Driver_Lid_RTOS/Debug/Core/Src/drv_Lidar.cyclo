@@ -3,4 +3,4 @@
 ../Core/Src/drv_Lidar.c:41:5:LIDAR_get_info	7
 ../Core/Src/drv_Lidar.c:111:5:LIDAR_get_health_stat	7
 ../Core/Src/drv_Lidar.c:167:5:LIDAR_start_scan_dma	3
-../Core/Src/drv_Lidar.c:190:6:LIDAR_process_frame	9
+../Core/Src/drv_Lidar.c:190:6:LIDAR_process_frame	11

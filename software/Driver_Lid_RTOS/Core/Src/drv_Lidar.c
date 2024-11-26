@@ -188,8 +188,8 @@ int LIDAR_start_scan_dma(h_LIDAR_t *h_LIDAR) {
 
 
 void LIDAR_process_frame(h_LIDAR_t *LIDAR) {
-    uint8_t *buff = LIDAR->processing.receive_buff; // Buffer circulaire DMA
-    int buffer_size = DATA_BUFF_SIZE;              // Taille totale du buffer
+    uint8_t *buff = LIDAR->processing.frame_buff; // Buffer circulaire DMA
+    int buffer_size = FRAME_BUFF_SIZE;              // Taille totale du buffer
     int start_idx = 0;                             // Indice de départ pour parcourir le buffer
 
 
@@ -199,7 +199,6 @@ void LIDAR_process_frame(h_LIDAR_t *LIDAR) {
 
         if (buff[start_idx] == 0xAA && buff[(start_idx + 1) % buffer_size] == 0x55) {
 
-        	printf("Trame trouvee\r\n");
 
             // L'entête est trouvé, extraire les métadonnées
             int header_idx = start_idx; // Index actuel pour début de trame
@@ -212,15 +211,15 @@ void LIDAR_process_frame(h_LIDAR_t *LIDAR) {
             uint8_t LSN = buff[(header_idx + 3) % buffer_size]; // Nombre de points
 
             // Calcul de la taille totale attendue de la trame
-            int frame_size = 10 + LSN * 2; // 8 octets d'entête + 2 octets par point
+            int frame_size = 10 + LSN * 2; // 10 octets d'entête + 2 octets par point
             if (frame_size > buffer_size) {
-                printf("Erreur : Taille de la trame (%d) dépasse la taille du buffer (%d).\r\n", frame_size, buffer_size);
+//                printf("Erreur : Taille de la trame (%d) dépasse la taille du buffer (%d).\r\n", frame_size, buffer_size);
                 break;
             }
 
             // Vérifier si toute la trame est contenue dans le buffer
             if ((start_idx + frame_size) % buffer_size < start_idx) {
-                printf("Trame partielle detectee en fin de buffer. Ignoree.\r\n");
+//                printf("Trame partielle detectee en fin de buffer. Ignoree.\r\n");
                 break;
             }
 
@@ -240,7 +239,7 @@ void LIDAR_process_frame(h_LIDAR_t *LIDAR) {
 //            }
 
             // Traiter les données de la trame
-            int *point_buff = LIDAR->processing.point_buff;
+
             for (int i = 0; i < LSN; i++) {
                 // Lecture de la distance brute
                 uint16_t Si = buff[(header_idx + 10 + i * 2) % buffer_size] |
@@ -248,16 +247,21 @@ void LIDAR_process_frame(h_LIDAR_t *LIDAR) {
                 int Di = Si / 4; // Distance réelle en mm
 
                 // Calcul de l'angle
-                int Ai = (i+1)*abs(LSA-FSA)/(LSN-1) + FSA;
+                int Ai = i*abs(LSA-FSA)/(LSN-1) + FSA;
+
+                if (Ai < 0 || Ai >= 360) {
+                    continue;
+                }
+
                 // Stockage dans le buffer des points
-                if (Di < 0 || Di > 2000) {
-                    point_buff[Ai] = 0; // Distance hors plage
+                if (Di < 0 || Di > 5000) {
+                	LIDAR->processing.point_buff[Ai] = 0; // Distance hors plage
                 } else {
-                    point_buff[Ai] = Di; // Distance valide
+                	LIDAR->processing.point_buff[Ai] = Di; // Distance valide
                 }
             }
 
-            printf("Trame traitee : FSA=%d, LSA=%d, Points=%d\r\n", FSA, LSA, LSN);
+//            printf("Trame traitee : FSA=%d, LSA=%d, Points=%d\r\n", FSA, LSA, LSN);
 
             // Avancer dans le buffer jusqu'à la fin de la trame traitée
             start_idx += frame_size;

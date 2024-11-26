@@ -102,10 +102,8 @@ void counter (void * pvParameters){
 	char* s = pcTaskGetName(xTaskGetCurrentTaskHandle());
 
 	int h = 0;
-
-//	LIDAR_restart(&lidar);
 //
-//	vTaskDelay(2000);
+//	vTaskDelay(500);
 //
 //	  // Récupération des informations de l'appareil
 //	  if (LIDAR_get_info(&lidar) == 0) {
@@ -114,12 +112,16 @@ void counter (void * pvParameters){
 //		  printf("Failed to retrieve LIDAR device information.\r\n");
 //	  }
 //
+//	vTaskDelay(500);
+
 //	  // Récupération de l'état de santé
 //	  if (LIDAR_get_health_stat(&lidar) == 0) {
 //		  printf("LIDAR health status retrieved successfully.\r\n");
 //	  } else {
 //		  printf("Failed to retrieve LIDAR health status.\r\n");
 //	  }
+
+//	vTaskDelay(500);
 
 	  if (LIDAR_start_scan_dma(&lidar) == 0) {
 	      printf("LIDAR scanning started successfully.\r\n");
@@ -128,10 +130,6 @@ void counter (void * pvParameters){
 	  }
 
 	while (1) {
-
-		    if (lidar.serial_drv.dma_receive(lidar.processing.receive_buff, DATA_BUFF_SIZE) != 0) {
-		        printf("Erreur lors de la configuration de la réception DMA.\r\n");
-		    }
 
 		printf("Je suis la tache %s et je m'endors pour %d periodes\r\n", s, DUREE);
 
@@ -298,45 +296,56 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
+
+void HAL_UART_RxHalfCpltCallback(UART_HandleTypeDef *huart) {
     if (huart->Instance == UART4) {
-    	lidar.rx_flag_uart = 1;
+
+    	if(lidar.rx_flag_dma == 0){
+    		lidar.rx_flag_dma = 1;
+
+			memcpy(lidar.processing.frame_buff, lidar.processing.receive_buff, 640);
+
+			// Traiter la première moitié du buffer
+			LIDAR_process_frame(&lidar);
+    	}
     }
 }
 
-//void HAL_DMA_XferCpltCallback(DMA_HandleTypeDef *hdma) {
-//
-//	printf("Hi 1 \r\n");
-//
-//    if (hdma->Instance == DMA1_Channel1) { // Vérifiez que c'est le bon canal
-//        printf("Réception complète via DMA (Full Transfer).\n");
-//
-//        // Traiter la deuxième moitié du buffer
-//        LIDAR_process_scan_dma_half(&lidar, lidar.processing.receive_buff + DATA_BUFF_SIZE / 2, DATA_BUFF_SIZE / 2);
-//    }
-//}
-//
-//void HAL_DMA_XferHalfCpltCallback(DMA_HandleTypeDef *hdma) {
-//
-//	printf("Hi 2 \r\n");
-//
-//    if (hdma->Instance == DMA1_Channel1) { // Vérifiez que c'est le bon canal
-//        printf("Réception à moitié complète via DMA (Half Transfer).\n");
-//
-//        // Traiter la première moitié du buffer
-//        LIDAR_process_scan_dma_half(&lidar, lidar.processing.receive_buff, DATA_BUFF_SIZE / 2);
-//    }
-//}
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
+    if (huart->Instance == UART4){
+    	if(lidar.rx_flag_dma == 0){
+    		lidar.rx_flag_dma = 2;
 
-void HAL_DMA_ErrorCallback(DMA_HandleTypeDef *hdma) {
-    if (hdma->Instance == DMA1_Channel1) {
-        printf("Erreur DMA détectée !\n");
-        // Gérez les erreurs ici
+			memcpy(lidar.processing.frame_buff, lidar.processing.receive_buff[640], 640);
+
+			// Traiter la deuxième moitié du buffer
+			LIDAR_process_frame(&lidar);
+    	}
     }
 }
-
 
 /* USER CODE END 4 */
+
+/**
+  * @brief  Period elapsed callback in non blocking mode
+  * @note   This function is called  when TIM6 interrupt took place, inside
+  * HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment
+  * a global variable "uwTick" used as application time base.
+  * @param  htim : TIM handle
+  * @retval None
+  */
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+  /* USER CODE BEGIN Callback 0 */
+
+  /* USER CODE END Callback 0 */
+  if (htim->Instance == TIM6) {
+    HAL_IncTick();
+  }
+  /* USER CODE BEGIN Callback 1 */
+
+  /* USER CODE END Callback 1 */
+}
 
 /**
   * @brief  This function is executed in case of error occurrence.
