@@ -49,10 +49,10 @@
 >* **PCB** : Un circuit imprimé (PCB) a été conçu pour **Alimentation & Décision du robot**.
 
 #### Fichiers et Dossiers :
->* **/schematics/** : Contient les schémas électroniques.
->* **/pcb_design/** : Fichiers Gerber et autres fichiers pour la fabrication du PCB.
->* **/components_list.txt** : Liste des composants électroniques (BOM).
->* **[Read.me](electronique/README.md)**
+>* **electronique/Tom&Jerry_PCB/** : Projet Kicad du PCB principal.
+>* **electronique/TOF_PCb/** : Projet Kicad du PCB annexe pour les TOF.
+>* **[Read.me ToF](electronique/READMETom&Jerry.md)**
+>* **[Read.me Tom&Jerry](electronique/READMETom&Jerry.md)**
 
 ---
 

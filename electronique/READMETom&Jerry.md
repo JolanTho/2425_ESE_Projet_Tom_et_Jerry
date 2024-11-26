@@ -1,4 +1,4 @@
-# Partie éléctronique 
+# Partie éléctronique  TOM&JERRY
 
 ## Sommaire
 - [Présentation](#présentation)
@@ -7,14 +7,17 @@
 - [STM32](#stm32)
 - [Peripheriques](#périphériques)
 - [Peripherique Annexe](#périphériques-annexes)
+- [Peripherique Annexe](#périphériques-annexes)
 - [Musique](#musique)
+- [Routage](#routage)
+- [Erreurs](#erreurs-notables)
 
 ---
 
 ## Présentation
 >Bienvenue dans la partie éléctronique du projet, dans ce dossier sont présent tous les fichiers de conception du PCB KiCad ainsi que tous les fichiers de fabrications Gerber.  
 Deux fichiers sont actuellement dans le directory. Tom&Jerry_PCB pour le PCB principal et TOF_PCB pour le secondaire.   
-Il est détaillé chaque composante du Schématique/PCb dans ce Read.me  
+Il est détaillé chaque composante du Schématique/PCb principal dans ce ReadMe. Sinon pour les TOF aller [ici](READMETOF.md)
 
 ---
 
@@ -179,10 +182,17 @@ Il est détaillé chaque composante du Schématique/PCb dans ce Read.me
 ![Lidar](../screenshot/electronique/Moustache.png)
 
 >[!Note]
->**Capteurs TOF [YDLidar X2](../datasheet/YDLIDARX2.pdf):**    
->* M_CTR : Entrée de la PWM du moteur du Lidar    
->* TX : Sortie UART avec les données du LIDAR      
+>**Capteurs TOF [YDLidar X2](../datasheet/YdLidarX4.pdf):**   
+>* NC : Non connected pin   
+>* TX : Sortie UART avec les données du LIDAR   
+>* RX : Entrée UART avec les données du LIDAR   
 >* GND : Ground    
+>* M_EN Motor enable control   
+>* DEV_EN Ranging enable control  
+>* M_CTR : Entrée de la PWM du moteur du Lidar      
+>* VCC Power supply  
+     
+  
 >* VCC : Tension d'alimentation du lidar (5v)  
 
  ![IMU](../screenshot/electronique/IMU.png)
@@ -252,6 +262,21 @@ Il est détaillé chaque composante du Schématique/PCb dans ce Read.me
 
 >[!Important]
 >Les deux capacité de découplage ainsi que les deux ferrites sont celles conforme à la documentation afin de réduire les interférence electromagnétique à partir de 1MHz et au dela. Ceci est parfait puisque ce composant est à coté de composant sensible comme la STM...  
+
+
+## Routage 
+![PCB](../screenshot/electronique/Tom&Jerry_PCB.png)
+
+> Le PCB a été particulièrement difficile à router. Beaucoup de composants devaient être placées en peu d'espace. Certaines contraintes physique ont cependant dû être vérifiée afin que le montage se passe au mieux. Les condensateurs de découplage de la SMT32 ont été placé au plus proche de celle-ci afin d'éviter les reboot intempestif. De plus le crystal a été placé au plus proche aussi. Enfin les connecteurs sortent des dimensions avec un silkscreen entièrement remanié à cause de la superposition du nom des composants. 
+
+
+## Erreurs notables 
+
+>[!Important] 
+>* Il faut vérifier absolument ces points qui ont été mal réalisé auparavant.   
+>* L'empreinte de la bobine pour l'entrée ADC doit avoir la bonne empreinte. Le cas échéant ceci peut amener à des soucis notables.   
+>* Une erreur a été commise sur l'attribution des timer en effet les encodeur prennent un advance timer chacun pour obtenir la vitesse du robot. Or nous en avons mis deux sur le même timer. Pour la suite du projet nous n'avons pas pu réaliser la partie encoder. Il suffirait de déplacer un encoder sur un autre timer  compatible avec le mode encoder.   
+
 
 ## Auteurs : 
 >* Jolan Thomasset (jolan.thomasset@ensea.fr)  
