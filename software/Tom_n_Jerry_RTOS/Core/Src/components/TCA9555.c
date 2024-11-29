@@ -9,29 +9,28 @@
  */
 
 #include "components/TCA9555.h"
-#define TCA9555_ADRR 	0x53 // A0=A1=A2 = GND
+#define TCA9555_ADRR 	0x20 // A0=A1=A2 = GND
 #define I2C_MAIN hi2c3
 
 GPIOExpanderRegister_t GPIOExpRegister[]={
-		{"INPUT PORT 0",	0x00},
-		{"INPUT PORT 1",	0x01},
-		{"OUTUPUT PORT 0",	0x02}, //Only read
-		{"OUTUPUT PORT 1",	0x03}, //Only read
+		{"INPUT PORT 0",	0x00},	//Only read
+		{"INPUT PORT 1",	0x01},	//Only read
+		{"OUTUPUT PORT 0",	0x02},	//Only read
+		{"OUTUPUT PORT 1",	0x03}, 	//Only read
 		{"POLARITY INVERSION PORT 0",	0x04},
 		{"POLARITY INVERSION PORT 1",	0x05},
 		{"CONFIGURATION PORT 0",	0x06},
 		{"CONFIGURATION PORT 1",	0x07},
 };
 void TCA9555_init(void){
-	TCA9555_WriteRegister(0x00, 0b11111111)!=HAL_OK ? debug(D_ERROR,"I2C TRANSMIT in WriteREGISTER"):(void)0;
-	TCA9555_WriteRegister(0x01, 0b11001111)!=HAL_OK ? debug(D_ERROR,"I2C TRANSMIT in WriteREGISTER"):(void)0;
+	debug(INFORMATION,"TCA9555 - INIT");
 
 	TCA9555_WriteRegister(0x06, 0b11111111)!=HAL_OK ? debug(D_ERROR,"I2C TRANSMIT in WriteREGISTER"):(void)0;
-	TCA9555_WriteRegister(0x07, 0b11001111)!=HAL_OK ? debug(D_ERROR,"I2C TRANSMIT in WriteREGISTER"):(void)0;
+	TCA9555_WriteRegister(0x07, 0b11111111)!=HAL_OK ? debug(D_ERROR,"I2C TRANSMIT in WriteREGISTER"):(void)0;
 
 	uint8_t startReg = 0x00;
 	uint8_t endReg = 0x07;
-	for (int i = 0; i <= endReg-startReg+1; i++) {
+	for (int i = 0; i <= endReg-startReg; i++) {
 		uint8_t ret=0;
 		TCA9555_ReadRegister(GPIOExpRegister[i].reg, &ret,1);
 		printf("READ - 0x%02X (%s): 0x%02X\r\n", GPIOExpRegister[i].reg,GPIOExpRegister[i].name, ret);

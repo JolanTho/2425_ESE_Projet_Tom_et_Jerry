@@ -14,9 +14,13 @@
 #define ADXL_WRITE_REG 	0xA6
 #define ADXL_READ_REG 	0xA7
 #define IMU_SAMPLE_0G	10
-#define SCALE_FACTOR_OFFSET_REG 15.6 // mg/LSB
-#define SENSITIVITY_FULL_RES 256     // LSB/g
-#define SCALE_FACTOR_LSB 3.9         // mg/LSB
+
+#define SCALE_FACTOR_OFFSET_REG 15.6 // mg/LSB --> Chatgpt
+#define SENSITIVITY_FULL_RES 256     // LSB/g 	-->
+#define SCALE_FACTOR_LSB 3.9         // mg/LSB -->
+
+#define ADXL_SENSIBILITY 4 			//mg/LSB
+#define MM_S2_SEUIL 40 //mm.s-2
 #define I2C_IMU hi2c1
 
 IMURegister_t IMURegister[]={
@@ -57,6 +61,7 @@ XYZ_t vitXYZ;
 XYZ_t posXYZ;
 
 void ADXL343_init(void){
+	debug(INFORMATION,"ADXL343 - INIT");
 	uint8_t ret=0;
 	ADXL343_ReadRegister(0x00, &ret,1)!=HAL_OK ? debug(D_ERROR,"I2C READ in INIT"):(void)0;
 	printf("READ - deviceID: 0x%02X\r\n",ret);
@@ -69,18 +74,64 @@ void ADXL343_init(void){
 		printf("READ - 0x%02X (%s): 0x%02X\r\n", IMURegister[i].reg,IMURegister[i].name, ret);
 	}
 
+	/*	0x1D-TRESHS_TAP
+	 *	0x10= 1g
+	 */
+	ADXL343_WriteRegister(0x1D, 0x20)!=HAL_OK ? debug(D_ERROR,"I2C TRANSMIT in INIT"):(void)0;
+	ADXL343_ReadRegister(0x1D, &ret,1)!=HAL_OK ? debug(D_ERROR,"I2C READ in INIT"):(void)0;
+	printf("WRITE/READ - TRESHS_TAP: 0x%02X\r\n",ret);
+	/* 	0x21-DUR
+	 *	0x08 : 5ms
+	 */
+	ADXL343_WriteRegister(0x21, 0x20)!=HAL_OK ? debug(D_ERROR,"I2C TRANSMIT in INIT"):(void)0;
+	ADXL343_ReadRegister(0x21, &ret,1)!=HAL_OK ? debug(D_ERROR,"I2C READ in INIT"):(void)0;
+	printf("WRITE/READ - DUR: 0x%02X\r\n",ret);
+	/* 	0x22 - LATENT
+	 *	0x50 : 100ms
+	 */
+	ADXL343_WriteRegister(0x22, 0xA0)!=HAL_OK ? debug(D_ERROR,"I2C TRANSMIT in INIT"):(void)0;
+	ADXL343_ReadRegister(0x22, &ret,1)!=HAL_OK ? debug(D_ERROR,"I2C READ in INIT"):(void)0;
+	printf("WRITE/READ - DUR: 0x%02X\r\n",ret);
+
+	/*	0x2A-TAP_AXES
+	 *	D3		|SUPRESS
+	 * 	D2		|TAP_X
+	 * 	D1		|TAP_Y
+	 * 	D0		|TAP_Z
+	 */
+	ADXL343_WriteRegister(0x2A, 0b110)!=HAL_OK ? debug(D_ERROR,"I2C TRANSMIT in INIT"):(void)0;
+	ADXL343_ReadRegister(0x2A, &ret,1)!=HAL_OK ? debug(D_ERROR,"I2C READ in INIT"):(void)0;
+	printf("WRITE/READ - TAP_AXES: 0x%02X\r\n",ret);
+	/*	0x2E-INT_ENABLE
+	 * 	D6 		| SINGLE_TAP
+	 */
+	ADXL343_WriteRegister(0x2E, 0b1<<6)!=HAL_OK ? debug(D_ERROR,"I2C TRANSMIT in INIT"):(void)0;
+	ADXL343_ReadRegister(0x2E, &ret,1)!=HAL_OK ? debug(D_ERROR,"I2C READ in INIT"):(void)0;
+	printf("WRITE/READ - INT_ENABLE: 0x%02X\r\n",ret);
+	/*	0x2F-INT_MAP
+	 * 	D6 		| SINGLE_TAP =1 : vers INT2
+	 */
+	ADXL343_WriteRegister(0x2F, 0b1<<6)!=HAL_OK ? debug(D_ERROR,"I2C TRANSMIT in INIT"):(void)0;
+	ADXL343_ReadRegister(0x2F, &ret,1)!=HAL_OK ? debug(D_ERROR,"I2C READ in INIT"):(void)0;
+	printf("WRITE/READ - INT_ENABLE: 0x%02X\r\n",ret);
+	printf("WRITE/READ - INT_ENABLE: 0x%02X\r\n",ret);
+
 	/*	0x27—ACT_INACT_CTL
 	 * 	D7		| ACT ac/dc
 	 * 	D6		| ACT_X enable
 	 * 	D5		| ACT_Y enable
 	 * 	D4		| ACT_Z enable
+	 * 	D3		| INACT ac/dc
+	 * 	D2		| INACT_X enable
+	 * 	D1		| INACT_Y enable
+	 * 	D0		| INACT_Z enable
 	 */
-	ADXL343_WriteRegister(0x27, 0b1111<<4)!=HAL_OK ? debug(D_ERROR,"I2C TRANSMIT in INIT"):(void)0;
+	ADXL343_WriteRegister(0x27, 0b11100000)!=HAL_OK ? debug(D_ERROR,"I2C TRANSMIT in INIT"):(void)0;
 	ADXL343_ReadRegister(0x27, &ret,1)!=HAL_OK ? debug(D_ERROR,"I2C READ in INIT"):(void)0;
 	printf("WRITE/READ - ACT_INACT_CTL: 0x%02X\r\n",ret);
+
 	/*	0x2D—POWER_CTL
 	 * 	D3		| MEASURE = 1
-
 	 */
 	ADXL343_WriteRegister(0x2D, 1<<3)!=HAL_OK ? debug(D_ERROR,"I2C TRANSMIT in INIT"):(void)0;
 	ADXL343_ReadRegister(0x2D, &ret,1)!=HAL_OK ? debug(D_ERROR,"I2C READ in INIT"):(void)0;
@@ -130,7 +181,7 @@ void ADXL343_init(void){
 	ADXL343_WriteRegister(0x1F, offsetY)!=HAL_OK ? debug(D_ERROR,"I2C READ in INIT"):(void)0;
 	ADXL343_WriteRegister(0x20, offsetZ)!=HAL_OK ? debug(D_ERROR,"I2C READ in INIT"):(void)0;
 }
-
+//Resort la valeur en mm/s2
 XYZ_t ADXL343_getAcc(void){
 	XYZ_t accXYZ;
 	int8_t a_x[2]={0,0};
@@ -140,9 +191,15 @@ XYZ_t ADXL343_getAcc(void){
 	ADXL343_ReadRegister(0x32, (uint8_t*)a_x, 2)!=HAL_OK ? debug(D_ERROR,"I2C RECEIVE in ReadREGISTER"):(void)0;
 	ADXL343_ReadRegister(0x34, (uint8_t*)a_y, 2)!=HAL_OK ? debug(D_ERROR,"I2C RECEIVE in ReadREGISTER"):(void)0;
 	ADXL343_ReadRegister(0x36, (uint8_t*)a_z, 2)!=HAL_OK ? debug(D_ERROR,"I2C RECEIVE in ReadREGISTER"):(void)0;
-	accXYZ.X = (int16_t)(	a_x[1] << 8 | a_x[0]	);
-	accXYZ.Y = (int16_t)(	a_y[1] << 8 | a_y[0]	);
-	accXYZ.Z = (int16_t)(	a_z[1] << 8 | a_z[0]	);
+	accXYZ.X = (int16_t)(	a_x[1] << 8 | a_x[0]	)*ADXL_SENSIBILITY; //g.e-3 ie mm.s-2
+	accXYZ.Y = (int16_t)(	a_y[1] << 8 | a_y[0]	)*ADXL_SENSIBILITY;
+	accXYZ.Z = (int16_t)(	a_z[1] << 8 | a_z[0]	)*ADXL_SENSIBILITY;
+
+	/** FILTRAGE **/
+	accXYZ.X = abs(accXYZ.X)>=MM_S2_SEUIL ? accXYZ.X:0;
+	accXYZ.Y = abs(accXYZ.Y)>=MM_S2_SEUIL ? accXYZ.Y:0;
+	accXYZ.Z = abs(accXYZ.Z)>=MM_S2_SEUIL ? accXYZ.Z:0;
+
 	return accXYZ;
 	/*
 	 * Pour obtenir vitesse et position : CallBack dans fichier .IT

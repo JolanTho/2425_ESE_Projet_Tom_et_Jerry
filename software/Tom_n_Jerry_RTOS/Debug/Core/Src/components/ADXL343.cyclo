@@ -1,4 +1,4 @@
-../Core/Src/components/ADXL343.c:59:6:ADXL343_init	15
-../Core/Src/components/ADXL343.c:134:7:ADXL343_getAcc	4
-../Core/Src/components/ADXL343.c:152:19:ADXL343_WriteRegister	1
-../Core/Src/components/ADXL343.c:157:19:ADXL343_ReadRegister	2
+../Core/Src/components/ADXL343.c:63:6:ADXL343_init	27
+../Core/Src/components/ADXL343.c:185:7:ADXL343_getAcc	7
+../Core/Src/components/ADXL343.c:209:19:ADXL343_WriteRegister	1
+../Core/Src/components/ADXL343.c:214:19:ADXL343_ReadRegister	2

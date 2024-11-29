@@ -5,8 +5,8 @@
  *      Author: romingo
  */
 
-#ifndef SHELLV2_H_
-#define SHELLV2_H_
+#ifndef SHELL_H_
+#define SHELL_H_
 
 #include <stdint.h>
 #include <stdio.h>
@@ -78,5 +78,5 @@ typedef struct {
 #define FUNCTION 		"\033[35m"
 #define D_RESET 		"\033[0m"         // Réinitialise la couleur
 
-#endif /* SHELLV2_H_ */
+#endif /* SHELL_H_ */
 

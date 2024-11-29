@@ -8,17 +8,17 @@
 #ifndef INC_COMPONENTS_ADXL343_H_
 #define INC_COMPONENTS_ADXL343_H_
 
+#include <shell.h>
 #include "stdio.h"
 #include "i2c.h"
 #include "tim.h"
 #include "cmsis_os.h"
-#include "shellv2.h"
 #include "math.h"
 
 typedef struct{
-	int16_t X;
-	int16_t Y;
-	int16_t Z;
+	int32_t X;
+	int32_t Y;
+	int32_t Z;
 }XYZ_t;
 
 typedef struct{

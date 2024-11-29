@@ -5,46 +5,49 @@
  *      Author: romingo
  */
 
-#include "shellv2.h"
+#include <shell.h>
 
 extern SemaphoreHandle_t sem_uart_read;
-
 
 extern XYZ_t accXYZ;
 extern XYZ_t vitXYZ;
 extern XYZ_t posXYZ;
 extern IMURegister_t IMURegister[];
 extern GPIOExpanderRegister_t GPIOExpRegister[];
+extern MDriver_t MDriver1;
+extern MDriver_t MDriver2;
 
 #define NUM_CHANNEL_ADC2 2
 
 
-MAPPER mapping[] = { { "help", "Print every function available", "None",
-		subfunct_help }, { "start", "Start the robot", "None", subfunct_start },
+MAPPER mapping[] = {
+		{ "help", "Print every function available", "None",subfunct_help },
+		{ "start", "Start the robot", "None", subfunct_start },
 		{ "stop", "Stop the robot", "None", subfunct_stop },
 		{ "speed", "Change speed motor", "int:MotorID, int:speed",subfunct_speed },
 		{ "led", "Change params of the LEDs", "int: LedId	int: %PWM(0-255)", subfunct_setLed },
-		{ "IMU","None", "None", subfunct_seeIMU },
-		{ "IMUsf","Self test of the IMU", "None", subfunct_IMU_SelfTest },
-		{"IMUu", "Read register", "None", subfunct_IMU_Update },
-		{"IMUg", "Get Acc Value", "None", subfunct_IMU_GET },
-		{"Iasserv","Start asservissement courant","None",subfunct_Iasserv},
+		{ "imu","None", "None", subfunct_seeIMU },
+		{ "imusf","Self test of the IMU", "None", subfunct_IMU_SelfTest },
+		{ "imuu", "Read register", "None", subfunct_IMU_Update },
+		{ "imug", "Get Acc Value", "None", subfunct_IMU_GET },
+		{ "adc","Start asservissement courant","None",subfunct_Iasserv},
 		{ "miaou","Play song", "None", subfunct_MIAOU },
 		{ "clear","Clear screen", "None", subfunct_clear },
 };
-uint8_t started[] = "\r\n*-----------------------------*"
+uint8_t started[] =
+		"\r\n*-----------------------------*"
 		"\r\n|     Welcome on Tom&Jerry    |"
 		"\r\n*-----------------------------*"
 		"\r\n";
 uint8_t newline[] = "\r\n";
 uint8_t backspace[] = "\b \b";
 uint8_t cmdNotFound[] = "Command not found\r\n";
-uint8_t prompt[] = "user@Tom&Jerry>>";
+uint8_t prompt[] = "shell@Tom&Jerry>>";
 uint8_t clear[] = "\x1b[2J\x1b[H";
 uint8_t uartRxBuffer[UART_RX_BUFFER_SIZE];
 uint8_t uartTxBuffer[UART_TX_BUFFER_SIZE];
 
-uint32_t adc2_values_VAL[2]={0,0};
+uint16_t adc2_asserv_VAL[2]={0,0};
 
 char cmdBuffer[CMD_BUFFER_SIZE];
 int idx_cmd;
@@ -60,8 +63,6 @@ int isADC_cplt =0;
 uint8_t PWMLed = 255;
 
 
-
-
 void shell_init(void) {
 	memset(argv, 0, MAX_ARGS * sizeof(char*));
 	memset(cmdBuffer, 0, CMD_BUFFER_SIZE * sizeof(char));
@@ -74,7 +75,7 @@ void shell_init(void) {
 			HAL_MAX_DELAY);
 	HAL_UART_Transmit(&UART_DEVICE, prompt, strlen((char*) prompt),
 			HAL_MAX_DELAY);
-
+	subfunct_start(0);
 }
 
 void shell_run(void*) {
@@ -83,9 +84,8 @@ void shell_run(void*) {
 		reading = 1;
 		idx_cmd = 0;
 		while (reading) {
-			HAL_UART_Receive_IT(&UART_DEVICE, uartRxBuffer,
-					UART_RX_BUFFER_SIZE);
-			xSemaphoreTake(sem_uart_read, portMAX_DELAY);
+			HAL_UART_Receive_IT(&UART_DEVICE, uartRxBuffer, UART_RX_BUFFER_SIZE);
+			xSemaphoreTake(sem_uart_read, portMAX_DELAY)!=pdPASS ? Error_Handler():(void)0;
 
 			switch (uartRxBuffer[0]) {
 			case ASCII_CR: // Nouvelle ligne, instruction à traiter
@@ -156,6 +156,10 @@ void subfunct_help(char **argv) {
 	printf(separator);
 }
 void subfunct_start(char **argv) {
+	debug(START,"STARTING COMPONENT");
+
+	LP5812_WriteRegister(0x049,0);
+	LP5812_WriteRegister(0x044,0);
 	HAL_TIM_Base_Start_IT(&htim15) == HAL_OK ?
 			debug(START, "TIMER 15 - CALCUL IMU") : (void) 0;
 	HAL_TIM_Base_Start(&htim2) == HAL_OK ?
@@ -164,10 +168,11 @@ void subfunct_start(char **argv) {
 			debug(START, "TIMER 3") : debug(D_ERROR, "TIMER 3");
 	HAL_ADCEx_Calibration_Start(&hadc2,ADC_SINGLE_ENDED) == HAL_OK ?
 			debug(START, "ADC2 CALIBRATION") : debug(D_ERROR, "ADC2 CALIBRATION");
-
-	//	LP5812_Init();
+	TCA9555_init();
+	LP5812_Init();
 	ADXL343_init();
 	ZXB5210_init();
+
 	return;
 }
 void subfunct_stop(char **argv) {
@@ -187,14 +192,23 @@ void subfunct_speed(char **argv) {
 	 * int:MotorID 	int:speed
 	 * ex:	speed 1 90
 	 */
-	uint8_t alpha = (uint8_t) strtol(argv[1], NULL, 10); // Base 10
-	ZXB5210_speed_REV(&htim3, alpha);
-	ZXB5210_speed_FWD(&htim2, alpha);
+	MDriver_t* MDriver;
+    if (argv[1] == NULL || argv[2] == NULL) {
+    	debug(INFORMATION,"SPEED - ARGUMENTS NEEDED");
+        return;
+    }
+	uint8_t driver_id = (uint8_t) strtol(argv[1], NULL, 10); // Base 10
+	int8_t s_alpha = (int8_t) strtol(argv[2], NULL, 10); //Prends des valeurs entre -128 et 127
+
+	MDriver = driver_id==1 ? &MDriver1 : &MDriver2;
+	s_alpha > 0 ? ZXB5210_speed_FWD(MDriver, (uint8_t)s_alpha) : ZXB5210_speed_REV(MDriver, (uint8_t)-s_alpha);
 
 	return;
 }
 void subfunct_Iasserv(char **argv) {
-	HAL_ADC_Start_DMA(&hadc2,(uint32_t*)adc2_values_VAL,NUM_CHANNEL_ADC2) == HAL_OK ?
+	/** THIS DMA REQUEST IS SYNC WITH THE TIM15 EVENT **/
+
+	HAL_ADC_Start_DMA(&hadc2,(uint32_t*)adc2_asserv_VAL,NUM_CHANNEL_ADC2) == HAL_OK ?
 			debug(START, "ADC2 DMA") : debug(D_ERROR, "ADC2 DMA");
 	return;
 }
@@ -294,14 +308,6 @@ void subfunct_IMU_GET(char **argv) {
 		- accXYZ.Z };
 	posXYZ = (XYZ_t ) { vitPREV.X - vitPREV.X, vitPREV.Y - vitPREV.Y, vitPREV.Z
 		- vitPREV.Z };
-
-	printf("accX: %-24i|accY: %-24i|accZ: %-24i\r\n", accXYZ.X, accXYZ.Y,
-			accXYZ.Z);
-	printf("1e3 vitX: %-20i|1e3 vitY: %-20i|1e3 vitZ: %-20i\r\n", vitXYZ.X,
-			vitXYZ.Y, vitXYZ.Z);
-	printf("1e3 posX: %-20i|1e3 posY: %-20i|1e3 posZ: %-20i\r\n", posXYZ.X,
-			posXYZ.Y, posXYZ.Z);
-	printf(separator);
 }
 void subfunct_MIAOU(char **argv) {
 	return;

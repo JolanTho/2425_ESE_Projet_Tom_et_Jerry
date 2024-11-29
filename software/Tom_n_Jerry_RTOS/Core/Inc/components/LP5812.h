@@ -8,10 +8,10 @@
 #ifndef INC_LP5812_H_
 #define INC_LP5812_H_
 
+#include <shell.h>
 #include "stdio.h"
 #include "i2c.h"
 #include"cmsis_os.h"
-#include "shellv2.h"
 
 typedef struct{
 

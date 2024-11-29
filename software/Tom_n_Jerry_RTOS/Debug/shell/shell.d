@@ -1,4 +1,5 @@
-shell/shellv2.o: ../shell/shellv2.c ../shell/shellv2.h \
+shell/shell.o: ../shell/shell.c \
+ /Users/romingo/Desktop/ENSEA/3A/PROJET/2425_ESE_Projet_Tom_et_Jerry/software/Tom_n_Jerry_RTOS/shell/shell.h \
  ../Core/Inc/usart.h ../Core/Inc/main.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h \
  ../Core/Inc/stm32g4xx_hal_conf.h \
@@ -66,10 +67,9 @@ shell/shellv2.o: ../shell/shellv2.c ../shell/shellv2.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
  ../Core/Inc/components/LP5812.h ../Core/Inc/i2c.h \
- /Users/romingo/Desktop/ENSEA/3A/PROJET/2425_ESE_Projet_Tom_et_Jerry/software/Tom_n_Jerry_RTOS/shell/shellv2.h \
  ../Core/Inc/components/ADXL343.h ../Core/Inc/components/TCA9555.h \
  ../Core/Inc/components/ZXB5210.h
-../shell/shellv2.h:
+/Users/romingo/Desktop/ENSEA/3A/PROJET/2425_ESE_Projet_Tom_et_Jerry/software/Tom_n_Jerry_RTOS/shell/shell.h:
 ../Core/Inc/usart.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h:
@@ -141,7 +141,6 @@ shell/shellv2.o: ../shell/shellv2.c ../shell/shellv2.h \
 ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
 ../Core/Inc/components/LP5812.h:
 ../Core/Inc/i2c.h:
-/Users/romingo/Desktop/ENSEA/3A/PROJET/2425_ESE_Projet_Tom_et_Jerry/software/Tom_n_Jerry_RTOS/shell/shellv2.h:
 ../Core/Inc/components/ADXL343.h:
 ../Core/Inc/components/TCA9555.h:
 ../Core/Inc/components/ZXB5210.h:

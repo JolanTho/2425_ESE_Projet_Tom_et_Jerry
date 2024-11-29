@@ -1,0 +1,3 @@
+../asserv/asserv.c:19:6:asserv_init	4	static
+../asserv/asserv.c:23:6:asserv_courant_run	32	static
+../asserv/asserv.c:47:6:asserv_position_run	104	static

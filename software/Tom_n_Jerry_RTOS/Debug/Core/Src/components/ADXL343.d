@@ -1,5 +1,7 @@
 Core/Src/components/ADXL343.o: ../Core/Src/components/ADXL343.c \
- ../Core/Inc/components/ADXL343.h ../Core/Inc/i2c.h ../Core/Inc/main.h \
+ ../Core/Inc/components/ADXL343.h \
+ /Users/romingo/Desktop/ENSEA/3A/PROJET/2425_ESE_Projet_Tom_et_Jerry/software/Tom_n_Jerry_RTOS/shell/shell.h \
+ ../Core/Inc/usart.h ../Core/Inc/main.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h \
  ../Core/Inc/stm32g4xx_hal_conf.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_rcc.h \
@@ -47,7 +49,7 @@ Core/Src/components/ADXL343.o: ../Core/Src/components/ADXL343.c \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_dma.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_dmamux.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_exti.h \
- ../Core/Inc/tim.h \
+ ../Core/Inc/gpio.h ../Core/Inc/tim.h ../Core/Inc/adc.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  ../Core/Inc/FreeRTOSConfig.h \
@@ -65,12 +67,11 @@ Core/Src/components/ADXL343.o: ../Core/Src/components/ADXL343.c \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
- /Users/romingo/Desktop/ENSEA/3A/PROJET/2425_ESE_Projet_Tom_et_Jerry/software/Tom_n_Jerry_RTOS/shell/shellv2.h \
- ../Core/Inc/usart.h ../Core/Inc/gpio.h ../Core/Inc/adc.h \
- ../Core/Inc/components/LP5812.h ../Core/Inc/components/TCA9555.h \
- ../Core/Inc/components/ZXB5210.h
+ ../Core/Inc/components/LP5812.h ../Core/Inc/i2c.h \
+ ../Core/Inc/components/TCA9555.h ../Core/Inc/components/ZXB5210.h
 ../Core/Inc/components/ADXL343.h:
-../Core/Inc/i2c.h:
+/Users/romingo/Desktop/ENSEA/3A/PROJET/2425_ESE_Projet_Tom_et_Jerry/software/Tom_n_Jerry_RTOS/shell/shell.h:
+../Core/Inc/usart.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h:
 ../Core/Inc/stm32g4xx_hal_conf.h:
@@ -119,7 +120,9 @@ Core/Src/components/ADXL343.o: ../Core/Src/components/ADXL343.c \
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_dma.h:
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_dmamux.h:
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_exti.h:
+../Core/Inc/gpio.h:
 ../Core/Inc/tim.h:
+../Core/Inc/adc.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 ../Core/Inc/FreeRTOSConfig.h:
@@ -137,10 +140,7 @@ Core/Src/components/ADXL343.o: ../Core/Src/components/ADXL343.c \
 ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
-/Users/romingo/Desktop/ENSEA/3A/PROJET/2425_ESE_Projet_Tom_et_Jerry/software/Tom_n_Jerry_RTOS/shell/shellv2.h:
-../Core/Inc/usart.h:
-../Core/Inc/gpio.h:
-../Core/Inc/adc.h:
 ../Core/Inc/components/LP5812.h:
+../Core/Inc/i2c.h:
 ../Core/Inc/components/TCA9555.h:
 ../Core/Inc/components/ZXB5210.h:

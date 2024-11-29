@@ -32,6 +32,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "callBack.h"
+#include "asserv.h"
+#include "changeMode.h"
 
 /* USER CODE END Includes */
 
@@ -42,8 +44,17 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define TASK_SHELL_STACK_DEPTH 512
-#define TASK_SHELL_PRIORITY 1
+#define TASK_STACK_DEPTH_SHELL 2048
+#define TASK_PRIORITY_SHELL 4
+
+#define TASK_STACK_DEPTH_ASSERV_I 500
+#define TASK_PRIORITY_ASSERV_I 2
+
+#define TASK_STACK_DEPTH_ASSERV_XYZ 500
+#define TASK_PRIORITY_ASSERV_XYZ 3
+
+#define TASK_STACK_DEPTH_CHANGEMODE 500
+#define TASK_PRIORITY_CHANGEMODE 1
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -55,6 +66,11 @@
 
 /* USER CODE BEGIN PV */
 TaskHandle_t h_task_shell = NULL;
+TaskHandle_t h_task_asserv_I = NULL;
+TaskHandle_t h_task_asserv_XYZ = NULL;
+TaskHandle_t h_task_changemenMode = NULL;
+
+
 
 /* USER CODE END PV */
 
@@ -112,8 +128,16 @@ int main(void)
   MX_USART2_UART_Init();
   MX_TIM15_Init();
   /* USER CODE BEGIN 2 */
+
+	asserv_init();
 	shell_init();
-	xTaskCreate(shell_run, "Shell", 2048, NULL, TASK_SHELL_PRIORITY, &h_task_shell);
+	xTaskCreate(changeMode_run,			"Changement MODE", TASK_STACK_DEPTH_CHANGEMODE, NULL, TASK_PRIORITY_CHANGEMODE, &h_task_changemenMode) != pdPASS ? Error_Handler():(void)0;
+	xTaskCreate(asserv_courant_run, 	"Asserv Courant", TASK_STACK_DEPTH_ASSERV_I, NULL, TASK_PRIORITY_ASSERV_I, &h_task_asserv_I) != pdPASS ? Error_Handler():(void)0;
+	xTaskCreate(asserv_position_run, 	"Asserv Position", TASK_STACK_DEPTH_ASSERV_XYZ, NULL, TASK_PRIORITY_ASSERV_XYZ, &h_task_asserv_XYZ) != pdPASS ? Error_Handler():(void)0;
+	xTaskCreate(shell_run,				"Shell", TASK_STACK_DEPTH_SHELL, NULL, TASK_PRIORITY_SHELL, &h_task_shell) != pdPASS ? Error_Handler():(void)0;
+
+	vTaskStartScheduler();
+
   /* USER CODE END 2 */
 
   /* USBPD initialisation ---------------------------------*/

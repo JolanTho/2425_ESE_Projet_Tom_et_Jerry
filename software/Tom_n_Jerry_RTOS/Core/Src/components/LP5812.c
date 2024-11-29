@@ -19,6 +19,7 @@
 
 // Fonctions de configuration du LP5812
 void LP5812_Init(void) {
+	debug(INFORMATION,"LP5812 - INIT");
 	// Activer les LEDs en écrivant dans le registre ENABLE
 	/*
 	 * Set chip_en = 1 to enable the device
@@ -62,6 +63,7 @@ void LP5812_Init(void) {
 	/*
 	 * Set 100% duty cycle to illuminate the LEDs (Write FFh to registers 044h - 04Fh)
 	 */
+	/*
 	int INT_MAX=254;
 	int PWM=0;
 	for (int offset_t=0; offset_t<=2.5*INT_MAX; offset_t++){
@@ -112,7 +114,7 @@ void LP5812_Init(void) {
 	LP5812_WriteRegister(0x04E,0)!=HAL_OK ?	debug(D_ERROR,"I2C MAIN"):	(void)0;
 	LP5812_WriteRegister(0x04F,0)!=HAL_OK ?	debug(D_ERROR,"I2C MAIN"):	(void)0;
 
-
+*/
 	/*//!\\Attention : L'adresse du composant est sur 2 bytes :
 	 *				1er bytes est composé de R/W +  2dernier bytes du registres ciblé + Broadcast/Speci
 	 *				2eme byte composé du reste du registre cible

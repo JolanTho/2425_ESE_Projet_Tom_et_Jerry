@@ -1,2 +1,4 @@
-../Core/Src/app_freertos.c:64:6:MX_FREERTOS_Init	40	static
-../Core/Src/app_freertos.c:103:6:StartDefaultTask	16	static
+../Core/Src/app_freertos.c:65:13:configureTimerForRunTimeStats	4	static
+../Core/Src/app_freertos.c:70:22:getRunTimeCounterValue	4	static
+../Core/Src/app_freertos.c:81:6:MX_FREERTOS_Init	40	static
+../Core/Src/app_freertos.c:120:6:StartDefaultTask	16	static

@@ -72,5 +72,7 @@
 "./USBPD/usbpd_dpm_user.o"
 "./USBPD/usbpd_pwr_if.o"
 "./USBPD/usbpd_pwr_user.o"
+"./asserv/asserv.o"
 "./callBack/callBack.o"
-"./shell/shellv2.o"
+"./changeMode/changeMode.o"
+"./shell/shell.o"

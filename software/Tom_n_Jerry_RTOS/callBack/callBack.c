@@ -9,55 +9,68 @@
 
 SemaphoreHandle_t sem_uart_read = NULL;
 
+extern TaskHandle_t h_task_asserv_I;
+extern TaskHandle_t h_task_asserv_XYZ;
+
 extern XYZ_t accXYZ;
 extern XYZ_t vitXYZ;
 extern XYZ_t posXYZ;
 extern int isSeeIMU;
-extern int isASSERV;
+extern int isSpeedInit;
+extern MDriver_t MDriver1;
+extern MDriver_t MDriver2;
 
-
-extern int isASSERV;
-extern int isADC_cplt;
-
-uint8_t fifo_status = 0;
+//extern uint8_t fifo_status = 0;
 
 /*
  * We must declared here a function CUSTOM_ because main.c already use this callback
  */
 
+/*********** PREEMPTION PRIORITY 14 ***********/
 void CUSTOM_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
-
 	if (htim->Instance == TIM15) { //Every 1ms
 		if (isSeeIMU) {
-			ADXL343_ReadRegister(0x00, &fifo_status, 1) != HAL_OK ?
-					debug(D_ERROR, "I2C READ in IT") : (void) 0;
-			if (fifo_status >> 7) {
-				XYZ_t accPREV = accXYZ;
-				XYZ_t vitPREV = vitXYZ;
+			uint8_t ret_ADXL;
+			uint8_t ret_GPIO;
+			ADXL343_ReadRegister(0x2B, &ret_ADXL, 1);
+			TCA9555_ReadRegister(0x01, &ret_GPIO, 1);
+			printf("READ - ACP_TAP_STATUS :0x%02X\r\n",ret_ADXL);
+			printf("READ - OUTPUT Port Registers :0x%02X\r\n",ret_GPIO);
 
-				accXYZ = ADXL343_getAcc();
 
-				vitXYZ = (XYZ_t ) { accPREV.X - accXYZ.X, accPREV.Y - accXYZ.Y,
-					accPREV.Z - accXYZ.Z };
-				posXYZ = (XYZ_t ) { vitPREV.X - vitPREV.X, vitPREV.Y - vitPREV.Y,
-					vitPREV.Z - vitPREV.Z };
-
-				printf("accX: %-24i|accY: %-24i|accZ: %-24i\r\n", accXYZ.X,
-						accXYZ.Y, accXYZ.Z);
-				printf("1e3 vitX: %-20i|1e3 vitY: %-20i|1e3 vitZ: %-20i\r\n",
-						vitXYZ.X, vitXYZ.Y, vitXYZ.Z);
-				printf("1e3 posX: %-20i|1e3 posY: %-20i|1e3 posZ: %-20i\r\n",
-						posXYZ.X, posXYZ.Y, posXYZ.Z);
-				printf(separator);
-				fifo_status = 0;
-			}
+			/*
+			BaseType_t pxHigherPriorityTaskWoken = pdFALSE;
+			xTaskNotifyFromISR(h_task_asserv_XYZ,
+					1,
+					eSetBits,
+					&pxHigherPriorityTaskWoken);
+			portYIELD_FROM_ISR(pxHigherPriorityTaskWoken);
+			 */
 		}
-		if (isASSERV) {
+		if (isSpeedInit) {
 
-			// Lancer le ADC
+			/*** SMOOTH SPEED CHANGE ***/
+			uint8_t isSMOOTHspeed = 0;
+			isSMOOTHspeed |= MDriver1.FWD.pulseGoal != *(MDriver1.FWD.CCR_Channel) ? 1: 0; //Stocke sur un bit si on doit changer une valeur de pulse
+			isSMOOTHspeed |= MDriver1.REV.pulseGoal != *(MDriver1.REV.CCR_Channel) ? 1<<1: 0;
+			isSMOOTHspeed |= MDriver2.FWD.pulseGoal != *(MDriver2.FWD.CCR_Channel) ? 1<<2: 0;
+			isSMOOTHspeed |= MDriver2.REV.pulseGoal != *(MDriver2.REV.CCR_Channel) ? 1<<3: 0;
+
+
+			if(isSMOOTHspeed){ // Si un seul 1 est présent aloir la condition est vrai
+				(isSMOOTHspeed & 0b1)>> 0 ? // Si on a detecter une erreur
+						IT_ZXB5210_speed_UPDATE(&MDriver1, &MDriver1.FWD):(void)0;
+				(isSMOOTHspeed & 0b10)>> 1 ?
+						IT_ZXB5210_speed_UPDATE(&MDriver1, &MDriver1.REV):(void)0;
+				(isSMOOTHspeed & 0b100)>> 2 ?
+						IT_ZXB5210_speed_UPDATE(&MDriver2, &MDriver2.FWD):(void)0;
+				(isSMOOTHspeed & 0b1000)>> 3 ?
+						IT_ZXB5210_speed_UPDATE(&MDriver2, &MDriver2.REV):(void)0;
+			}
 		}
 	}
 }
+/*********** PREEMPTION PRIORITY 5 ***********/
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 	/** SHELL INTERRUPTIONS **/
 	if (huart->Instance == USART1) {
@@ -66,10 +79,14 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 		portYIELD_FROM_ISR(pxHigherPriorityTaskWoken);
 	}
 }
-
-
+/*********** PREEMPTION PRIORITY 5 ***********/
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc) {
 	if (hadc->Instance == ADC2) {
-		isADC_cplt = 1;
+		BaseType_t pxHigherPriorityTaskWoken = pdFALSE;
+		xTaskNotifyFromISR(h_task_asserv_I,
+				1,
+				eSetBits,
+				&pxHigherPriorityTaskWoken);
+		portYIELD_FROM_ISR(pxHigherPriorityTaskWoken);
 	}
 }
