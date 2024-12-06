@@ -183,12 +183,8 @@ int LIDAR_start_scan_dma(h_LIDAR_t *h_LIDAR) {
     return 0;
 }
 
-
-
-
-
-void LIDAR_process_frame(h_LIDAR_t *LIDAR) {
-    uint8_t *buff = LIDAR->processing.frame_buff; // Buffer circulaire DMA
+void LIDAR_process_frame(h_LIDAR_t *LIDAR, uint8_t *buff) {
+    // uint8_t *buff = LIDAR->processing.frame_buff; // Buffer circulaire DMA
     int buffer_size = FRAME_BUFF_SIZE;              // Taille totale du buffer
     int start_idx = 0;                             // Indice de départ pour parcourir le buffer
 
@@ -199,16 +195,23 @@ void LIDAR_process_frame(h_LIDAR_t *LIDAR) {
 
         if (buff[start_idx] == 0xAA && buff[(start_idx + 1) % buffer_size] == 0x55) {
 
+        	//printf("Trame trouvée \r\n");
 
             // L'entête est trouvé, extraire les métadonnées
             int header_idx = start_idx; // Index actuel pour début de trame
+
+            // Start Angle
             uint16_t FSA = (buff[(header_idx + 4) % buffer_size] |
                             (buff[(header_idx + 5) % buffer_size] << 8)) >>
-                           7; // Angle de départ (en degrés)
+                           7; // Shift de 7 pour diviser de 64 + Shift à 1 pour avoir l'angle en degré
+
+            // End Angle
             uint16_t LSA = (buff[(header_idx + 6) % buffer_size] |
                             (buff[(header_idx + 7) % buffer_size] << 8)) >>
-                           7; // Angle de fin (en degrés)
-            uint8_t LSN = buff[(header_idx + 3) % buffer_size]; // Nombre de points
+                           7; // Shift de 7 pour diviser de 64 + Shift à 1 pour avoir l'angle en degré
+
+            // Nombre de points
+            uint8_t LSN = buff[(header_idx + 3) % buffer_size];
 
             // Calcul de la taille totale attendue de la trame
             int frame_size = 10 + LSN * 2; // 10 octets d'entête + 2 octets par point
@@ -223,7 +226,7 @@ void LIDAR_process_frame(h_LIDAR_t *LIDAR) {
                 break;
             }
 
-//            // Vérification du checksum
+//            // Vérification du checksum qui ne fonctionne jamais car mal fait
 //            uint16_t checksum_calculated = 0;
 //            for (int i = 0; i < frame_size - 2; i++) {
 //                checksum_calculated ^= buff[(header_idx + i) % buffer_size];
@@ -244,17 +247,19 @@ void LIDAR_process_frame(h_LIDAR_t *LIDAR) {
                 // Lecture de la distance brute
                 uint16_t Si = buff[(header_idx + 10 + i * 2) % buffer_size] |
                               (buff[(header_idx + 11 + i * 2) % buffer_size] << 8);
+
+
                 int Di = Si / 4; // Distance réelle en mm
 
                 // Calcul de l'angle
-                int Ai = i*abs(LSA-FSA)/(LSN-1) + FSA;
+                int Ai = (i+1)*abs(LSA-FSA)/(LSN-1) + FSA;
 
                 if (Ai < 0 || Ai >= 360) {
                     continue;
                 }
 
                 // Stockage dans le buffer des points
-                if (Di < 0 || Di > 5000) {
+                if (Di < 150 || Di > 10000) {
                 	LIDAR->processing.point_buff[Ai] = 0; // Distance hors plage
                 } else {
                 	LIDAR->processing.point_buff[Ai] = Di; // Distance valide
@@ -271,12 +276,163 @@ void LIDAR_process_frame(h_LIDAR_t *LIDAR) {
         }
     }
 
-    LIDAR->rx_flag_dma = 0;
+}
 
+// Permet de calculer la distance moyenen sur un tableau entre deux indices
+int calculer_distance_moyenne(const int *distances, int debut, int fin) {
+    int somme = 0;
+    int n = fin - debut + 1;
+    for (int i = debut; i <= fin; i++) {
+        somme += distances[i];
+    }
+    return somme / n;
+}
+
+/**
+ * @brief Trouve les clusters dans les données du LIDAR.
+ * @param LIDAR Pointeur vers la structure h_LIDAR_t.
+ */
+void find_clusters(h_LIDAR_t *LIDAR) {
+    int *distances = LIDAR->processing.filtred_buff;
+    int cluster_count = 0;
+    int debut_cluster = 0;
+
+    // Parcours des distances pour identifier les clusters
+    for (int i = 1; i < NB_DEGRES; i++) {
+        // Si la différence dépasse le seuil, un cluster est terminé
+        if (fabs(distances[i] - distances[i - 1]) > CLUSTER_SEUIL) {
+            // Calcul et stockage des informations du cluster
+            if (cluster_count < MAX_CLUSTERS) {
+                LIDAR->processing.clusters[cluster_count].distance_moyenne = calculer_distance_moyenne(distances, debut_cluster, i - 1);
+                LIDAR->processing.clusters[cluster_count].angle_moyen = (debut_cluster + i - 1) / 2;
+                LIDAR->processing.clusters[cluster_count].count = i - debut_cluster;
+                cluster_count++;
+            }
+            debut_cluster = i; // Nouveau cluster
+        }
+    }
+
+    // Traitement du dernier cluster
+    if (cluster_count < MAX_CLUSTERS) {
+        LIDAR->processing.clusters[cluster_count].distance_moyenne = calculer_distance_moyenne(distances, debut_cluster, NB_DEGRES - 1);
+        LIDAR->processing.clusters[cluster_count].angle_moyen = (debut_cluster + NB_DEGRES - 1) / 2;
+        LIDAR->processing.clusters[cluster_count].count = NB_DEGRES - debut_cluster;
+        cluster_count++;
+    }
+
+    // Mise à jour du compteur de clusters
+    LIDAR->processing.cluster_cnt = cluster_count;
+}
+
+//Applique un filtre médian aux données du LIDAR.
+void medianFilter(h_LIDAR_t *LIDAR) {
+    int *signal = LIDAR->processing.point_buff;     // Signal brut
+    int *filtred = LIDAR->processing.filtred_buff; // Signal filtré
+    int signal_length = NB_DEGRES;
+    int window[5];
+    int middle = 2; // La médiane est au centre d'une fenêtre de taille 5
+
+    for (int i = 0; i < signal_length; i++) {
+        // Construire la fenêtre de voisinage
+        for (int j = 0; j < 5; j++) {
+            int index = i - middle + j;
+            // Gérer les bords du signal
+            if (index < 0) index = 0;
+            if (index >= signal_length) index = signal_length - 1;
+            window[j] = signal[index];
+        }
+
+        // Trier la fenêtre pour extraire la médiane
+        for (int j = 0; j < 5; j++) {
+            for (int k = j + 1; k < 5; k++) {
+                if (window[j] > window[k]) {
+                    int temp = window[j];
+                    window[j] = window[k];
+                    window[k] = temp;
+                }
+            }
+        }
+
+        // Stocker la médiane dans le tableau filtré
+        filtred[i] = window[middle];
+    }
 }
 
 
 
+void kMeansClustering(h_LIDAR_t *LIDAR) {
+    int *distances = LIDAR->processing.filtred_buff;
+    int signal_length = NB_DEGRES;
+    float centroids[MAX_K];
+    int clusters2[NB_DEGRES];
+    int cluster_counts[MAX_K];
+    float new_centroids[MAX_K];
+
+    // Initialisation des centroïdes (au hasard parmi les distances)
+    for (int i = 0; i < MAX_K; i++) {
+        centroids[i] = distances[rand() % signal_length];
+    }
+
+    int iterations = 0;
+    int converged = 0;
+
+    while (iterations < MAX_ITERATIONS && !converged) {
+        converged = 1;
+
+        // Réinitialiser les compteurs
+        for (int i = 0; i < MAX_K; i++) {
+            cluster_counts[i] = 0;
+            new_centroids[i] = 0;
+        }
+
+        // Assignation des points aux clusters
+        for (int i = 0; i < signal_length; i++) {
+            float min_distance = fabs(distances[i] - centroids[0]);
+            int closest_cluster = 0;
+
+            for (int j = 1; j < MAX_K; j++) {
+                float distance = fabs(distances[i] - centroids[j]);
+                if (distance < min_distance) {
+                    min_distance = distance;
+                    closest_cluster = j;
+                }
+            }
+
+            clusters2[i] = closest_cluster;
+            cluster_counts[closest_cluster]++;
+            new_centroids[closest_cluster] += distances[i];
+        }
+
+        // Mise à jour des centroïdes
+        for (int i = 0; i < MAX_K; i++) {
+            if (cluster_counts[i] > 0) {
+                new_centroids[i] /= cluster_counts[i];
+            } else {
+                new_centroids[i] = centroids[i]; // Si aucun point n'est assigné, garder le centroïde précédent
+            }
+
+            if (fabs(new_centroids[i] - centroids[i]) > 1e-3) {
+                converged = 0;
+            }
+        }
+
+        // Copier les nouveaux centroïdes
+        for (int i = 0; i < MAX_K; i++) {
+            centroids[i] = new_centroids[i];
+        }
+
+        iterations++;
+    }
+
+    // Stockage des résultats
+    LIDAR->processing.cluster_cnt = MAX_K;
+    for (int i = 0; i < MAX_K; i++) {
+        LIDAR->processing.clusters[i].distance_moyenne = centroids[i];
+        LIDAR->processing.clusters[i].count = cluster_counts[i];
+        // Angle moyen peut être calculé en fonction des indices assignés au cluster
+        LIDAR->processing.clusters[i].angle_moyen = 0; // Calcul optionnel
+    }
+}
 
 
 

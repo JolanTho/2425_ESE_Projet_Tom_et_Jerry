@@ -41,7 +41,9 @@
 /* USER CODE BEGIN PD */
 #define STACK_SIZE 256
 
-#define DUREE 1000
+
+#define DUREE 5000
+#define DUREEP 30000
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -53,6 +55,8 @@
 
 /* USER CODE BEGIN PV */
 h_LIDAR_t lidar;
+SemaphoreHandle_t semb_halfCllbck;
+SemaphoreHandle_t semb_cpltCllbck;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -101,7 +105,6 @@ int uart_dma_transmit(uint8_t *p_data, uint16_t size){
 void counter (void * pvParameters){
 	char* s = pcTaskGetName(xTaskGetCurrentTaskHandle());
 
-	int h = 0;
 //
 //	vTaskDelay(500);
 //
@@ -123,20 +126,13 @@ void counter (void * pvParameters){
 
 //	vTaskDelay(500);
 
-	  if (LIDAR_start_scan_dma(&lidar) == 0) {
-	      printf("LIDAR scanning started successfully.\r\n");
-	  } else {
-	      printf("Failed to start LIDAR scanning.\r\n");
-	  }
-
 	while (1) {
 
-		printf("Je suis la tache %s et je m'endors pour %d periodes\r\n", s, DUREE);
+		printf("Je suis la tache %s et je m'endors pour %d periodes\r\n", s, DUREEP);
 
-		if(h >= 30){
-			h=0;
+		vTaskDelay(DUREEP);
 
-			printf("LIDAR Scan Results (Angle: Distance in mm):\r\n");
+		printf("LIDAR Scan Results (Angle: Distance in mm):\r\n");
 	    for (int i = 0; i < 360; i++) {
 	    		if (lidar.processing.point_buff[i] >= 0) { // Afficher uniquement les valeurs valides
 	    			printf("Angle %3d: %4d mm\r\n", i, lidar.processing.point_buff[i]);
@@ -147,11 +143,61 @@ void counter (void * pvParameters){
 
 	    printf("\n");
 
-		}
 
-		h++;
-		vTaskDelay(DUREE);
+		}
 	}
+
+void lidarTake (void * pvParameters){
+	char* s = pcTaskGetName(xTaskGetCurrentTaskHandle());
+	uint8_t* buff;
+
+	  if (LIDAR_start_scan_dma(&lidar) == 0) {
+	      printf("LIDAR scanning started successfully.\r\n");
+	  } else {
+	      printf("Failed to start LIDAR scanning.\r\n");
+	  }
+
+	for(;;){
+
+
+		// Attente du Semahore de half buffer
+		xSemaphoreTake(semb_halfCllbck, portMAX_DELAY);
+
+		// Pointeur sur le début des données
+		buff = lidar.processing.receive_buff;
+		LIDAR_process_frame(&lidar, buff);
+
+
+		// Attente du semaphore du complete buffer
+		xSemaphoreTake(semb_cpltCllbck, portMAX_DELAY);
+
+		// Pointeur sur la moitié des données
+		buff = &lidar.processing.receive_buff[FRAME_BUFF_SIZE];
+		LIDAR_process_frame(&lidar, buff);
+
+
+		}
+}
+
+void lidarprocess (void * pvParameters){
+	char* s = pcTaskGetName(xTaskGetCurrentTaskHandle());
+
+	for(;;){
+		printf("Je suis la tache %s et je m'endors pour %d periodes\r\n", s, DUREE);
+
+	    medianFilter(&lidar);
+
+	    find_clusters(&lidar);
+
+	    printf("Clusters Maison trouvees : %d \r\n", lidar.processing.cluster_cnt);
+//
+//	    kMeansClustering(&lidar);
+//
+//	    printf("Clusters K-Means trouvees : %d \r\n", lidar.processing.cluster_cnt);
+
+	    vTaskDelay(DUREE);
+	}
+
 }
 /* USER CODE END 0 */
 
@@ -165,6 +211,8 @@ int main(void)
   /* USER CODE BEGIN 1 */
 	BaseType_t xReturned;
 	TaskHandle_t xHandle1 = NULL;
+	TaskHandle_t xHandle2 = NULL;
+	TaskHandle_t xHandle3 = NULL;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -198,7 +246,11 @@ int main(void)
 
   /*
    * Création des vérifications du lidar.
+   *
    */
+
+  semb_cpltCllbck = xSemaphoreCreateBinary();
+  semb_halfCllbck = xSemaphoreCreateBinary();
 
 	  // Déclaration et configuration de la structure h_LIDAR
 
@@ -212,12 +264,44 @@ int main(void)
 	  lidar.serial_drv.dma_transmit=uart_dma_transmit;
 
 	xReturned = xTaskCreate(
+			lidarTake, // Function that implements the task.
+			"lidarTake", // Text name for the task.
+			STACK_SIZE, // Stack size in words, not bytes.
+			(void *) NULL, // Parameter passed into the task.
+			2,// Priority at which the task is created.
+			&xHandle1 ); // Used to pass out the created task's handle.
+
+	if (xReturned != pdPASS)
+	{
+		printf("Error creating Task\r\n");
+		Error_Handler();
+	}
+
+	printf("Tasks created\r\n");
+
+	xReturned = xTaskCreate(
 			counter, // Function that implements the task.
 			"counter", // Text name for the task.
 			STACK_SIZE, // Stack size in words, not bytes.
 			(void *) NULL, // Parameter passed into the task.
 			tskIDLE_PRIORITY,// Priority at which the task is created.
-			&xHandle1 ); // Used to pass out the created task's handle.
+			&xHandle2 ); // Used to pass out the created task's handle.
+
+	if (xReturned != pdPASS)
+	{
+		printf("Error creating Task\r\n");
+		Error_Handler();
+	}
+
+	printf("Tasks created\r\n");
+
+	xReturned = xTaskCreate(
+			lidarprocess, // Function that implements the task.
+			"LidarProcess", // Text name for the task.
+			STACK_SIZE, // Stack size in words, not bytes.
+			(void *) NULL, // Parameter passed into the task.
+			tskIDLE_PRIORITY,// Priority at which the task is created.
+			&xHandle3 ); // Used to pass out the created task's handle.
 
 	if (xReturned != pdPASS)
 	{
@@ -298,29 +382,26 @@ void SystemClock_Config(void)
 /* USER CODE BEGIN 4 */
 
 void HAL_UART_RxHalfCpltCallback(UART_HandleTypeDef *huart) {
+
     if (huart->Instance == UART4) {
 
-    	if(lidar.rx_flag_dma == 0){
-    		lidar.rx_flag_dma = 1;
 
-			memcpy(lidar.processing.frame_buff, lidar.processing.receive_buff, 640);
+    	BaseType_t higher_priority_task_woken = pdFALSE;
+    	xSemaphoreGiveFromISR(semb_halfCllbck, &higher_priority_task_woken);
 
-			// Traiter la première moitié du buffer
-			LIDAR_process_frame(&lidar);
-    	}
+    	portYIELD_FROM_ISR(higher_priority_task_woken);
+
     }
 }
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
     if (huart->Instance == UART4){
-    	if(lidar.rx_flag_dma == 0){
-    		lidar.rx_flag_dma = 2;
 
-			memcpy(lidar.processing.frame_buff, lidar.processing.receive_buff[640], 640);
+		BaseType_t higher_priority_task_woken = pdFALSE;
+    	xSemaphoreGiveFromISR(semb_cpltCllbck, &higher_priority_task_woken);
 
-			// Traiter la deuxième moitié du buffer
-			LIDAR_process_frame(&lidar);
-    	}
+    	portYIELD_FROM_ISR(higher_priority_task_woken);
+
     }
 }
 

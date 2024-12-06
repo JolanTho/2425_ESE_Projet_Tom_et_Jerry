@@ -6,16 +6,25 @@
 #include "stm32g4xx_hal.h"
 
 
-// Constantes
-#define INFO_BUFF_SIZE 27
-#define HEALTH_BUFF_SIZE 10
-#define CMD_BUFF_SIZE 2
-#define DATA_BUFF_SIZE 1280
-#define FRAME_BUFF_SIZE 640	//Au max on a 0x28=40 points par packet (80o) + le header (10o)
-#define POINT_BUFF_SIZE 360 //Les 360° autour du LIDAR
-#define NB_DEGRES 360
-#define CLUSTER_SEUIL 150
+// Super Define
+#define INFO_BUFF_SIZE 27 // Taille de résultat INFO
+#define HEALTH_BUFF_SIZE 10 // Taille de résultat HEALTH
+#define CMD_BUFF_SIZE 2 // Taille de CMD
 
+
+#define DATA_BUFF_SIZE 4000 // Taille du buffer de données recus
+#define FRAME_BUFF_SIZE 2000	// Taille du demi buffer de données recus
+#define POINT_BUFF_SIZE 360 // Taille des données LIDAR
+#define NB_DEGRES 360 // Les degres de traitement
+
+// Methode de cluster maison
+#define CLUSTER_SEUIL 30   // Seuil pour la différence de distance entre deux points pour définir un nouveau cluster
+							// Erreur systematique de 2cm on prend 30mm pour etre large.
+#define MAX_CLUSTERS 100    // Nombre maximum de clusters gérés
+
+// Methode de cluster jolie
+#define MAX_K 20
+#define MAX_ITERATIONS 100
 
 
 // Commandes pour le LiDAR
@@ -61,6 +70,14 @@ typedef struct {
     uint16_t error_code;
 } LIDAR_health_stat_t;
 
+// Structure d'un cluster de points
+typedef struct {
+    int angle_moyen;       // Angle moyen du cluster
+    int distance_moyenne;  // Distance moyenne du cluster
+    int count;             // Nombre de points dans le cluster
+} Cluster_t;
+
+
 typedef struct LIDAR_processing_struct {
 	//Header
 	uint16_t PH;
@@ -83,9 +100,18 @@ typedef struct LIDAR_processing_struct {
 	//Frame index
 	uint8_t idx;
 
+	// Definition pour récuperer les data
     uint8_t frame_buff[FRAME_BUFF_SIZE]; // Buffer pour stocker une frame
     int point_buff[POINT_BUFF_SIZE];     // Tableau pour les 360 angles
     uint8_t receive_buff[DATA_BUFF_SIZE]; // Buffer pour la réception DMA
+
+    // Definition pour traiter les data
+    int filtred_buff[NB_DEGRES];      // Points filtrés
+    Cluster_t clusters[MAX_CLUSTERS]; // Liste des clusters
+    int cluster_cnt;
+
+
+
 } LIDAR_processing_t;
 
 // Structure pour les fonctions de communication
@@ -125,7 +151,14 @@ int LIDAR_restart(h_LIDAR_t * h_LIDAR);
 int LIDAR_get_info(h_LIDAR_t *h_LIDAR);
 int LIDAR_get_health_stat(h_LIDAR_t *h_LIDAR);
 
+// Fonctions pour récuperer les valeurs du lidar
 int LIDAR_start_scan_dma(h_LIDAR_t *h_LIDAR);
-void LIDAR_process_frame(h_LIDAR_t *h_LIDAR);
+void LIDAR_process_frame(h_LIDAR_t *h_LIDAR, uint8_t *buff);
 
+// Méthode cluster maison
+void medianFilter(h_LIDAR_t *LIDAR);
+void find_clusters(h_LIDAR_t *LIDAR);
+
+// Méthode du K_Means
+void kMeansClustering(h_LIDAR_t *LIDAR);
 #endif /* DRV_LIDAR_H_ */
