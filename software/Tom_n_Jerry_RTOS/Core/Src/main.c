@@ -146,6 +146,8 @@ int main(void)
 	asserv_init();
 	shell_init();
 	lidar_init();
+	changement_mode_init();
+
 	vPortGetHeapStats(&heapStats);
 	xTaskCreate(changeMode_run,			"Changement MODE", TASK_STACK_DEPTH_CHANGEMODE, NULL, TASK_PRIORITY_CHANGEMODE, &h_task_changemenMode) != pdPASS ? Error_Handler():(void)0;
 	vPortGetHeapStats(&heapStats);

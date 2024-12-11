@@ -1,3 +1,0 @@
-../Core/Src/components/TCA9555.c:25:6:TCA9555_init	16	static
-../Core/Src/components/TCA9555.c:41:19:TCA9555_WriteRegister	32	static
-../Core/Src/components/TCA9555.c:45:19:TCA9555_ReadRegister	24	static

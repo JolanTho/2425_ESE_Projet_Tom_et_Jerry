@@ -14,7 +14,9 @@
 
 static int  workMode =0;
 
+void changement_mode_init(void){
 
+}
 void changeMode_run(void*){
 
 	for(;;){

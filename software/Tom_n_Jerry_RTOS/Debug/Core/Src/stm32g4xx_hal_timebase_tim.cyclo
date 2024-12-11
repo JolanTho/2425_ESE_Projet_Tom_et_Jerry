@@ -1,4 +1,0 @@
-../Core/Src/stm32g4xx_hal_timebase_tim.c:42:19:HAL_InitTick	4
-../Core/Src/stm32g4xx_hal_timebase_tim.c:110:6:HAL_SuspendTick	1
-../Core/Src/stm32g4xx_hal_timebase_tim.c:122:6:HAL_ResumeTick	1
-../Core/Src/stm32g4xx_hal_timebase_tim.c:137:6:TimeBase_TIM_PeriodElapsedCallback	1

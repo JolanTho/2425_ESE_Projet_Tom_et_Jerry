@@ -10,6 +10,7 @@
 
 #include <shell.h>
 
+void changement_mode_init(void);
 void changeMode_run(void*);
 
 #endif /* CHANGEMODE_H_ */

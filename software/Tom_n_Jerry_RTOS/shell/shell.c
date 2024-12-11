@@ -173,7 +173,11 @@ void subfunct_start(char **argv) {
 	HAL_ADCEx_Calibration_Start(&hadc2,ADC_SINGLE_ENDED) == HAL_OK ?
 			debug(START, "ADC2 CALIBRATION") : debug(D_ERROR, "ADC2 CALIBRATION");
 
-	LP5812_WriteRegister(0x049,0);
+	LP5812_WriteRegister(0x049,0);//LED HAUTE VERTE
+	LP5812_WriteRegister(0x048,0);
+	LP5812_WriteRegister(0x047,0);
+	LP5812_WriteRegister(0x046,0);
+	LP5812_WriteRegister(0x045,0);
 	LP5812_WriteRegister(0x044,0);
 	//To-Do : Chenillard des LEDs
 	TCA9555_init();

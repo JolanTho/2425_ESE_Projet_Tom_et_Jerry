@@ -1,4 +1,0 @@
-../Core/Src/app_freertos.c:65:13:configureTimerForRunTimeStats	1
-../Core/Src/app_freertos.c:70:22:getRunTimeCounterValue	1
-../Core/Src/app_freertos.c:81:6:MX_FREERTOS_Init	1
-../Core/Src/app_freertos.c:120:13:StartDefaultTask	1

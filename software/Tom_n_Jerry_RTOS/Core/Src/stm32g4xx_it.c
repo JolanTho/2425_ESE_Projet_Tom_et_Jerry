@@ -25,6 +25,7 @@
 /* USER CODE BEGIN Includes */
 #include "main.h"
 #include "cmsis_os.h"
+#include "components/LP5812.h"
 
 /* USER CODE END Includes */
 
@@ -316,18 +317,34 @@ void USART2_IRQHandler(void)
 void EXTI15_10_IRQHandler(void)
 {
   /* USER CODE BEGIN EXTI15_10_IRQn 0 */
-	BaseType_t pxHigherPriorityTaskWoken = pdFALSE;
-	xTaskNotifyFromISR(h_task_changemenMode,
-			1,
-			eSetBits,
-			&pxHigherPriorityTaskWoken);
-	portYIELD_FROM_ISR(pxHigherPriorityTaskWoken);
 
+	if (__HAL_GPIO_EXTI_GET_IT(MOUSTACHE_4_Pin) != RESET)
+	{
+		LP5812_WriteRegister(0x045,0);
+		LP5812_WriteRegister(0x046,0);
+		LP5812_WriteRegister(0x047,124);
+//		BaseType_t pxHigherPriorityTaskWoken = pdFALSE;
+//		xTaskNotifyFromISR(h_task_changemenMode,
+//				1,
+//				eSetBits,
+//				&pxHigherPriorityTaskWoken);
+//		portYIELD_FROM_ISR(pxHigherPriorityTaskWoken);
+	}
+	if (__HAL_GPIO_EXTI_GET_IT(MOUSTACHE_3_Pin) != RESET)
+	{
+		LP5812_WriteRegister(0x045,124);
+		LP5812_WriteRegister(0x046,0);
+		LP5812_WriteRegister(0x047,0);
+//		BaseType_t pxHigherPriorityTaskWoken = pdFALSE;
+//		xTaskNotifyFromISR(h_task_changemenMode,
+//				1,
+//				eSetBits,
+//				&pxHigherPriorityTaskWoken);
+//		portYIELD_FROM_ISR(pxHigherPriorityTaskWoken);
+	}
   /* USER CODE END EXTI15_10_IRQn 0 */
-  HAL_GPIO_EXTI_IRQHandler(GPIO_EXP_EXTI_Pin);
-  HAL_GPIO_EXTI_IRQHandler(BUTTON_INITIAL_STATE_Pin);
-  HAL_GPIO_EXTI_IRQHandler(BUTTON_START_ROBOT_Pin);
-  HAL_GPIO_EXTI_IRQHandler(MOUSTACHE_1_Pin);
+  HAL_GPIO_EXTI_IRQHandler(MOUSTACHE_4_Pin);
+  HAL_GPIO_EXTI_IRQHandler(MOUSTACHE_3_Pin);
   /* USER CODE BEGIN EXTI15_10_IRQn 1 */
 
   /* USER CODE END EXTI15_10_IRQn 1 */
