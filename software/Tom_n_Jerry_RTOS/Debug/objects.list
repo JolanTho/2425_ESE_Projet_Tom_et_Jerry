@@ -49,6 +49,8 @@
 "./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_tim.o"
 "./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_ucpd.o"
 "./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_utils.o"
+"./Lidar/driverLidar.o"
+"./Lidar/lidar.o"
 "./Middlewares/ST/STM32_USBPD_Library/Core/src/usbpd_trace.o"
 "./Middlewares/ST/STM32_USBPD_Library/Devices/STM32G4XX/src/usbpd_cad_hw_if.o"
 "./Middlewares/ST/STM32_USBPD_Library/Devices/STM32G4XX/src/usbpd_hw.o"

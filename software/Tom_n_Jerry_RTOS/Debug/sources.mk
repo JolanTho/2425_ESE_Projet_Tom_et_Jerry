@@ -26,6 +26,7 @@ Core/Src \
 Core/Src/components \
 Core/Startup \
 Drivers/STM32G4xx_HAL_Driver/Src \
+Lidar \
 Middlewares/ST/STM32_USBPD_Library/Core/src \
 Middlewares/ST/STM32_USBPD_Library/Devices/STM32G4XX/src \
 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS \

@@ -1,1 +1,2 @@
-../changeMode/changeMode.c:15:6:changeMode_run	3
+../changeMode/changeMode.c:18:6:changeMode_run	3
+../changeMode/changeMode.c:45:6:play_song	1

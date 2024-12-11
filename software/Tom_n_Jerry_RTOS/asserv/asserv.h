@@ -21,6 +21,7 @@
 
 void asserv_init(void);
 void asserv_courant_run(void*);
+void asserv_vitesse_run(void*);
 void asserv_position_run(void*);
 
 #endif /* ASSERV_H_ */

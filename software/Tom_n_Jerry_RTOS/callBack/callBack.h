@@ -10,6 +10,7 @@
 
 #include <shell.h>
 #include "tim.h"
+#include "usart.h"
 #include "components/ADXL343.h"
 
 void CUSTOM_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim);

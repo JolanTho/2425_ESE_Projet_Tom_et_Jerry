@@ -132,15 +132,15 @@ USBPD_StatusTypeDef USBPD_DPM_InitCore(void)
 
   static const USBPD_PE_Callbacks dpmCallbacks =
   {
-    USBPD_DPM_SetupNewPower,
+    NULL,
     USBPD_DPM_HardReset,
     NULL,
     USBPD_DPM_Notification,
     USBPD_DPM_ExtendedMessageReceived,
     USBPD_DPM_GetDataInfo,
     USBPD_DPM_SetDataInfo,
-    USBPD_DPM_EvaluateRequest,
     NULL,
+    USBPD_DPM_SNK_EvaluateCapabilities,
     NULL,
     USBPD_PE_TaskWakeUp,
 #if defined(_VCONN_SUPPORT)
@@ -323,7 +323,7 @@ void USBPD_PE_Task(void const *argument)
 
   for(;;)
   {
-    _timing = USBPD_PE_StateMachine_SRC(_port);
+    _timing = USBPD_PE_StateMachine_SNK(_port);
     osMessageGet(PEQueueId[_port],_timing);
   }
 }
@@ -361,7 +361,7 @@ static void PE_Task(uint32_t PortNum)
   {
     uint32_t event;
     (void)osMessageQueueGet(PEQueueId[PortNum], &event, NULL,
-    USBPD_PE_StateMachine_SRC(PortNum));
+    USBPD_PE_StateMachine_SNK(PortNum));
   }
 }
 #endif /* osCMSIS < 0x20000U */

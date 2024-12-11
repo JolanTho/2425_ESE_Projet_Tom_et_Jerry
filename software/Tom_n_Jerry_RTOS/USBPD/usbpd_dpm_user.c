@@ -303,18 +303,6 @@ void USBPD_DPM_HardReset(uint8_t PortNum, USBPD_PortPowerRole_TypeDef CurrentRol
 }
 
 /**
-  * @brief  Request the DPM to setup the new power level.
-  * @param  PortNum The current port number
-  * @retval USBPD status
-  */
-USBPD_StatusTypeDef USBPD_DPM_SetupNewPower(uint8_t PortNum)
-{
-/* USER CODE BEGIN USBPD_DPM_SetupNewPower */
-  return USBPD_PWR_IF_SetProfile(PortNum);
-/* USER CODE END USBPD_DPM_SetupNewPower */
-}
-
-/**
   * @brief  DPM callback to allow PE to retrieve information from DPM/PWR_IF.
   * @param  PortNum Port number
   * @param  DataId  Type of data to be updated in DPM based on @ref USBPD_CORE_DataInfoType_TypeDef
@@ -400,25 +388,17 @@ void USBPD_DPM_SetDataInfo(uint8_t PortNum, USBPD_CORE_DataInfoType_TypeDef Data
 }
 
 /**
-  * @brief  Evaluate received Request Message from Sink port
-  * @param  PortNum Port number
-  * @param  PtrPowerObject  Pointer on the power data object
-  * @retval USBPD status : USBPD_ACCEPT, USBPD_REJECT, USBPD_WAIT, USBPD_GOTOMIN
+  * @brief  Evaluate received Capabilities Message from Source port and prepare the request message
+  * @param  PortNum         Port number
+  * @param  PtrRequestData  Pointer on selected request data object
+  * @param  PtrPowerObjectType  Pointer on the power data object
+  * @retval None
   */
-USBPD_StatusTypeDef USBPD_DPM_EvaluateRequest(uint8_t PortNum, USBPD_CORE_PDO_Type_TypeDef *PtrPowerObject)
+void USBPD_DPM_SNK_EvaluateCapabilities(uint8_t PortNum, uint32_t *PtrRequestData, USBPD_CORE_PDO_Type_TypeDef *PtrPowerObjectType)
 {
-/* USER CODE BEGIN USBPD_DPM_EvaluateRequest */
-  /*
-    Set power data object to initialize value.
-    This parameter is used by the stack to start or not tPPSTimeout
-    (in case of USBPD_CORE_PDO_TYPE_APDO, stack will wait for periodic request
-    from the port partner in PPS mode).
-  */
-  *PtrPowerObject = USBPD_CORE_PDO_TYPE_FIXED;
-
-  DPM_USER_DEBUG_TRACE(PortNum, "ADVICE: update USBPD_DPM_EvaluateRequest");
-  return USBPD_REJECT;
-/* USER CODE END USBPD_DPM_EvaluateRequest */
+/* USER CODE BEGIN USBPD_DPM_SNK_EvaluateCapabilities */
+  DPM_USER_DEBUG_TRACE(PortNum, "ADVICE: update USBPD_DPM_SNK_EvaluateCapabilities");
+/* USER CODE END USBPD_DPM_SNK_EvaluateCapabilities */
 }
 
 /**
@@ -786,8 +766,9 @@ USBPD_StatusTypeDef USBPD_DPM_RequestGetSourceCapabilityExt(uint8_t PortNum)
   */
 USBPD_StatusTypeDef USBPD_DPM_RequestGetSinkCapabilityExt(uint8_t PortNum)
 {
-  DPM_USER_ERROR_TRACE(PortNum, USBPD_ERROR, "GET_SINK_CAPA_EXT not accepted by the stack");
-  return USBPD_ERROR;
+  USBPD_StatusTypeDef _status = USBPD_PE_Request_CtrlMessage(PortNum, USBPD_CONTROLMSG_GET_SNK_CAPEXT, USBPD_SOPTYPE_SOP);
+  DPM_USER_ERROR_TRACE(PortNum, _status, "GET_SINK_CAPA_EXT not accepted by the stack");
+  return _status;
 }
 
 /**

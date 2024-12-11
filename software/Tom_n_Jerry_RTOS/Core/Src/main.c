@@ -34,6 +34,7 @@
 #include "callBack.h"
 #include "asserv.h"
 #include "changeMode.h"
+#include "lidar.h"
 
 /* USER CODE END Includes */
 
@@ -45,16 +46,19 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 #define TASK_STACK_DEPTH_SHELL 2048
-#define TASK_PRIORITY_SHELL 4
+#define TASK_PRIORITY_SHELL 5
 
-#define TASK_STACK_DEPTH_ASSERV_I 500
+#define TASK_STACK_DEPTH_ASSERV_I 64
 #define TASK_PRIORITY_ASSERV_I 2
 
-#define TASK_STACK_DEPTH_ASSERV_XYZ 500
+#define TASK_STACK_DEPTH_ASSERV_XYZ 64
 #define TASK_PRIORITY_ASSERV_XYZ 3
 
-#define TASK_STACK_DEPTH_CHANGEMODE 500
+#define TASK_STACK_DEPTH_CHANGEMODE 64
 #define TASK_PRIORITY_CHANGEMODE 1
+
+#define TASK_STACK_DEPTH_LIDAR 512
+#define TASK_PRIORITY_LIDAR 4
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -65,12 +69,18 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+HeapStats_t heapStats;
+
 TaskHandle_t h_task_shell = NULL;
 TaskHandle_t h_task_asserv_I = NULL;
 TaskHandle_t h_task_asserv_XYZ = NULL;
 TaskHandle_t h_task_changemenMode = NULL;
+TaskHandle_t h_task_LIDAR_Take = NULL;
+TaskHandle_t h_task_LIDAR_Process = NULL;
 
 
+SemaphoreHandle_t semb_halfCllbck;
+SemaphoreHandle_t semb_cpltCllbck;
 
 /* USER CODE END PV */
 
@@ -127,17 +137,30 @@ int main(void)
   MX_USART1_UART_Init();
   MX_USART2_UART_Init();
   MX_TIM15_Init();
+  MX_TIM16_Init();
   /* USER CODE BEGIN 2 */
+
+	semb_cpltCllbck = xSemaphoreCreateBinary();
+	semb_halfCllbck = xSemaphoreCreateBinary();
 
 	asserv_init();
 	shell_init();
+	lidar_init();
+	vPortGetHeapStats(&heapStats);
 	xTaskCreate(changeMode_run,			"Changement MODE", TASK_STACK_DEPTH_CHANGEMODE, NULL, TASK_PRIORITY_CHANGEMODE, &h_task_changemenMode) != pdPASS ? Error_Handler():(void)0;
-	xTaskCreate(asserv_courant_run, 	"Asserv Courant", TASK_STACK_DEPTH_ASSERV_I, NULL, TASK_PRIORITY_ASSERV_I, &h_task_asserv_I) != pdPASS ? Error_Handler():(void)0;
-	xTaskCreate(asserv_position_run, 	"Asserv Position", TASK_STACK_DEPTH_ASSERV_XYZ, NULL, TASK_PRIORITY_ASSERV_XYZ, &h_task_asserv_XYZ) != pdPASS ? Error_Handler():(void)0;
+	vPortGetHeapStats(&heapStats);
+	//xTaskCreate(asserv_courant_run, 	"Asserv Courant", TASK_STACK_DEPTH_ASSERV_I, NULL, TASK_PRIORITY_ASSERV_I, &h_task_asserv_I) != pdPASS ? Error_Handler():(void)0;
+	//vPortGetHeapStats(&heapStats);
+	//xTaskCreate(asserv_position_run, 	"Asserv Position", TASK_STACK_DEPTH_ASSERV_XYZ, NULL, TASK_PRIORITY_ASSERV_XYZ, &h_task_asserv_XYZ) != pdPASS ? Error_Handler():(void)0;
+	vPortGetHeapStats(&heapStats);
 	xTaskCreate(shell_run,				"Shell", TASK_STACK_DEPTH_SHELL, NULL, TASK_PRIORITY_SHELL, &h_task_shell) != pdPASS ? Error_Handler():(void)0;
+	vPortGetHeapStats(&heapStats);
+	xTaskCreate(lidarTake,				"LIDAR_Take", TASK_STACK_DEPTH_LIDAR, NULL, TASK_PRIORITY_LIDAR, &h_task_LIDAR_Take) != pdPASS ? Error_Handler():(void)0;
+	vPortGetHeapStats(&heapStats);
+	xTaskCreate(lidarprocess,			"LIDAR_Process", TASK_STACK_DEPTH_LIDAR, NULL, TASK_PRIORITY_LIDAR, &h_task_LIDAR_Process) != pdPASS ? Error_Handler():(void)0;
+	vPortGetHeapStats(&heapStats);
 
 	vTaskStartScheduler();
-
   /* USER CODE END 2 */
 
   /* USBPD initialisation ---------------------------------*/

@@ -26,7 +26,8 @@ void TCA9555_init(void){
 	debug(INFORMATION,"TCA9555 - INIT");
 
 	TCA9555_WriteRegister(0x06, 0b11111111)!=HAL_OK ? debug(D_ERROR,"I2C TRANSMIT in WriteREGISTER"):(void)0;
-	TCA9555_WriteRegister(0x07, 0b11111111)!=HAL_OK ? debug(D_ERROR,"I2C TRANSMIT in WriteREGISTER"):(void)0;
+	TCA9555_WriteRegister(0x07, 0b11001111)!=HAL_OK ? debug(D_ERROR,"I2C TRANSMIT in WriteREGISTER"):(void)0;
+	TCA9555_WriteRegister(0x05, 0b11001111)!=HAL_OK ? debug(D_ERROR,"I2C TRANSMIT in WriteREGISTER"):(void)0;
 
 	uint8_t startReg = 0x00;
 	uint8_t endReg = 0x07;

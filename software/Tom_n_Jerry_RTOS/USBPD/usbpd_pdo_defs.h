@@ -33,8 +33,8 @@
 /* USER CODE END Includes */
 
 /* Define   ------------------------------------------------------------------*/
-#define PORT0_NB_SOURCEPDO         1U   /* Number of Source PDOs (applicable for port 0)   */
-#define PORT0_NB_SINKPDO           0U   /* Number of Sink PDOs (applicable for port 0)     */
+#define PORT0_NB_SOURCEPDO         0U   /* Number of Source PDOs (applicable for port 0)   */
+#define PORT0_NB_SINKPDO           1U   /* Number of Sink PDOs (applicable for port 0)     */
 #define PORT1_NB_SOURCEPDO         0U   /* Number of Source PDOs (applicable for port 1)   */
 #define PORT1_NB_SINKPDO           0U   /* Number of Sink PDOs (applicable for port 1)     */
 
@@ -84,22 +84,7 @@ extern uint32_t PORT0_PDO_ListSNK[USBPD_MAX_NB_PDO];
 /* Definition of Source PDO for Port 0 */
 uint32_t PORT0_PDO_ListSRC[USBPD_MAX_NB_PDO] =
 {
-  /* PDO 1 */
-  (
-    USBPD_PDO_TYPE_FIXED                 | /* Fixed supply PDO            */
-
-    USBPD_PDO_SRC_FIXED_SET_VOLTAGE(9000U)         | /* Voltage in mV               */
-    USBPD_PDO_SRC_FIXED_SET_MAX_CURRENT(100U)     | /* Max current in mA           */
-    USBPD_PDO_SRC_FIXED_PEAKCURRENT_EQUAL          | /* Peak Current info           */
-
-    /* Common definitions applicable to all PDOs, defined only in PDO 1 */
-    USBPD_PDO_SRC_FIXED_UNCHUNK_NOT_SUPPORTED      | /* Unchunked Extended Messages */
-    USBPD_PDO_SRC_FIXED_DRD_NOT_SUPPORTED          | /* Dual-Role Data              */
-    USBPD_PDO_SRC_FIXED_USBCOMM_NOT_SUPPORTED      | /* USB Communications          */
-    USBPD_PDO_SRC_FIXED_EXT_POWER_NOT_AVAILABLE    | /* External Power              */
-    USBPD_PDO_SRC_FIXED_USBSUSPEND_NOT_SUPPORTED   | /* USB Suspend Supported		 */
-    USBPD_PDO_SRC_FIXED_DRP_NOT_SUPPORTED            /* Dual-Role Power             */
-  ),
+  /* PDO 1 */ (0x00000000U),
 
   /* PDO 2 */ (0x00000000U),
 
@@ -119,7 +104,21 @@ uint32_t PORT0_PDO_ListSRC[USBPD_MAX_NB_PDO] =
 uint32_t PORT0_PDO_ListSNK[USBPD_MAX_NB_PDO] =
 {
 
-  /* PDO 1 */ (0x00000000U),
+  /* PDO 1 */
+  (
+    USBPD_PDO_TYPE_FIXED                 | /* Fixed supply PDO            */
+
+    USBPD_PDO_SNK_FIXED_SET_VOLTAGE(9000U)         | /* Voltage in mV               */
+    USBPD_PDO_SNK_FIXED_SET_OP_CURRENT(3000U)     | /* Operating current in  mA            */
+
+    /* Common definitions applicable to all PDOs, defined only in PDO 1 */
+    USBPD_PDO_SNK_FIXED_FRS_NOT_SUPPORTED          | /* Fast Role Swap				 */
+    USBPD_PDO_SNK_FIXED_DRD_NOT_SUPPORTED          | /* Dual-Role Data              */
+    USBPD_PDO_SNK_FIXED_USBCOMM_SUPPORTED      | /* USB Communications          */
+    USBPD_PDO_SNK_FIXED_EXT_POWER_AVAILABLE    | /* External Power              */
+    USBPD_PDO_SNK_FIXED_HIGHERCAPAB_SUPPORTED   | /* Higher Capability           */
+    USBPD_PDO_SNK_FIXED_DRP_NOT_SUPPORTED            /* Dual-Role Power             */
+  ),
 
   /* PDO 2 */ (0x00000000U),
 

@@ -45,6 +45,7 @@ void subfunct_IMU_GET(char **argv);
 void subfunct_Iasserv(char **argv);
 void subfunct_MIAOU(char **argv);
 void subfunct_clear(char **argv);
+void subfunct_modify_calc_speed(char** argv);
 
 void debug(char *debugType, char *message);
 

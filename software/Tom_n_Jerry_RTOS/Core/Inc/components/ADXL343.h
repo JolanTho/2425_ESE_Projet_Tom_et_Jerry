@@ -16,9 +16,9 @@
 #include "math.h"
 
 typedef struct{
-	int32_t X;
-	int32_t Y;
-	int32_t Z;
+	float X;
+	float Y;
+	float Z;
 }XYZ_t;
 
 typedef struct{

@@ -69,7 +69,7 @@ changeMode/changeMode.o: ../changeMode/changeMode.c \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
  ../Core/Inc/components/LP5812.h ../Core/Inc/i2c.h \
  ../Core/Inc/components/ADXL343.h ../Core/Inc/components/TCA9555.h \
- ../Core/Inc/components/ZXB5210.h
+ ../Core/Inc/components/ZXB5210.h ../changeMode/song.h
 ../changeMode/changeMode.h:
 /Users/romingo/Desktop/ENSEA/3A/PROJET/2425_ESE_Projet_Tom_et_Jerry/software/Tom_n_Jerry_RTOS/shell/shell.h:
 ../Core/Inc/usart.h:
@@ -146,3 +146,4 @@ changeMode/changeMode.o: ../changeMode/changeMode.c \
 ../Core/Inc/components/ADXL343.h:
 ../Core/Inc/components/TCA9555.h:
 ../Core/Inc/components/ZXB5210.h:
+../changeMode/song.h:

@@ -120,25 +120,6 @@ USBPD_StatusTypeDef USBPD_PWR_IF_Init(void)
 }
 
 /**
-  * @brief  Sets the required power profile, now it works only with Fixed ones
-  * @param  PortNum Port number
-  * @retval USBPD status
-*/
-USBPD_StatusTypeDef USBPD_PWR_IF_SetProfile(uint8_t PortNum)
-{
-/* USER CODE BEGIN USBPD_PWR_IF_SetProfile */
-  USBPD_StatusTypeDef      _status = USBPD_ERROR;
-  PWR_IF_DEBUG_TRACE(PortNum, "ADVICE: update USBPD_PWR_IF_SetProfile");
-/*   if (BSP_ERROR_NONE == BSP_USBPD_PWR_VBUSSetVoltage_Fixed(PortNum, 5000, 3000, 3000))
-  {
-     _status = USBPD_OK;
-  }
- */
-  return _status;
-/* USER CODE END USBPD_PWR_IF_SetProfile */
-}
-
-/**
   * @brief  Checks if the power on a specified port is ready
   * @param  PortNum Port number
   * @param  Vsafe   Vsafe status based on @ref USBPD_VSAFE_StatusTypeDef
@@ -170,43 +151,6 @@ USBPD_StatusTypeDef USBPD_PWR_IF_SupplyReady(uint8_t PortNum, USBPD_VSAFE_Status
 
   return status;
 /* USER CODE END USBPD_PWR_IF_SupplyReady */
-}
-
-/**
-  * @brief  Enables VBUS power on a specified port
-  * @param  PortNum Port number
-  * @retval USBPD status
-  */
-USBPD_StatusTypeDef USBPD_PWR_IF_VBUSEnable(uint8_t PortNum)
-{
-/* USER CODE BEGIN USBPD_PWR_IF_VBUSEnable */
-  USBPD_StatusTypeDef _status = (USBPD_StatusTypeDef)HW_IF_PWR_Enable(PortNum, USBPD_ENABLE, CCNONE, USBPD_FALSE, USBPD_PORTPOWERROLE_SRC);
-  return _status;
-/* USER CODE END USBPD_PWR_IF_VBUSEnable */
-}
-
-/**
-  * @brief  Disable VBUS/VCONN the power on a specified port
-  * @param  PortNum Port number
-  * @retval USBPD status
-  */
-USBPD_StatusTypeDef USBPD_PWR_IF_VBUSDisable(uint8_t PortNum)
-{
-/* USER CODE BEGIN USBPD_PWR_IF_VBUSDisable */
-  USBPD_StatusTypeDef _status = (USBPD_StatusTypeDef)HW_IF_PWR_Enable(PortNum, USBPD_DISABLE, CCNONE, USBPD_FALSE, USBPD_PORTPOWERROLE_SRC);
-  return _status;
-/* USER CODE END USBPD_PWR_IF_VBUSDisable */
-}
-
-/**
-  * @brief  Checks if the power on a specified port is enabled
-  * @param  PortNum Port number
-  * @retval USBPD_ENABLE or USBPD_DISABLE
-  */
-USBPD_FunctionalState USBPD_PWR_IF_VBUSIsEnabled(uint8_t PortNum)
-{
-  /* Get the Status of the port */
-  return USBPD_PORT_IsValid(PortNum) ? (USBPD_FunctionalState)HW_IF_PWR_VBUSIsEnabled(PortNum) : USBPD_DISABLE;
 }
 
 /**
@@ -262,10 +206,9 @@ USBPD_StatusTypeDef USBPD_PWR_IF_Disable_VConn(uint8_t PortNum, CCxPin_TypeDef C
   */
 void USBPD_PWR_IF_GetPortPDOs(uint8_t PortNum, USBPD_CORE_DataInfoType_TypeDef DataId, uint8_t *Ptr, uint32_t *Size)
 {
-    if (DataId == USBPD_CORE_DATATYPE_SRC_PDO)
     {
-      *Size = PORT0_NB_SOURCEPDO;
-      memcpy(Ptr,PORT0_PDO_ListSRC, sizeof(uint32_t) * PORT0_NB_SOURCEPDO);
+      *Size = PORT0_NB_SINKPDO;
+      memcpy(Ptr,PORT0_PDO_ListSNK, sizeof(uint32_t) * PORT0_NB_SINKPDO);
     }
 /* USER CODE BEGIN USBPD_PWR_IF_GetPortPDOs */
 

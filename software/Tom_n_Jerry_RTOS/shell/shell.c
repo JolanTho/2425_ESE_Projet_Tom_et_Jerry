@@ -9,9 +9,9 @@
 
 extern SemaphoreHandle_t sem_uart_read;
 
-extern XYZ_t accXYZ;
-extern XYZ_t vitXYZ;
-extern XYZ_t posXYZ;
+XYZ_t accXYZ;
+XYZ_t vitXYZ;
+XYZ_t posXYZ;
 extern IMURegister_t IMURegister[];
 extern GPIOExpanderRegister_t GPIOExpRegister[];
 extern MDriver_t MDriver1;
@@ -21,18 +21,20 @@ extern MDriver_t MDriver2;
 
 
 MAPPER mapping[] = {
-		{ "help", "Print every function available", "None",subfunct_help },
-		{ "start", "Start the robot", "None", subfunct_start },
-		{ "stop", "Stop the robot", "None", subfunct_stop },
-		{ "speed", "Change speed motor", "int:MotorID, int:speed",subfunct_speed },
-		{ "led", "Change params of the LEDs", "int: LedId	int: %PWM(0-255)", subfunct_setLed },
-		{ "imu","None", "None", subfunct_seeIMU },
-		{ "imusf","Self test of the IMU", "None", subfunct_IMU_SelfTest },
-		{ "imuu", "Read register", "None", subfunct_IMU_Update },
-		{ "imug", "Get Acc Value", "None", subfunct_IMU_GET },
-		{ "adc","Start asservissement courant","None",subfunct_Iasserv},
-		{ "miaou","Play song", "None", subfunct_MIAOU },
-		{ "clear","Clear screen", "None", subfunct_clear },
+		{ "help", 	"Print every function available", 	"None",subfunct_help },
+		{ "clear",	"Clear screen", 					"None", subfunct_clear },
+		{ "start", 	"Start the robot", 					"None", subfunct_start },
+		{ "stop", 	"Stop the robot", 					"None", subfunct_stop },
+		{ "speed", 	"Change speed motor", 				"int:MotorID, int:speed",subfunct_speed },
+		{ "cs", 	"Coeff qui relie le pulse a la W",	"motorId , FWD/REV offset",subfunct_modify_calc_speed},
+		{ "led", 	"Change params of the LEDs", 		"int: LedId	int: %PWM(0-255)", subfunct_setLed },
+		{ "imu",	"None", 							"None", subfunct_seeIMU },
+		{ "imusf",	"Self test of the IMU",				"None", subfunct_IMU_SelfTest },
+		{ "imuu", 	"Read register", 					"None", subfunct_IMU_Update },
+		{ "imug", 	"Get Acc Value", 					"None", subfunct_IMU_GET },
+		{ "adc",	"Start asservissement courant",		"None",subfunct_Iasserv},
+		{ "miaou",	"Play song", 						"None", subfunct_MIAOU },
+
 };
 uint8_t started[] =
 		"\r\n*-----------------------------*"
@@ -155,19 +157,25 @@ void subfunct_help(char **argv) {
 	}
 	printf(separator);
 }
+void subfunct_clear(char **argv) {
+	HAL_UART_Transmit(&UART_DEVICE, clear, sizeof(clear), HAL_MAX_DELAY);
+}
 void subfunct_start(char **argv) {
-	debug(START,"STARTING COMPONENT");
+
+	HAL_TIM_Base_Start_IT(&htim15) == HAL_OK ?
+			debug(START, "TIMER 15 - CALCUL IMU") : (void) 0;
+	HAL_TIM_Base_Start_IT(&htim16) == HAL_OK ?
+			debug(START, "TIMER 16 - SMOOTH SPEED") : (void) 0;
+	HAL_TIM_Base_Start(&htim2) == HAL_OK ?
+			debug(START, "TIMER 2 for PWM" ) : debug(D_ERROR, "TIMER 2 for PWM");
+	HAL_TIM_Base_Start(&htim3) == HAL_OK ?
+			debug(START, "TIMER 3 for PWM") : debug(D_ERROR, "TIMER 3 for PWM");
+	HAL_ADCEx_Calibration_Start(&hadc2,ADC_SINGLE_ENDED) == HAL_OK ?
+			debug(START, "ADC2 CALIBRATION") : debug(D_ERROR, "ADC2 CALIBRATION");
 
 	LP5812_WriteRegister(0x049,0);
 	LP5812_WriteRegister(0x044,0);
-	HAL_TIM_Base_Start_IT(&htim15) == HAL_OK ?
-			debug(START, "TIMER 15 - CALCUL IMU") : (void) 0;
-	HAL_TIM_Base_Start(&htim2) == HAL_OK ?
-			debug(START, "TIMER 2") : debug(D_ERROR, "TIMER 2");
-	HAL_TIM_Base_Start(&htim3) == HAL_OK ?
-			debug(START, "TIMER 3") : debug(D_ERROR, "TIMER 3");
-	HAL_ADCEx_Calibration_Start(&hadc2,ADC_SINGLE_ENDED) == HAL_OK ?
-			debug(START, "ADC2 CALIBRATION") : debug(D_ERROR, "ADC2 CALIBRATION");
+	//To-Do : Chenillard des LEDs
 	TCA9555_init();
 	LP5812_Init();
 	ADXL343_init();
@@ -178,12 +186,16 @@ void subfunct_start(char **argv) {
 void subfunct_stop(char **argv) {
 	HAL_TIM_Base_Stop(&htim15) == HAL_OK ?
 			debug(STOP, "TIMER 15 - CALCUL IMU") : (void) 0;
-	HAL_TIM_Base_Stop(&htim2) == HAL_OK ?
-			debug(STOP, "TIMER 2") : debug(D_ERROR, "TIMER 2");
-	HAL_TIM_Base_Stop(&htim3) == HAL_OK ?
-			debug(STOP, "TIMER 3") : debug(D_ERROR, "TIMER 3");
+	ZXB5210_speed_FWD(&MDriver1,0);
+	ZXB5210_speed_FWD(&MDriver2,0);
+
+	//	HAL_TIM_Base_Stop(&htim2) == HAL_OK ?
+	//			debug(STOP, "TIMER 2") : debug(D_ERROR, "TIMER 2");
+	//	HAL_TIM_Base_Stop(&htim3) == HAL_OK ?
+	//			debug(STOP, "TIMER 3") : debug(D_ERROR, "TIMER 3");
 	HAL_ADC_Stop_DMA(&hadc2) == HAL_OK ?
 			debug(STOP, "ADC DMA") : debug(D_ERROR, "ADC2 DMA");
+
 	ZXB5210_deinit();
 	return;
 }
@@ -193,10 +205,10 @@ void subfunct_speed(char **argv) {
 	 * ex:	speed 1 90
 	 */
 	MDriver_t* MDriver;
-    if (argv[1] == NULL || argv[2] == NULL) {
-    	debug(INFORMATION,"SPEED - ARGUMENTS NEEDED");
-        return;
-    }
+	if (argv[1] == NULL || argv[2] == NULL) {
+		debug(INFORMATION,"SPEED - ARGUMENTS NEEDED");
+		return;
+	}
 	uint8_t driver_id = (uint8_t) strtol(argv[1], NULL, 10); // Base 10
 	int8_t s_alpha = (int8_t) strtol(argv[2], NULL, 10); //Prends des valeurs entre -128 et 127
 
@@ -312,10 +324,21 @@ void subfunct_IMU_GET(char **argv) {
 void subfunct_MIAOU(char **argv) {
 	return;
 }
-void subfunct_clear(char **argv) {
-	HAL_UART_Transmit(&UART_DEVICE, clear, sizeof(clear), HAL_MAX_DELAY);
+void subfunct_modify_calc_speed(char**argv){
+	MDriver_t* MDriver;
+	MDriver_Config_t* MDriver_Config;
+	uint8_t driver_id = (uint8_t) strtol(argv[1], NULL, 10); // Base 10
+	char* sens_motor = argv[2];
+	int32_t offset_user = (int32_t) strtol(argv[3], NULL, 10); //Prends des valeurs entre -128 et 127
+	MDriver = driver_id==1 ? &MDriver1 : &MDriver2;
+	MDriver_Config = strcmp(sens_motor, "FWD") == 0 ? MDriver->FWD : MDriver->REV;
+	MDriver_Config->offset=offset_user;
+
 }
 
+void subfunct_lidar(char**argv){
+
+}
 /************************************************************************************************
  * 										DEBUG
  *************************************************************************************************/

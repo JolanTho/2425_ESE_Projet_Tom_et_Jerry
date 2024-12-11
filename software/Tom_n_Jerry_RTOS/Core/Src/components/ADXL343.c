@@ -56,9 +56,6 @@ IMURegister_t IMURegister[]={
 		{"FIFO_SATUS",	0x39}
 };
 
-XYZ_t accXYZ;
-XYZ_t vitXYZ;
-XYZ_t posXYZ;
 
 void ADXL343_init(void){
 	debug(INFORMATION,"ADXL343 - INIT");
@@ -74,24 +71,24 @@ void ADXL343_init(void){
 		printf("READ - 0x%02X (%s): 0x%02X\r\n", IMURegister[i].reg,IMURegister[i].name, ret);
 	}
 
-	/*	0x1D-TRESHS_TAP
-	 *	0x10= 1g
+	/*	0x1D-TRESHS_TAP		|	62.5 mg/LSB
+	 *	0xa0= 10g
 	 */
-	ADXL343_WriteRegister(0x1D, 0x20)!=HAL_OK ? debug(D_ERROR,"I2C TRANSMIT in INIT"):(void)0;
+	ADXL343_WriteRegister(0x1D, 0xa0)!=HAL_OK ? debug(D_ERROR,"I2C TRANSMIT in INIT"):(void)0;
 	ADXL343_ReadRegister(0x1D, &ret,1)!=HAL_OK ? debug(D_ERROR,"I2C READ in INIT"):(void)0;
-	printf("WRITE/READ - TRESHS_TAP: 0x%02X\r\n",ret);
-	/* 	0x21-DUR
-	 *	0x08 : 5ms
+	//printf("WRITE/READ - TRESHS_TAP: 0x%02X\r\n",ret);
+	/* 	0x21-DUR	|	625 µs/LSB
+	 *	0xa0 : 100ms
 	 */
-	ADXL343_WriteRegister(0x21, 0x20)!=HAL_OK ? debug(D_ERROR,"I2C TRANSMIT in INIT"):(void)0;
+	ADXL343_WriteRegister(0x21, 0xFF)!=HAL_OK ? debug(D_ERROR,"I2C TRANSMIT in INIT"):(void)0;
 	ADXL343_ReadRegister(0x21, &ret,1)!=HAL_OK ? debug(D_ERROR,"I2C READ in INIT"):(void)0;
-	printf("WRITE/READ - DUR: 0x%02X\r\n",ret);
-	/* 	0x22 - LATENT
-	 *	0x50 : 100ms
+	//printf("WRITE/READ - DUR: 0x%02X\r\n",ret);
+	/* 	0x22 - LATENT	|	 1.25 ms/LSB
+	 *	0xFF : 378.75ms
 	 */
-	ADXL343_WriteRegister(0x22, 0xA0)!=HAL_OK ? debug(D_ERROR,"I2C TRANSMIT in INIT"):(void)0;
+	ADXL343_WriteRegister(0x22, 0xFF)!=HAL_OK ? debug(D_ERROR,"I2C TRANSMIT in INIT"):(void)0;
 	ADXL343_ReadRegister(0x22, &ret,1)!=HAL_OK ? debug(D_ERROR,"I2C READ in INIT"):(void)0;
-	printf("WRITE/READ - DUR: 0x%02X\r\n",ret);
+	//printf("WRITE/READ - DUR: 0x%02X\r\n",ret);
 
 	/*	0x2A-TAP_AXES
 	 *	D3		|SUPRESS
@@ -101,20 +98,19 @@ void ADXL343_init(void){
 	 */
 	ADXL343_WriteRegister(0x2A, 0b110)!=HAL_OK ? debug(D_ERROR,"I2C TRANSMIT in INIT"):(void)0;
 	ADXL343_ReadRegister(0x2A, &ret,1)!=HAL_OK ? debug(D_ERROR,"I2C READ in INIT"):(void)0;
-	printf("WRITE/READ - TAP_AXES: 0x%02X\r\n",ret);
+	//printf("WRITE/READ - TAP_AXES: 0x%02X\r\n",ret);
 	/*	0x2E-INT_ENABLE
 	 * 	D6 		| SINGLE_TAP
 	 */
 	ADXL343_WriteRegister(0x2E, 0b1<<6)!=HAL_OK ? debug(D_ERROR,"I2C TRANSMIT in INIT"):(void)0;
 	ADXL343_ReadRegister(0x2E, &ret,1)!=HAL_OK ? debug(D_ERROR,"I2C READ in INIT"):(void)0;
-	printf("WRITE/READ - INT_ENABLE: 0x%02X\r\n",ret);
+	//printf("WRITE/READ - INT_ENABLE: 0x%02X\r\n",ret);
 	/*	0x2F-INT_MAP
 	 * 	D6 		| SINGLE_TAP =1 : vers INT2
 	 */
 	ADXL343_WriteRegister(0x2F, 0b1<<6)!=HAL_OK ? debug(D_ERROR,"I2C TRANSMIT in INIT"):(void)0;
 	ADXL343_ReadRegister(0x2F, &ret,1)!=HAL_OK ? debug(D_ERROR,"I2C READ in INIT"):(void)0;
-	printf("WRITE/READ - INT_ENABLE: 0x%02X\r\n",ret);
-	printf("WRITE/READ - INT_ENABLE: 0x%02X\r\n",ret);
+	//printf("WRITE/READ - INT_ENABLE: 0x%02X\r\n",ret);
 
 	/*	0x27—ACT_INACT_CTL
 	 * 	D7		| ACT ac/dc
@@ -128,14 +124,14 @@ void ADXL343_init(void){
 	 */
 	ADXL343_WriteRegister(0x27, 0b11100000)!=HAL_OK ? debug(D_ERROR,"I2C TRANSMIT in INIT"):(void)0;
 	ADXL343_ReadRegister(0x27, &ret,1)!=HAL_OK ? debug(D_ERROR,"I2C READ in INIT"):(void)0;
-	printf("WRITE/READ - ACT_INACT_CTL: 0x%02X\r\n",ret);
+	//printf("WRITE/READ - ACT_INACT_CTL: 0x%02X\r\n",ret);
 
 	/*	0x2D—POWER_CTL
 	 * 	D3		| MEASURE = 1
 	 */
 	ADXL343_WriteRegister(0x2D, 1<<3)!=HAL_OK ? debug(D_ERROR,"I2C TRANSMIT in INIT"):(void)0;
 	ADXL343_ReadRegister(0x2D, &ret,1)!=HAL_OK ? debug(D_ERROR,"I2C READ in INIT"):(void)0;
-	printf("WRITE/READ - POWER_CTL: 0x%02X\r\n",ret);
+	//printf("WRITE/READ - POWER_CTL: 0x%02X\r\n",ret);
 	/*	0x31—DATA_FORMAT
 	 * 	D7 		| SELF_TEST = 0 => Permet de tester tousles axes avec un signal imposé  (~0.5g)
 	 * 	D6 		| SPI = 1 => SPI 3-WIRE
@@ -146,7 +142,7 @@ void ADXL343_init(void){
 	 */
 	ADXL343_WriteRegister(0x31, 0<<7|1<<6|1<<3|0b00)!=HAL_OK ? debug(D_ERROR,"I2C TRANSMIT in INIT"):(void)0;
 	ADXL343_ReadRegister(0x31, &ret,1)!=HAL_OK ? debug(D_ERROR,"I2C READ in INIT"):(void)0;
-	printf("WRITE/READ - dataFormat: 0x%02X\r\n",ret);
+	//printf("WRITE/READ - dataFormat: 0x%02X\r\n",ret);
 
 	/* 	0x38—FIFO_CTL
 	 * 	D7-D6	| FIFO_MODE = 10 => STREAM
@@ -155,7 +151,7 @@ void ADXL343_init(void){
 	 */
 	ADXL343_WriteRegister(0x38, ((0b10<<6)| 0b10000))!=HAL_OK ? debug(D_ERROR,"I2C TRANSMIT in INIT"):(void)0;
 	ADXL343_ReadRegister(0x38, &ret,1)!=HAL_OK ? debug(D_ERROR,"I2C READ in INIT"):(void)0;
-	printf("WRITE/READ - FIFO Mode: 0x%02X\r\n",ret);
+	//printf("WRITE/READ - FIFO Mode: 0x%02X\r\n",ret);
 
 	/*
 	 ************$	ETALONNAGE	$************
