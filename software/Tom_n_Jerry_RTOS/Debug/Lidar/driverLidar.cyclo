@@ -1,0 +1,15 @@
+../Lidar/driverLidar.c:14:5:LIDAR_stop	4
+../Lidar/driverLidar.c:37:5:LIDAR_restart	2
+../Lidar/driverLidar.c:48:5:LIDAR_get_info	7
+../Lidar/driverLidar.c:118:5:LIDAR_get_health_stat	7
+../Lidar/driverLidar.c:174:5:LIDAR_start_scan_dma	3
+../Lidar/driverLidar.c:193:6:LIDAR_process_frame	11
+../Lidar/driverLidar.c:289:5:calculer_distance_moyenne	2
+../Lidar/driverLidar.c:302:6:find_clusters	5
+../Lidar/driverLidar.c:335:6:medianFilter	8
+../Lidar/driverLidar.c:371:5:uart_transmit	1
+../Lidar/driverLidar.c:375:5:uart_poll_receive	1
+../Lidar/driverLidar.c:379:5:uart_it_receive	1
+../Lidar/driverLidar.c:384:5:uart_it_transmit	1
+../Lidar/driverLidar.c:389:5:uart_dma_receive	1
+../Lidar/driverLidar.c:394:5:uart_dma_transmit	1

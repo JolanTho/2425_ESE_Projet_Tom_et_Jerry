@@ -1,0 +1,4 @@
+../asserv/asserv.c:19:6:asserv_init	4	static
+../asserv/asserv.c:23:6:asserv_courant_run	32	static
+../asserv/asserv.c:43:6:asserv_vitesse_run	16	static
+../asserv/asserv.c:53:6:asserv_position_run	120	static

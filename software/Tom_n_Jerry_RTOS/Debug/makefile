@@ -74,8 +74,8 @@ all: main-build
 main-build: Tom_n_Jerry_RTOS.elf secondary-outputs
 
 # Tool invocations
-Tom_n_Jerry_RTOS.elf Tom_n_Jerry_RTOS.map: $(OBJS) $(USER_OBJS) /Users/romingo/Desktop/ENSEA/3A/PROJET/2425_ESE_Projet_Tom_et_Jerry/software/Tom_n_Jerry_RTOS/STM32G431CBUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Tom_n_Jerry_RTOS.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/Users/romingo/Desktop/ENSEA/3A/PROJET/2425_ESE_Projet_Tom_et_Jerry/software/Tom_n_Jerry_RTOS/STM32G431CBUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Tom_n_Jerry_RTOS.map" -Wl,--gc-sections -static -L../Middlewares/ST/STM32_USBPD_Library/Core/lib --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Tom_n_Jerry_RTOS.elf Tom_n_Jerry_RTOS.map: $(OBJS) $(USER_OBJS) /Volumes/jolanT/Ensea/3A/Projet/Github_qui_marche/2425_ESE_Projet_Tom_et_Jerry/software/Tom_n_Jerry_RTOS/STM32G431CBUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Tom_n_Jerry_RTOS.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/Volumes/jolanT/Ensea/3A/Projet/Github_qui_marche/2425_ESE_Projet_Tom_et_Jerry/software/Tom_n_Jerry_RTOS/STM32G431CBUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Tom_n_Jerry_RTOS.map" -Wl,--gc-sections -static -L../Middlewares/ST/STM32_USBPD_Library/Core/lib --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

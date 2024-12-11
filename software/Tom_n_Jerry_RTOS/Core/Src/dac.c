@@ -25,6 +25,7 @@
 /* USER CODE END 0 */
 
 DAC_HandleTypeDef hdac1;
+DMA_HandleTypeDef hdma_dac1_ch1;
 
 /* DAC1 init function */
 void MX_DAC1_Init(void)
@@ -54,7 +55,7 @@ void MX_DAC1_Init(void)
   sConfig.DAC_DMADoubleDataMode = DISABLE;
   sConfig.DAC_SignedFormat = DISABLE;
   sConfig.DAC_SampleAndHold = DAC_SAMPLEANDHOLD_DISABLE;
-  sConfig.DAC_Trigger = DAC_TRIGGER_NONE;
+  sConfig.DAC_Trigger = DAC_TRIGGER_T6_TRGO;
   sConfig.DAC_Trigger2 = DAC_TRIGGER_NONE;
   sConfig.DAC_OutputBuffer = DAC_OUTPUTBUFFER_ENABLE;
   sConfig.DAC_ConnectOnChipPeripheral = DAC_CHIPCONNECT_EXTERNAL;
@@ -90,6 +91,24 @@ void HAL_DAC_MspInit(DAC_HandleTypeDef* dacHandle)
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     HAL_GPIO_Init(DAC__GPIO_Port, &GPIO_InitStruct);
 
+    /* DAC1 DMA Init */
+    /* DAC1_CH1 Init */
+    hdma_dac1_ch1.Instance = DMA1_Channel5;
+    hdma_dac1_ch1.Init.Request = DMA_REQUEST_DAC1_CHANNEL1;
+    hdma_dac1_ch1.Init.Direction = DMA_MEMORY_TO_PERIPH;
+    hdma_dac1_ch1.Init.PeriphInc = DMA_PINC_DISABLE;
+    hdma_dac1_ch1.Init.MemInc = DMA_MINC_ENABLE;
+    hdma_dac1_ch1.Init.PeriphDataAlignment = DMA_PDATAALIGN_WORD;
+    hdma_dac1_ch1.Init.MemDataAlignment = DMA_MDATAALIGN_HALFWORD;
+    hdma_dac1_ch1.Init.Mode = DMA_NORMAL;
+    hdma_dac1_ch1.Init.Priority = DMA_PRIORITY_LOW;
+    if (HAL_DMA_Init(&hdma_dac1_ch1) != HAL_OK)
+    {
+      Error_Handler();
+    }
+
+    __HAL_LINKDMA(dacHandle,DMA_Handle1,hdma_dac1_ch1);
+
   /* USER CODE BEGIN DAC1_MspInit 1 */
 
   /* USER CODE END DAC1_MspInit 1 */
@@ -112,6 +131,8 @@ void HAL_DAC_MspDeInit(DAC_HandleTypeDef* dacHandle)
     */
     HAL_GPIO_DeInit(DAC__GPIO_Port, DAC__Pin);
 
+    /* DAC1 DMA DeInit */
+    HAL_DMA_DeInit(dacHandle->DMA_Handle1);
   /* USER CODE BEGIN DAC1_MspDeInit 1 */
 
   /* USER CODE END DAC1_MspDeInit 1 */

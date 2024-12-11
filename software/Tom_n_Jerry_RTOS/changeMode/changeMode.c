@@ -11,6 +11,9 @@
 #include "components/TCA9555.h"
 #include "components/LP5812.h"
 #include "components/ADXL343.h"
+#include "miaou.h"
+#include "dac.h"
+
 
 static int  workMode =0;
 
@@ -46,4 +49,10 @@ void changeMode_run(void*){
 
 void play_song(void){
 	//Ici on joue le son miaou
+
+	if (HAL_OK != HAL_DAC_Start_DMA(&hdac1, DAC1_CHANNEL_1, audio_table, AUDIO_LENGTH,DAC_ALIGN_8B_R))
+		Error_Handler();
+
+	if(HAL_OK != HAL_TIM_Base_Start(&htim6))
+		Error_Handler();
 }

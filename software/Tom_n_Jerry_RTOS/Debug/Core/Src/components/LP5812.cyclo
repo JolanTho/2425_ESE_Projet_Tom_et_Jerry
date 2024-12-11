@@ -1,0 +1,3 @@
+../Core/Src/components/LP5812.c:21:6:LP5812_Init	18
+../Core/Src/components/LP5812.c:126:19:LP5812_WriteRegister	1
+../Core/Src/components/LP5812.c:142:19:LP5812_ReadRegister	2
