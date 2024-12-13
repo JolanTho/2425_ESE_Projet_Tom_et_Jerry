@@ -13,12 +13,12 @@ XYZ_t accXYZ;
 XYZ_t vitXYZ;
 XYZ_t posXYZ;
 extern IMURegister_t IMURegister[];
-extern GPIOExpanderRegister_t GPIOExpRegister[];
 extern MDriver_t MDriver1;
 extern MDriver_t MDriver2;
 
 #define NUM_CHANNEL_ADC2 2
 
+extern h_LIDAR_t lidar;
 
 MAPPER mapping[] = {
 		{ "help", 	"Print every function available", 	"None",subfunct_help },
@@ -33,7 +33,11 @@ MAPPER mapping[] = {
 		{ "imuu", 	"Read register", 					"None", subfunct_IMU_Update },
 		{ "imug", 	"Get Acc Value", 					"None", subfunct_IMU_GET },
 		{ "adc",	"Start asservissement courant",		"None",subfunct_Iasserv},
+		{"lidar","Fonctions pour lidar","None: start|-h : health_status|-r:restart",subfunct_lidar},
 		{ "miaou",	"Play song", 						"None", subfunct_MIAOU },
+		{ "reset",	"None", 							"None", reset },
+
+
 
 };
 uint8_t started[] =
@@ -62,6 +66,7 @@ int isSeeIMUFORCE = 0;
 int isFind = 0;
 int isStarted = 0;
 int isADC_cplt =0;
+int lidarDebugShell=0;
 uint8_t PWMLed = 255;
 
 
@@ -77,6 +82,7 @@ void shell_init(void) {
 			HAL_MAX_DELAY);
 	HAL_UART_Transmit(&UART_DEVICE, prompt, strlen((char*) prompt),
 			HAL_MAX_DELAY);
+	printf("\r\n");
 	subfunct_start(0);
 }
 
@@ -185,6 +191,8 @@ void subfunct_start(char **argv) {
 	ADXL343_init();
 	ZXB5210_init();
 
+	HAL_UART_Transmit(&UART_DEVICE, prompt, sizeof(prompt),
+			HAL_MAX_DELAY);
 	return;
 }
 void subfunct_stop(char **argv) {
@@ -331,6 +339,7 @@ void subfunct_MIAOU(char **argv) {
 void subfunct_modify_calc_speed(char**argv){
 	MDriver_t* MDriver;
 	MDriver_Config_t* MDriver_Config;
+
 	uint8_t driver_id = (uint8_t) strtol(argv[1], NULL, 10); // Base 10
 	char* sens_motor = argv[2];
 	int32_t offset_user = (int32_t) strtol(argv[3], NULL, 10); //Prends des valeurs entre -128 et 127
@@ -341,7 +350,23 @@ void subfunct_modify_calc_speed(char**argv){
 }
 
 void subfunct_lidar(char**argv){
+	if(argv[1]==NULL){
+		LIDAR_start_scan_dma(&lidar) == 0 ? debug(START,"LIDAR") : debug(D_ERROR,"LIDAR");
+		lidarDebugShell = 1;
+	}
+	else{
+		strcmp(argv[1], "-h") ==0 ? LIDAR_get_health_stat(&lidar):(void)0;
+		strcmp(argv[1], "-r") ==0 ? LIDAR_restart(&lidar):(void)0;
+		strcmp(argv[1], "-i") ==0 ? LIDAR_get_info(&lidar):(void)0;
+		strcmp(argv[1], "-s") ==0 ? HAL_GPIO_TogglePin(GPIOA,LIDAR_M_CTR_Pin):(void)0;
 
+		lidarDebugShell = strcmp(argv[1], "-debug") == 0 ? 1-lidarDebugShell:lidarDebugShell;
+
+	}
+}
+void reset(char **argv){
+    __disable_irq(); // Désactive les interruptions globales
+    NVIC_SystemReset(); // Demande un reset système via le NVIC
 }
 /************************************************************************************************
  * 										DEBUG

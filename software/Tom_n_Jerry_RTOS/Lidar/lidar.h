@@ -122,7 +122,7 @@ typedef struct LIDAR_processing_struct {
 	int filtred_buff[NB_DEGRES];      // Points filtrés
 	Cluster_t clusters[MAX_CLUSTERS]; // Liste des clusters
 	int cluster_cnt;
-
+	Cluster_t cluster_DistanceMIN;
 
 
 } LIDAR_processing_t;
