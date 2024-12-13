@@ -17,10 +17,12 @@
 #include "adc.h"
 #include "cmsis_os.h"
 #include "string.h"
+
 #include "components/LP5812.h"
 #include "components/ADXL343.h"
 #include "components/TCA9555.h"
 #include "components/ZXB5210.h"
+#include"lidar.h"
 
 #define UART_DEVICE huart1
 
@@ -46,7 +48,9 @@ void subfunct_Iasserv(char **argv);
 void subfunct_MIAOU(char **argv);
 void subfunct_clear(char **argv);
 void subfunct_modify_calc_speed(char** argv);
+void subfunct_lidar(char**argv);
 
+void reset( char**argv);
 void debug(char *debugType, char *message);
 
 typedef struct {

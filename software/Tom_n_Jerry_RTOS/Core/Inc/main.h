@@ -95,6 +95,9 @@ void Error_Handler(void);
 #define MOUSTACHE_3_Pin GPIO_PIN_13
 #define MOUSTACHE_3_GPIO_Port GPIOB
 #define MOUSTACHE_3_EXTI_IRQn EXTI15_10_IRQn
+#define START_Pin GPIO_PIN_14
+#define START_GPIO_Port GPIOB
+#define START_EXTI_IRQn EXTI15_10_IRQn
 #define I2C_MAIN_SCL_Pin GPIO_PIN_8
 #define I2C_MAIN_SCL_GPIO_Port GPIOA
 #define LIDAR_M_CTR_Pin GPIO_PIN_11

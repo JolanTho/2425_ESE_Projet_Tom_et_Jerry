@@ -14,9 +14,6 @@ extern SemaphoreHandle_t semb_halfCllbck;
 extern TaskHandle_t h_task_asserv_I;
 extern TaskHandle_t h_task_asserv_XYZ;
 
-extern XYZ_t accXYZ;
-extern XYZ_t vitXYZ;
-extern XYZ_t posXYZ;
 extern int isSeeIMU;
 extern int isSpeedInit;
 extern MDriver_t MDriver1;
@@ -49,7 +46,7 @@ void CUSTOM_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 
 		}
 	}
-	if (htim->Instance == TIM16) { //Every 1ms
+	if (htim->Instance == TIM16) { //Every 500us
 		if (isSpeedInit) {
 			/*** SMOOTH SPEED CHANGE ***/
 			uint8_t isSMOOTHspeed = 0;
@@ -62,11 +59,11 @@ void CUSTOM_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 			if(isSMOOTHspeed){ // Si un seul 1 est présent aloir la condition est vrai
 				(isSMOOTHspeed & 0b1)>> 0 ? // Si on a detecter une erreur
 						IT_ZXB5210_speed_UPDATE(&MDriver1, MDriver1.FWD):(void)0;
-				(isSMOOTHspeed & 0b10)>> 1 ?
+				((isSMOOTHspeed & 0b10)>> 1) ?
 						IT_ZXB5210_speed_UPDATE(&MDriver1, MDriver1.REV):(void)0;
-				(isSMOOTHspeed & 0b100)>> 2 ?
+				((isSMOOTHspeed & 0b100)>> 2) ?
 						IT_ZXB5210_speed_UPDATE(&MDriver2, MDriver2.FWD):(void)0;
-				(isSMOOTHspeed & 0b1000)>> 3 ?
+				((isSMOOTHspeed & 0b1000)>> 3) ?
 						IT_ZXB5210_speed_UPDATE(&MDriver2, MDriver2.REV):(void)0;
 			}
 		}

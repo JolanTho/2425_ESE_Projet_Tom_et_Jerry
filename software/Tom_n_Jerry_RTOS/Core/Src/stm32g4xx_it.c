@@ -26,6 +26,8 @@
 #include "main.h"
 #include "cmsis_os.h"
 #include "components/LP5812.h"
+#include "components/ZXB5210.h"
+
 
 /* USER CODE END Includes */
 
@@ -47,6 +49,7 @@
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
 extern TaskHandle_t h_task_changemenMode;
+extern int isSpeedInit;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -102,6 +105,8 @@ void HardFault_Handler(void)
   /* USER CODE END HardFault_IRQn 0 */
   while (1)
   {
+	    NVIC_SystemReset(); // Demande un reset système via le NVIC
+
     /* USER CODE BEGIN W1_HardFault_IRQn 0 */
     /* USER CODE END W1_HardFault_IRQn 0 */
   }
@@ -117,6 +122,8 @@ void MemManage_Handler(void)
   /* USER CODE END MemoryManagement_IRQn 0 */
   while (1)
   {
+	    NVIC_SystemReset(); // Demande un reset système via le NVIC
+
     /* USER CODE BEGIN W1_MemoryManagement_IRQn 0 */
     /* USER CODE END W1_MemoryManagement_IRQn 0 */
   }
@@ -357,9 +364,14 @@ void EXTI15_10_IRQHandler(void)
 //				&pxHigherPriorityTaskWoken);
 //		portYIELD_FROM_ISR(pxHigherPriorityTaskWoken);
 	}
+	if (__HAL_GPIO_EXTI_GET_IT(START_Pin) != RESET)
+	{
+		isSpeedInit = 1-isSpeedInit;
+	}
   /* USER CODE END EXTI15_10_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(MOUSTACHE_4_Pin);
   HAL_GPIO_EXTI_IRQHandler(MOUSTACHE_3_Pin);
+  HAL_GPIO_EXTI_IRQHandler(START_Pin);
   /* USER CODE BEGIN EXTI15_10_IRQn 1 */
 
   /* USER CODE END EXTI15_10_IRQn 1 */
