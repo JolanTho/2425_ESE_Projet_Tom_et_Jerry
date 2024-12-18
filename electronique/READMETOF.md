@@ -12,8 +12,9 @@ Il est détaillé chaque composante du Schématique/PCb des TOF dans ce ReadMe. 
 ---
 
 ## Contexte 
-
 >Pour pouvoir respecter la contrainte pour laquelle le robot ne doit pas tombé nous avons choisis deux solutions techniques la première est d'utiliser des capteurs moustaches positionné à l'avant et à l'arrière du robots. La deuxième solution est d'utiliser des TOF (Time of Flight). Pour pouvoir les fixer aux robots nous avons fais des pièces en 3D qui seront présenté dans le ReadMe consacré à la mécanique.
+
+
 
 ## Auteurs : 
 >* Jolan Thomasset (jolan.thomasset@ensea.fr)  
