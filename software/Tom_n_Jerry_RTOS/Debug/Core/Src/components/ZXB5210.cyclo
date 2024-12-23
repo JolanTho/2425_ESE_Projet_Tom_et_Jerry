@@ -4,4 +4,4 @@
 ../Core/Src/components/ZXB5210.c:66:6:ZXB5210_speed_REV	2
 ../Core/Src/components/ZXB5210.c:76:6:IT_ZXB5210_speed_UPDATE	9
 ../Core/Src/components/ZXB5210.c:89:6:ZXB5210_calc_speed	1
-../Core/Src/components/ZXB5210.c:94:6:ZXB5210_angle	5
+../Core/Src/components/ZXB5210.c:94:6:ZXB5210_angle	9

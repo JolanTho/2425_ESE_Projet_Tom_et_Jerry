@@ -105,8 +105,6 @@ void HardFault_Handler(void)
   /* USER CODE END HardFault_IRQn 0 */
   while (1)
   {
-	    NVIC_SystemReset(); // Demande un reset système via le NVIC
-
     /* USER CODE BEGIN W1_HardFault_IRQn 0 */
     /* USER CODE END W1_HardFault_IRQn 0 */
   }
@@ -122,8 +120,6 @@ void MemManage_Handler(void)
   /* USER CODE END MemoryManagement_IRQn 0 */
   while (1)
   {
-	    NVIC_SystemReset(); // Demande un reset système via le NVIC
-
     /* USER CODE BEGIN W1_MemoryManagement_IRQn 0 */
     /* USER CODE END W1_MemoryManagement_IRQn 0 */
   }
@@ -340,11 +336,19 @@ void EXTI15_10_IRQHandler(void)
 {
   /* USER CODE BEGIN EXTI15_10_IRQn 0 */
 
-	if (__HAL_GPIO_EXTI_GET_IT(MOUSTACHE_4_Pin) != RESET)
+	if (__HAL_GPIO_EXTI_GET_IT(GE_EXTI_Pin) != RESET)
 	{
-		LP5812_WriteRegister(0x045,0);
-		LP5812_WriteRegister(0x046,0);
-		LP5812_WriteRegister(0x047,124);
+		BaseType_t pxHigherPriorityTaskWoken = pdFALSE;
+		xTaskNotifyFromISR(h_task_changemenMode,
+				1,
+				eSetBits,
+				&pxHigherPriorityTaskWoken);
+		portYIELD_FROM_ISR(pxHigherPriorityTaskWoken);
+	}
+	if (__HAL_GPIO_EXTI_GET_IT(MOUSTACHE_1_Pin) != RESET)
+	{
+		//LP5812_WriteRegister(0x045,0);
+		//LP5812_WriteRegister(0x047,124);
 //		BaseType_t pxHigherPriorityTaskWoken = pdFALSE;
 //		xTaskNotifyFromISR(h_task_changemenMode,
 //				1,
@@ -354,9 +358,8 @@ void EXTI15_10_IRQHandler(void)
 	}
 	if (__HAL_GPIO_EXTI_GET_IT(MOUSTACHE_3_Pin) != RESET)
 	{
-		LP5812_WriteRegister(0x045,124);
-		LP5812_WriteRegister(0x046,0);
-		LP5812_WriteRegister(0x047,0);
+//		LP5812_WriteRegister(0x045,124);
+//		LP5812_WriteRegister(0x047,0);
 //		BaseType_t pxHigherPriorityTaskWoken = pdFALSE;
 //		xTaskNotifyFromISR(h_task_changemenMode,
 //				1,
@@ -369,9 +372,10 @@ void EXTI15_10_IRQHandler(void)
 		isSpeedInit = 1-isSpeedInit;
 	}
   /* USER CODE END EXTI15_10_IRQn 0 */
-  HAL_GPIO_EXTI_IRQHandler(MOUSTACHE_4_Pin);
+  HAL_GPIO_EXTI_IRQHandler(GE_EXTI_Pin);
   HAL_GPIO_EXTI_IRQHandler(MOUSTACHE_3_Pin);
   HAL_GPIO_EXTI_IRQHandler(START_Pin);
+  HAL_GPIO_EXTI_IRQHandler(MOUSTACHE_1_Pin);
   /* USER CODE BEGIN EXTI15_10_IRQn 1 */
 
   /* USER CODE END EXTI15_10_IRQn 1 */

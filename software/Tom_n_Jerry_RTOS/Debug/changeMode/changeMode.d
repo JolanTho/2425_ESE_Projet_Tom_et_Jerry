@@ -71,7 +71,7 @@ changeMode/changeMode.o: ../changeMode/changeMode.c \
  ../Core/Inc/components/ADXL343.h ../Core/Inc/components/TCA9555.h \
  ../Core/Inc/components/ZXB5210.h \
  /Users/romingo/Desktop/ENSEA/3A/PROJET/2425_ESE_Projet_Tom_et_Jerry/software/Tom_n_Jerry_RTOS/Lidar/lidar.h \
- ../changeMode/song.h ../changeMode/miaou.h ../Core/Inc/dac.h
+ ../Core/Inc/dac.h ../changeMode/miaou.h
 ../changeMode/changeMode.h:
 /Users/romingo/Desktop/ENSEA/3A/PROJET/2425_ESE_Projet_Tom_et_Jerry/software/Tom_n_Jerry_RTOS/shell/shell.h:
 ../Core/Inc/usart.h:
@@ -149,6 +149,5 @@ changeMode/changeMode.o: ../changeMode/changeMode.c \
 ../Core/Inc/components/TCA9555.h:
 ../Core/Inc/components/ZXB5210.h:
 /Users/romingo/Desktop/ENSEA/3A/PROJET/2425_ESE_Projet_Tom_et_Jerry/software/Tom_n_Jerry_RTOS/Lidar/lidar.h:
-../changeMode/song.h:
-../changeMode/miaou.h:
 ../Core/Inc/dac.h:
+../changeMode/miaou.h:

@@ -10,6 +10,7 @@
 
 #include <shell.h>
 
+void play_song(void);
 void changement_mode_init(void);
 void changeMode_run(void*);
 

@@ -14,7 +14,7 @@ MDriver_Config_t MDriver2_FWD_Config;
 MDriver_Config_t MDriver2_REV_Config;
 
 int isSpeedInit = 0;
-
+#define MAX_ALPHA_SPEED 20
 void ZXB5210_init(void){
 	debug(INFORMATION,"ZXB5210 - INIT");
 	MDriver1_FWD_Config = (MDriver_Config_t){.Tim_Channel = TIM_CHANNEL_3,.CCR_Channel = &htim2.Instance->CCR3,.pulseGoal = 0, .offset=0}; //28 Surement inutlie si l'asservissement en vitesse fonctionne un jour
@@ -95,39 +95,36 @@ void ZXB5210_angle(int angle){
 	uint8_t alpha_1;
 	uint8_t alpha_2;
 
-	if (angle <=90){
-		alpha_1 = 100 - 100/90 * angle ;
-		alpha_2 = 100 ;
+	if(angle <=90){
+		alpha_1 = MAX_ALPHA_SPEED ;
+		alpha_2 = 100- 100.0/90.0 * angle > MAX_ALPHA_SPEED ? MAX_ALPHA_SPEED:100- 100.0/90.0 * angle ;
 		ZXB5210_speed_FWD(&MDriver1 , alpha_1);
 		ZXB5210_speed_FWD(&MDriver2 , alpha_2);
-
 		return;
 	}
-	else if(angle <=180){
-		alpha_1 = 100/90 * angle -100 ;
-		alpha_2 = 100 ;
-
-		ZXB5210_speed_REV(&MDriver1 , alpha_1);
-		ZXB5210_speed_REV(&MDriver2 , alpha_2);
+	else if (angle <=180){
+		alpha_1 = 100.0/90.0 * (180-angle) > MAX_ALPHA_SPEED ? MAX_ALPHA_SPEED:100.0/90.0 * (180-angle);
+		alpha_2 = MAX_ALPHA_SPEED ;
+		ZXB5210_speed_FWD(&MDriver1 , alpha_1);
+		ZXB5210_speed_FWD(&MDriver2 , alpha_2);
 		return;
 	}
 	else if(angle <=270){
-		alpha_1 = 100 ;
-		alpha_2 = 100 - 100/90 * (angle -180) ;
-
+		alpha_1 = 100.0/90.0 * (angle -180) > MAX_ALPHA_SPEED ? MAX_ALPHA_SPEED: 100.0/90.0 * (angle -180) ;
+		alpha_2 = MAX_ALPHA_SPEED ;
+		ZXB5210_speed_REV(&MDriver1 , alpha_1);
+		ZXB5210_speed_REV(&MDriver2 , alpha_2);
+		return;
+	}
+	else if(angle <360){
+		alpha_1 = MAX_ALPHA_SPEED ;
+		alpha_2 = 100.0/90.0 * (360 -angle) > MAX_ALPHA_SPEED ? MAX_ALPHA_SPEED: 100.0/90.0 * (360 -angle) ;
 		ZXB5210_speed_REV(&MDriver1 , alpha_1);
 		ZXB5210_speed_REV(&MDriver2 , alpha_2);
 		return;
 
 	}
-	else if(angle <=360){
-		alpha_1 = 100 ;
-		alpha_2 = 100/90 * (angle -180) -100 ;
-		ZXB5210_speed_FWD(&MDriver1 , alpha_1);
-		ZXB5210_speed_FWD(&MDriver2 , alpha_2);
-		return;
 
-	}
 
 
 

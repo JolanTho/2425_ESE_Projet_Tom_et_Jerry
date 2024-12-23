@@ -10,7 +10,7 @@
 #include "components/ZXB5210.h"
 #include "shell.h"
 
-#define DUREE 500
+#define DUREE 10
 #define DUREEP 30000
 
 h_LIDAR_t lidar;

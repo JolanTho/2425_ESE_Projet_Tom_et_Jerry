@@ -155,10 +155,10 @@ int main(void)
 	//xTaskCreate(asserv_courant_run, 	"Asserv Courant", TASK_STACK_DEPTH_ASSERV_I, NULL, TASK_PRIORITY_ASSERV_I, &h_task_asserv_I) != pdPASS ? Error_Handler():(void)0;
 	//vPortGetHeapStats(&heapStats);
 	//xTaskCreate(asserv_position_run, 	"Asserv Position", TASK_STACK_DEPTH_ASSERV_XYZ, NULL, TASK_PRIORITY_ASSERV_XYZ, &h_task_asserv_XYZ) != pdPASS ? Error_Handler():(void)0;
+	//vPortGetHeapStats(&heapStats);
+	//xTaskCreate(lidarTake,				"LIDAR_Take", TASK_STACK_DEPTH_LIDAR, NULL, TASK_PRIORITY_LIDAR+1, &h_task_LIDAR_Take) != pdPASS ? Error_Handler():(void)0;
 	vPortGetHeapStats(&heapStats);
-	xTaskCreate(lidarTake,				"LIDAR_Take", TASK_STACK_DEPTH_LIDAR, NULL, TASK_PRIORITY_LIDAR, &h_task_LIDAR_Take) != pdPASS ? Error_Handler():(void)0;
-	vPortGetHeapStats(&heapStats);
-	xTaskCreate(lidarprocess,			"LIDAR_Process", TASK_STACK_DEPTH_LIDAR, NULL, TASK_PRIORITY_LIDAR, &h_task_LIDAR_Process) != pdPASS ? Error_Handler():(void)0;
+	//xTaskCreate(lidarprocess,			"LIDAR_Process", TASK_STACK_DEPTH_LIDAR, NULL, TASK_PRIORITY_LIDAR, &h_task_LIDAR_Process) != pdPASS ? Error_Handler():(void)0;
 	vPortGetHeapStats(&heapStats);
 	xTaskCreate(shell_run,				"Shell", TASK_STACK_DEPTH_SHELL, NULL, TASK_PRIORITY_SHELL, &h_task_shell) != pdPASS ? Error_Handler():(void)0;
 	vPortGetHeapStats(&heapStats);

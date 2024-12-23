@@ -6,6 +6,7 @@
  */
 
 #include <shell.h>
+#include "changeMode.h"
 
 extern SemaphoreHandle_t sem_uart_read;
 
@@ -17,6 +18,7 @@ extern MDriver_t MDriver1;
 extern MDriver_t MDriver2;
 
 #define NUM_CHANNEL_ADC2 2
+extern int isSpeedInit;
 
 extern h_LIDAR_t lidar;
 
@@ -26,6 +28,7 @@ MAPPER mapping[] = {
 		{ "start", 	"Start the robot", 					"None", subfunct_start },
 		{ "stop", 	"Stop the robot", 					"None", subfunct_stop },
 		{ "speed", 	"Change speed motor", 				"int:MotorID, int:speed",subfunct_speed },
+		{ "angle",	"Change angle of robot",			"int:angle",			subfunct_angle},
 		{ "cs", 	"Coeff qui relie le pulse a la W",	"motorId , FWD/REV offset",subfunct_modify_calc_speed},
 		{ "led", 	"Change params of the LEDs", 		"int: LedId	int: %PWM(0-255)", subfunct_setLed },
 		{ "imu",	"None", 							"None", subfunct_seeIMU },
@@ -36,8 +39,6 @@ MAPPER mapping[] = {
 		{"lidar","Fonctions pour lidar","None: start|-h : health_status|-r:restart",subfunct_lidar},
 		{ "miaou",	"Play song", 						"None", subfunct_MIAOU },
 		{ "reset",	"None", 							"None", reset },
-
-
 
 };
 uint8_t started[] =
@@ -178,6 +179,8 @@ void subfunct_start(char **argv) {
 			debug(START, "TIMER 3 for PWM") : debug(D_ERROR, "TIMER 3 for PWM");
 	HAL_ADCEx_Calibration_Start(&hadc2,ADC_SINGLE_ENDED) == HAL_OK ?
 			debug(START, "ADC2 CALIBRATION") : debug(D_ERROR, "ADC2 CALIBRATION");
+	HAL_TIM_Base_Start(&htim6)!= HAL_OK ?
+			debug(START,"TIM6 - MIAOU") : debug(D_ERROR,"TIM6 - MIAOU");
 
 	LP5812_WriteRegister(0x049,0);//LED HAUTE VERTE
 	LP5812_WriteRegister(0x048,0);
@@ -223,9 +226,28 @@ void subfunct_speed(char **argv) {
 	}
 	uint8_t driver_id = (uint8_t) strtol(argv[1], NULL, 10); // Base 10
 	int8_t s_alpha = (int8_t) strtol(argv[2], NULL, 10); //Prends des valeurs entre -128 et 127
-
+	if (isSpeedInit==0){isSpeedInit=1;}
 	MDriver = driver_id==1 ? &MDriver1 : &MDriver2;
-	s_alpha > 0 ? ZXB5210_speed_FWD(MDriver, (uint8_t)s_alpha) : ZXB5210_speed_REV(MDriver, (uint8_t)-s_alpha);
+	s_alpha >= 0 ? ZXB5210_speed_FWD(MDriver, (uint8_t)s_alpha) : ZXB5210_speed_REV(MDriver, (uint8_t)-s_alpha);
+
+	return;
+}
+void subfunct_angle(char **argv) {
+	/*
+	 * int:MotorID 	int:speed
+	 * ex:	speed 1 90
+	 */
+	if (argv[1] == NULL) {
+		debug(INFORMATION,"ANGLE - ARGUMENTS NEEDED");
+		return;
+	}
+	int angle = (int) strtol(argv[1], NULL, 10); // Base 10
+	if (isSpeedInit==0){isSpeedInit=1;}
+	ZXB5210_angle(angle);
+	printf("FWD1 | pulseGoal: %lu | pulse: %lu\r\n", MDriver1.FWD->pulseGoal, *(MDriver1.FWD->CCR_Channel));
+	printf("REV1 | pulseGoal: %lu | pulse: %lu\r\n", MDriver1.REV->pulseGoal, *(MDriver1.REV->CCR_Channel));
+	printf("FWD2 | pulseGoal: %lu | pulse: %lu\r\n", MDriver2.FWD->pulseGoal, *(MDriver2.FWD->CCR_Channel));
+	printf("REV2 | pulseGoal: %lu | pulse: %lu\r\n", MDriver2.REV->pulseGoal, *(MDriver2.REV->CCR_Channel));
 
 	return;
 }
@@ -334,6 +356,8 @@ void subfunct_IMU_GET(char **argv) {
 		- vitPREV.Z };
 }
 void subfunct_MIAOU(char **argv) {
+	debug(INFORMATION,"MIAOU");
+	play_song();
 	return;
 }
 void subfunct_modify_calc_speed(char**argv){

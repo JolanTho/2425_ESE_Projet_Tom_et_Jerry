@@ -1,3 +1,6 @@
+#ifndef MIAOU_H_
+#define MIAOU_H_
+
 #define AUDIO_LENGTH 8000
 
 const int8_t audio_table[AUDIO_LENGTH]={	 -40,	 -1,	 99,	 0,	 -10,	 -1,	 83,	 -1,
@@ -1001,3 +1004,5 @@ const int8_t audio_table[AUDIO_LENGTH]={	 -40,	 -1,	 99,	 0,	 -10,	 -1,	 83,	 -1
 	 12,	 -102,	 -3,	 -12,	 -18,	 0,	 -22,	 1,
 	 -14,	 81,	 1,	 9,	 18,	 105,	 32,	 -18
 };
+#endif // miaou.h
+

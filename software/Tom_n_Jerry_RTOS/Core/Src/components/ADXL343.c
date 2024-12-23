@@ -74,7 +74,7 @@ void ADXL343_init(void){
 	/*	0x1D-TRESHS_TAP		|	62.5 mg/LSB
 	 *	0xa0= 10g
 	 */
-	ADXL343_WriteRegister(0x1D, 0xa0)!=HAL_OK ? debug(D_ERROR,"I2C TRANSMIT in INIT"):(void)0;
+	ADXL343_WriteRegister(0x1D, 0x10)!=HAL_OK ? debug(D_ERROR,"I2C TRANSMIT in INIT"):(void)0;
 	ADXL343_ReadRegister(0x1D, &ret,1)!=HAL_OK ? debug(D_ERROR,"I2C READ in INIT"):(void)0;
 	//printf("WRITE/READ - TRESHS_TAP: 0x%02X\r\n",ret);
 	/* 	0x21-DUR	|	625 µs/LSB
