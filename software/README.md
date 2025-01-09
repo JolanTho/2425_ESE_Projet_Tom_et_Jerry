@@ -4,11 +4,6 @@
 - [Présentation](#présentation)
 - [Architecture](#architecture)
 - [Driver-Lidar](#driver-lidar)
-- [Fonctionnalités principales](#fonctionnalités-principales)
-- [Structures de données](#structures-de-données)
-- [Prototypes des fonctions](#prototypes-des-fonctions)
-- [Description des fonctions](#description-des-fonctions)
-- [Entrées/Sorties](#entréessorties)
 
 ---
 
