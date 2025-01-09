@@ -30,7 +30,7 @@ Il est détaillé chaque composante du Schématique/PCb principal dans ce ReadMe
 
 **Recharge de batterie**
 
-[Recharge](../screenshot/electronique/usbC.png)
+![Recharge](../screenshot/electronique/usbC.png)
 
 >Pour la recharge de la batterie nous prévoyons deux connecteurs : Type-C et Bornier afin de pouvoir recharger la batterie par alimentation stabilisée de labo ainsi que par cable USB-C (Plus difficile à mettre en oeuvre) [Documentation1](../datasheet/PPM_BMS.pdf).  
 
@@ -48,11 +48,15 @@ Il est détaillé chaque composante du Schématique/PCb principal dans ce ReadMe
 >* EXP : Ground (Pad thermique)  
 >* GND : Ground  
 
-[CanalP](../screenshot/electronique/canalP.png)
+![CanalP](../screenshot/electronique/canalP.png)
 
 >On a un transistor à canal P pour bloquer la charge du circuit par batterie lorsqu'une tension vient du bornier ou de l'USB-C. De plus on ajoute des condensateur (C...) pour eviter les retours de courant dû a des freinage des roues dans la résistance et donc dans l'alimentation derrière [(Doc)](../datasheet/slua376.pdf).    
 
 ![Convertisseur linéaire](../screenshot/electronique/BUCK.png)
+
+>[!Important]
+>* Actuellement le circuit fonctionne correctement. On a bien le switch entre le circuit de recharge et le circuite de décharge. Rien n'a cramé ce qui est bon signe. 
+>* Un petit soucis sur le temps de charge. Il serait mieux d'augmenter le courant possible admissible par la batterie car actuellement celle-ci se recharge en 4h. Cela peut être un peu long. 
 
 >On utilise un premier convertisseur Buck pour abaisser la tension à 5V. Celui-ci est à découpage donc plus cher mais possède un meilleur rendement et un plus faible échauffement. Cela est parfait puisqu'il alimente le lidar ainsi que tous les circuits 3.3v derrière et donc peut avoir des appels de courant assez élevé (Comme démarrage de lidar).  
 
@@ -67,7 +71,10 @@ Il est détaillé chaque composante du Schématique/PCb principal dans ce ReadMe
 >* FB : Feedback  
 >* GND : Ground  
 
->Actuellement les données sont celle ce la doc. La seule chose réglée est le pont diviseur avec une Vref = 1.25V pour avoir une sortie de 5V en sortie.  
+>Actuellement les données sont celle ce la doc. La seule chose réglée est le pont diviseur avec une Vref = 1.25V pour avoir une sortie de 5V en sortie. 
+
+>[!Important]
+>* Une erreur a été commise sur l'empreinte de la bobine sur la taille. Il a donc fallu faire une bobine flotante avec deux fils et un ptit coup d'isolant pour éviter les cour-circuits. 
 
 ![Convertisseur linéaire](../screenshot/electronique/LDO.png)
 
@@ -97,7 +104,10 @@ Il est détaillé chaque composante du Schématique/PCb principal dans ce ReadMe
 >* Codeur PH1 : Pin allant avec PH2 avec la trame du codeur pour déterminer ensuite la vitesse du robot.   
 >* Codeur PH2 : Pin allant avec PH1 avec la trame du codeur pour déterminer ensuite la vitesse du robot.   
 
->Pour controler ces deux moteurs chaque moteur aura son driver.   
+>Pour controler ces deux moteurs chaque moteur aura son driver.  
+
+>[!Important]
+>* Un petit soucis est à noter sur ces fameux driver mais plus côté STM32. Nous avons pensé qu'un seul timer pouvait controller les encodeurs et les moteurs au lieu de deux timers pour les encodeurs et deux timers pour les moteurs. Par conséquent nous n'avons rien pour utiliser les encodeurs.
 
 ![Driver Moteur](../screenshot/electronique/XBM5210.png)
 
@@ -148,7 +158,7 @@ Il est détaillé chaque composante du Schématique/PCb principal dans ce ReadMe
 ## Périphériques 
 
 >[!Note]
->La carte actuelle va gérer certains capteurs. Avec ceux-ci le robot pourra (Nous l'esperons) se repérer sur la table et réaliser au mieux la stratégie mise en place. 
+>La carte actuelle va gérer certains capteurs. Avec ceux-ci le robot pourra (Nous l'esperons --> ca ne sert plus à rien d'esprer nous n'avons plus d'encodeur esperer sert a rien.) se repérer sur la table et réaliser au mieux la stratégie mise en place. 
 
 >[!Tip]
 > Afin de détecter les bords nous avons décider de faire de la redondance. En effet nous utilisons des capteurs "Moustache" ainsi que TOF pour repérer les bords de la table et éviter que les robots tombent. L'avantage des capteurs moustache est qu'ils sont mécanique donc fiable maintenant cela demande de na pas louper son intégration sur la base roulante ce qui n'es tpas gagner. Pour cela nous pouvvons utiliser les TOF. Ceux-ci sont plus simple à positionner sur le robot et à fonctionner. Cependant l'exploitation des données est plus dure (I2C + GPIO Extender...). 
@@ -161,7 +171,7 @@ Il est détaillé chaque composante du Schématique/PCb principal dans ce ReadMe
 >* GND : Ground  
 >Ceux-ci marchent en interrupteur pas besoin de plus de chose pour lire leurs données. 
 
-![TOF](../screenshot/electronique/Moustache.png)
+![TOF](../screenshot/electronique/TOF.png)
 
 >[!Note]
 >**Capteurs TOF [VL53L1X](../datasheet/VL53L1X.pdf):**   
@@ -176,10 +186,14 @@ Il est détaillé chaque composante du Schématique/PCb principal dans ce ReadMe
 >* AVDD : Tension d'alim du composant
 >Ceux-ci sont sur les cartes fournient avec produit par STM32. 
 
->[!Note]
->En plus de la détection de bord avec les TOF et les capteurs "Moustache", le robot aura un IMU pour faire de la fusion de donnée (Rédigé en septembre ca ne sera pas traité pas assez de temps) ainsi que de vérifier si un robot nous touche. De plus il y aura un lidar pour détecter les robots sur la table et foncer sur eux. 
+>[!Important]
+>* Les capteurs TOF n'ont pas été réalisés par manque de temps et de test. Il fallait utiliser le GPIO expander en plus mais avec tout ce que nous avions à sortir nous avons abandonné cette partie mais elle devrait fonctionner (Théoriquement par un étudiant ce qui est suffisant pour y re-réfléchir). 
+>* Pour la suite les bords ne seront détéctés uniquement par des capteurs de fin de course pour faire les demi-tours et donc repartir sans tomber. 
 
-![Lidar](../screenshot/electronique/Moustache.png)
+>[!Note]
+>En plus de la détection de bord avec les TOF et les capteurs "Moustache", le robot aura un IMU pour faire de la fusion de donnée (Rédigé en septembre ca ne sera pas traité pas assez de temps --> Confirmé la veille de la date limite a 00H05) ainsi que de vérifier si un robot nous touche. De plus il y aura un lidar pour détecter les robots sur la table et foncer sur eux. 
+
+![Lidar](../screenshot/electronique/lidar.png)
 
 >[!Note]
 >**Capteurs TOF [YDLidar X2](../datasheet/YdLidarX4.pdf):**   
@@ -276,6 +290,11 @@ Il est détaillé chaque composante du Schématique/PCb principal dans ce ReadMe
 >* Il faut vérifier absolument ces points qui ont été mal réalisé auparavant.   
 >* L'empreinte de la bobine pour l'entrée ADC doit avoir la bonne empreinte. Le cas échéant ceci peut amener à des soucis notables.   
 >* Une erreur a été commise sur l'attribution des timer en effet les encodeur prennent un advance timer chacun pour obtenir la vitesse du robot. Or nous en avons mis deux sur le même timer. Pour la suite du projet nous n'avons pas pu réaliser la partie encoder. Il suffirait de déplacer un encoder sur un autre timer  compatible avec le mode encoder.   
+>* Un petit via a été oublié sur le driver d'un moteur empechant celui-ci de fonctionner correctement. 
+>* On a alimenté le GPIO Expander en 5v ce qui fait des sorties d'état haut du GPIO expander à 5v. Ce qui est trop élevé pour le lidar heureusement on asservit pas sa vitesse de rotation en prenant celle de base. De plus les tof supportent cette tension d'état aux états haut (Ca reste pas un soucis car on s'en sert pas). --> Solution alimenter le gpio expander en 3.3v ...
+
+>[!Important] 
+>* **Il est important de noter que touts ces soucis ont été corrigé dans le commit :**
 
 
 ## Auteurs : 
