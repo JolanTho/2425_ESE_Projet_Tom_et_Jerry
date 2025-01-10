@@ -1,5 +1,6 @@
+../Drivers/CMSIS/Include/core_cm4.h:1933:34:__NVIC_SystemReset	1
 ../Core/Src/stm32g4xx_it.c:86:6:NMI_Handler	1
-../Core/Src/stm32g4xx_it.c:101:6:HardFault_Handler	1
+../Core/Src/stm32g4xx_it.c:101:6:HardFault_Handler	0
 ../Core/Src/stm32g4xx_it.c:116:6:MemManage_Handler	1
 ../Core/Src/stm32g4xx_it.c:131:6:BusFault_Handler	1
 ../Core/Src/stm32g4xx_it.c:146:6:UsageFault_Handler	1
@@ -15,5 +16,6 @@
 ../Core/Src/stm32g4xx_it.c:293:6:TIM1_TRG_COM_TIM17_IRQHandler	1
 ../Core/Src/stm32g4xx_it.c:307:6:USART1_IRQHandler	1
 ../Core/Src/stm32g4xx_it.c:321:6:USART2_IRQHandler	1
-../Core/Src/stm32g4xx_it.c:335:6:EXTI15_10_IRQHandler	4
-../Core/Src/stm32g4xx_it.c:387:6:UCPD1_IRQHandler	1
+../Core/Src/stm32g4xx_it.c:335:6:EXTI15_10_IRQHandler	1
+../Core/Src/stm32g4xx_it.c:350:6:TIM6_DAC_IRQHandler	1
+../Core/Src/stm32g4xx_it.c:365:6:UCPD1_IRQHandler	1

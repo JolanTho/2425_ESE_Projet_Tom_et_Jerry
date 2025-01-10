@@ -5,6 +5,11 @@
  *      Author: romingo
  */
 #include "components/ZXB5210.h"
+#include "changeMode.h"
+#include "callBack.h"
+
+#define MAX_ALPHA_SPEED 30.0
+#define V2
 MDriver_t MDriver1;
 MDriver_t MDriver2;
 
@@ -14,14 +19,16 @@ MDriver_Config_t MDriver2_FWD_Config;
 MDriver_Config_t MDriver2_REV_Config;
 
 int isSpeedInit = 0;
-#define MAX_ALPHA_SPEED 20
+int ANGLE_GLOBAL = -1;
+extern int workMode;
+extern int isSpeedActualisationIsBlocked;
+
 void ZXB5210_init(void){
 	debug(INFORMATION,"ZXB5210 - INIT");
 	MDriver1_FWD_Config = (MDriver_Config_t){.Tim_Channel = TIM_CHANNEL_3,.CCR_Channel = &htim2.Instance->CCR3,.pulseGoal = 0, .offset=0}; //28 Surement inutlie si l'asservissement en vitesse fonctionne un jour
 	MDriver1_REV_Config = (MDriver_Config_t){.Tim_Channel = TIM_CHANNEL_4,.CCR_Channel = &htim2.Instance->CCR4,.pulseGoal = 0, .offset=0}; //36
 	MDriver2_FWD_Config = (MDriver_Config_t){.Tim_Channel = TIM_CHANNEL_3,.CCR_Channel = &htim3.Instance->CCR3,.pulseGoal = 0, .offset=0};
 	MDriver2_REV_Config = (MDriver_Config_t){.Tim_Channel = TIM_CHANNEL_4,.CCR_Channel = &htim3.Instance->CCR4,.pulseGoal = 0, .offset=0};
-
 
 	MDriver1 = (MDriver_t){
 		.htim = &htim2,
@@ -52,37 +59,30 @@ void ZXB5210_deinit(void){
 	HAL_TIM_PWM_Stop(MDriver2.htim,MDriver2.REV->Tim_Channel) == HAL_OK ? debug(STOP,"DRIVER2 - PWM CHANNEL REV"):(void)0;
 }
 
-
 void ZXB5210_speed_FWD(MDriver_t* MDriver ,uint8_t alpha){
 	MDriver->FWD->pulseGoal=(MDriver->htim->Instance->ARR * alpha)/100;
-	if (MDriver->ACTIVE == NULL){
-		MDriver->ACTIVE = MDriver->FWD;
-	}
-	else{
-		MDriver->REV->pulseGoal = 0;
+	MDriver->ACTIVE = MDriver->FWD;
 
-	}
+	__HAL_TIM_SET_COMPARE(MDriver->htim,MDriver->REV->Tim_Channel,0);
+	MDriver->REV->pulseGoal = 0;
 }
 void ZXB5210_speed_REV(MDriver_t *MDriver ,uint8_t alpha)
 {	//ZXB5210_calc_speed(MDriver->REV,(MDriver->htim->Instance->ARR * alpha)/100);
 	MDriver->REV->pulseGoal=(MDriver->htim->Instance->ARR * alpha)/100;
-	if (MDriver->ACTIVE == NULL){ // Est NULL si on est a pulse =0 ou au debut
-		MDriver->ACTIVE = MDriver->REV;
-	}
-	else{	//N'est pas NULL donc on doit changer de sens
-		MDriver->FWD->pulseGoal = 0;
-	}
+	MDriver->ACTIVE = MDriver->REV;
+
+	__HAL_TIM_SET_COMPARE(MDriver->htim,MDriver->FWD->Tim_Channel,0);
+	MDriver->FWD->pulseGoal = 0;
 }
+
 void IT_ZXB5210_speed_UPDATE(MDriver_t* MDriver, MDriver_Config_t* SENS){
-	if(MDriver->ACTIVE == SENS){
-		uint32_t pulse = *(SENS->CCR_Channel);
-		pulse < SENS->pulseGoal ? // Si le pulse est trop petit
-				pulse ++ :
-				pulse --;
-		__HAL_TIM_SET_COMPARE(MDriver->htim,SENS->Tim_Channel,pulse);
-		if (SENS->pulseGoal == pulse){ // Si on a atteint l'objectif de pulse
-			MDriver->ACTIVE = NULL;
-		}
+	uint32_t pulse = *(SENS->CCR_Channel);
+	pulse < SENS->pulseGoal ? // Si le pulse est trop petit
+			pulse ++ :
+			pulse --;
+	__HAL_TIM_SET_COMPARE(MDriver->htim,SENS->Tim_Channel,pulse);
+	if (SENS->pulseGoal == pulse){ // Si on a atteint l'objectif de pulse
+		MDriver->ACTIVE = NULL;
 	}
 }
 
@@ -94,39 +94,40 @@ void ZXB5210_calc_speed(MDriver_Config_t* MDriver_Config,uint32_t initial_Pulse)
 void ZXB5210_angle(int angle){
 	uint8_t alpha_1;
 	uint8_t alpha_2;
-
-	if(angle <=90){
-		alpha_1 = MAX_ALPHA_SPEED ;
-		alpha_2 = 100- 100.0/90.0 * angle > MAX_ALPHA_SPEED ? MAX_ALPHA_SPEED:100- 100.0/90.0 * angle ;
-		ZXB5210_speed_FWD(&MDriver1 , alpha_1);
-		ZXB5210_speed_FWD(&MDriver2 , alpha_2);
-		return;
+	if(angle <0){return;}
+	if(!workMode){
+		angle = ((angle + 180) % 360 + 360) % 360;
 	}
-	else if (angle <=180){
-		alpha_1 = 100.0/90.0 * (180-angle) > MAX_ALPHA_SPEED ? MAX_ALPHA_SPEED:100.0/90.0 * (180-angle);
-		alpha_2 = MAX_ALPHA_SPEED ;
-		ZXB5210_speed_FWD(&MDriver1 , alpha_1);
-		ZXB5210_speed_FWD(&MDriver2 , alpha_2);
-		return;
+	ANGLE_GLOBAL = angle;
+#ifdef V2
+	if (!isSpeedActualisationIsBlocked){
+		if(angle <=90){
+			alpha_1 =  MAX_ALPHA_SPEED/2 - MAX_ALPHA_SPEED/180.0 * angle ;
+			alpha_2 = MAX_ALPHA_SPEED/2 + MAX_ALPHA_SPEED/180.0 * angle;
+
+			alpha_1 = alpha_1 > MAX_ALPHA_SPEED ? MAX_ALPHA_SPEED : alpha_1;
+			alpha_2 = alpha_2 > MAX_ALPHA_SPEED ? MAX_ALPHA_SPEED : alpha_2 ;
+			ZXB5210_speed_FWD(&MDriver1 , alpha_1);
+			ZXB5210_speed_FWD(&MDriver2 , alpha_2);
+		}
+		else if(angle <=270){
+			alpha_1 =  MAX_ALPHA_SPEED/180.0 * (angle -90) ;
+			alpha_2 = MAX_ALPHA_SPEED -  MAX_ALPHA_SPEED/180.0 * (angle - 90);
+
+			alpha_1 = alpha_1 > MAX_ALPHA_SPEED ? MAX_ALPHA_SPEED : alpha_1;
+			alpha_2 = alpha_2 > MAX_ALPHA_SPEED ? MAX_ALPHA_SPEED : alpha_2 ;
+			ZXB5210_speed_REV(&MDriver1 , alpha_1);
+			ZXB5210_speed_REV(&MDriver2 , alpha_2);
+		}
+		else if(angle <=360){
+			alpha_2 = MAX_ALPHA_SPEED/180.0 * (angle-270);
+			alpha_1 = MAX_ALPHA_SPEED -  MAX_ALPHA_SPEED/180.0 * (angle - 270);
+
+			alpha_1 = alpha_1 > MAX_ALPHA_SPEED ? MAX_ALPHA_SPEED : alpha_1;
+			alpha_2 = alpha_2 > MAX_ALPHA_SPEED ? MAX_ALPHA_SPEED : alpha_2 ;
+			ZXB5210_speed_FWD(&MDriver1 , alpha_1);
+			ZXB5210_speed_FWD(&MDriver2 , alpha_2);
+		}
 	}
-	else if(angle <=270){
-		alpha_1 = 100.0/90.0 * (angle -180) > MAX_ALPHA_SPEED ? MAX_ALPHA_SPEED: 100.0/90.0 * (angle -180) ;
-		alpha_2 = MAX_ALPHA_SPEED ;
-		ZXB5210_speed_REV(&MDriver1 , alpha_1);
-		ZXB5210_speed_REV(&MDriver2 , alpha_2);
-		return;
-	}
-	else if(angle <360){
-		alpha_1 = MAX_ALPHA_SPEED ;
-		alpha_2 = 100.0/90.0 * (360 -angle) > MAX_ALPHA_SPEED ? MAX_ALPHA_SPEED: 100.0/90.0 * (360 -angle) ;
-		ZXB5210_speed_REV(&MDriver1 , alpha_1);
-		ZXB5210_speed_REV(&MDriver2 , alpha_2);
-		return;
-
-	}
-
-
-
-
-
+#endif
 }

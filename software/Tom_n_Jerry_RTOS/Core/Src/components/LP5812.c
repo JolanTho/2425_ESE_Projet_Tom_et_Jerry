@@ -61,40 +61,31 @@ void LP5812_Init(void) {
 	LP5812_WriteRegister(0x03D,0xCC)!=HAL_OK ? debug(D_ERROR,"I2C MAIN"):	(void)0;
 	LP5812_WriteRegister(0x03F,0xCC)!=HAL_OK ? debug(D_ERROR,"I2C MAIN"):	(void)0;
 
+	LED.L2.B=0x4A;
+	LED.L1.B=0x44;
+	LED.L4.B=0x4D;
+	LED.L3.B=0x47;
 
-	LED.L1.R=0x47;
 
-	LED.L1.R=0x44;
-	LED.L1.G=0x45;
-	LED.L1.B=0x44; // et 0x45
-
-	LED.L2.R=0x47;
+	LED.L3.G=0x45;
 	LED.L2.G=0x48;
-	LED.L2.B=0x46; //
-
-	LED.L3.R=0x4A;
-	LED.L3.G=0x4B;
-	LED.L3.B=0x4C;
-
-	LED.L4.R=0x4D;
-	LED.L4.G=0x4E;
-	LED.L4.B=0x4F;
-
-	LED_update(LED.L1.R,0);
-	LED_update(LED.L2.R,0);
-	LED_update(LED.L3.R,0);
-	LED_update(LED.L4.R,0);
-	LED_update(LED.L1.B,0);
-	LED_update(LED.L2.B,0);
-	LED_update(LED.L3.B,0);
-	LED_update(LED.L4.B,0);
-	LED_update(LED.L1.G,0);
-	LED_update(LED.L2.G,0);
-	LED_update(LED.L3.G,0);
-	LED_update(LED.L4.G,0);
-// Changer les registres carRGB pas dans le bon sens.
+	LED.L1.G=0x4E;
+	LED.L4.G=0x4B;
 
 
+	LED.L2.R=0x46;
+	LED.L4.R=0x49;
+	LED.L3.R=0x4F;
+	LED.L1.R=0x4C;
+    ConfigLED_t* LEDs[] = {&LED.L1, &LED.L2, &LED.L3, &LED.L4};
+    size_t numLEDs = sizeof(LEDs) / sizeof(LEDs[0]);
+
+    for (size_t j = 0; j < numLEDs; ++j) {
+            LED_update(LEDs[j]->R, 0);
+            LED_update(LEDs[j]->G, 0);
+            LED_update(LEDs[j]->B, 0);
+
+    }
 
 	/*//!\\Attention : L'adresse du composant est sur 2 bytes :
 	 *				1er bytes est composé de R/W +  2dernier bytes du registres ciblé + Broadcast/Speci
@@ -134,4 +125,55 @@ HAL_StatusTypeDef LP5812_ReadRegister(uint16_t reg_addr, uint8_t *pData) {
 
 void LED_update(uint16_t regRGB, uint8_t RGB){
 	LP5812_WriteRegister(regRGB,RGB);
+}
+
+
+void chenillard_RGB(void) {
+    ConfigLED_t* LEDs[] = {&LED.L1, &LED.L2, &LED.L3, &LED.L4};
+    size_t numLEDs = sizeof(LEDs) / sizeof(LEDs[0]);
+
+    uint8_t RGB_values[3] = {255, 0, 0}; // Rouge de départ (R, G, B)
+    size_t activeColor = 0;              // Couleur active (R=0, G=1, B=2)
+
+    for (size_t j = 0; j<3; j++) {
+        for (size_t i = 0; i < numLEDs; ++i) {
+            // Mise à jour de la LED active
+            LED_update(LEDs[i]->R, (activeColor == 0) ? RGB_values[0] : 0); // Rouge
+            LED_update(LEDs[i]->G, (activeColor == 1) ? RGB_values[1] : 0); // Vert
+            LED_update(LEDs[i]->B, (activeColor == 2) ? RGB_values[2] : 0); // Bleu
+
+            // Éteindre les autres LEDs
+            for (size_t j = 0; j < numLEDs; ++j) {
+                if (j != i) {
+                    LED_update(LEDs[j]->R, 0);
+                    LED_update(LEDs[j]->G, 0);
+                    LED_update(LEDs[j]->B, 0);
+                }
+            }
+            // Pause pour voir le chenillard
+            osDelay(200);
+        }
+
+        // Passer à la couleur suivante (rouge -> vert -> bleu)
+        activeColor = (activeColor + 1) % 3;
+        if (activeColor == 0) {
+            RGB_values[0] = 255; // Retour à rouge
+            RGB_values[1] = 0;
+            RGB_values[2] = 0;
+        } else if (activeColor == 1) {
+            RGB_values[0] = 0;
+            RGB_values[1] = 255; // Vert
+            RGB_values[2] = 0;
+        } else {
+            RGB_values[0] = 0;
+            RGB_values[1] = 0;
+            RGB_values[2] = 255; // Bleu
+        }
+    }
+    for (size_t j = 0; j < numLEDs; ++j) {
+            LED_update(LEDs[j]->R, 0);
+            LED_update(LEDs[j]->G, 0);
+            LED_update(LEDs[j]->B, 0);
+
+    }
 }

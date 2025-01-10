@@ -14,10 +14,9 @@
 #define DUREEP 30000
 
 h_LIDAR_t lidar;
+
 extern SemaphoreHandle_t semb_halfCllbck;
 extern SemaphoreHandle_t semb_cpltCllbck;
-extern MDriver_t MDriver1;
-extern MDriver_t MDriver2;
 extern int lidarDebugShell;
 
 SemaphoreHandle_t semb_process_authorized;
@@ -35,7 +34,6 @@ void lidar_init(void){
 	lidar.serial_drv.dma_transmit=uart_dma_transmit;
 
 	semb_process_authorized = xSemaphoreCreateBinary();
-
 }
 
 void lidarTake (void * pvParameters){
@@ -46,7 +44,6 @@ void lidarTake (void * pvParameters){
 	for(;;){
 		// Attente du Semahore de half buffer
 		xSemaphoreTake(semb_halfCllbck, portMAX_DELAY);
-
 		// Pointeur sur le début des données
 		buff = lidar.processing.receive_buff;
 		xSemaphoreTake(semMutex_Process,portMAX_DELAY);
@@ -54,10 +51,8 @@ void lidarTake (void * pvParameters){
 		xSemaphoreGive(semMutex_Process);
 
 		xSemaphoreGive(semb_process_authorized);
-
 		// Attente du semaphore du complete buffer
 		xSemaphoreTake(semb_cpltCllbck, portMAX_DELAY);
-
 		// Pointeur sur la moitié des données
 		buff = &lidar.processing.receive_buff[FRAME_BUFF_SIZE];
 
@@ -66,7 +61,6 @@ void lidarTake (void * pvParameters){
 		xSemaphoreGive(semMutex_Process);
 
 		xSemaphoreGive(semb_process_authorized);
-
 	}
 }
 
@@ -74,15 +68,15 @@ void lidarprocess (void * pvParameters){
 	for(;;){
 		medianFilter(&lidar);
 		find_clusters(&lidar);
-		ZXB5210_angle(lidar.processing.cluster_DistanceMIN.angle_moyen);
+		// Changer la distance minimale si workMode idee tab_distance[distance_souris, distance_chat]
+		if (lidar.processing.cluster_DistanceMIN.distance_moyenne < 4000){
+			ZXB5210_angle(lidar.processing.cluster_DistanceMIN.angle_moyen);
+		}
 
 		if(lidarDebugShell){
 			printf("Clusters Maison trouvees : %d \r\n", lidar.processing.cluster_cnt);
 			printf("Clusters Distance Minimum : %i | %i° \r\n", lidar.processing.cluster_DistanceMIN.distance_moyenne,lidar.processing.cluster_DistanceMIN.angle_moyen);
-			printf("FWD1 | pulseGoal: %lu | pulse: %lu\r\n", MDriver1.FWD->pulseGoal, *(MDriver1.FWD->CCR_Channel));
-			printf("REV1 | pulseGoal: %lu | pulse: %lu\r\n", MDriver1.REV->pulseGoal, *(MDriver1.REV->CCR_Channel));
-			printf("FWD2 | pulseGoal: %lu | pulse: %lu\r\n", MDriver2.FWD->pulseGoal, *(MDriver2.FWD->CCR_Channel));
-			printf("REV2 | pulseGoal: %lu | pulse: %lu\r\n", MDriver2.REV->pulseGoal, *(MDriver2.REV->CCR_Channel));
+
 		}
 		vTaskDelay(DUREE);
 	}

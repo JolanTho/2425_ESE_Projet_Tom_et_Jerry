@@ -53,17 +53,17 @@ void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(LIDAR_M_CTR_GPIO_Port, LIDAR_M_CTR_Pin, GPIO_PIN_SET);
 
-  /*Configure GPIO pin : PtPin */
-  GPIO_InitStruct.Pin = MOUSTACHE_3_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(MOUSTACHE_3_GPIO_Port, &GPIO_InitStruct);
-
   /*Configure GPIO pins : PBPin PBPin */
-  GPIO_InitStruct.Pin = START_Pin|MOUSTACHE_1_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pin = MOUSTACHE_3_Pin|MOUSTACHE_1_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PtPin */
+  GPIO_InitStruct.Pin = START_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(START_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PtPin */
   GPIO_InitStruct.Pin = LIDAR_M_CTR_Pin;

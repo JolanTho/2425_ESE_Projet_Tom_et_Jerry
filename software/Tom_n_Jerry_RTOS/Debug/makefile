@@ -10,6 +10,7 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include shell/subdir.mk
+-include init/subdir.mk
 -include changeMode/subdir.mk
 -include callBack/subdir.mk
 -include asserv/subdir.mk

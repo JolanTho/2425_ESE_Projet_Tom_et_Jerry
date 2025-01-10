@@ -83,7 +83,8 @@ void shell_init(void) {
 			HAL_MAX_DELAY);
 	HAL_UART_Transmit(&UART_DEVICE, prompt, strlen((char*) prompt),
 			HAL_MAX_DELAY);
-	printf("\r\n");
+	HAL_UART_Transmit(&UART_DEVICE, newline, strlen((char*) newline),
+			HAL_MAX_DELAY);
 	subfunct_start(0);
 }
 
@@ -179,16 +180,9 @@ void subfunct_start(char **argv) {
 			debug(START, "TIMER 3 for PWM") : debug(D_ERROR, "TIMER 3 for PWM");
 	HAL_ADCEx_Calibration_Start(&hadc2,ADC_SINGLE_ENDED) == HAL_OK ?
 			debug(START, "ADC2 CALIBRATION") : debug(D_ERROR, "ADC2 CALIBRATION");
-	HAL_TIM_Base_Start(&htim6)!= HAL_OK ?
+	HAL_TIM_Base_Start_IT(&htim6)== HAL_OK ?
 			debug(START,"TIM6 - MIAOU") : debug(D_ERROR,"TIM6 - MIAOU");
 
-	LP5812_WriteRegister(0x049,0);//LED HAUTE VERTE
-	LP5812_WriteRegister(0x048,0);
-	LP5812_WriteRegister(0x047,0);
-	LP5812_WriteRegister(0x046,0);
-	LP5812_WriteRegister(0x045,0);
-	LP5812_WriteRegister(0x044,0);
-	//To-Do : Chenillard des LEDs
 	TCA9555_init();
 	LP5812_Init();
 	ADXL343_init();
@@ -244,11 +238,6 @@ void subfunct_angle(char **argv) {
 	int angle = (int) strtol(argv[1], NULL, 10); // Base 10
 	if (isSpeedInit==0){isSpeedInit=1;}
 	ZXB5210_angle(angle);
-	printf("FWD1 | pulseGoal: %lu | pulse: %lu\r\n", MDriver1.FWD->pulseGoal, *(MDriver1.FWD->CCR_Channel));
-	printf("REV1 | pulseGoal: %lu | pulse: %lu\r\n", MDriver1.REV->pulseGoal, *(MDriver1.REV->CCR_Channel));
-	printf("FWD2 | pulseGoal: %lu | pulse: %lu\r\n", MDriver2.FWD->pulseGoal, *(MDriver2.FWD->CCR_Channel));
-	printf("REV2 | pulseGoal: %lu | pulse: %lu\r\n", MDriver2.REV->pulseGoal, *(MDriver2.REV->CCR_Channel));
-
 	return;
 }
 void subfunct_Iasserv(char **argv) {
@@ -263,45 +252,8 @@ void subfunct_setLed(char **argv) {
 	 * int: LedId	int: %PWM(0-255)
 	 */
 
-	//uint8_t unused = argv[0];
-	//uint8_t LedID = (uint8_t) strtol(argv[1], NULL, 10); // Base 10
-	uint8_t PWM = (uint8_t) strtol(argv[2], NULL, 10); // Base 10
-	/* Set chip_en = 1 to enable the device*/
-	LP5812_WriteRegister(0x000, 0x01) == HAL_OK ?
-			printf("I2C Ok\r\n") : printf("I2C Error\r\n");
-	/* Set led_mode = 4h to configure the LED drive mode as direct drive mode*/
-	LP5812_WriteRegister(0x002, 0x40) == HAL_OK ?
-			printf("I2C Ok\r\n") : printf("I2C Error\r\n");
-	/* Send update command to complete configuration settings*/
-	LP5812_WriteRegister(0x010, 0x55) == HAL_OK ?
-			printf("I2C Ok\r\n") : printf("I2C Error\r\n");
+	chenillard_RGB();
 
-	/* Set duty cycle for LEDs*/
-	PWMLed = PWM < 255 ? 255 : 0;
-	LP5812_WriteRegister(0x044, PWMLed) == HAL_OK ?
-			printf("I2C Ok\r\n") : printf("I2C Error\r\n");
-	LP5812_WriteRegister(0x045, PWMLed) == HAL_OK ?
-			printf("I2C Ok\r\n") : printf("I2C Error\r\n");
-	LP5812_WriteRegister(0x046, PWMLed) == HAL_OK ?
-			printf("I2C Ok\r\n") : printf("I2C Error\r\n");
-	LP5812_WriteRegister(0x047, PWMLed) == HAL_OK ?
-			printf("I2C Ok\r\n") : printf("I2C Error\r\n");
-	LP5812_WriteRegister(0x048, PWMLed) == HAL_OK ?
-			printf("I2C Ok\r\n") : printf("I2C Error\r\n");
-	LP5812_WriteRegister(0x049, PWMLed) == HAL_OK ?
-			printf("I2C Ok\r\n") : printf("I2C Error\r\n");
-	LP5812_WriteRegister(0x04A, PWMLed) == HAL_OK ?
-			printf("I2C Ok\r\n") : printf("I2C Error\r\n");
-	LP5812_WriteRegister(0x04B, PWMLed) == HAL_OK ?
-			printf("I2C Ok\r\n") : printf("I2C Error\r\n");
-	LP5812_WriteRegister(0x04C, PWMLed) == HAL_OK ?
-			printf("I2C Ok\r\n") : printf("I2C Error\r\n");
-	LP5812_WriteRegister(0x04D, PWMLed) == HAL_OK ?
-			printf("I2C Ok\r\n") : printf("I2C Error\r\n");
-	LP5812_WriteRegister(0x04E, PWMLed) == HAL_OK ?
-			printf("I2C Ok\r\n") : printf("I2C Error\r\n");
-	LP5812_WriteRegister(0x04F, PWMLed) == HAL_OK ?
-			printf("I2C Ok\r\n") : printf("I2C Error\r\n");
 }
 void subfunct_seeIMU(char **argv) {
 	/*
@@ -376,7 +328,6 @@ void subfunct_modify_calc_speed(char**argv){
 void subfunct_lidar(char**argv){
 	if(argv[1]==NULL){
 		LIDAR_start_scan_dma(&lidar) == 0 ? debug(START,"LIDAR") : debug(D_ERROR,"LIDAR");
-		lidarDebugShell = 1;
 	}
 	else{
 		strcmp(argv[1], "-h") ==0 ? LIDAR_get_health_stat(&lidar):(void)0;

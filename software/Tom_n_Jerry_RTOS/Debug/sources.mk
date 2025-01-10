@@ -38,5 +38,6 @@ USBPD \
 asserv \
 callBack \
 changeMode \
+init \
 shell \
 

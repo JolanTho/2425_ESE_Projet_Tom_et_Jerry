@@ -31,5 +31,5 @@ void LP5812_Init(void);
 HAL_StatusTypeDef LP5812_WriteRegister(uint16_t reg_addr, uint8_t data);
 HAL_StatusTypeDef LP5812_ReadRegister(uint16_t reg_addr, uint8_t *pData);
 void LED_update(uint16_t regRGB, uint8_t RGB);
-
+void chenillard_RGB(void);
 #endif /* INC_LP5812_H_ */
