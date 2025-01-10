@@ -18,6 +18,25 @@ Il est détaillé chaque composante du Schématique/PCb des TOF dans ce ReadMe. 
 ## Solution technique
 >Nous avons choisi d'utiliser 6 TOF, 3 à l'avant du robot et 3 à l'arrièere. Nous avons donc fais 6 PCB pour pouvoir relier nos capteur TOF au PCB principale. Le PCB fixé au capteur TOF centrale est relié au PCB principal et ensuite celui-ci est relié au deux autres PCB.
 
+...mermaid
+---
+config:
+  flowchart:
+    htmlLabels: false
+  layout: fixed
+---
+flowchart LR
+    n2["PCB prinipal"] --> n1["PCB prinipal"] & n3["PCB prinipal"]
+    n4["PCB prinipal"] --> n2
+    n2@{ shape: rounded}
+    n1@{ shape: rounded}
+    n3@{ shape: rounded}
+    n4@{ shape: rounded}
+    style n2 stroke:#000000
+    style n1 stroke:#000000
+    style n3 stroke:#000000
+    style n4 stroke:#000000
+
 
 ## Auteurs : 
 >* Jolan Thomasset (jolan.thomasset@ensea.fr)  
