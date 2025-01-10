@@ -2424,7 +2424,7 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 158.75) (xy 90.17 158.75)
+			(xy 90.17 158.75) (xy 101.6 158.75)
 		)
 		(stroke
 			(width 0)
@@ -3828,6 +3828,74 @@
 		)
 	)
 	(symbol
+		(lib_name "+3.3V_1")
+		(lib_id "power:+3.3V")
+		(at 101.6 158.75 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "43036a16-6371-4cf7-8c0d-96fe9edc26a0")
+		(property "Reference" "#PWR0312"
+			(at 97.79 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 105.41 158.7499 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 101.6 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 101.6 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 101.6 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5cade90d-80a7-4d6f-8446-6c35eabab91e")
+		)
+		(instances
+			(project "Tom&Jerry_PCB"
+				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/ac7f7f04-c418-4551-b204-a999b9c3c440"
+					(reference "#PWR0312")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_name "GND_3")
 		(lib_id "power:GND")
 		(at 243.84 130.81 270)
@@ -3890,73 +3958,6 @@
 			(project "Tom&Jerry_PCB"
 				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/ac7f7f04-c418-4551-b204-a999b9c3c440"
 					(reference "#PWR0306")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 93.98 158.75 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "50c46acd-a741-429c-9e8f-3a3bf0675c72")
-		(property "Reference" "#PWR0310"
-			(at 93.98 162.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 96.52 157.4799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 93.98 158.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 93.98 158.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 93.98 158.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "e8de8738-1579-43de-ac87-36ae86e6bc69")
-		)
-		(instances
-			(project "Tom&Jerry_PCB"
-				(path "/d6e3fbeb-d028-494d-83bf-2e4a8b12578d/ac7f7f04-c418-4551-b204-a999b9c3c440"
-					(reference "#PWR0310")
 					(unit 1)
 				)
 			)

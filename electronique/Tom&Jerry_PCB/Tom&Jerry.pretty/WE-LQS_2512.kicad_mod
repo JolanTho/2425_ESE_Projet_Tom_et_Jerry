@@ -1,0 +1,132 @@
+(footprint "WE-LQS_2512"
+	(version 20240108)
+	(generator "pcbnew")
+	(generator_version "8.0")
+	(layer "F.Cu")
+	(descr "<b>WE-LQS SMD Power Inductor<br></b><br></b>Size: 2512, SMT, 2pins<br>LxWxH= 2.5mmx2mmx1.2mm")
+	(property "Reference" "REF**"
+		(at 0 -2.008 0)
+		(layer "F.SilkS")
+		(uuid "12faf302-d799-4b2e-9224-6a3d9638cf7e")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "WE-LQS_2512"
+		(at 0 1.992 0)
+		(layer "F.Fab")
+		(uuid "3d1c877c-a833-49d4-a363-4b4f3176742c")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Footprint" "WE-LQS_2512"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "2f4901c6-72b6-4df7-b59b-0e765cea8e1a")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "2919d0b9-3a5a-4da9-adbf-556afa80eaed")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "0479588b-cb8a-495e-a643-fac815f9533d")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr smd)
+	(fp_poly
+		(pts
+			(xy -1.7 -1.2) (xy 1.7 -1.2) (xy 1.7 1.2) (xy -1.7 1.2)
+		)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill solid)
+		(layer "F.CrtYd")
+		(uuid "3f633ec5-d0ee-40f0-98c9-05b4573ac2a3")
+	)
+	(fp_line
+		(start -1.25 -1)
+		(end 1.25 -1)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "23d3ad1b-22b8-4c1d-acee-5b2211dc27ee")
+	)
+	(fp_line
+		(start -1.25 1)
+		(end -1.25 -1)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "90a41d96-1425-44bd-802d-8539402050bf")
+	)
+	(fp_line
+		(start 1.25 -1)
+		(end 1.25 1)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "78b69bf3-467d-48b8-a2be-4549226aafb1")
+	)
+	(fp_line
+		(start 1.25 1)
+		(end -1.25 1)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "c771028d-f446-4175-853d-db2d4cc03f77")
+	)
+	(pad "1" smd rect
+		(at -0.95 0)
+		(size 1.1 2)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(solder_mask_margin 0.102)
+		(uuid "efac5f40-0a5b-4e63-8dd6-9ba2d53ac072")
+	)
+	(pad "2" smd rect
+		(at 0.95 0)
+		(size 1.1 2)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(solder_mask_margin 0.102)
+		(uuid "c473f8fd-2891-4fcb-b245-6eeac062959d")
+	)
+)

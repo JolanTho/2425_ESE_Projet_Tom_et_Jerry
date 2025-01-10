@@ -9184,7 +9184,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Inductor_SMD:L_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
+		(property "Footprint" "Tom&Jerry:WE-LQS_2512"
 			(at 73.66 44.45 0)
 			(effects
 				(font
