@@ -156,8 +156,8 @@ int main(void)
 	vPortGetHeapStats(&heapStats);
 	xTaskCreate(changeMode_run,			"Changement MODE", TASK_STACK_DEPTH_CHANGEMODE, NULL, TASK_PRIORITY_CHANGEMODE, &h_task_changemenMode) != pdPASS ? Error_Handler():(void)0;
 	//vPortGetHeapStats(&heapStats);
-	//xTaskCreate(asserv_courant_run, 	"Asserv Courant", TASK_STACK_DEPTH_ASSERV_I, NULL, TASK_PRIORITY_ASSERV_I, &h_task_asserv_I) != pdPASS ? Error_Handler():(void)0;
-	//vPortGetHeapStats(&heapStats);
+	xTaskCreate(asserv_courant_run, 	"Asserv Courant", TASK_STACK_DEPTH_ASSERV_I, NULL, TASK_PRIORITY_ASSERV_I, &h_task_asserv_I) != pdPASS ? Error_Handler():(void)0;
+	vPortGetHeapStats(&heapStats);
 	//xTaskCreate(asserv_position_run, 	"Asserv Position", TASK_STACK_DEPTH_ASSERV_XYZ, NULL, TASK_PRIORITY_ASSERV_XYZ, &h_task_asserv_XYZ) != pdPASS ? Error_Handler():(void)0;
 	vPortGetHeapStats(&heapStats);
 

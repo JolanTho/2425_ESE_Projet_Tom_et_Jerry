@@ -1,4 +1,4 @@
 ../changeMode/changeMode.c:31:6:changement_mode_init	1
-../changeMode/changeMode.c:36:6:changeMode_run	3
+../changeMode/changeMode.c:36:6:changeMode_run	4
 ../changeMode/changeMode.c:79:6:play_song	2
 ../changeMode/changeMode.c:87:6:generate_sine_wave	4

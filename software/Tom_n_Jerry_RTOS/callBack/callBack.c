@@ -28,6 +28,7 @@ extern int workMode;
 
 extern LED_t LED;
 extern int ANGLE_GLOBAL;
+extern int verbosePulse;
 
 int isFalling1=0;
 int isFalling3=0;
@@ -39,13 +40,13 @@ int isFalling3=0;
 /*********** PREEMPTION PRIORITY 14 ***********/
 void CUSTOM_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 	if (htim->Instance == TIM15) { //Every 1s
-
+		if (verbosePulse){
 		printf("\r\nANGLE:%i\tWorkMode:%s\t%s\r\n",ANGLE_GLOBAL,(workMode == 1) ? "CHAT" : "SOURIS",(isSpeedActualisationIsBlocked==1) ? "BLOCKED" : "");
 		printf("FWD1 | pulseGoal: %lu | pulse: %lu\r\n", MDriver1.FWD->pulseGoal, *(MDriver1.FWD->CCR_Channel));
 		printf("REV1 | pulseGoal: %lu | pulse: %lu\r\n", MDriver1.REV->pulseGoal, *(MDriver1.REV->CCR_Channel));
 		printf("FWD2 | pulseGoal: %lu | pulse: %lu\r\n", MDriver2.FWD->pulseGoal, *(MDriver2.FWD->CCR_Channel));
 		printf("REV2 | pulseGoal: %lu | pulse: %lu\r\n", MDriver2.REV->pulseGoal, *(MDriver2.REV->CCR_Channel));
-
+		}
 		if (isSeeIMU) {
 			uint8_t ret_ADXL;
 			uint8_t ret_GPIO;

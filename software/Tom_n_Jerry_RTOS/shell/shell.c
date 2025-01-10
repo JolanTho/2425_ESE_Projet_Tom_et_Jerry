@@ -19,7 +19,6 @@ extern MDriver_t MDriver2;
 
 #define NUM_CHANNEL_ADC2 2
 extern int isSpeedInit;
-
 extern h_LIDAR_t lidar;
 
 MAPPER mapping[] = {
@@ -68,6 +67,7 @@ int isFind = 0;
 int isStarted = 0;
 int isADC_cplt =0;
 int lidarDebugShell=0;
+int verbosePulse = 0;
 uint8_t PWMLed = 255;
 
 
@@ -235,9 +235,14 @@ void subfunct_angle(char **argv) {
 		debug(INFORMATION,"ANGLE - ARGUMENTS NEEDED");
 		return;
 	}
-	int angle = (int) strtol(argv[1], NULL, 10); // Base 10
-	if (isSpeedInit==0){isSpeedInit=1;}
-	ZXB5210_angle(angle);
+	if (strcmp(argv[1], "-v")==0){
+		verbosePulse = verbosePulse ==0? 1:0;
+	}
+	else{
+		int angle = (int) strtol(argv[1], NULL, 10); // Base 10
+		if (isSpeedInit==0){isSpeedInit=1;}
+		ZXB5210_angle(angle);
+	}
 	return;
 }
 void subfunct_Iasserv(char **argv) {
@@ -340,8 +345,8 @@ void subfunct_lidar(char**argv){
 	}
 }
 void reset(char **argv){
-    __disable_irq(); // Désactive les interruptions globales
-    NVIC_SystemReset(); // Demande un reset système via le NVIC
+	__disable_irq(); // Désactive les interruptions globales
+	NVIC_SystemReset(); // Demande un reset système via le NVIC
 }
 /************************************************************************************************
  * 										DEBUG
