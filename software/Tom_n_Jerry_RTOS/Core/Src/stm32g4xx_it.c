@@ -27,7 +27,7 @@
 #include "cmsis_os.h"
 #include "components/LP5812.h"
 #include "components/ZXB5210.h"
-
+#include "callBack.h"
 
 /* USER CODE END Includes */
 
@@ -48,8 +48,6 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
-extern TaskHandle_t h_task_changemenMode;
-extern int isSpeedInit;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -66,6 +64,8 @@ extern int isSpeedInit;
 extern DMA_HandleTypeDef hdma_adc2;
 extern ADC_HandleTypeDef hadc2;
 extern DMA_HandleTypeDef hdma_dac1_ch1;
+extern DAC_HandleTypeDef hdac1;
+extern TIM_HandleTypeDef htim6;
 extern TIM_HandleTypeDef htim15;
 extern TIM_HandleTypeDef htim16;
 extern DMA_HandleTypeDef hdma_usart2_rx;
@@ -101,12 +101,10 @@ void NMI_Handler(void)
 void HardFault_Handler(void)
 {
   /* USER CODE BEGIN HardFault_IRQn 0 */
-
+    NVIC_SystemReset(); // Demande un reset système via le NVIC
   /* USER CODE END HardFault_IRQn 0 */
   while (1)
   {
-	    NVIC_SystemReset(); // Demande un reset système via le NVIC
-
     /* USER CODE BEGIN W1_HardFault_IRQn 0 */
     /* USER CODE END W1_HardFault_IRQn 0 */
   }
@@ -122,8 +120,6 @@ void MemManage_Handler(void)
   /* USER CODE END MemoryManagement_IRQn 0 */
   while (1)
   {
-	    NVIC_SystemReset(); // Demande un reset système via le NVIC
-
     /* USER CODE BEGIN W1_MemoryManagement_IRQn 0 */
     /* USER CODE END W1_MemoryManagement_IRQn 0 */
   }
@@ -339,42 +335,28 @@ void USART2_IRQHandler(void)
 void EXTI15_10_IRQHandler(void)
 {
   /* USER CODE BEGIN EXTI15_10_IRQn 0 */
-
-	if (__HAL_GPIO_EXTI_GET_IT(MOUSTACHE_4_Pin) != RESET)
-	{
-		LP5812_WriteRegister(0x045,0);
-		LP5812_WriteRegister(0x046,0);
-		LP5812_WriteRegister(0x047,124);
-//		BaseType_t pxHigherPriorityTaskWoken = pdFALSE;
-//		xTaskNotifyFromISR(h_task_changemenMode,
-//				1,
-//				eSetBits,
-//				&pxHigherPriorityTaskWoken);
-//		portYIELD_FROM_ISR(pxHigherPriorityTaskWoken);
-	}
-	if (__HAL_GPIO_EXTI_GET_IT(MOUSTACHE_3_Pin) != RESET)
-	{
-		LP5812_WriteRegister(0x045,124);
-		LP5812_WriteRegister(0x046,0);
-		LP5812_WriteRegister(0x047,0);
-//		BaseType_t pxHigherPriorityTaskWoken = pdFALSE;
-//		xTaskNotifyFromISR(h_task_changemenMode,
-//				1,
-//				eSetBits,
-//				&pxHigherPriorityTaskWoken);
-//		portYIELD_FROM_ISR(pxHigherPriorityTaskWoken);
-	}
-	if (__HAL_GPIO_EXTI_GET_IT(START_Pin) != RESET)
-	{
-		isSpeedInit = 1-isSpeedInit;
-	}
+	CUSTOM_EXTI_IRQHandler();
   /* USER CODE END EXTI15_10_IRQn 0 */
-  HAL_GPIO_EXTI_IRQHandler(MOUSTACHE_4_Pin);
-  HAL_GPIO_EXTI_IRQHandler(MOUSTACHE_3_Pin);
+  HAL_GPIO_EXTI_IRQHandler(GE_EXTI_Pin);
   HAL_GPIO_EXTI_IRQHandler(START_Pin);
   /* USER CODE BEGIN EXTI15_10_IRQn 1 */
 
   /* USER CODE END EXTI15_10_IRQn 1 */
+}
+
+/**
+  * @brief This function handles TIM6 global interrupt, DAC1 and DAC3 channel underrun error interrupts.
+  */
+void TIM6_DAC_IRQHandler(void)
+{
+  /* USER CODE BEGIN TIM6_DAC_IRQn 0 */
+
+  /* USER CODE END TIM6_DAC_IRQn 0 */
+  HAL_TIM_IRQHandler(&htim6);
+  HAL_DAC_IRQHandler(&hdac1);
+  /* USER CODE BEGIN TIM6_DAC_IRQn 1 */
+
+  /* USER CODE END TIM6_DAC_IRQn 1 */
 }
 
 /**

@@ -77,4 +77,5 @@
 "./asserv/asserv.o"
 "./callBack/callBack.o"
 "./changeMode/changeMode.o"
+"./init/init.o"
 "./shell/shell.o"

@@ -1,3 +1,4 @@
-../changeMode/changeMode.c:20:6:changement_mode_init	4	static
-../changeMode/changeMode.c:23:6:changeMode_run	24	static
-../changeMode/changeMode.c:50:6:play_song	16	static
+../changeMode/changeMode.c:31:6:changement_mode_init	4	static
+../changeMode/changeMode.c:36:6:changeMode_run	32	static
+../changeMode/changeMode.c:79:6:play_song	16	static
+../changeMode/changeMode.c:87:6:generate_sine_wave	32	static

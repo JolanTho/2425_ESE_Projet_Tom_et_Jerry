@@ -37,6 +37,7 @@ void task_shell(void *unused);
 
 void subfunct_help(char **argv);
 void subfunct_speed(char **argv);
+void subfunct_angle(char **argv);
 void subfunct_start(char **argv);
 void subfunct_stop(char **argv);
 void subfunct_setLed(char **argv);

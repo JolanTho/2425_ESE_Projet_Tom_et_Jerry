@@ -72,9 +72,9 @@ void ADXL343_init(void){
 	}
 
 	/*	0x1D-TRESHS_TAP		|	62.5 mg/LSB
-	 *	0xa0= 10g
+	 *	0x0D= 800mg | 0x10=1000mg
 	 */
-	ADXL343_WriteRegister(0x1D, 0xa0)!=HAL_OK ? debug(D_ERROR,"I2C TRANSMIT in INIT"):(void)0;
+	ADXL343_WriteRegister(0x1D, 0x0D)!=HAL_OK ? debug(D_ERROR,"I2C TRANSMIT in INIT"):(void)0;
 	ADXL343_ReadRegister(0x1D, &ret,1)!=HAL_OK ? debug(D_ERROR,"I2C READ in INIT"):(void)0;
 	//printf("WRITE/READ - TRESHS_TAP: 0x%02X\r\n",ret);
 	/* 	0x21-DUR	|	625 µs/LSB
@@ -153,6 +153,12 @@ void ADXL343_init(void){
 	ADXL343_ReadRegister(0x38, &ret,1)!=HAL_OK ? debug(D_ERROR,"I2C READ in INIT"):(void)0;
 	//printf("WRITE/READ - FIFO Mode: 0x%02X\r\n",ret);
 
+
+ /*On reinitialise en prevention les registres de sortie
+  *
+  */
+	ADXL343_ReadRegister(0x30,&ret,1); //Permet de reinitialiser le registre de l'adxl
+	ADXL343_ReadRegister(0x31,&ret,1);
 	/*
 	 ************$	ETALONNAGE	$************
 	 */

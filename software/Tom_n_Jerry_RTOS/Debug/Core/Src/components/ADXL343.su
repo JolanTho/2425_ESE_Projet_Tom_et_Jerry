@@ -1,4 +1,4 @@
 ../Core/Src/components/ADXL343.c:60:6:ADXL343_init	80	static
-../Core/Src/components/ADXL343.c:181:7:ADXL343_getAcc	64	static
-../Core/Src/components/ADXL343.c:205:19:ADXL343_WriteRegister	32	static
-../Core/Src/components/ADXL343.c:210:19:ADXL343_ReadRegister	24	static
+../Core/Src/components/ADXL343.c:187:7:ADXL343_getAcc	64	static
+../Core/Src/components/ADXL343.c:211:19:ADXL343_WriteRegister	32	static
+../Core/Src/components/ADXL343.c:216:19:ADXL343_ReadRegister	24	static

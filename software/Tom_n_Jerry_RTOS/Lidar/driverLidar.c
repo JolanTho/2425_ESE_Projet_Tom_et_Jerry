@@ -8,6 +8,7 @@
 
 
 #include "lidar.h"
+#include "shell.h"
 #define MIN_DISTANCE 40 //mm
 
 //Stop and stop scanning
@@ -35,6 +36,7 @@ int LIDAR_stop(h_LIDAR_t *h_LIDAR) {
 //Soft restart
 //No response
 int LIDAR_restart(h_LIDAR_t * h_LIDAR){
+	debug(START,"RESTART LIDAR");
 	uint8_t cmd_buff[CMD_BUFF_SIZE]={CMD_BEGIN,CMD_RESTART};
 	// Envoi de la commande pour restart le LIDAR
 	if (h_LIDAR->serial_drv.it_transmit(cmd_buff, CMD_BUFF_SIZE) != 0) {

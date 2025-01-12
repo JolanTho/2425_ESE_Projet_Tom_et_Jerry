@@ -1,3 +1,5 @@
-../Core/Src/components/LP5812.c:21:6:LP5812_Init	8	static
-../Core/Src/components/LP5812.c:126:19:LP5812_WriteRegister	32	static
-../Core/Src/components/LP5812.c:142:19:LP5812_ReadRegister	32	static
+../Core/Src/components/LP5812.c:22:6:LP5812_Init	40	static
+../Core/Src/components/LP5812.c:97:19:LP5812_WriteRegister	32	static
+../Core/Src/components/LP5812.c:113:19:LP5812_ReadRegister	32	static
+../Core/Src/components/LP5812.c:126:6:LED_update	16	static
+../Core/Src/components/LP5812.c:131:6:chenillard_RGB	64	static

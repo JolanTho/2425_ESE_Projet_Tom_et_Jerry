@@ -1,7 +1,7 @@
-../Core/Src/components/ZXB5210.c:18:6:ZXB5210_init	112	static
-../Core/Src/components/ZXB5210.c:47:6:ZXB5210_deinit	8	static
-../Core/Src/components/ZXB5210.c:56:6:ZXB5210_speed_FWD	16	static
-../Core/Src/components/ZXB5210.c:66:6:ZXB5210_speed_REV	16	static
-../Core/Src/components/ZXB5210.c:76:6:IT_ZXB5210_speed_UPDATE	24	static
+../Core/Src/components/ZXB5210.c:26:6:ZXB5210_init	112	static
+../Core/Src/components/ZXB5210.c:54:6:ZXB5210_deinit	8	static
+../Core/Src/components/ZXB5210.c:62:6:ZXB5210_speed_FWD	16	static
+../Core/Src/components/ZXB5210.c:69:6:ZXB5210_speed_REV	16	static
+../Core/Src/components/ZXB5210.c:78:6:IT_ZXB5210_speed_UPDATE	24	static
 ../Core/Src/components/ZXB5210.c:89:6:ZXB5210_calc_speed	24	static
 ../Core/Src/components/ZXB5210.c:94:6:ZXB5210_angle	24	static
