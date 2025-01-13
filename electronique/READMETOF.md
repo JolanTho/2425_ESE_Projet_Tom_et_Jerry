@@ -42,7 +42,7 @@ flowchart LR
 
 | PCB gauche | PCB central  | PCB droit |
 | ------------- | ------------- |--------------|
-| <p align="center"><img src="https://github.com/JolanTho/2425_ESE_Projet_Tom_et_Jerry/blob/main/electronique/Photos_PCB/3D_PCB_Gauche.png" width="600" /> </p>  | <p align="center"><img src="https://github.com/JolanTho/2425_ESE_Projet_Tom_et_Jerry/blob/main/electronique/Photos_PCB/3D_PCB_central.png" width="600" /> </p>  |  <p align="center"><img src="https://github.com/JolanTho/2425_ESE_Projet_Tom_et_Jerry/blob/main/electronique/Photos_PCB/3D_PCB_central.png" width="600" /> </p> |
+| <p align="center"><img src="https://github.com/JolanTho/2425_ESE_Projet_Tom_et_Jerry/blob/main/electronique/Photos_PCB/3D_PCB_Gauche.png" width="600" /> </p>  | <p align="center"><img src="https://github.com/JolanTho/2425_ESE_Projet_Tom_et_Jerry/blob/main/electronique/Photos_PCB/3D_PCB_central.png" width="600" /> </p>  |  <p align="center"><img src="https://github.com/JolanTho/2425_ESE_Projet_Tom_et_Jerry/blob/main/electronique/Photos_PCB/3D_PCB_Droit.png" width="600" /> </p> |
 | Content Cell  | Content Cell  | content cell |
 
 ## Auteurs : 
