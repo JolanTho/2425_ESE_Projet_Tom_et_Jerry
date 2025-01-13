@@ -39,12 +39,13 @@ flowchart LR
 ```
 >Les PCB fabriqué sont des PCB deux couches qui ont été fabriqué à l'ENSEA.
 
-
+## PCB
 | PCB gauche | PCB central  | PCB droit |
 | ------------- | ------------- |--------------|
 | <p align="center"><img src="https://github.com/JolanTho/2425_ESE_Projet_Tom_et_Jerry/blob/main/electronique/Photos_PCB/3D_PCB_Gauche.png" width="600" /> </p>  | <p align="center"><img src="https://github.com/JolanTho/2425_ESE_Projet_Tom_et_Jerry/blob/main/electronique/Photos_PCB/3D_PCB_central.png" width="600" /> </p>  |  <p align="center"><img src="https://github.com/JolanTho/2425_ESE_Projet_Tom_et_Jerry/blob/main/electronique/Photos_PCB/3D_PCB_Droit.png" width="600" /> </p> |
 | <p align="center"><img src="https://github.com/JolanTho/2425_ESE_Projet_Tom_et_Jerry/blob/main/electronique/Photos_PCB/Routage_PCB_Gauche.png" width="600" /> </p>  | <p align="center"><img src="https://github.com/JolanTho/2425_ESE_Projet_Tom_et_Jerry/blob/main/electronique/Photos_PCB/Routage_PCB_Central.png" width="600" /> </p>  | <p align="center"><img src="https://github.com/JolanTho/2425_ESE_Projet_Tom_et_Jerry/blob/main/electronique/Photos_PCB/Routage_PCB_Droit.png" width="600" /> </p> |
 
+Hélas nous n'avons pas utiliser les TOF au final par manque de temps. Nous avons utilisés des capteurs moustaches pour détecter le bord de la table car leur utilisation est beaucoup plus simple que les TOFs.
 ## Auteurs : 
 >* Jolan Thomasset (jolan.thomasset@ensea.fr)  
 >* Romain Pace   (romain.pace@ensea.fr)  
