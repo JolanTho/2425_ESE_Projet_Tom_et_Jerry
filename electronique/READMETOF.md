@@ -42,7 +42,7 @@ flowchart LR
 
 | PCB gauche | PCB central  | PCB droit |
 | ------------- | ------------- |--------------|
-| Content Cell  | Content Cell  | content cell |
+| <p align="center"><img src="https://github.com/user-attachments/assets/94b4a1b8-6e84-4c01-b2e8-799141c868a2" width="600" /> </p>  | Content Cell  | content cell |
 | Content Cell  | Content Cell  | content cell |
 
 ## Auteurs : 
