@@ -42,7 +42,7 @@ flowchart LR
 
 | PCB gauche | PCB central  | PCB droit |
 | ------------- | ------------- |--------------|
-| <p align="center"><img src="electronique/Photos PCB/3D_PCB_Gauche.png" width="600" /> </p>  | Content Cell  | content cell |
+| <p align="center"><img src="electronique/Photos_PCB" width="600" /> </p>  | Content Cell  | content cell |
 | Content Cell  | Content Cell  | content cell |
 
 ## Auteurs : 
