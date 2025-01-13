@@ -39,6 +39,12 @@ flowchart LR
 ```
 >Les PCB fabriqué sont des PCB deux couches qui ont été fabriqué à l'ENSEA.
 
+
+| PCB gauche | PCB central  | PCB droit |
+| ------------- | ------------- |--------------|
+| Content Cell  | Content Cell  | content cell |
+| Content Cell  | Content Cell  | content cell |
+
 ## Auteurs : 
 >* Jolan Thomasset (jolan.thomasset@ensea.fr)  
 >* Romain Pace   (romain.pace@ensea.fr)  
