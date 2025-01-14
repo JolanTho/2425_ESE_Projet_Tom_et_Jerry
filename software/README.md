@@ -597,13 +597,21 @@ Récupère les données d'accélération sur les trois axes.
 ### CS
 >
 ### LED
+> Permet de changer les paramètre des LEDs pour créer notament des chenillards.
 ### imu
+>
 ### imusf
+> Permet de tester si l'IMU fonctionne correctement.
 ### imuu
+> Permet d'envoyer une demande de lecture à un registre précis de l'IMU.
 ### imug
+> Permet de récupérer la valeur de l'accélération.
 ### adc
+> Permet de démarrer l'asservissement en courant.
 ### Lidar
+> Permet de démarrer le LIDAR.
 ### miaou
+> Active le DAC pour faire du son et que le robot fasse "miaou".
 ### reset
 ___
 
