@@ -613,6 +613,7 @@ Récupère les données d'accélération sur les trois axes.
 ### miaou
 > Active le DAC pour faire du son et que le robot fasse "miaou".
 ### reset
+> Permet de reset le robot en cas de disfonctionnement.
 ___
 
 ## Auteurs : 
