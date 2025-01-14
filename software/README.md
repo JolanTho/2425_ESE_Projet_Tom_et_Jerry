@@ -580,6 +580,24 @@ Récupère les données d'accélération sur les trois axes.
 | `ADXL343_getAcc`           | Aucune                                    | `XYZ_t`                     |
 
 ---
+## Shell
+### Help
+### Clear 
+### Start
+### Stop
+### Speed 
+### Angle
+### CS
+### LED
+### imu
+### imusf
+### imuu
+### imug
+### adc
+### Lidar
+### miaou
+### reset
+___
 
 ## Auteurs : 
 >* Jolan Thomasset (jolan.thomasset@ensea.fr)  
