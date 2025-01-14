@@ -581,7 +581,9 @@ Récupère les données d'accélération sur les trois axes.
 
 ---
 ## Shell
+>  Afin de pouvoir effectuer des tests unitaire le plus facilement possible nous avons décider d'utiliser un shell. Nous avons donc créer des fonctions pour tester les moteurs, pour vérifier le foncionement correct de l'ADXL ainsi que tester le LIDAR.
 ### Help
+> Cette fonction permet d'ébumérer toutes les fonction présente dans le shell.
 ### Clear 
 ### Start
 ### Stop
