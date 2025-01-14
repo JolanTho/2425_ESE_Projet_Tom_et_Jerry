@@ -585,11 +585,17 @@ Récupère les données d'accélération sur les trois axes.
 ### Help
 > Cette fonction permet d'ébumérer toutes les fonction présente dans le shell.
 ### Clear 
+> Permet de supprimé toutes les actions effectué précédement sur l'écran.
 ### Start
+> Permet de faire démarrer le robot.
 ### Stop
+> Permet d'arrêter le robot.
 ### Speed 
+> Permet de faire varier la vitesse des moteurs en controlant indépendament chaque moteur.
 ### Angle
+> Permet de dire au robot à quel angle on détecte un peu et ansi vérifier si celui-ci s'orinte bien en face de l'objet détecté.
 ### CS
+>
 ### LED
 ### imu
 ### imusf
