@@ -1,0 +1,6 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "TOF_PCB_COTE")(type "KiCad")(uri "D:/Ensea/3A/Projet/Github/2425_ESE_Projet_Tom_et_Jerry/electronique/TOF_PCB/TOF_PCB_COTE.pretty")(options "")(descr ""))
+  (lib (name "VL")(type "KiCad")(uri "${KIPRJMOD}/VL.pretty")(options "")(descr ""))
+  (lib (name "TJ")(type "KiCad")(uri "${KIPRJMOD}/TJ.pretty")(options "")(descr ""))
+)
